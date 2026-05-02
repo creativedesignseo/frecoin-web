@@ -1,57 +1,42 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, MessageSquare } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export default function CTA() {
   return (
-    <section id="contacto" className="py-28 bg-navy-900 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-blue/10 rounded-full blur-3xl" />
-      </div>
-
-      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+    <section id="contacto" className="py-24 bg-white">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="glass rounded-3xl p-12 lg:p-16"
+          transition={{ duration: 0.5 }}
+          className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-3xl p-12 lg:p-14 text-center shadow-sm"
         >
-          <div className="w-16 h-16 bg-brand-blue/15 rounded-2xl flex items-center justify-center mx-auto mb-8">
-            <MessageSquare className="text-brand-blue w-8 h-8" />
-          </div>
-
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-navy-900 mb-3 leading-tight">
             ¿Tienes un proyecto
             <br />
             <span className="text-gradient">en mente?</span>
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">
+          <p className="text-gray-500 text-base mb-8 max-w-md mx-auto">
             Hablemos de cómo podemos ayudarte a construir una infraestructura sólida, segura y preparada para el futuro.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="mailto:info@frecoin.es"
-              className="btn-primary text-base px-10 py-4"
+              className="btn-primary text-base px-8 py-3.5"
             >
-              Solicita asesoramiento <ArrowRight size={18} />
+              Solicita asesoramiento
+              <ArrowRight size={18} />
             </a>
             <a
               href="https://wa.me/34936020365"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline text-base px-10 py-4"
+              className="btn-dark-outline text-base px-8 py-3.5"
             >
               WhatsApp directo
             </a>
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-6 text-white/40 text-sm">
-            <span>📍 Sant Vicenç dels Horts, Barcelona</span>
-            <span className="hidden sm:block">·</span>
-            <span>✉️ info@frecoin.es</span>
-            <span className="hidden sm:block">·</span>
-            <span>📞 +34 936 02 03 65</span>
           </div>
         </motion.div>
       </div>

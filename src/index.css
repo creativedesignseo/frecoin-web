@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #04111F;
-  color: #fff;
+  background-color: #ffffff;
+  color: #0A1628;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -28,23 +28,33 @@ body {
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #1A6BFF, #00D4AA);
+    background: linear-gradient(135deg, #1A6BFF, #00C896);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .glass {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  .card-light {
+    background: #ffffff;
+    border: 1px solid #E5EAF0;
+    transition: all 0.3s ease;
+  }
+
+  .card-light:hover {
+    border-color: #1A6BFF;
+    box-shadow: 0 12px 40px -12px rgba(26, 107, 255, 0.18);
+    transform: translateY(-3px);
   }
 
   .btn-primary {
-    @apply bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-brand-light transition-all duration-200 inline-flex items-center gap-2;
+    @apply bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-brand-light transition-all duration-200 inline-flex items-center gap-2 shadow-lg shadow-brand-blue/20;
   }
 
   .btn-outline {
-    @apply border border-white/20 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:border-brand-teal hover:text-brand-teal transition-all duration-200 inline-flex items-center gap-2;
+    @apply text-navy-900 px-6 py-3 rounded-lg font-semibold text-sm hover:text-brand-blue transition-all duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-dark-outline {
+    @apply border border-navy-900/15 text-navy-900 px-6 py-3 rounded-lg font-semibold text-sm hover:border-brand-blue hover:text-brand-blue transition-all duration-200 inline-flex items-center gap-2;
   }
 }

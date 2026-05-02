@@ -20,13 +20,14 @@ export default function NetworkCanvas() {
     const ctx = canvas.getContext('2d')!
 
     let particles: Particle[] = []
-    const COUNT = 90
-    const CONNECTION_DIST = 160
-    const MOUSE_DIST = 200
+    const COUNT = 110
+    const CONNECTION_DIST = 150
+    const MOUSE_DIST = 220
 
     const resize = () => {
       canvas.width = canvas.offsetWidth * window.devicePixelRatio
       canvas.height = canvas.offsetHeight * window.devicePixelRatio
+      ctx.setTransform(1, 0, 0, 1, 0, 0)
       ctx.scale(window.devicePixelRatio, window.devicePixelRatio)
     }
 
@@ -36,10 +37,10 @@ export default function NetworkCanvas() {
       particles = Array.from({ length: COUNT }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.5 + 0.8,
-        opacity: Math.random() * 0.5 + 0.3,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        radius: Math.random() * 1.6 + 1,
+        opacity: Math.random() * 0.5 + 0.4,
       }))
     }
 
@@ -58,14 +59,13 @@ export default function NetworkCanvas() {
         if (p.x < 0 || p.x > w) p.vx *= -1
         if (p.y < 0 || p.y > h) p.vy *= -1
 
-        // Mouse repulsion
         const dx = p.x - mx
         const dy = p.y - my
         const dist = Math.sqrt(dx * dx + dy * dy)
-        if (dist < MOUSE_DIST) {
+        if (dist < MOUSE_DIST && dist > 0) {
           const force = (MOUSE_DIST - dist) / MOUSE_DIST
-          p.x += (dx / dist) * force * 1.5
-          p.y += (dy / dist) * force * 1.5
+          p.x += (dx / dist) * force * 1.8
+          p.y += (dy / dist) * force * 1.8
         }
       }
 
@@ -79,19 +79,18 @@ export default function NetworkCanvas() {
           const dist = Math.sqrt(dx * dx + dy * dy)
 
           if (dist < CONNECTION_DIST) {
-            const alpha = (1 - dist / CONNECTION_DIST) * 0.35
+            const alpha = (1 - dist / CONNECTION_DIST) * 0.4
 
-            // Mouse proximity brightens lines
             const mdA = Math.sqrt((a.x - mx) ** 2 + (a.y - my) ** 2)
             const mdB = Math.sqrt((b.x - mx) ** 2 + (b.y - my) ** 2)
-            const boost = mdA < MOUSE_DIST || mdB < MOUSE_DIST ? 2.5 : 1
+            const boost = mdA < MOUSE_DIST || mdB < MOUSE_DIST ? 2.2 : 1
 
             const gradient = ctx.createLinearGradient(a.x, a.y, b.x, b.y)
             gradient.addColorStop(0, `rgba(26,107,255,${alpha * boost})`)
-            gradient.addColorStop(1, `rgba(0,212,170,${alpha * boost})`)
+            gradient.addColorStop(1, `rgba(0,200,150,${alpha * boost})`)
 
             ctx.strokeStyle = gradient
-            ctx.lineWidth = 0.8
+            ctx.lineWidth = 1
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(b.x, b.y)
@@ -103,11 +102,14 @@ export default function NetworkCanvas() {
       // Draw particles
       for (const p of particles) {
         const mdist = Math.sqrt((p.x - mx) ** 2 + (p.y - my) ** 2)
-        const glow = mdist < MOUSE_DIST ? 1 : 0.5
+        const inField = mdist < MOUSE_DIST
+        const r = p.radius * (inField ? 1.8 : 1)
 
         ctx.beginPath()
-        ctx.arc(p.x, p.y, p.radius * (mdist < MOUSE_DIST ? 1.8 : 1), 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(26,107,255,${p.opacity * glow})`
+        ctx.arc(p.x, p.y, r, 0, Math.PI * 2)
+        ctx.fillStyle = inField
+          ? `rgba(0,200,150,${p.opacity * 1.2})`
+          : `rgba(26,107,255,${p.opacity})`
         ctx.fill()
       }
 
@@ -118,13 +120,18 @@ export default function NetworkCanvas() {
     init()
     draw()
 
-    const onResize = () => { resize(); init() }
+    const onResize = () => {
+      resize()
+      init()
+    }
     const onMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect()
       mouse.current.x = e.clientX - rect.left
       mouse.current.y = e.clientY - rect.top
     }
-    const onMouseLeave = () => { mouse.current = { x: -9999, y: -9999 } }
+    const onMouseLeave = () => {
+      mouse.current = { x: -9999, y: -9999 }
+    }
 
     window.addEventListener('resize', onResize)
     canvas.addEventListener('mousemove', onMouseMove)
@@ -138,11 +145,5 @@ export default function NetworkCanvas() {
     }
   }, [])
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
-      style={{ mixBlendMode: 'screen' }}
-    />
-  )
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 }
