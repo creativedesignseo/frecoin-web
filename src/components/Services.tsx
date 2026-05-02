@@ -6,43 +6,31 @@ const services = [
     icon: Network,
     title: 'Redes Informáticas',
     desc: 'Diseño, instalación y mantenimiento de redes cableadas e inalámbricas seguras y eficientes.',
-    color: 'text-brand-blue',
-    bg: 'bg-brand-blue/10',
   },
   {
     icon: Zap,
     title: 'Instalaciones Eléctricas',
     desc: 'Instalaciones eléctricas en baja tensión para empresas, oficinas e industrias.',
-    color: 'text-amber-500',
-    bg: 'bg-amber-500/10',
   },
   {
     icon: Camera,
     title: 'Cámaras de Videovigilancia',
     desc: 'Sistemas de CCTV IP para la protección de personas, bienes e instalaciones.',
-    color: 'text-brand-teal',
-    bg: 'bg-brand-teal/10',
   },
   {
     icon: Wifi,
     title: 'Antenas WiFi',
     desc: 'Cobertura WiFi profesional de alta densidad para espacios corporativos y entornos exigentes.',
-    color: 'text-purple-500',
-    bg: 'bg-purple-500/10',
   },
   {
     icon: Battery,
     title: 'SAI',
     desc: 'Sistemas de alimentación ininterrumpida para garantizar la continuidad de tu negocio.',
-    color: 'text-orange-500',
-    bg: 'bg-orange-500/10',
   },
   {
     icon: Shield,
     title: 'Controles de Acceso',
     desc: 'Soluciones de control de accesos para una gestión segura y eficiente de entradas.',
-    color: 'text-emerald-500',
-    bg: 'bg-emerald-500/10',
   },
 ]
 
@@ -89,9 +77,7 @@ export default function Services() {
               variants={item}
               className="card-light rounded-2xl p-7 group cursor-pointer"
             >
-              <div className={`w-12 h-12 ${s.bg} rounded-xl flex items-center justify-center mb-5`}>
-                <s.icon className={`${s.color} w-6 h-6`} strokeWidth={2.2} />
-              </div>
+              <s.icon className="text-brand-blue w-9 h-9 mb-5" strokeWidth={1.6} />
               <h3 className="text-navy-900 font-bold text-lg mb-2.5">{s.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-5">{s.desc}</p>
               <span className="inline-flex items-center gap-1.5 text-brand-blue text-sm font-semibold group-hover:gap-3 transition-all duration-200">
