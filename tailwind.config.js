@@ -11,9 +11,10 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#10b981",
+          DEFAULT: "#0052FF",
           foreground: "#FFFFFF",
         },
+        "frecoin-green": "#00C853",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -45,11 +46,11 @@ module.exports = {
         "text-dark": "#2A3441",
         "text-gray": "#6b7280",
         "border-dark": "#162B4D",
-        star: "#14B8A6",
+        star: "#FFAB00",
       },
       fontFamily: {
-        heading: ['Sora', 'sans-serif'],
-        sans: ['Manrope', 'sans-serif'],
+        heading: ['Roboto', 'sans-serif'],
+        sans: ['Roboto', 'sans-serif'],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",

@@ -1,14 +1,9 @@
-import { useState, useRef, type FormEvent } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useState, type FormEvent } from 'react'
+import { motion } from 'framer-motion'
 import {
-  MapPin,
   Phone,
   Mail,
   Clock,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
   ArrowRight,
   Plus,
   X,
@@ -19,15 +14,6 @@ import {
 /* ─── Animation helpers ─── */
 const easeSmooth = [0.16, 1, 0.3, 1] as [number, number, number, number]
 
-const fadeRight = {
-  hidden: { opacity: 0, x: 30 },
-  visible: (i = 0) => ({
-    opacity: 1,
-    x: 0,
-    transition: { delay: 0.3 + i * 0.1, duration: 0.7, ease: easeSmooth },
-  }),
-}
-
 const staggerContainer = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08 } },
@@ -36,6 +22,15 @@ const staggerContainer = {
 const staggerItem = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeSmooth } },
+}
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 30 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: 0.3 + i * 0.1, duration: 0.7, ease: easeSmooth },
+  }),
 }
 
 const formStaggerContainer = {
@@ -51,29 +46,29 @@ const formStaggerItem = {
 /* ─── FAQ Data ─── */
 const faqItems = [
   {
-    question: 'How much can I save with solar panels?',
+    question: '¿Qué tipo de clientes atiende FRECOIN?',
     answer:
-      'On average, homeowners save between 50–90% on their electricity bills after installing solar panels. The exact savings depend on your energy usage, local electricity rates, system size, and available sunlight. Most systems pay for themselves within 5–8 years.',
+      'Atendemos a todo tipo de clientes: pequeñas y medianas empresas, comunidades de propietarios, naves industriales, locales comerciales, oficinas y particulares en Sant Vicenç dels Horts y el área metropolitana sur de Barcelona.',
   },
   {
-    question: 'How long does the installation process take?',
+    question: '¿Cuánto tiempo tarda una instalación de red?',
     answer:
-      'A typical residential installation takes 1–3 days, while commercial projects may take 1–2 weeks. The entire process — from initial consultation to system activation — usually spans 4–8 weeks, including permitting and utility approval.',
+      'Depende del alcance del proyecto. Una instalación de red para una oficina pequeña puede realizarse en 1–2 días. Proyectos en naves o edificios corporativos pueden requerir entre 1 y 2 semanas. Siempre acordamos el plazo antes de comenzar.',
   },
   {
-    question: 'What maintenance do solar panels require?',
+    question: '¿Ofrecéis garantía en las instalaciones?',
     answer:
-      'Solar panels require minimal maintenance. We recommend an annual cleaning and inspection to ensure optimal performance. Our monitoring system alerts us to any issues automatically, and our maintenance team handles all repairs under warranty.',
+      'Sí. Todos nuestros trabajos incluyen garantía en materiales y mano de obra. Además, ofrecemos contratos de mantenimiento preventivo para que su instalación esté siempre en perfecto estado.',
   },
   {
-    question: 'Do solar panels work on cloudy days?',
+    question: '¿Podéis trabajar fuera de horario para no interrumpir mi negocio?',
     answer:
-      'Yes, solar panels continue to generate electricity on cloudy days, typically at 10–25% of their rated capacity. Modern panels are increasingly efficient in low-light conditions, and battery storage systems ensure you have power even during extended cloudy periods.',
+      'Por supuesto. Nos adaptamos a las necesidades de cada cliente. Realizamos instalaciones en horario nocturno, fines de semana o por fases para minimizar el impacto en la actividad de su empresa.',
   },
   {
-    question: 'What financing options are available?',
+    question: '¿Dónde trabajáis?',
     answer:
-      'We offer multiple financing options including cash purchase, solar loans with competitive rates, leases, and power purchase agreements (PPAs). Our team will help you find the option that best fits your budget and energy goals.',
+      'Nuestra zona principal de actuación es Sant Vicenç dels Horts y el área metropolitana sur de Barcelona. Contáctanos indicando la ubicación de tu proyecto y te informaremos sin compromiso.',
   },
 ]
 
@@ -95,17 +90,14 @@ function SectionTag({ text }: { text: string }) {
 function HeroSection() {
   return (
     <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-      {/* Background image */}
       <img
         src="/contact-hero.jpg"
-        alt="Wind turbines on green hills"
+        alt="Instalaciones técnicas FRECOIN"
         className="absolute inset-0 w-full h-full object-cover opacity-25"
       />
-      {/* Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#081A3A]/70 to-[#081A3A]" />
       <div className="absolute inset-0 bg-[#081A3A]/40" />
 
-      {/* Content */}
       <div className="relative z-10 text-center px-5">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -113,7 +105,7 @@ function HeroSection() {
           transition={{ delay: 0.2, duration: 0.5, ease: easeSmooth }}
           className="text-primary uppercase text-xs font-sans font-medium tracking-widest mb-4"
         >
-          Get in Touch
+          Frecoin Comunicaciones
         </motion.p>
 
         <motion.h1
@@ -122,7 +114,7 @@ function HeroSection() {
           transition={{ delay: 0.3, duration: 0.8, ease: easeSmooth }}
           className="font-heading text-display text-white mb-4"
         >
-          Contact <span className="italic text-primary">Us</span>
+          Solicitar <span className="italic text-primary">Presupuesto</span>
         </motion.h1>
 
         <motion.p
@@ -131,16 +123,7 @@ function HeroSection() {
           transition={{ delay: 0.4, duration: 0.6, ease: easeSmooth }}
           className="text-white/70 text-base font-sans leading-relaxed max-w-lg mx-auto"
         >
-          Have questions about solar energy? We&apos;re here to help you every step of the way.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="text-white/40 text-sm font-sans mt-6"
-        >
-          Home / Contact
+          Cuéntanos tu proyecto y te respondemos sin compromiso en menos de 24 horas.
         </motion.p>
       </div>
     </section>
@@ -148,87 +131,30 @@ function HeroSection() {
 }
 
 /* ═══════════════════════════════════════════
-   SECTION 2: MAP
+   SECTION 2: CONTACT FORM & INFO CARDS
    ═══════════════════════════════════════════ */
-function MapSection() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-50px' })
-
-  return (
-    <section ref={ref} className="relative w-full h-80 bg-[#e5e7eb] overflow-hidden">
-      {/* Placeholder map styled with dark theme */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 1 }}
-        className="w-full h-full relative"
-      >
-        <iframe
-          title="Auron Office Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.715220363277!2d-118.243685!3d34.052234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDAzJzA4LjAiTiAxMTjCsDE0JzM3LjMiVw!5e0!3m2!1sen!2sus!4v1"
-          className="w-full h-full border-0"
-          style={{ filter: 'grayscale(100%) invert(92%) contrast(83%)' }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-        {/* Bottom gradient blend */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to top, #F6F8FB 0%, transparent 100%)',
-          }}
-        />
-      </motion.div>
-    </section>
-  )
-}
-
-/* ═══════════════════════════════════════════
-   SECTION 3: CONTACT FORM & INFO CARDS
-   ═══════════════════════════════════════════ */
-
-const subjectOptions = [
-  'General Inquiry',
-  'Solar Installation',
-  'Maintenance Request',
-  'Commercial Project',
-  'Partnership',
-  'Other',
-]
-
-const socialLinks = [
-  { icon: Facebook, label: 'Facebook', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
-  { icon: Instagram, label: 'Instagram', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-]
-
 function ContactFormSection() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle')
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    subject: '',
     message: '',
   })
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     setFormState('submitting')
-    // Simulate submission
     setTimeout(() => {
       setFormState('success')
       setTimeout(() => {
         setFormState('idle')
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+        setFormData({ name: '', phone: '', message: '' })
       }, 3000)
     }, 1500)
   }
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
@@ -245,14 +171,17 @@ function ContactFormSection() {
             variants={formStaggerContainer}
             className="lg:w-[60%]"
           >
+            <motion.div variants={formStaggerItem}>
+              <SectionTag text="Escríbenos" />
+            </motion.div>
             <motion.h2
               variants={formStaggerItem}
               className="font-heading text-4xl text-text-dark mb-2"
             >
-              Send Us a <span className="italic text-primary">Message</span>
+              Cuéntanos tu <span className="italic text-primary">Proyecto</span>
             </motion.h2>
             <motion.p variants={formStaggerItem} className="text-text-gray text-base leading-relaxed mb-8">
-              Fill out the form below and our team will get back to you within 24 hours.
+              Rellena el formulario y te contactamos en menos de 24 horas con un presupuesto sin compromiso.
             </motion.p>
 
             {formState === 'success' ? (
@@ -261,119 +190,75 @@ function ContactFormSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center justify-center py-20 bg-white rounded-xl border border-[#e5e7eb]"
               >
-                <CheckCircle2 size={48} className="text-green-500 mb-4" />
-                <h3 className="font-heading text-2xl text-text-dark mb-2">Message Sent Successfully!</h3>
-                <p className="text-text-gray text-base">We&apos;ll get back to you within 24 hours.</p>
+                <CheckCircle2 size={48} className="text-primary mb-4" />
+                <h3 className="font-heading text-2xl text-text-dark mb-2">¡Mensaje enviado!</h3>
+                <p className="text-text-gray text-base">Te contactamos en menos de 24 horas.</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                {/* Name */}
                 <motion.div variants={formStaggerItem}>
                   <label htmlFor="name" className="block font-sans font-medium text-text-dark text-base mb-2">
-                    Full Name
+                    Nombre
                   </label>
                   <input
                     id="name"
                     name="name"
                     type="text"
                     required
-                    placeholder="John Smith"
+                    placeholder="Tu nombre"
                     value={formData.name}
                     onChange={handleChange}
                     className="bg-white border border-[#e5e7eb] rounded-xl px-5 py-3 w-full font-sans text-base text-text-dark outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-[#9ca3af]"
                   />
                 </motion.div>
 
-                {/* Email */}
-                <motion.div variants={formStaggerItem}>
-                  <label htmlFor="email" className="block font-sans font-medium text-text-dark text-base mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="john@example.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-white border border-[#e5e7eb] rounded-xl px-5 py-3 w-full font-sans text-base text-text-dark outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-[#9ca3af]"
-                  />
-                </motion.div>
-
-                {/* Phone */}
                 <motion.div variants={formStaggerItem}>
                   <label htmlFor="phone" className="block font-sans font-medium text-text-dark text-base mb-2">
-                    Phone Number
+                    Teléfono
                   </label>
                   <input
                     id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="(555) 123-4567"
+                    required
+                    placeholder="+34 600 000 000"
                     value={formData.phone}
                     onChange={handleChange}
                     className="bg-white border border-[#e5e7eb] rounded-xl px-5 py-3 w-full font-sans text-base text-text-dark outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-[#9ca3af]"
                   />
                 </motion.div>
 
-                {/* Subject */}
-                <motion.div variants={formStaggerItem}>
-                  <label htmlFor="subject" className="block font-sans font-medium text-text-dark text-base mb-2">
-                    Subject
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="bg-white border border-[#e5e7eb] rounded-xl px-5 py-3 w-full font-sans text-base text-text-dark outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20 appearance-none cursor-pointer"
-                  >
-                    <option value="" disabled>
-                      Select a subject...
-                    </option>
-                    {subjectOptions.map((opt) => (
-                      <option key={opt} value={opt}>
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                </motion.div>
-
-                {/* Message */}
                 <motion.div variants={formStaggerItem}>
                   <label htmlFor="message" className="block font-sans font-medium text-text-dark text-base mb-2">
-                    Your Message
+                    Mensaje
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     required
                     rows={5}
-                    placeholder="Tell us about your project or question..."
+                    placeholder="Cuéntanos qué necesitas instalar o mejorar..."
                     value={formData.message}
                     onChange={handleChange}
                     className="bg-white border border-[#e5e7eb] rounded-xl px-5 py-3 w-full h-36 resize-none font-sans text-base text-text-dark outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-[#9ca3af]"
                   />
                 </motion.div>
 
-                {/* Submit */}
                 <motion.div variants={formStaggerItem}>
                   <button
                     type="submit"
                     disabled={formState === 'submitting'}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-primary text-white font-sans font-medium rounded-full px-6 py-4 text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(16,185,129,0.3)] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-primary text-white font-sans font-medium rounded-full px-6 py-4 text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,82,255,0.3)] disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {formState === 'submitting' ? (
                       <>
                         <Loader2 size={18} className="animate-spin" />
-                        Sending...
+                        Enviando...
                       </>
                     ) : (
                       <>
-                        Send Message
-                        <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                        Enviar Mensaje
+                        <ArrowRight size={16} />
                       </>
                     )}
                   </button>
@@ -387,34 +272,28 @@ function ContactFormSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
-            variants={fadeRight}
+            variants={staggerContainer}
             className="lg:w-[40%]"
           >
-            {/* Card 1: Office */}
-            <motion.div
+            {/* WhatsApp CTA */}
+            <motion.a
               variants={fadeRight}
               custom={0}
-              className="bg-white rounded-xl p-8 border border-[#e5e7eb] mb-6"
+              href="https://wa.me/34614134292"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-5 bg-[#25D366] rounded-xl p-8 mb-6 transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
-              <div className="bg-primary/10 rounded-lg p-2 w-fit mb-4">
-                <MapPin size={24} className="text-primary" />
+              <div className="bg-white/20 rounded-lg p-3 shrink-0">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </div>
-              <h3 className="font-heading text-2xl text-text-dark mb-2">Our Office</h3>
-              <p className="text-text-gray text-base leading-relaxed mb-3">
-                123 Solar Street, Green Valley, CA 90210
-              </p>
-              <a
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-primary font-sans font-medium text-sm hover:underline"
-              >
-                Get Directions
-                <ArrowRight size={14} />
-              </a>
-            </motion.div>
+              <div>
+                <p className="font-heading text-white text-xl font-medium">WhatsApp Directo</p>
+                <p className="text-white/80 text-base font-sans">+34 614 134 292</p>
+              </div>
+            </motion.a>
 
-            {/* Card 2: Phone */}
+            {/* Phone */}
             <motion.div
               variants={fadeRight}
               custom={1}
@@ -423,12 +302,14 @@ function ContactFormSection() {
               <div className="bg-primary/10 rounded-lg p-2 w-fit mb-4">
                 <Phone size={24} className="text-primary" />
               </div>
-              <h3 className="font-heading text-2xl text-text-dark mb-2">Phone</h3>
-              <p className="text-text-gray text-base leading-relaxed mb-1">(555) 123-4567</p>
-              <p className="text-[#9ca3af] text-sm font-sans">Mon–Fri: 8AM – 6PM</p>
+              <h3 className="font-heading text-2xl text-text-dark mb-2">Teléfono</h3>
+              <a href="tel:+34614134292" className="text-text-gray text-base leading-relaxed hover:text-primary transition-colors block mb-1">
+                +34 614 134 292
+              </a>
+              <p className="text-[#9ca3af] text-sm font-sans">Lun–Vie: 8:00 – 18:00</p>
             </motion.div>
 
-            {/* Card 3: Email */}
+            {/* Email */}
             <motion.div
               variants={fadeRight}
               custom={2}
@@ -438,11 +319,13 @@ function ContactFormSection() {
                 <Mail size={24} className="text-primary" />
               </div>
               <h3 className="font-heading text-2xl text-text-dark mb-2">Email</h3>
-              <p className="text-text-gray text-base leading-relaxed mb-1">hello@auronenergy.com</p>
-              <p className="text-[#9ca3af] text-sm font-sans">We reply within 24 hours</p>
+              <a href="mailto:info@frecoin.es" className="text-text-gray text-base leading-relaxed hover:text-primary transition-colors block mb-1">
+                info@frecoin.es
+              </a>
+              <p className="text-[#9ca3af] text-sm font-sans">Respondemos en menos de 24 h</p>
             </motion.div>
 
-            {/* Card 4: Business Hours */}
+            {/* Business Hours */}
             <motion.div
               variants={fadeRight}
               custom={3}
@@ -451,27 +334,11 @@ function ContactFormSection() {
               <div className="bg-primary/10 rounded-lg p-2 w-fit mb-4">
                 <Clock size={24} className="text-primary" />
               </div>
-              <h3 className="font-heading text-2xl text-text-dark mb-3">Business Hours</h3>
+              <h3 className="font-heading text-2xl text-text-dark mb-3">Horario</h3>
               <div className="space-y-1">
-                <p className="text-text-gray text-sm font-sans">Monday – Friday: 8:00 AM – 6:00 PM</p>
-                <p className="text-text-gray text-sm font-sans">Saturday: 9:00 AM – 2:00 PM</p>
-                <p className="text-text-gray text-sm font-sans">Sunday: Closed</p>
+                <p className="text-text-gray text-sm font-sans">Lunes – Viernes: 8:00 – 18:00</p>
+                <p className="text-text-gray text-sm font-sans">Sant Vicenç dels Horts, Barcelona</p>
               </div>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div variants={fadeRight} custom={4} className="mt-6 flex items-center gap-3">
-              <span className="text-text-gray text-sm font-sans mr-1">Follow Us:</span>
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-[#e5e7eb] flex items-center justify-center text-text-gray transition-all duration-300 hover:bg-primary hover:border-primary hover:text-white"
-                >
-                  <social.icon size={16} />
-                </a>
-              ))}
             </motion.div>
           </motion.div>
         </div>
@@ -481,7 +348,7 @@ function ContactFormSection() {
 }
 
 /* ═══════════════════════════════════════════
-   SECTION 4: FAQ ACCORDION
+   SECTION 3: FAQ ACCORDION
    ═══════════════════════════════════════════ */
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -489,7 +356,6 @@ function FAQSection() {
   return (
     <section className="bg-light-gray py-20 lg:py-24">
       <div className="px-5 md:px-8 lg:px-16 xl:px-20">
-        {/* Heading — centered */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -499,14 +365,13 @@ function FAQSection() {
         >
           <SectionTag text="FAQ" />
           <h2 className="font-heading text-4xl text-text-dark mb-4">
-            Frequently Asked <span className="italic text-primary">Questions</span>
+            Preguntas <span className="italic text-primary">Frecuentes</span>
           </h2>
           <p className="text-text-gray text-base leading-relaxed max-w-2xl mx-auto">
-            Find answers to common questions about our services and solar energy.
+            Respondemos a las dudas más habituales sobre nuestros servicios de instalación.
           </p>
         </motion.div>
 
-        {/* Accordion */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -553,11 +418,11 @@ function FAQSection() {
 }
 
 /* ═══════════════════════════════════════════
-   SECTION 5: CTA BANNER
+   SECTION 4: CTA BANNER
    ═══════════════════════════════════════════ */
 function CTABannerSection() {
   return (
-    <section className="bg-darker-green py-20">
+    <section className="bg-dark-green py-20">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -569,22 +434,30 @@ function CTABannerSection() {
           variants={staggerItem}
           className="font-heading text-4xl text-white mb-4"
         >
-          Prefer to Talk? <span className="italic text-primary">Call Us Now</span>
+          ¿Prefieres llamar?{' '}
+          <span className="italic text-primary">Te atendemos ya</span>
         </motion.h2>
         <motion.p variants={staggerItem} className="text-white/70 text-base leading-relaxed mb-8">
-          Our friendly team is standing by to answer your questions and schedule your free consultation.
+          Nuestro equipo está disponible de lunes a viernes de 8:00 a 18:00 para atenderte.
         </motion.p>
-        <motion.a
-          variants={staggerItem}
-          href="tel:+15551234567"
-          className="inline-flex items-center gap-3 text-primary text-2xl font-sans font-medium transition-all duration-300 hover:opacity-80"
-        >
-          <Phone size={28} />
-          (555) 123-4567
-        </motion.a>
-        <motion.p variants={staggerItem} className="text-white/40 text-base mt-6">
-          Or email us at hello@auronenergy.com
-        </motion.p>
+        <motion.div variants={staggerItem} className="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="tel:+34614134292"
+            className="inline-flex items-center gap-3 bg-white text-dark-green font-sans font-medium rounded-full px-8 py-4 transition-all hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            <Phone size={20} />
+            +34 614 134 292
+          </a>
+          <a
+            href="https://wa.me/34614134292"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#25D366] text-white font-sans font-medium rounded-full px-8 py-4 transition-all hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </motion.div>
       </motion.div>
     </section>
   )
@@ -597,7 +470,6 @@ export default function Contact() {
   return (
     <div>
       <HeroSection />
-      <MapSection />
       <ContactFormSection />
       <FAQSection />
       <CTABannerSection />

@@ -2,15 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import {
-  Leaf,
   Users,
   Zap,
-  PlayCircle,
+  CheckCircle,
+  Network,
+  Shield,
   ChevronDown,
   ArrowRight,
   Target,
   Eye,
-  Home as HomeIcon,
   Star,
   Plus,
   X,
@@ -58,7 +58,7 @@ const staggerItem = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 }
 
-/* ─── Section Tag Component ─── */
+/* ─── Section Tag ─── */
 function SectionTag({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-2 mb-4">
@@ -71,9 +71,9 @@ function SectionTag({ text }: { text: string }) {
 }
 
 /* ─── Animated Counter ─── */
-function useCountUp(end: number, duration = 2000, startOnView = true) {
+function useCountUp(end: number, duration = 2000) {
   const [count, setCount] = useState(0)
-  const [started, setStarted] = useState(!startOnView)
+  const [started, setStarted] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -85,7 +85,6 @@ function useCountUp(end: number, duration = 2000, startOnView = true) {
     if (!started) return
     let startTime: number | null = null
     let raf: number
-
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp
       const progress = Math.min((timestamp - startTime) / duration, 1)
@@ -93,7 +92,6 @@ function useCountUp(end: number, duration = 2000, startOnView = true) {
       setCount(Math.floor(eased * end))
       if (progress < 1) raf = requestAnimationFrame(animate)
     }
-
     raf = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(raf)
   }, [started, end, duration])
@@ -132,7 +130,7 @@ function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, rgba(8,26,58,0.82) 0%, rgba(8,26,58,0.65) 100%)',
+          background: 'linear-gradient(135deg, rgba(8,26,58,0.88) 0%, rgba(8,26,58,0.70) 100%)',
         }}
       />
 
@@ -144,7 +142,7 @@ function HeroSection() {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="text-primary uppercase text-xs font-sans font-medium tracking-widest mb-6"
         >
-          Auron &mdash; Solar &amp; Renewable Energy
+          Frecoin Comunicaciones &mdash; Instalaciones Técnicas
         </motion.p>
 
         <motion.h1
@@ -153,8 +151,8 @@ function HeroSection() {
           transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="font-heading text-display-xl text-white mb-6"
         >
-          Powering a{' '}
-          <span className="italic text-primary">Sustainable</span> Future
+          Tu Satisfacción es Nuestra{' '}
+          <span className="italic text-primary">Prioridad</span> Laboral
         </motion.h1>
 
         <motion.p
@@ -163,8 +161,8 @@ function HeroSection() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="text-white/80 text-base font-sans leading-relaxed max-w-xl mx-auto mb-8"
         >
-          We provide innovative solar and renewable energy solutions that reduce your
-          carbon footprint while cutting energy costs for homes and businesses.
+          Soluciones integrales en infraestructuras tecnológicas para empresas.
+          Redes, electricidad, seguridad, SAI y control de acceso en Sant Vicenç dels Horts, Barcelona.
         </motion.p>
 
         <motion.div
@@ -173,16 +171,22 @@ function HeroSection() {
           transition={{ delay: 1.1, duration: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-4"
         >
+          <a
+            href="https://wa.me/34614134292"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#25D366] text-white font-sans font-medium rounded-full px-6 py-3 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(37,211,102,0.35)]"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Contactar por WhatsApp
+          </a>
           <Link
             to="/contact"
-            className="inline-flex items-center bg-primary text-white font-sans font-medium rounded-full px-6 py-3 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(16,185,129,0.3)]"
+            className="inline-flex items-center gap-2 text-white font-sans font-medium border border-white/30 rounded-full px-5 py-2.5 transition-all hover:bg-white/10"
           >
-            Get Started
+            <ArrowRight size={18} />
+            Solicitar Presupuesto
           </Link>
-          <button className="inline-flex items-center gap-2 text-white font-sans font-medium border border-white/30 rounded-full px-5 py-2.5 transition-all hover:bg-white/10">
-            <PlayCircle size={18} />
-            Watch Our Story
-          </button>
         </motion.div>
       </div>
 
@@ -215,20 +219,20 @@ function TrustedPartnerSection() {
             variants={fadeUp}
             className="lg:w-1/2"
           >
-            <SectionTag text="Your Trusted Partner" />
+            <SectionTag text="Tu Empresa de Confianza" />
             <h2 className="font-heading text-4xl lg:text-5xl text-text-dark mb-4">
-              Your trusted partner in renewable energy solutions
+              Tu socio de confianza en instalaciones técnicas
             </h2>
             <p className="text-text-gray text-base leading-relaxed max-w-md mb-6">
-              For over a decade, we&apos;ve been at the forefront of the clean energy
-              revolution, helping thousands of homeowners and businesses transition to
-              sustainable power.
+              Más de 20 años instalando redes informáticas, sistemas eléctricos, cámaras de seguridad
+              y controles de acceso para empresas y particulares en España. Cada proyecto es un compromiso
+              con la calidad y la satisfacción del cliente.
             </p>
             <Link
               to="/about"
               className="inline-flex items-center gap-2 text-primary font-sans font-medium group"
             >
-              Learn More About Us
+              Conoce más sobre nosotros
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
@@ -244,14 +248,14 @@ function TrustedPartnerSection() {
             <motion.img
               variants={staggerItem}
               src="/trusted-partner-1.jpg"
-              alt="Residential solar installation"
+              alt="Instalación de red empresarial"
               className="absolute top-0 left-0 w-72 h-52 object-cover rounded-xl shadow-lg"
               style={{ transform: 'rotate(-3deg)' }}
             />
             <motion.img
               variants={staggerItem}
               src="/trusted-partner-2.jpg"
-              alt="Commercial solar installation"
+              alt="Sistema de cámaras de seguridad"
               className="absolute top-8 right-0 w-72 h-52 object-cover rounded-xl shadow-lg"
               style={{ transform: 'rotate(3deg)' }}
             />
@@ -263,26 +267,38 @@ function TrustedPartnerSection() {
 }
 
 /* ═══════════════════════════════════════════
-   SECTION 3: WHY CHOOSE AURON
+   SECTION 3: WHY CHOOSE FRECOIN
    ═══════════════════════════════════════════ */
 const featureCards = [
   {
-    icon: Leaf,
-    title: 'Eco-Friendly & Sustainable',
+    icon: Users,
+    title: 'Experiencia y Profesionalidad',
     description:
-      'Our solutions are designed with the environment in mind, using recyclable materials and processes that minimize ecological impact while maximizing energy output.',
+      'Más de 20 años con un enfoque técnico sólido en cada instalación. Conocemos cada detalle del sector para garantizarte el mejor resultado.',
   },
   {
-    icon: Users,
-    title: 'Expert Team & Quality Services',
+    icon: Target,
+    title: 'Soluciones a Medida',
     description:
-      'Our certified technicians bring over 10 years of hands-on experience in solar installation, maintenance, and energy consulting, ensuring every project meets the highest standards.',
+      'Adaptamos cada proyecto a las necesidades reales de cada cliente, sin soluciones genéricas. Escuchamos, analizamos y ejecutamos con precisión.',
   },
   {
     icon: Zap,
-    title: 'Smart & Efficient Energy',
+    title: 'Fiabilidad y Continuidad',
     description:
-      'We leverage cutting-edge smart technology to optimize your energy consumption, providing real-time monitoring and AI-driven insights that maximize efficiency and savings.',
+      'Garantizamos el correcto funcionamiento de tus sistemas a largo plazo, con materiales de primera calidad y una instalación impecable.',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Atención Cercana y Rápida',
+    description:
+      'Respuesta eficaz ante cualquier incidencia. Somos un equipo cercano que se implica de verdad con cada cliente y cada proyecto.',
+  },
+  {
+    icon: Shield,
+    title: 'Cumplimiento de Normativa',
+    description:
+      'Todas nuestras instalaciones cumplen con la normativa eléctrica y técnica vigente en España, garantizando seguridad y durabilidad.',
   },
 ]
 
@@ -296,15 +312,14 @@ function WhyChooseSection() {
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeUp}
         >
-          <SectionTag text="Why Choose Us" />
+          <SectionTag text="Por Qué Elegirnos" />
           <h2 className="font-heading text-4xl lg:text-5xl text-text-dark max-w-3xl">
-            Empowering a{' '}
-            <span className="italic text-primary">Sustainable</span> Future with
-            Cutting-Edge Renewable Energy Solutions
+            Soluciones técnicas con{' '}
+            <span className="italic text-primary">garantía</span>, rapidez y profesionalidad
           </h2>
           <p className="text-text-gray text-base leading-relaxed max-w-2xl mt-4">
-            We combine expertise, innovation, and a commitment to sustainability to
-            deliver energy solutions that make a real difference.
+            Combinamos experiencia, tecnología actualizada y atención personalizada para
+            ofrecerte el mejor resultado en cada instalación.
           </p>
         </motion.div>
 
@@ -313,7 +328,7 @@ function WhyChooseSection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-12"
         >
           {featureCards.map((card) => (
             <motion.div
@@ -354,11 +369,11 @@ function StatsSection() {
           >
             <img
               src="/about-solar-farm.jpg"
-              alt="Solar farm"
+              alt="Equipo técnico Frecoin"
               className="w-full aspect-[4/3] object-cover rounded-xl"
             />
             <div className="absolute bottom-4 left-4 bg-primary text-white font-sans font-semibold rounded-lg px-4 py-2 text-sm">
-              10+ Years
+              20+ Años
             </div>
           </motion.div>
 
@@ -370,21 +385,21 @@ function StatsSection() {
             variants={fadeRight}
             className="lg:w-[45%]"
           >
-            <SectionTag text="Leading the Revolution" />
+            <SectionTag text="Nuestra Trayectoria" />
             <h2 className="font-heading text-4xl lg:text-5xl text-white mb-4">
-              Leading the{' '}
-              <span className="italic text-primary">Clean Energy</span> Revolution
+              Más de 20 años{' '}
+              <span className="italic text-primary">conectando</span> empresas y particulares
             </h2>
             <p className="text-white/70 text-base leading-relaxed mb-6">
-              We&apos;ve helped thousands of clients make the switch to renewable energy,
-              reducing carbon emissions and creating a more sustainable future for
-              generations to come.
+              Llevamos más de dos décadas completando proyectos de instalación en España, aportando
+              conectividad, seguridad y eficiencia operativa. En FRECOIN, cada proyecto
+              es único y lo tratamos con la máxima dedicación.
             </p>
             <Link
               to="/about"
               className="inline-flex items-center border border-white text-white font-sans font-medium rounded-full px-6 py-3 transition-all hover:bg-white hover:text-dark-green"
             >
-              About Us
+              Sobre Nosotros
             </Link>
           </motion.div>
         </div>
@@ -398,18 +413,18 @@ function StatsSection() {
           className="mt-12 bg-darker-green rounded-xl px-6 md:px-10 py-8 shadow-xl flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0"
         >
           <div className="flex-1 text-center md:px-6">
-            <Counter end={50} suffix="k+" />
-            <p className="text-white/60 text-sm font-sans mt-1">Tons of CO2 Saved</p>
-          </div>
-          <div className="hidden md:block w-px h-16 bg-border-dark" />
-          <div className="flex-1 text-center md:px-6">
             <Counter end={500} suffix="+" />
-            <p className="text-white/60 text-sm font-sans mt-1">Successful Installations</p>
+            <p className="text-white/60 text-sm font-sans mt-1">Instalaciones Completadas</p>
           </div>
           <div className="hidden md:block w-px h-16 bg-border-dark" />
           <div className="flex-1 text-center md:px-6">
-            <Counter end={10} suffix="+" />
-            <p className="text-white/60 text-sm font-sans mt-1">Years of Excellence</p>
+            <Counter end={20} suffix="+" />
+            <p className="text-white/60 text-sm font-sans mt-1">Años de Experiencia</p>
+          </div>
+          <div className="hidden md:block w-px h-16 bg-border-dark" />
+          <div className="flex-1 text-center md:px-6">
+            <Counter end={200} suffix="+" />
+            <p className="text-white/60 text-sm font-sans mt-1">Clientes Satisfechos</p>
           </div>
         </motion.div>
       </div>
@@ -431,10 +446,10 @@ function MissionVisionSection() {
           variants={fadeUp}
           className="text-center max-w-2xl mx-auto"
         >
-          <SectionTag text="Our Purpose" />
+          <SectionTag text="Nuestro Propósito" />
           <h2 className="font-heading text-4xl lg:text-5xl text-text-dark">
-            Driven by Purpose,{' '}
-            <span className="italic text-primary">Powered</span> by Innovation
+            Comprometidos con la{' '}
+            <span className="italic text-primary">Conectividad</span> y la Seguridad
           </h2>
         </motion.div>
 
@@ -455,12 +470,11 @@ function MissionVisionSection() {
             </span>
             <div className="relative z-10">
               <Target size={32} className="text-primary mb-4" />
-              <h3 className="font-heading text-3xl text-text-dark mb-4">Our Mission</h3>
+              <h3 className="font-heading text-3xl text-text-dark mb-4">Nuestra Misión</h3>
               <p className="text-text-gray text-base leading-relaxed">
-                To accelerate the world&apos;s transition to sustainable energy by making
-                solar power accessible, affordable, and efficient for every home and
-                business. We believe clean energy is not just an alternative — it&apos;s
-                the future.
+                En FRECOIN llevamos más de 20 años ofreciendo soluciones integrales en infraestructuras
+                tecnológicas para empresas. Aseguramos la continuidad operativa de nuestros clientes
+                con un servicio de alta calidad, adaptado a sus necesidades reales.
               </p>
             </div>
           </motion.div>
@@ -475,11 +489,11 @@ function MissionVisionSection() {
             </span>
             <div className="relative z-10">
               <Eye size={32} className="text-primary mb-4" />
-              <h3 className="font-heading text-3xl text-text-dark mb-4">Our Vision</h3>
+              <h3 className="font-heading text-3xl text-text-dark mb-4">Nuestra Visión</h3>
               <p className="text-text-gray text-base leading-relaxed">
-                A world where 100% of energy comes from renewable sources. We envision
-                communities powered by the sun, independent from fossil fuels, with
-                every rooftop contributing to a cleaner, greener planet.
+                Nos especializamos en instalaciones de redes informáticas, sistemas eléctricos y SAI,
+                garantizando infraestructuras seguras, eficientes y fiables para empresas y
+                particulares en Sant Vicenç dels Horts y el área metropolitana de Barcelona.
               </p>
             </div>
           </motion.div>
@@ -490,15 +504,15 @@ function MissionVisionSection() {
 }
 
 /* ═══════════════════════════════════════════
-   SECTION 6: PARTNERS LOGO MARQUEE
+   SECTION 6: BRANDS / PARTNERS MARQUEE
    ═══════════════════════════════════════════ */
 const partnerLogos = [
-  { name: 'Aora Roots', src: '/partner-aora-roots.svg' },
-  { name: 'Orbit Inc', src: '/partner-orbit-inc.svg' },
-  { name: 'House Pixel', src: '/partner-house-pixel.svg' },
-  { name: 'Practista', src: '/partner-practista.svg' },
-  { name: 'The Garden Inc', src: '/partner-garden-inc.svg' },
-  { name: 'SolarTech', src: '/partner-solar-tech.svg' },
+  { name: 'Cisco', src: '/partner-aora-roots.svg' },
+  { name: 'TP-Link', src: '/partner-orbit-inc.svg' },
+  { name: 'Legrand', src: '/partner-house-pixel.svg' },
+  { name: 'Hikvision', src: '/partner-practista.svg' },
+  { name: 'Dahua', src: '/partner-garden-inc.svg' },
+  { name: 'Ubiquiti', src: '/partner-solar-tech.svg' },
 ]
 
 function PartnersMarqueeSection() {
@@ -515,11 +529,12 @@ function PartnersMarqueeSection() {
           className="text-center"
         >
           <h2 className="font-heading text-3xl lg:text-4xl text-white">
-            Trusted by <span className="italic text-primary">Industry Leaders</span>
+            Marcas con las que{' '}
+            <span className="italic text-primary">trabajamos</span>
           </h2>
           <p className="text-white/60 text-base mt-3 max-w-xl mx-auto">
-            We&apos;ve partnered with leading organizations to deliver exceptional
-            renewable energy solutions.
+            Instalamos y configuramos equipos de los principales fabricantes del sector
+            para garantizar la máxima calidad y fiabilidad.
           </p>
         </motion.div>
       </div>
@@ -529,13 +544,16 @@ function PartnersMarqueeSection() {
           {allPartners.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="flex-shrink-0 mx-12 h-10 flex items-center"
+              className="flex-shrink-0 mx-12 h-10 flex items-center gap-3"
             >
               <img
                 src={partner.src}
                 alt={partner.name}
-                className="h-8 w-auto opacity-60 brightness-0 invert hover:opacity-100 transition-opacity duration-300"
+                className="h-6 w-auto opacity-50 brightness-0 invert"
               />
+              <span className="text-white/50 font-heading text-lg font-medium tracking-wide">
+                {partner.name}
+              </span>
             </div>
           ))}
         </div>
@@ -550,45 +568,51 @@ function PartnersMarqueeSection() {
 const services = [
   {
     num: '01',
-    title: 'Solar Panel Installation',
+    title: 'Redes Informáticas',
     image: '/service-1.jpg',
     description:
-      'Expert installation of high-efficiency solar panels for residential and commercial properties.',
+      'Montaje de redes informáticas eficientes y seguras, asegurando conectividad rápida y fiable para tu empresa.',
+    highlight: true,
   },
   {
     num: '02',
-    title: 'Energy Storage Solutions',
+    title: 'Instalaciones Eléctricas',
     image: '/service-2.jpg',
     description:
-      'Cutting-edge battery systems that store excess energy for use when you need it most.',
+      'Ejecución de instalaciones eléctricas seguras y eficientes, desde el cableado hasta los cuadros y sistemas de protección.',
+    highlight: false,
   },
   {
     num: '03',
-    title: 'Consultation & Maintenance',
+    title: 'Cámaras de Videovigilancia',
     image: '/service-3.jpg',
     description:
-      'Comprehensive energy audits and ongoing maintenance to keep your system running at peak.',
+      'Montaje de sistemas de cámaras de seguridad para control y vigilancia eficaz de tus instalaciones.',
+    highlight: false,
   },
   {
     num: '04',
-    title: 'EV Charging Stations',
+    title: 'Antenas WiFi',
     image: '/service-4.jpg',
     description:
-      'Professional installation of EV charging stations for homes and businesses.',
+      'Montaje de antenas WiFi para asegurar cobertura y conexión inalámbrica eficiente en cualquier espacio.',
+    highlight: false,
   },
   {
     num: '05',
-    title: 'Hybrid Solar Systems',
+    title: 'SAI — Alimentación Ininterrumpida',
     image: '/service-5.jpg',
     description:
-      'Combined solar and wind solutions for maximum energy independence.',
+      'Montaje de sistemas SAI para asegurar continuidad eléctrica y protección de equipos ante cortes de suministro.',
+    highlight: false,
   },
   {
     num: '06',
-    title: 'Energy Efficiency Audits',
+    title: 'Controles de Acceso',
     image: '/service-6.jpg',
     description:
-      'Detailed assessments to identify opportunities for reducing energy consumption.',
+      'Instalación de sistemas de control de acceso para la seguridad y gestión de entradas en instalaciones.',
+    highlight: false,
   },
 ]
 
@@ -602,20 +626,20 @@ function ServicesSection() {
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeUp}
         >
-          <SectionTag text="Our Services" />
+          <SectionTag text="Nuestros Servicios" />
           <h2 className="font-heading text-4xl lg:text-5xl text-text-dark max-w-3xl">
-            Powering the Future with{' '}
-            <span className="italic text-primary">Renewable Energy</span> Solutions
+            Instalaciones técnicas{' '}
+            <span className="italic text-primary">profesionales</span> para tu empresa y hogar
           </h2>
           <p className="text-text-gray text-base leading-relaxed max-w-2xl mt-4">
-            From installation to maintenance, we offer comprehensive solar and renewable
-            energy services tailored to your needs.
+            Desde el diseño hasta la puesta en marcha, ofrecemos soluciones completas
+            adaptadas a las necesidades de cada cliente.
           </p>
           <Link
             to="/services"
             className="inline-flex items-center mt-6 border border-primary text-primary font-sans font-medium rounded-full px-6 py-3 transition-all hover:bg-primary hover:text-white"
           >
-            View All Services
+            Ver Todos los Servicios
           </Link>
         </motion.div>
 
@@ -630,7 +654,7 @@ function ServicesSection() {
             <motion.div
               key={service.num}
               variants={staggerItem}
-              className="bg-white rounded-xl border border-[#e5e7eb] overflow-hidden group transition-all duration-400 ease-smooth hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)]"
+              className={`bg-white rounded-xl overflow-hidden group transition-all duration-400 ease-smooth hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] ${service.highlight ? 'border-2 border-primary shadow-[0_4px_16px_rgba(0,82,255,0.12)]' : 'border border-[#e5e7eb]'}`}
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
@@ -653,7 +677,7 @@ function ServicesSection() {
                   to="/services"
                   className="inline-flex items-center gap-1 text-primary font-sans font-medium text-sm group/link"
                 >
-                  Learn More
+                  Más información
                   <ArrowRight
                     size={14}
                     className="transition-transform group-hover/link:translate-x-1"
@@ -673,40 +697,40 @@ function ServicesSection() {
    ═══════════════════════════════════════════ */
 const projects = [
   {
-    title: 'Riverside Warehouse Complex',
-    category: 'Commercial',
+    title: 'Nave Industrial en Polígono',
+    category: 'Industrial',
     image: '/project-1.jpg',
-    stats: ['145kW system', '$42,000 savings/year'],
+    stats: ['Redes + Cámaras', '1.200 m²'],
   },
   {
-    title: 'Oakwood Family Residence',
-    category: 'Residential',
+    title: 'Oficinas Corporativas',
+    category: 'Empresarial',
     image: '/project-2.jpg',
-    stats: ['8.5kW + Powerwall', '$3,200 savings/year'],
+    stats: ['WiFi Mesh', 'Control Acceso'],
   },
   {
-    title: 'Metro Center Parking',
-    category: 'Commercial',
+    title: 'Comunidad de Vecinos',
+    category: 'Residencial',
     image: '/project-3.jpg',
-    stats: ['Solar carport', '89kW'],
+    stats: ['Videovigilancia', '12 viviendas'],
   },
   {
-    title: 'Highland Retreat Cabin',
-    category: 'Off-grid',
+    title: 'Local Comercial',
+    category: 'Comercial',
     image: '/project-4.jpg',
-    stats: ['5.2kW', 'Battery backup'],
+    stats: ['Red informática', 'TPV integrado'],
   },
   {
-    title: 'Willowbrook Community Solar',
-    category: 'Community',
+    title: 'Hogar Inteligente',
+    category: 'Domótica',
     image: '/project-5.jpg',
-    stats: ['320kW', 'Shared garden'],
+    stats: ['Automatización', 'Seguridad 24h'],
   },
   {
-    title: 'Desert Plains Solar Farm',
-    category: 'Utility',
+    title: 'Centro Logístico',
+    category: 'Industrial',
     image: '/project-6.jpg',
-    stats: ['2.4MW', 'Industrial array'],
+    stats: ['Cableado estructurado', '5.000 m²'],
   },
 ]
 
@@ -720,20 +744,20 @@ function ProjectsSection() {
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeUp}
         >
-          <SectionTag text="Our Projects" />
+          <SectionTag text="Nuestros Proyectos" />
           <h2 className="font-heading text-4xl lg:text-5xl text-white max-w-3xl">
-            Transforming Homes &amp; Businesses with{' '}
-            <span className="italic text-primary">Solar Energy</span>
+            Instalaciones reales para{' '}
+            <span className="italic text-primary">empresas y particulares</span>
           </h2>
           <p className="text-white/70 text-base leading-relaxed max-w-2xl mt-4">
-            Explore our portfolio of successful installations that have helped clients
-            save money and reduce their environmental impact.
+            Cada proyecto es un compromiso de calidad. Aquí tienes una muestra
+            de nuestros trabajos más destacados.
           </p>
           <Link
             to="/projects"
             className="inline-flex items-center mt-6 border border-white text-white font-sans font-medium rounded-full px-6 py-3 transition-all hover:bg-white hover:text-dark-green"
           >
-            View All Projects
+            Ver Todos los Proyectos
           </Link>
         </motion.div>
 
@@ -755,13 +779,10 @@ function ProjectsSection() {
                 alt={project.title}
                 className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,26,58,0.85)] via-transparent to-transparent" />
-              {/* Category badge */}
               <span className="absolute top-4 left-4 bg-primary text-white text-xs font-sans font-semibold uppercase tracking-wider rounded-full px-3 py-1">
                 {project.category}
               </span>
-              {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <h3 className="font-sans text-xl font-medium text-white mb-2">
                   {project.title}
@@ -805,19 +826,19 @@ function ImpactSection() {
               variants={fadeLeft}
               className="font-heading text-display text-dark-green"
             >
-              Footprint
+              Conectividad
             </motion.h2>
             <motion.h2
               variants={fadeLeft}
               className="font-heading text-display text-dark-green"
             >
-              Independence
+              Seguridad
             </motion.h2>
             <motion.h2
               variants={fadeLeft}
               className="font-heading text-display text-primary italic"
             >
-              Communities
+              Confianza
             </motion.h2>
           </motion.div>
 
@@ -829,16 +850,15 @@ function ImpactSection() {
             variants={fadeRight}
             className="lg:w-1/2"
           >
-            <SectionTag text="Our Impact" />
+            <SectionTag text="Nuestro Impacto" />
             <h2 className="font-heading text-4xl lg:text-5xl text-text-dark mb-4">
-              Making a Difference for the{' '}
-              <span className="italic text-primary">Planet</span>
+              Infraestructura tecnológica que{' '}
+              <span className="italic text-primary">transforma</span> tu negocio
             </h2>
             <p className="text-text-gray text-base leading-relaxed mb-6">
-              Every solar panel we install contributes to a larger mission — reducing
-              carbon emissions, promoting energy independence, and building sustainable
-              communities. Our work goes beyond business; it&apos;s about creating a legacy
-              of environmental stewardship.
+              Más de 20 años trabajando para que la tecnología sea un activo, no un problema.
+              Nuestro trabajo no es solo tender cables — es construir la infraestructura
+              sobre la que funciona tu empresa día a día.
             </p>
 
             <motion.div
@@ -849,21 +869,21 @@ function ImpactSection() {
               className="space-y-4"
             >
               <motion.div variants={staggerItem} className="flex items-center gap-3">
-                <Leaf size={20} className="text-primary shrink-0" />
+                <Network size={20} className="text-primary shrink-0" />
                 <span className="text-text-dark text-sm font-sans">
-                  Reduced carbon footprint by 50,000+ tons
+                  Más de 500 proyectos de red completados con éxito
                 </span>
               </motion.div>
               <motion.div variants={staggerItem} className="flex items-center gap-3">
-                <HomeIcon size={20} className="text-primary shrink-0" />
+                <Shield size={20} className="text-primary shrink-0" />
                 <span className="text-text-dark text-sm font-sans">
-                  Enabled energy independence for 500+ clients
+                  Protección activa para más de 200 empresas y comunidades
                 </span>
               </motion.div>
               <motion.div variants={staggerItem} className="flex items-center gap-3">
                 <Users size={20} className="text-primary shrink-0" />
                 <span className="text-text-dark text-sm font-sans">
-                  Strengthened 50+ local communities
+                  Clientes satisfechos en toda España con garantía de calidad
                 </span>
               </motion.div>
             </motion.div>
@@ -872,7 +892,7 @@ function ImpactSection() {
               to="/about"
               className="inline-flex items-center gap-2 text-primary font-sans font-medium mt-6 group"
             >
-              Learn About Our Impact
+              Conoce nuestra trayectoria
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
@@ -887,25 +907,25 @@ function ImpactSection() {
    ═══════════════════════════════════════════ */
 const testimonials = [
   {
-    name: 'Marcus T.',
-    role: 'Homeowner, Austin TX',
+    name: 'Carlos M.',
+    role: 'Gerente, Empresa Logística · Madrid',
     avatar: '/testimonial-avatar-1.jpg',
     quote:
-      "Auron transformed our home into an energy-efficient powerhouse. Our electricity bill dropped by 85% in the first month, and the installation team was professional, punctual, and incredibly thorough. Best investment we've ever made.",
+      'Frecoin instaló toda la red informática de nuestra nueva nave en tiempo récord. Trabajo impecable, muy profesionales y la red funciona a la perfección desde el primer día. 100% recomendables.',
   },
   {
-    name: 'Sarah K.',
-    role: 'Business Owner, Denver CO',
+    name: 'Ana R.',
+    role: 'Propietaria, Local Comercial · Barcelona',
     avatar: '/testimonial-avatar-2.jpg',
     quote:
-      "We were skeptical about the ROI for our small business, but Auron proved us wrong. The commercial solar system they designed has cut our operational costs by 60%, and our customers love that we're now a green business.",
+      'Nos instalaron un sistema de cámaras y control de acceso que transformó la seguridad de nuestro negocio. Rápidos, limpios y con un precio muy competitivo. Quedé encantada con el resultado.',
   },
   {
-    name: 'David L.',
-    role: 'Property Manager, Portland OR',
+    name: 'Roberto F.',
+    role: 'Administrador de Fincas · Valencia',
     avatar: '/testimonial-avatar-3.jpg',
     quote:
-      "Managing 12 properties, energy costs were our biggest headache. Auron designed a scalable solution that works across all our buildings. Their maintenance team is responsive, and the monitoring dashboard is incredibly intuitive.",
+      'Llevaba tiempo buscando una empresa seria para instalar videovigilancia en nuestra comunidad. Con Frecoin encontramos profesionalidad y un servicio post-venta excelente. Sin duda volvería a contratarles.',
   },
 ]
 
@@ -920,10 +940,10 @@ function TestimonialsSection() {
           variants={fadeUp}
           className="text-center"
         >
-          <SectionTag text="Testimonials" />
+          <SectionTag text="Testimonios" />
           <h2 className="font-heading text-4xl lg:text-5xl text-text-dark">
-            Real Experiences,{' '}
-            <span className="italic text-primary">Real Impact</span>
+            Lo que dicen{' '}
+            <span className="italic text-primary">nuestros clientes</span>
           </h2>
         </motion.div>
 
@@ -973,29 +993,29 @@ function TestimonialsSection() {
    ═══════════════════════════════════════════ */
 const faqItems = [
   {
-    question: 'How much can I save with solar panels?',
+    question: '¿Qué tipo de clientes son sus habituales?',
     answer:
-      'On average, homeowners save between 50–90% on their electricity bills after installing solar panels. The exact savings depend on your energy usage, local electricity rates, system size, and available sunlight. Most systems pay for themselves within 5–8 years.',
+      'Trabajamos con todo tipo de clientes: pequeñas y medianas empresas, comunidades de vecinos, locales comerciales, naves industriales, oficinas y particulares. Adaptamos cada solución a las necesidades específicas de cada proyecto.',
   },
   {
-    question: 'How long does the installation process take?',
+    question: '¿Cuánto tiempo tarda una instalación de red?',
     answer:
-      'A typical residential installation takes 1–3 days, while commercial projects may take 1–2 weeks. The entire process — from initial consultation to system activation — usually spans 4–8 weeks, including permitting and utility approval.',
+      'Depende del alcance del proyecto. Una instalación de red para una oficina pequeña puede realizarse en 1-2 días. Proyectos más grandes en naves o edificios corporativos pueden requerir entre 1 y 2 semanas. Siempre acordamos el plazo antes de comenzar.',
   },
   {
-    question: 'What maintenance do solar panels require?',
+    question: '¿Ofrecéis garantía en las instalaciones?',
     answer:
-      'Solar panels require minimal maintenance. We recommend an annual cleaning and inspection to ensure optimal performance. Our monitoring system alerts us to any issues automatically, and our maintenance team handles all repairs under warranty.',
+      'Sí. Todos nuestros trabajos incluyen 2 años de garantía en materiales y mano de obra. Además, ofrecemos contratos de mantenimiento preventivo para que su instalación esté siempre en perfecto estado.',
   },
   {
-    question: 'Do solar panels work on cloudy days?',
+    question: '¿Podéis trabajar fuera de horario para no interrumpir mi negocio?',
     answer:
-      'Yes, solar panels continue to generate electricity on cloudy days, typically at 10–25% of their rated capacity. Modern panels are increasingly efficient in low-light conditions, and battery storage systems ensure you have power even during extended cloudy periods.',
+      'Por supuesto. Nos adaptamos a las necesidades de cada cliente. Realizamos instalaciones en horario nocturno, fines de semana o por fases para minimizar el impacto en la actividad de su empresa.',
   },
   {
-    question: 'What financing options are available?',
+    question: '¿Trabajáis en toda España?',
     answer:
-      'We offer multiple financing options including cash purchase, solar loans with competitive rates, leases, and power purchase agreements (PPAs). Our team will help you find the option that best fits your budget and energy goals.',
+      'Tenemos capacidad de desplazamiento a nivel nacional. Contáctanos indicando la ubicación de tu proyecto y te informaremos sin compromiso sobre disponibilidad y plazos.',
   },
 ]
 
@@ -1016,17 +1036,18 @@ function FAQSection() {
           >
             <SectionTag text="FAQ" />
             <h2 className="font-heading text-4xl lg:text-5xl text-text-dark mb-4">
-              Frequently Asked <span className="italic text-primary">Questions</span>
+              Preguntas{' '}
+              <span className="italic text-primary">Frecuentes</span>
             </h2>
             <p className="text-text-gray text-base leading-relaxed mb-6">
-              Have questions about solar energy? We&apos;ve compiled answers to the most
-              common inquiries to help you make an informed decision.
+              Respondemos a las dudas más habituales sobre nuestros servicios de instalación.
+              Si tienes alguna pregunta más, no dudes en contactarnos.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center bg-primary text-white font-sans font-medium rounded-full px-6 py-3 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(16,185,129,0.3)]"
+              className="inline-flex items-center bg-primary text-white font-sans font-medium rounded-full px-6 py-3 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,82,255,0.3)]"
             >
-              Contact Us
+              Contáctanos
             </Link>
           </motion.div>
 
@@ -1086,7 +1107,7 @@ function CTABannerSection() {
       className="relative py-20"
       style={{
         background:
-          'radial-gradient(circle at center, rgba(16,185,129,0.08) 0%, transparent 70%), #081A3A',
+          'radial-gradient(circle at center, rgba(0,82,255,0.08) 0%, transparent 70%), #081A3A',
       }}
     >
       <div className="px-5 md:px-8 lg:px-16 xl:px-20 max-w-2xl mx-auto text-center">
@@ -1123,20 +1144,21 @@ function CTABannerSection() {
           variants={fadeUp}
         >
           <h2 className="font-heading text-4xl lg:text-5xl text-white mb-4">
-            Ready to Switch to <span className="italic text-primary">Solar?</span>
+            ¿Listo para mejorar tu{' '}
+            <span className="italic text-primary">infraestructura tecnológica?</span>
           </h2>
           <p className="text-white/70 text-base leading-relaxed mb-8">
-            Join thousands of satisfied customers who have made the switch to clean,
-            renewable energy. Get your free consultation and personalized quote today.
+            Solicita un presupuesto gratuito sin compromiso. Analizamos tu situación
+            y te proponemos la solución más eficiente y adaptada a tu presupuesto.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center bg-primary text-white font-sans font-medium rounded-full px-8 py-4 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(16,185,129,0.3)]"
+            className="inline-flex items-center bg-primary text-white font-sans font-medium rounded-full px-8 py-4 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,82,255,0.3)]"
           >
-            Get a Free Quote
+            Solicitar Presupuesto Gratis
           </Link>
           <p className="text-white/40 text-xs font-sans uppercase tracking-wider mt-4">
-            No commitment required &bull; Free site assessment
+            Sin compromiso &bull; Respuesta en 24h
           </p>
         </motion.div>
       </div>
@@ -1149,27 +1171,27 @@ function CTABannerSection() {
    ═══════════════════════════════════════════ */
 const blogPosts = [
   {
-    title: 'The Future of Solar Technology in 2025',
-    category: 'Technology',
-    date: 'Dec 15, 2024',
+    title: 'WiFi 6 para empresas: qué necesitas saber',
+    category: 'Tecnología',
+    date: '28 Abr 2026',
     excerpt:
-      'Discover the breakthrough innovations shaping the next generation of solar panels, from perovskite cells to bifacial technology.',
+      'Descubre cómo el estándar WiFi 6 mejora la velocidad y cobertura en entornos empresariales con muchos dispositivos conectados simultáneamente.',
     image: '/blog-1.jpg',
   },
   {
-    title: 'How to Maximize Your Solar Investment',
-    category: 'Guide',
-    date: 'Dec 10, 2024',
+    title: 'Cámaras IP vs. analógicas: ¿cuál elegir para tu negocio?',
+    category: 'Guía',
+    date: '20 Abr 2026',
     excerpt:
-      'Learn expert strategies to get the most out of your solar panel system, from optimal placement to smart energy storage solutions.',
+      'Comparativa completa entre sistemas de videovigilancia analógicos e IP para ayudarte a tomar la mejor decisión de seguridad para tu empresa.',
     image: '/blog-2.jpg',
   },
   {
-    title: 'Wind vs. Solar: Choosing the Right Renewable Energy',
-    category: 'Insights',
-    date: 'Dec 5, 2024',
+    title: 'Control de acceso biométrico: seguridad sin llaves',
+    category: 'Seguridad',
+    date: '12 Abr 2026',
     excerpt:
-      'A comprehensive comparison of wind and solar energy to help you determine which renewable solution fits your property and budget.',
+      'Exploramos las ventajas del control de acceso por huella o reconocimiento facial frente a sistemas tradicionales de tarjeta y código PIN.',
     image: '/blog-3.jpg',
   },
 ]
@@ -1186,17 +1208,17 @@ function BlogPreviewSection() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-4"
         >
           <div>
-            <SectionTag text="Latest News" />
+            <SectionTag text="Noticias y Recursos" />
             <h2 className="font-heading text-4xl lg:text-5xl text-text-dark">
-              Stay Updated on{' '}
-              <span className="italic text-primary">Renewable Energy</span> Trends
+              Actualidad en{' '}
+              <span className="italic text-primary">tecnología</span> e instalaciones
             </h2>
           </div>
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-primary font-sans font-medium group shrink-0"
           >
-            View All Posts
+            Ver todos los artículos
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>
@@ -1244,7 +1266,7 @@ function BlogPreviewSection() {
 }
 
 /* ═══════════════════════════════════════════
-   HOME PAGE - All Sections
+   HOME PAGE
    ═══════════════════════════════════════════ */
 export default function Home() {
   return (

@@ -4,12 +4,12 @@ import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Services', path: '/services' },
-  { label: 'Projects', path: '/projects' },
+  { label: 'Inicio', path: '/' },
+  { label: 'Nosotros', path: '/about' },
+  { label: 'Servicios', path: '/services' },
+  { label: 'Proyectos', path: '/projects' },
   { label: 'Blog', path: '/blog' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Contacto', path: '/contact' },
 ]
 
 export default function Navbar() {
@@ -40,14 +40,17 @@ export default function Navbar() {
       >
         <div className="w-full px-5 md:px-8 lg:px-16 xl:px-20 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-              <rect x="2" y="2" width="12" height="12" rx="2" fill="#10b981" />
-              <rect x="18" y="2" width="12" height="12" rx="2" fill="#10b981" />
-              <rect x="2" y="18" width="12" height="12" rx="2" fill="#10b981" />
-              <rect x="18" y="18" width="12" height="12" rx="2" fill="#10b981" />
-            </svg>
-            <span className="text-white font-heading text-2xl tracking-tight">Auron</span>
+          <Link to="/" className="flex items-center gap-3 shrink-0">
+            <img
+              src="/imagotipo-frecoin.png"
+              alt="FRECOIN"
+              className="h-8 w-auto"
+              style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
+            />
+            <span className="font-heading text-xl tracking-tight leading-none">
+              <span className="text-white">frecoin</span>
+              <span className="text-primary"> comunicaciones</span>
+            </span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -73,16 +76,16 @@ export default function Navbar() {
           {/* CTA Button */}
           <Link
             to="/contact"
-            className="hidden lg:inline-flex items-center bg-primary text-white font-sans font-medium text-sm rounded-full px-6 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(16,185,129,0.3)]"
+            className="hidden lg:inline-flex items-center bg-primary text-white font-sans font-medium text-sm rounded-full px-6 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,82,255,0.3)]"
           >
-            Get in Touch
+            Solicitar Presupuesto
           </Link>
 
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden text-white p-2"
-            aria-label="Toggle menu"
+            aria-label="Abrir menú"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -126,7 +129,7 @@ export default function Navbar() {
                   className="mt-4 inline-flex items-center bg-primary text-white font-sans font-medium rounded-full px-8 py-3"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Get in Touch
+                  Solicitar Presupuesto
                 </Link>
               </motion.div>
             </div>
