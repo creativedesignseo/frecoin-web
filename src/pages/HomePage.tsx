@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 import Navbar from '@/sections/Navbar';
 import Hero from '@/sections/Hero';
+import Numbers from '@/sections/Numbers';
 import Services from '@/sections/Services';
 import WhyChooseUs from '@/sections/WhyChooseUs';
 import About from '@/sections/About';
@@ -29,6 +30,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <Numbers />
       <Services />
       <WhyChooseUs />
       <About />
