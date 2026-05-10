@@ -85,8 +85,9 @@ export default function Services() {
               <div className="flex items-center gap-2 text-[13px] font-semibold text-gripz-black group-hover:text-gripz-primary transition-colors">
                 Saber más <ArrowRight size={14} />
               </div>
-              <div className="absolute bottom-0 right-0 w-[100px] h-[80px] opacity-0 group-hover:opacity-10 transition-opacity">
-                <img src={service.image} alt="" className="w-full h-full object-cover rounded-tl-xl" />
+              {/* Watermark del icono propio del servicio (sustituye la imagen del template) */}
+              <div className="absolute -bottom-6 -right-6 opacity-[0.04] group-hover:opacity-[0.10] transition-opacity duration-500 pointer-events-none">
+                <service.icon size={150} className="text-gripz-primary" strokeWidth={1.2} />
               </div>
             </div>
           ))}
