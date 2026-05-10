@@ -95,7 +95,7 @@ export default function PoliticaCookies() {
 
       <div className="info-box">
         <p>
-          Para cualquier consulta sobre esta Política de Cookies o el tratamiento de datos a través de cookies, puede contactar en <a href="mailto:info@frecoin.es">info@frecoin.es</a>. Consulte también nuestra <a href="/politica-privacidad">Política de Privacidad</a> y nuestro <a href="/aviso-legal">Aviso Legal</a>.
+          Para cualquier consulta sobre esta Política de Cookies o el tratamiento de datos a través de cookies, puede contactar en <a href="mailto:lfreire@frecoin.es">lfreire@frecoin.es</a>. Consulte también nuestra <a href="/politica-privacidad">Política de Privacidad</a> y nuestro <a href="/aviso-legal">Aviso Legal</a>.
         </p>
       </div>
     </LegalLayout>

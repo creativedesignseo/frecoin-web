@@ -93,7 +93,7 @@ export default function FooterCTA() {
               <li className="text-[14px] text-gripz-gray-400">Luis Freire Camino</li>
               <li className="text-[14px] text-gripz-gray-400">NIF: 48142086G</li>
               <li className="text-[14px] text-gripz-gray-400">Sant Vicenç dels Horts, Barcelona</li>
-              <li className="text-[14px] text-gripz-gray-400">info@frecoin.es</li>
+              <li className="text-[14px] text-gripz-gray-400">lfreire@frecoin.es</li>
             </ul>
           </div>
         </div>

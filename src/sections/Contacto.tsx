@@ -15,8 +15,10 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'EMAIL',
-    value: 'info@frecoin.es',
-    href: 'mailto:info@frecoin.es',
+    // NOTA: info@frecoin.es aún no existe (pendiente decisión Google Workspace).
+    // Usamos lfreire@ provisionalmente. Cambiar cuando se cree info@.
+    value: 'lfreire@frecoin.es',
+    href: 'mailto:lfreire@frecoin.es',
   },
   {
     icon: MessageCircle,

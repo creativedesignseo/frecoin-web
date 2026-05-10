@@ -23,8 +23,8 @@ export default function PoliticaPrivacidad() {
       <ul>
         <li><strong>Identidad:</strong> Luis Freire Camino (FRECOIN)</li>
         <li><strong>NIF:</strong> 48142086G</li>
-        <li><strong>Dirección postal:</strong> Sant Vicenç dels Horts, Barcelona, España <em>(dirección completa pendiente de aportar)</em></li>
-        <li><strong>Correo electrónico:</strong> <a href="mailto:info@frecoin.es">info@frecoin.es</a></li>
+        <li><strong>Dirección postal:</strong> C/ Balmes 33, 2º 4ª, 08620 Sant Vicenç dels Horts, Barcelona, España</li>
+        <li><strong>Correo electrónico:</strong> <a href="mailto:lfreire@frecoin.es">lfreire@frecoin.es</a></li>
         <li><strong>Teléfono:</strong> <a href="tel:+34614134292">+34 614 134 292</a></li>
       </ul>
 
@@ -107,7 +107,7 @@ export default function PoliticaPrivacidad() {
         <li><strong>Derecho a retirar el consentimiento</strong> en cualquier momento.</li>
       </ul>
       <p>
-        Para ejercer estos derechos, el Usuario puede dirigir una solicitud por escrito a <a href="mailto:info@frecoin.es">info@frecoin.es</a>, indicando "Protección de datos" en el asunto y aportando copia de un documento identificativo (DNI, NIE o pasaporte).
+        Para ejercer estos derechos, el Usuario puede dirigir una solicitud por escrito a <a href="mailto:lfreire@frecoin.es">lfreire@frecoin.es</a>, indicando "Protección de datos" en el asunto y aportando copia de un documento identificativo (DNI, NIE o pasaporte).
       </p>
       <p>
         Asimismo, el Usuario tiene derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> si considera que el tratamiento de sus datos personales no se ajusta a la normativa: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.
@@ -125,7 +125,7 @@ export default function PoliticaPrivacidad() {
 
       <div className="info-box">
         <p>
-          Si tiene cualquier duda sobre esta Política de Privacidad o sobre el tratamiento de sus datos personales, puede contactar en <a href="mailto:info@frecoin.es">info@frecoin.es</a>.
+          Si tiene cualquier duda sobre esta Política de Privacidad o sobre el tratamiento de sus datos personales, puede contactar en <a href="mailto:lfreire@frecoin.es">lfreire@frecoin.es</a>.
         </p>
       </div>
     </LegalLayout>
