@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'SERVICIOS', href: '#servicios', isRoute: false },
   { label: 'SOBRE NOSOTROS', href: '#sobre-nosotros', isRoute: false },
   { label: 'TRABAJOS', href: '#trabajos', isRoute: false },
-  { label: 'CONTACTO', href: '/contacto', isRoute: true },
+  { label: 'CONTACTO', href: '#contacto', isRoute: false },
 ];
 
 export default function Navbar() {
@@ -61,9 +61,9 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-          <Link to="/contacto" className="btn-primary text-[13px] py-3 px-5 flex items-center gap-2">
+          <a href="#contacto" onClick={(e) => handleNavClick(e, { label: 'PRESUPUESTO', href: '#contacto', isRoute: false })} className="btn-primary text-[13px] py-3 px-5 flex items-center gap-2">
             PRESUPUESTO <Zap size={14} className="fill-white" />
-          </Link>
+          </a>
           <a href="tel:+34614134292" className="flex items-center gap-2 border border-gripz-primary rounded px-4 py-3">
             <Phone size={14} className="text-gripz-primary" />
             <span className="text-[13px] font-medium text-gripz-primary">614 134 292</span>
@@ -92,9 +92,9 @@ export default function Navbar() {
                 </a>
               );
             })}
-            <Link to="/contacto" onClick={() => setMobileOpen(false)} className="btn-primary w-fit mt-2">
+            <a href="#contacto" onClick={(e) => handleNavClick(e, { label: 'PRESUPUESTO', href: '#contacto', isRoute: false })} className="btn-primary w-fit mt-2">
               PRESUPUESTO <Zap size={14} />
-            </Link>
+            </a>
           </div>
         </div>
       )}

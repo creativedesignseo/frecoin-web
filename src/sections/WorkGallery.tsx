@@ -13,8 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const works = [
   { title: 'RED CORPORATIVA COMPLETA', image: '/assets/work-solar.jpg', tag: 'REDES' },
-  { title: 'INSTALACION ELECTRICA INDUSTRIAL', image: '/assets/work-office.jpg', tag: 'ELECTRICAS' },
-  { title: 'CIRCUITO CERRADO DE CAMARAS', image: '/assets/work-industrial.jpg', tag: 'SEGURIDAD' },
+  { title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', image: '/assets/work-office.jpg', tag: 'ELÉCTRICAS' },
+  { title: 'CIRCUITO CERRADO DE CÁMARAS', image: '/assets/work-industrial.jpg', tag: 'SEGURIDAD' },
   { title: 'COBERTURA WIFI EMPRESARIAL', image: '/assets/work-outdoor.jpg', tag: 'WIFI' },
 ];
 
@@ -47,7 +47,7 @@ export default function WorkGallery() {
               TRABAJOS REALIZADOS
             </div>
             <h2 className="font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black">
-              CALIDAD EN CADA <span className="text-gripz-primary">INSTALACION</span>
+              CALIDAD EN CADA <span className="text-gripz-primary">INSTALACIÓN</span>
             </h2>
           </div>
           <div className="flex gap-2">

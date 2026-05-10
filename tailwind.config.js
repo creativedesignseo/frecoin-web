@@ -9,10 +9,24 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       colors: {
+        // Paleta FRECOIN aprobada
+        frecoin: {
+          blue: '#0052FF',
+          'blue-dark': '#003ECC',
+          'blue-light': '#3D7AFF',
+          green: '#00C853',
+          'green-dark': '#00A040',
+          'green-light': '#33D679',
+          gold: '#FFAB00',
+          'gold-dark': '#CC8900',
+          'gold-light': '#FFC233',
+        },
+        // Alias legacy (gripz) → ahora apuntan a la paleta FRECOIN
+        // Mantenido para no romper las 215 clases existentes en src/.
         gripz: {
-          primary: '#22C55E',
-          'primary-light': '#4ADE80',
-          'primary-dark': '#16A34A',
+          primary: '#00C853',         // antes #22C55E (verde tailwind) — ahora verde FRECOIN
+          'primary-light': '#33D679', // antes #4ADE80
+          'primary-dark': '#00A040',  // antes #16A34A
           black: '#222222',
           dark: '#1A1A1A',
           cream: '#F8F5F0',

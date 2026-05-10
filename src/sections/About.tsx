@@ -6,7 +6,7 @@ import { ArrowRight, Check } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
-  'Redes informaticas de alta velocidad',
+  'Redes informáticas de alta velocidad',
   'Instalaciones certificadas y seguras',
   'Servicio personalizado en Barcelona',
 ];
@@ -48,7 +48,7 @@ export default function About() {
               <svg viewBox="0 0 120 120" className="w-full h-full animate-[spin-slow_20s_linear_infinite]">
                 <defs><path id="circlePath" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" /></defs>
                 <circle cx="60" cy="60" r="55" fill="none" stroke="#22C55E" strokeWidth="1.5" strokeDasharray="6 4" />
-                <text fill="#22C55E" fontSize="11" fontWeight="600" letterSpacing="3"><textPath href="#circlePath">+20 ANOS DE EXPERIENCIA • +20 ANOS DE EXPERIENCIA •</textPath></text>
+                <text fill="#22C55E" fontSize="11" fontWeight="600" letterSpacing="3"><textPath href="#circlePath">+20 AÑOS DE EXPERIENCIA • +20 AÑOS DE EXPERIENCIA •</textPath></text>
                 <g transform="translate(48, 48)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22C55E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg></g>
               </svg>
             </div>
@@ -60,13 +60,13 @@ export default function About() {
               SOBRE NOSOTROS
             </div>
             <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black mb-5">
-              FRECOIN: <span className="text-gripz-primary">TECNOLOGIA</span> Y <span className="text-gripz-primary">CONFIANZA</span> DESDE 2004
+              FRECOIN: <span className="text-gripz-primary">TECNOLOGÍA</span> Y <span className="text-gripz-primary">CONFIANZA</span> DESDE 2004
             </h2>
             <p className="text-[15px] leading-[1.7] text-gripz-gray-600 mb-6">
-              En FRECOIN llevamos mas de 20 anos ofreciendo soluciones integrales en infraestructuras tecnologicas para empresas. Nos especializamos en instalaciones de redes informaticas, sistemas electricos y SAI, garantizando infraestructuras seguras, eficientes y fiables.
+              En FRECOIN llevamos más de 20 años ofreciendo soluciones integrales en infraestructuras tecnológicas para empresas. Nos especializamos en instalaciones de redes informáticas, sistemas eléctricos y SAI, garantizando infraestructuras seguras, eficientes y fiables.
             </p>
             <p className="text-[15px] leading-[1.7] text-gripz-gray-600 mb-6">
-              Nuestra mision: asegurar la continuidad operativa de nuestros clientes con un servicio de alta calidad, adaptado a sus necesidades reales. Trabajamos en <strong>Sant Vicenc dels Horts</strong> y toda el area metropolitana sur de Barcelona.
+              Nuestra misión: asegurar la continuidad operativa de nuestros clientes con un servicio de alta calidad, adaptado a sus necesidades reales. Trabajamos en <strong>Sant Vicenç dels Horts</strong> y toda el área metropolitana sur de Barcelona.
             </p>
             <div className="flex flex-col gap-3 mb-8">
               {features.map((f, i) => (

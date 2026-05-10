@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const contactInfo = [
   {
     icon: Phone,
-    title: 'TELEFONO / WHATSAPP',
+    title: 'TELÉFONO / WHATSAPP',
     value: '+34 614 134 292',
     href: 'tel:+34614134292',
   },
@@ -82,17 +82,17 @@ export default function Contacto() {
             ))}
             <div className="mt-4 p-6 bg-gripz-cream rounded-xl">
               <p className="text-[14px] text-gripz-gray-600 leading-relaxed">
-                <strong>Zona de cobertura:</strong> Sant Vicenc dels Horts y area metropolitana sur de Barcelona.
+                <strong>Zona de cobertura:</strong> Sant Vicenç dels Horts y área metropolitana sur de Barcelona.
               </p>
               <p className="text-[14px] text-gripz-gray-600 leading-relaxed mt-2">
-                Atendemos directamente en su empresa o domicilio. Sin oficina fisica — vamos a usted.
+                Atendemos directamente en su empresa o domicilio. Sin oficina física — vamos a usted.
               </p>
             </div>
           </div>
 
           {/* Right - Form */}
           <div className="contact-right bg-gripz-cream rounded-xl p-6 lg:p-8">
-            <h3 className="font-montserrat font-bold text-[18px] text-gripz-black mb-5">ENVIANOS UN MENSAJE</h3>
+            <h3 className="font-montserrat font-bold text-[18px] text-gripz-black mb-5">ENVÍANOS UN MENSAJE</h3>
             {submitted ? (
               <div className="bg-gripz-primary/10 border border-gripz-primary/30 rounded-lg p-6 text-center">
                 <p className="text-gripz-primary font-semibold text-[16px]">¡Mensaje enviado!</p>
@@ -101,8 +101,8 @@ export default function Contacto() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input type="text" required placeholder="Nombre completo*" value={formData.nombre} onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
-                <input type="tel" required placeholder="Telefono*" value={formData.telefono} onChange={(e) => setFormData({ ...formData, telefono: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
-                <textarea required rows={4} placeholder="¿Que necesitas?*" value={formData.mensaje} onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors resize-none" />
+                <input type="tel" required placeholder="Teléfono*" value={formData.telefono} onChange={(e) => setFormData({ ...formData, telefono: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
+                <textarea required rows={4} placeholder="¿Qué necesitas?*" value={formData.mensaje} onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors resize-none" />
                 <button type="submit" className="btn-primary w-full justify-center text-[14px]">
                   ENVIAR MENSAJE <Send size={14} />
                 </button>

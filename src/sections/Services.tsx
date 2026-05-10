@@ -4,43 +4,43 @@ import { ArrowRight, Wifi, Plug, Camera, Antenna, BatteryCharging, Lock } from '
 const services = [
   {
     icon: Wifi,
-    title: 'REDES INFORMATICAS',
-    description: 'Montaje de redes informaticas eficientes y seguras, asegurando conectividad rapida y fiable para su empresa.',
+    title: 'REDES INFORMÁTICAS',
+    description: 'Montaje de redes informáticas eficientes y seguras, asegurando conectividad rápida y fiable para su empresa.',
     image: '/assets/service-installation.jpg',
     featured: true,
   },
   {
     icon: Plug,
-    title: 'INSTALACIONES ELECTRICAS',
-    description: 'Ejecucion de instalaciones electricas seguras y eficientes, desde el cableado hasta los cuadros y sistemas de proteccion.',
+    title: 'INSTALACIONES ELÉCTRICAS',
+    description: 'Ejecución de instalaciones eléctricas seguras y eficientes, desde el cableado hasta los cuadros y sistemas de protección.',
     image: '/assets/service-repairs.jpg',
     featured: false,
   },
   {
     icon: Camera,
-    title: 'CAMARAS DE VIDEOVIGILANCIA',
-    description: 'Montaje de sistemas de camaras de seguridad para control y vigilancia eficaz de instalaciones.',
+    title: 'CÁMARAS DE VIDEOVIGILANCIA',
+    description: 'Montaje de sistemas de cámaras de seguridad para control y vigilancia eficaz de instalaciones.',
     image: '/assets/service-safety.jpg',
     featured: false,
   },
   {
     icon: Antenna,
     title: 'ANTENAS WIFI',
-    description: 'Montaje de antenas WiFi para asegurar cobertura y conexion inalambrica eficiente en toda su instalacion.',
+    description: 'Montaje de antenas WiFi para asegurar cobertura y conexión inalámbrica eficiente en toda su instalación.',
     image: '/assets/service-energy.jpg',
     featured: false,
   },
   {
     icon: BatteryCharging,
     title: 'SAI',
-    description: 'Montaje de sistemas SAI para asegurar continuidad electrica y proteccion de equipos criticos.',
+    description: 'Montaje de sistemas SAI para asegurar continuidad eléctrica y protección de equipos críticos.',
     image: '/assets/work-industrial.jpg',
     featured: false,
   },
   {
     icon: Lock,
     title: 'CONTROLES DE ACCESO',
-    description: 'Instalacion de sistemas de control de acceso para la seguridad y gestion de entradas en instalaciones.',
+    description: 'Instalación de sistemas de control de acceso para la seguridad y gestión de entradas en instalaciones.',
     image: '/assets/work-office.jpg',
     featured: false,
   },
@@ -60,7 +60,7 @@ export default function Services() {
             NUESTROS SERVICIOS
           </div>
           <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black">
-            SOLUCIONES INTEGRALES EN <span className="text-gripz-primary">INFRAESTRUCTURAS TECNOLOGICAS</span>
+            SOLUCIONES INTEGRALES EN <span className="text-gripz-primary">INFRAESTRUCTURAS TECNOLÓGICAS</span>
           </h2>
         </div>
 
@@ -83,7 +83,7 @@ export default function Services() {
                 {service.description}
               </p>
               <div className="flex items-center gap-2 text-[13px] font-semibold text-gripz-black group-hover:text-gripz-primary transition-colors">
-                Saber mas <ArrowRight size={14} />
+                Saber más <ArrowRight size={14} />
               </div>
               <div className="absolute bottom-0 right-0 w-[100px] h-[80px] opacity-0 group-hover:opacity-10 transition-opacity">
                 <img src={service.image} alt="" className="w-full h-full object-cover rounded-tl-xl" />
