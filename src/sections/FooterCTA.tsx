@@ -1,7 +1,14 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Phone } from 'lucide-react';
+
+const legalLinks = [
+  { label: 'Aviso Legal', to: '/aviso-legal' },
+  { label: 'Política de Privacidad', to: '/politica-privacidad' },
+  { label: 'Política de Cookies', to: '/politica-cookies' },
+];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,8 +77,12 @@ export default function FooterCTA() {
           <div className="footer-col">
             <h4 className="text-[13px] font-semibold text-white uppercase tracking-[0.08em] mb-4">LEGAL</h4>
             <ul className="flex flex-col gap-2.5">
-              {['Aviso Legal', 'Política de Privacidad', 'Política de Cookies'].map((link) => (
-                <li key={link}><span className="text-[14px] text-gripz-gray-400 hover:text-gripz-primary transition-colors cursor-pointer">{link}</span></li>
+              {legalLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="text-[14px] text-gripz-gray-400 hover:text-gripz-primary transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
