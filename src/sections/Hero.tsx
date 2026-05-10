@@ -35,9 +35,9 @@ export default function Hero() {
 
             {/* Title */}
             <h1 className="hero-title font-montserrat font-extrabold text-[36px] sm:text-[48px] lg:text-[64px] leading-[0.95] tracking-[-0.03em] text-gripz-black mb-5">
-              INFRAESTRUCTURAS<br />
-              <span className="text-gripz-primary">TECNOLÓGICAS</span><br />
-              PARA EMPRESAS
+              Infraestructuras<br />
+              <span className="text-gripz-primary">tecnológicas</span><br />
+              para empresas.
             </h1>
 
             {/* Subtitle */}

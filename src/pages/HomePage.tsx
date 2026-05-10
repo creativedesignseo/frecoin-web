@@ -19,8 +19,12 @@ function ScrollToTop() {
   }, []);
   if (!visible) return null;
   return (
-    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-gripz-primary flex items-center justify-center z-50 hover:scale-110 transition-transform shadow-[0_0_40px_rgba(34,197,94,0.3)]">
-      <ChevronUp size={20} className="text-white" />
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Volver arriba"
+      className="fixed bottom-[88px] right-6 w-11 h-11 rounded-full bg-gripz-black/90 flex items-center justify-center z-40 hover:scale-110 transition-transform shadow-md"
+    >
+      <ChevronUp size={18} className="text-white" />
     </button>
   );
 }
