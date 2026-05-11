@@ -5,6 +5,7 @@ import AvisoLegal from './pages/AvisoLegal';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import PoliticaCookies from './pages/PoliticaCookies';
 import Servicio from './pages/Servicio';
+import Rediseno from './pages/Rediseno';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import CookieBanner from './components/CookieBanner';
 import { initAnalyticsFromConsent } from './lib/analytics';
@@ -19,6 +20,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/rediseno" element={<Rediseno />} />
         <Route path="/servicios/:slug" element={<Servicio />} />
         <Route path="/aviso-legal" element={<AvisoLegal />} />
         <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
