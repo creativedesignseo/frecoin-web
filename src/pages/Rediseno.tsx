@@ -295,7 +295,7 @@ export default function Rediseno() {
                 >
                   <div className={`p-8 lg:p-14 flex flex-col justify-center ${reverse ? 'lg:col-start-2' : ''}`}>
                     <div className="text-[#1F5B3A] mb-6">
-                      <SvcIcon />
+                      {SvcIcon()}
                     </div>
                     <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#86868B] mb-3">
                       {service.kicker}
@@ -337,7 +337,7 @@ export default function Rediseno() {
                 return (
                   <article key={s.title} className="bg-white rounded-2xl p-8 lg:p-10" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
                     <div className="text-[#1F5B3A] mb-6">
-                      <SIcon />
+                      {SIcon()}
                     </div>
                     <h3 className="text-[22px] font-semibold text-[#1D1D1F]" style={{ letterSpacing: '-0.01em' }}>{s.title}</h3>
                     <p className="mt-2 text-[15px] leading-[1.55] text-[#515154]">{s.desc}</p>
