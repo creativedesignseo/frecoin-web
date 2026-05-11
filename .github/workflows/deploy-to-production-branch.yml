@@ -66,9 +66,12 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: production
-          # force_orphan: la rama production es siempre 1 commit con el build actual
-          # (no acumulamos historia gigante de builds antiguos)
-          force_orphan: true
+          # NOTA: NO usamos force_orphan porque Hostinger Git Auto-Deploy hace
+          # `git pull` y rompería con "divergent branches" en cada deploy.
+          # En su lugar, la rama production crece con commits lineales (cada
+          # uno reemplaza el dist/). El repo crece moderadamente pero el pull
+          # de Hostinger funciona siempre.
+          keep_files: false
           commit_message: 'deploy: build de ${{ github.sha }}'
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
