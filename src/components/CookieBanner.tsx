@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Cookie, X } from 'lucide-react';
+import { enableAnalytics, disableAnalytics } from '@/lib/analytics';
 
 const STORAGE_KEY = 'frecoin_cookie_consent';
 const STORAGE_VERSION = '1';
@@ -61,12 +62,13 @@ export default function CookieBanner() {
 
   const handleAccept = () => {
     writeConsent('accepted');
+    enableAnalytics();   // carga GA4/GTM solo ahora
     closeBanner();
-    // Aquí, en el futuro, se cargarían herramientas analíticas / marketing
   };
 
   const handleReject = () => {
     writeConsent('rejected');
+    disableAnalytics();
     closeBanner();
   };
 

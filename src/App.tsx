@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AvisoLegal from './pages/AvisoLegal';
@@ -5,8 +6,14 @@ import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import PoliticaCookies from './pages/PoliticaCookies';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import CookieBanner from './components/CookieBanner';
+import { initAnalyticsFromConsent } from './lib/analytics';
 
 export default function App() {
+  // Restaura analytics si el usuario ya había aceptado en una sesión previa
+  useEffect(() => {
+    initAnalyticsFromConsent();
+  }, []);
+
   return (
     <>
       <Routes>

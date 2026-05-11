@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { Send, Phone } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -81,7 +83,13 @@ export default function Hero() {
           }}
         >
           <h3 className="text-white font-montserrat font-bold text-lg mb-5">SOLICITA TU PRESUPUESTO</h3>
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="space-y-4"
+            onSubmit={(e) => {
+              e.preventDefault();
+              trackEvent('form_submit', { form_id: 'presupuesto_hero', location: 'hero' });
+            }}
+          >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <input type="text" placeholder="Nombre completo*" className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
               <input type="tel" placeholder="Teléfono*" className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
@@ -101,6 +109,16 @@ export default function Hero() {
                 <Send size={20} className="text-white" />
               </button>
             </div>
+            {/* Cláusula informativa RGPD/LSSI — obligatoria en cualquier formulario que recoja datos */}
+            <label className="flex items-start gap-2 text-[11px] text-white/60 leading-[1.5] cursor-pointer">
+              <input type="checkbox" required className="mt-0.5 accent-gripz-primary flex-shrink-0" />
+              <span>
+                He leído y acepto la{' '}
+                <Link to="/politica-privacidad" className="text-gripz-primary hover:underline">
+                  Política de Privacidad
+                </Link>. Tus datos serán tratados por Luis Freire Camino (FRECOIN) con la única finalidad de responder a tu consulta.
+              </span>
+            </label>
           </form>
         </div>
       </div>

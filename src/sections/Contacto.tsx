@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Phone, Mail, MessageCircle, Send } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,6 +52,7 @@ export default function Contacto() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackEvent('form_submit', { form_id: 'contacto_main', location: 'contacto' });
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
     setFormData({ nombre: '', telefono: '', mensaje: '' });
@@ -105,6 +108,18 @@ export default function Contacto() {
                 <input type="text" required placeholder="Nombre completo*" value={formData.nombre} onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
                 <input type="tel" required placeholder="Teléfono*" value={formData.telefono} onChange={(e) => setFormData({ ...formData, telefono: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
                 <textarea required rows={4} placeholder="¿Qué necesitas?*" value={formData.mensaje} onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors resize-none" />
+
+                {/* Cláusula informativa RGPD/LSSI — obligatoria en cualquier formulario que recoja datos */}
+                <label className="flex items-start gap-2 text-[12px] text-gripz-gray-600 leading-[1.5] cursor-pointer">
+                  <input type="checkbox" required className="mt-0.5 accent-gripz-primary flex-shrink-0" />
+                  <span>
+                    He leído y acepto la{' '}
+                    <Link to="/politica-privacidad" className="text-gripz-primary hover:underline font-semibold">
+                      Política de Privacidad
+                    </Link>. Tus datos serán tratados por <strong>Luis Freire Camino (FRECOIN)</strong> con la única finalidad de responder a tu consulta. Puedes ejercer tus derechos enviando un correo a lfreire@frecoin.es.
+                  </span>
+                </label>
+
                 <button type="submit" className="btn-primary w-full justify-center text-[14px]">
                   ENVIAR MENSAJE <Send size={14} />
                 </button>
