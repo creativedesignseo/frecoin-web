@@ -1,0 +1,101 @@
+# =============================================================================
+# FRECOIN — Configuración Apache para Hostinger
+# =============================================================================
+# Este archivo se copia automáticamente a dist/.htaccess durante el build de Vite
+# (los archivos de public/ se copian tal cual al raíz de dist/).
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# SPA routing — necesario para que React Router funcione al refrescar /aviso-legal etc.
+# -----------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Si el request es un archivo o directorio real, sírvelo
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Cualquier otra ruta → devolver index.html (React Router se encarga)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Forzar HTTPS (cuando esté el SSL provisionado)
+# -----------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Compresión gzip — reduce tamaño de transferencia ~70%
+# -----------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml text/xml application/xml
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Cache headers — assets versionados se cachean 1 año, HTML nada
+# -----------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML — nunca cachear (revalidar siempre, porque el bundle JS cambia de hash)
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # Assets versionados (CSS, JS con hash) — 1 año
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/json "access plus 1 day"
+
+  # Imágenes
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Cache-Control para HTML (defensa extra ante el caché del navegador)
+# -----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  <FilesMatch "\.(js|css|woff2?|jpg|jpeg|png|svg|webp|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Seguridad básica
+# -----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Bloquear acceso a archivos sensibles
+<FilesMatch "(\.env|\.git|composer\.json|package\.json|package-lock\.json|node_modules)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# -----------------------------------------------------------------------------
+# 404 personalizado → redirigir a la home (igual que en Netlify)
+# -----------------------------------------------------------------------------
+ErrorDocument 404 /index.html
