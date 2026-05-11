@@ -1,0 +1,80 @@
+name: Build y publicar en rama `production` (para Hostinger Git Auto-Deploy)
+
+# Flujo:
+# - En cada push a main, GitHub Actions:
+#   1. Hace npm ci + npm run build
+#   2. Coge el contenido de dist/
+#   3. Lo empuja a la rama `production` (creándola/sobrescribiéndola)
+# - Hostinger Git Auto-Deploy está conectado a la rama `production`
+# - Hostinger detecta el push y sincroniza public_html/ con el contenido
+#
+# Resultado: cada push a main → web actualizada en frecoin-web del cliente
+#
+# IMPORTANTE: Hostinger Git Auto-Deploy NO ejecuta `npm run build` (solo
+# está pensado para PHP/Composer). Por eso necesitamos esta arquitectura
+# de "rama production con el build precompilado".
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # necesario para que actions-gh-pages pueda empujar a `production`
+
+jobs:
+  build-and-publish:
+    name: Build + push a rama production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código (main)
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias (npm ci)
+        run: npm ci
+
+      - name: Build producción (Vite)
+        env:
+          # IDs analytics — inyectados al bundle si están como Secrets del repo
+          VITE_GTM_ID: ${{ secrets.VITE_GTM_ID }}
+          VITE_GA4_ID: ${{ secrets.VITE_GA4_ID }}
+        run: npm run build
+
+      - name: Verificar que dist/ se generó correctamente
+        run: |
+          if [ ! -f dist/index.html ]; then
+            echo "❌ dist/index.html no existe"
+            exit 1
+          fi
+          if [ ! -f dist/.htaccess ]; then
+            echo "❌ dist/.htaccess no existe — SPA routing no funcionará"
+            exit 1
+          fi
+          echo "✓ dist/ válido"
+          ls -la dist/
+
+      - name: Publicar dist/ en rama production
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: production
+          # force_orphan: la rama production es siempre 1 commit con el build actual
+          # (no acumulamos historia gigante de builds antiguos)
+          force_orphan: true
+          commit_message: 'deploy: build de ${{ github.sha }}'
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Resumen
+        run: |
+          echo "✅ Build subido a rama production"
+          echo "Hostinger Git Auto-Deploy debería detectarlo en breve"
+          echo "Verificar en: https://lime-hornet-282088.hostingersite.com/"
