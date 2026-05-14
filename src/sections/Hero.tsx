@@ -38,7 +38,7 @@ export default function Hero() {
             {/* Title */}
             <h1 className="hero-title font-montserrat font-extrabold text-[36px] sm:text-[48px] lg:text-[64px] leading-[0.95] tracking-[-0.03em] text-gripz-black mb-5">
               Infraestructuras<br />
-              <span className="text-gripz-primary">tecnológicas</span><br />
+              tecnológicas<br />
               para empresas.
             </h1>
 
@@ -70,7 +70,7 @@ export default function Hero() {
           alt="Instalaciones tecnológicas Frecoin"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute bottom-0 left-0 w-[60px] h-[60px] bg-gripz-primary hidden lg:block" />
+        {/* Cuadrado decorativo verde retirado para reducir carga visual del verde. */}
       </div>
 
       {/* Consultation Form */}

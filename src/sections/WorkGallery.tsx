@@ -47,7 +47,7 @@ export default function WorkGallery() {
               TRABAJOS REALIZADOS
             </div>
             <h2 className="font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black">
-              CALIDAD EN CADA <span className="text-gripz-primary">INSTALACIÓN</span>
+              CALIDAD EN CADA INSTALACIÓN
             </h2>
           </div>
           <div className="flex gap-2">

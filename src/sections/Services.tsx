@@ -23,7 +23,7 @@ export default function Services() {
             NUESTROS SERVICIOS
           </div>
           <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black">
-            SOLUCIONES INTEGRALES EN <span className="text-gripz-primary">INFRAESTRUCTURAS TECNOLÓGICAS</span>
+            SOLUCIONES INTEGRALES EN INFRAESTRUCTURAS TECNOLÓGICAS
           </h2>
         </div>
 

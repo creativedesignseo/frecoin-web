@@ -67,7 +67,7 @@ export default function Contacto() {
             CONTACTO
           </div>
           <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black">
-            HABLEMOS DE TU <span className="text-gripz-primary">PROYECTO</span>
+            HABLEMOS DE TU PROYECTO
           </h2>
         </div>
 

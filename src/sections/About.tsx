@@ -60,7 +60,7 @@ export default function About() {
               SOBRE NOSOTROS
             </div>
             <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black mb-5">
-              FRECOIN: <span className="text-gripz-primary">TECNOLOGÍA</span> Y <span className="text-gripz-primary">CONFIANZA</span> DESDE 2004
+              FRECOIN: TECNOLOGÍA Y CONFIANZA DESDE 2004
             </h2>
             <p className="text-[15px] leading-[1.7] text-gripz-gray-600 mb-6">
               En FRECOIN llevamos más de 20 años ofreciendo soluciones integrales en infraestructuras tecnológicas para empresas. Nos especializamos en instalaciones de redes informáticas, sistemas eléctricos y SAI, garantizando infraestructuras seguras, eficientes y fiables.

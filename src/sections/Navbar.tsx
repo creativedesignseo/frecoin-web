@@ -69,43 +69,32 @@ export default function Navbar() {
                     <ChevronDown size={12} className="transition-transform group-hover:rotate-180" />
                   </a>
 
-                  {/* Dropdown panel */}
+                  {/* Dropdown panel (sin iconos — diseño limpio y sobrio) */}
                   <div className="absolute left-1/2 -translate-x-1/2 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pt-2 z-50">
-                    <div className="bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] border border-gripz-gray-200 overflow-hidden w-[320px]">
+                    <div className="bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] border border-gripz-gray-200 overflow-hidden w-[300px]">
                       <div className="p-2">
-                        {services.map((service) => {
-                          const Icon = service.icon;
-                          return (
-                            <Link
-                              key={service.slug}
-                              to={`/servicios/${service.slug}`}
-                              className={`flex items-start gap-3 p-3 rounded-lg transition-colors hover:bg-gripz-cream group/item ${
-                                service.featured ? 'ring-1 ring-gripz-primary/20' : ''
-                              }`}
-                            >
-                              <div className="w-9 h-9 rounded-full bg-gripz-primary/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gripz-primary/20 transition-colors">
-                                <Icon size={16} className="text-gripz-primary" strokeWidth={2.2} />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-2">
-                                  <span className="font-montserrat font-bold text-[13px] text-gripz-black leading-tight">
-                                    {service.name}
-                                  </span>
-                                  {service.featured && (
-                                    <span className="text-[9px] font-bold text-gripz-primary bg-gripz-primary/10 px-1.5 py-0.5 rounded uppercase tracking-wider flex-shrink-0">
-                                      Estrella
-                                    </span>
-                                  )}
-                                </div>
-                                <p className="text-[11px] text-gripz-gray-600 leading-snug mt-0.5 line-clamp-2">
-                                  {service.tagline === 'Servicio estrella' ? 'Conectividad rápida, segura y fiable' : service.heroParagraph.split('.')[0] + '.'}
-                                </p>
-                              </div>
-                            </Link>
-                          );
-                        })}
+                        {services.map((service) => (
+                          <Link
+                            key={service.slug}
+                            to={`/servicios/${service.slug}`}
+                            className="block p-3 rounded-lg transition-colors hover:bg-gripz-cream"
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="font-montserrat font-bold text-[13px] text-gripz-black leading-tight">
+                                {service.name}
+                              </span>
+                              {service.featured && (
+                                <span className="text-[9px] font-bold text-gripz-primary bg-gripz-primary/10 px-1.5 py-0.5 rounded uppercase tracking-wider flex-shrink-0">
+                                  Estrella
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-[11px] text-gripz-gray-600 leading-snug mt-1 line-clamp-2">
+                              {service.tagline === 'Servicio estrella' ? 'Conectividad rápida, segura y fiable' : service.heroParagraph.split('.')[0] + '.'}
+                            </p>
+                          </Link>
+                        ))}
                       </div>
-                      {/* Footer del dropdown */}
                       <div className="border-t border-gripz-gray-200 px-4 py-3 bg-gripz-cream">
                         <a
                           href="#servicios"
@@ -202,26 +191,22 @@ export default function Navbar() {
                       />
                     </button>
                     {mobileServicesOpen && (
-                      <div className="pl-4 pb-2 flex flex-col gap-1 border-l-2 border-gripz-primary/30 ml-1">
-                        {services.map((service) => {
-                          const Icon = service.icon;
-                          return (
-                            <Link
-                              key={service.slug}
-                              to={`/servicios/${service.slug}`}
-                              onClick={() => { setMobileOpen(false); setMobileServicesOpen(false); }}
-                              className="flex items-center gap-3 py-2.5 text-[13px] text-gripz-gray-800 hover:text-gripz-primary transition-colors"
-                            >
-                              <Icon size={16} className="text-gripz-primary flex-shrink-0" strokeWidth={2.2} />
-                              <span className="font-medium">{service.name}</span>
-                              {service.featured && (
-                                <span className="text-[9px] font-bold text-gripz-primary bg-gripz-primary/10 px-1.5 py-0.5 rounded uppercase tracking-wider">
-                                  ★
-                                </span>
-                              )}
-                            </Link>
-                          );
-                        })}
+                      <div className="pl-4 pb-2 flex flex-col gap-1 border-l border-gripz-gray-200 ml-1">
+                        {services.map((service) => (
+                          <Link
+                            key={service.slug}
+                            to={`/servicios/${service.slug}`}
+                            onClick={() => { setMobileOpen(false); setMobileServicesOpen(false); }}
+                            className="flex items-center gap-2 py-2.5 text-[13px] text-gripz-gray-800 hover:text-gripz-primary transition-colors"
+                          >
+                            <span className="font-medium">{service.name}</span>
+                            {service.featured && (
+                              <span className="text-[9px] font-bold text-gripz-primary bg-gripz-primary/10 px-1.5 py-0.5 rounded uppercase tracking-wider">
+                                ★
+                              </span>
+                            )}
+                          </Link>
+                        ))}
                         <a
                           href="#servicios"
                           onClick={(e) => handleNavClick(e, link)}
