@@ -73,13 +73,10 @@ export default function ServiceLayout({ service }: Props) {
           <div className="grid lg:grid-cols-[55%_45%] gap-8 lg:gap-12 items-center">
             {/* Left: copy */}
             <div>
-              {/* Badge */}
-              <div className="hero-fade inline-flex items-center gap-2 bg-gripz-primary/10 rounded-full px-4 py-1.5 mb-5">
-                <HeroIcon size={14} className="text-gripz-primary" strokeWidth={2.4} />
-                <span className="text-[12px] font-semibold text-gripz-primary tracking-wide uppercase">
-                  {service.featured ? '⭐ Servicio estrella' : service.tagline}
-                </span>
-              </div>
+              {/* Eyebrow — estilo Apple: solo texto, sin fondo ni iconos */}
+              <p className="hero-fade text-[13px] font-semibold uppercase tracking-[0.14em] text-gripz-primary mb-6">
+                {service.featured ? 'Servicio estrella' : service.tagline}
+              </p>
 
               <h1 className="hero-fade font-montserrat font-extrabold text-[34px] sm:text-[42px] lg:text-[52px] leading-[1.05] tracking-[-0.02em] text-gripz-black mb-5">
                 {service.heroH1}
@@ -117,7 +114,7 @@ export default function ServiceLayout({ service }: Props) {
                 alt={service.heroImageAlt}
                 className="w-full h-[340px] lg:h-[440px] object-cover rounded-2xl shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)]"
               />
-              <div className="absolute -bottom-4 -right-4 w-[60px] h-[60px] bg-gripz-primary rounded-full hidden lg:block" />
+              {/* Círculo decorativo retirado — no aportaba valor y cargaba el verde. */}
             </div>
           </div>
         </div>

@@ -198,7 +198,7 @@ const instalacionesElectricas: ServiceData = {
   metaDescription: 'Ejecución de instalaciones eléctricas seguras y certificadas en Sant Vicenç dels Horts y Barcelona. Cableado, cuadros eléctricos, protecciones y mantenimiento. +20 años.',
   keywords: ['instalaciones eléctricas', 'electricista empresa', 'cuadro eléctrico', 'cableado industrial', 'reforma eléctrica', 'Sant Vicenç dels Horts', 'Barcelona', 'boletín eléctrico'],
 
-  tagline: 'Nuestros servicios',
+  tagline: 'Normativa y seguridad',
   heroH1: 'Instalaciones eléctricas seguras, certificadas y bien hechas.',
   heroParagraph: 'Diseño y ejecución de instalaciones eléctricas para empresas, oficinas y naves industriales. Cableado, cuadros, protecciones y certificación según normativa vigente.',
   heroImage: '/assets/services/electricas/hero.jpg',
@@ -255,7 +255,7 @@ const camarasVideovigilancia: ServiceData = {
   metaDescription: 'Sistemas de videovigilancia CCTV e IP para empresas, naves industriales y comunidades en Sant Vicenç dels Horts y Barcelona. Visión nocturna, acceso remoto, normativa RGPD.',
   keywords: ['cámaras de seguridad', 'videovigilancia', 'CCTV', 'cámaras IP empresa', 'sistemas videovigilancia Barcelona', 'cámaras nave industrial', 'Sant Vicenç dels Horts', 'normativa cámaras'],
 
-  tagline: 'Nuestros servicios',
+  tagline: 'Vigilancia activa',
   heroH1: 'Sistemas de videovigilancia profesionales y siempre operativos.',
   heroParagraph: 'Diseño e instalación de circuitos cerrados de cámaras IP y CCTV para empresas, naves, comercios y comunidades. Visión nocturna, acceso remoto, grabación segura y cumplimiento normativo.',
   heroImage: '/assets/services/camaras/hero.jpg',
@@ -312,7 +312,7 @@ const antenasWifi: ServiceData = {
   metaDescription: 'Cobertura WiFi profesional para empresas, naves y locales en Sant Vicenç dels Horts y Barcelona. Antenas exteriores, puntos de acceso, redes mesh y soporte continuo.',
   keywords: ['antenas WiFi', 'WiFi empresarial', 'cobertura WiFi nave', 'WiFi profesional Barcelona', 'puntos de acceso', 'mesh WiFi', 'WiFi 6', 'Sant Vicenç dels Horts'],
 
-  tagline: 'Nuestros servicios',
+  tagline: 'Cobertura empresarial',
   heroH1: 'WiFi sin cortes en cada rincón de tu empresa.',
   heroParagraph: 'Diseñamos e instalamos cobertura WiFi profesional para oficinas, naves, locales y exteriores. Puntos de acceso gestionables, redes mesh y conectividad estable para todos tus dispositivos.',
   heroImage: '/assets/services/wifi/hero.jpg',
@@ -369,7 +369,7 @@ const sai: ServiceData = {
   metaDescription: 'Instalación de Sistemas de Alimentación Ininterrumpida (SAI/UPS) para servidores, equipos críticos y comercios. Evita pérdidas por cortes eléctricos. Sant Vicenç dels Horts y Barcelona.',
   keywords: ['SAI', 'UPS', 'sistema alimentación ininterrumpida', 'protección eléctrica', 'SAI servidor', 'UPS empresa Barcelona', 'cortes de luz', 'protección equipos'],
 
-  tagline: 'Nuestros servicios',
+  tagline: 'Continuidad operativa',
   heroH1: 'No pierdas dinero por un corte de luz.',
   heroParagraph: 'Instalamos Sistemas de Alimentación Ininterrumpida (SAI/UPS) que mantienen tus servidores, ordenadores y equipos críticos funcionando durante cortes y picos eléctricos. Cero pérdidas de datos, cero interrupciones.',
   heroImage: '/assets/services/sai/hero.jpg',
@@ -426,7 +426,7 @@ const controlesAcceso: ServiceData = {
   metaDescription: 'Instalación de sistemas de control de acceso para empresas: tarjetas RFID, huella, código y app. Sant Vicenç dels Horts y Barcelona. Sin llaves físicas, todo trazado.',
   keywords: ['control de acceso', 'control accesos empresa', 'tarjeta RFID', 'lector huella', 'cerradura electrónica', 'control horario', 'Sant Vicenç dels Horts', 'Barcelona'],
 
-  tagline: 'Nuestros servicios',
+  tagline: 'Trazabilidad y seguridad',
   heroH1: 'Adiós a las llaves perdidas. Hola a un control real.',
   heroParagraph: 'Sistemas de control de acceso por tarjeta, huella, código o app móvil. Quién entra, cuándo y a qué zonas, todo registrado y configurable desde un único panel.',
   heroImage: '/assets/services/accesos/hero.jpg',
