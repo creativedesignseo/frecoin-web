@@ -162,7 +162,7 @@ export default function Rediseno() {
             <a href="tel:+34614134292" className="hover:text-white inline-flex items-center gap-1.5">
               {IconPhone(13)} +34 614 134 292
             </a>
-            <a href="mailto:lfreire@frecoin.es" className="hover:text-white">lfreire@frecoin.es</a>
+            <a href="mailto:info@frecoin.es" className="hover:text-white">info@frecoin.es</a>
           </div>
         </div>
       </div>
@@ -502,7 +502,7 @@ export default function Rediseno() {
               <div className="mt-12 space-y-7">
                 {[
                   { icon: IconPhone, label: 'Teléfono / WhatsApp', value: '+34 614 134 292', href: 'tel:+34614134292' },
-                  { icon: IconMail, label: 'Email', value: 'lfreire@frecoin.es', href: 'mailto:lfreire@frecoin.es' },
+                  { icon: IconMail, label: 'Email', value: 'info@frecoin.es', href: 'mailto:info@frecoin.es' },
                   { icon: IconPin, label: 'Zona de servicio', value: 'Sant Vicenç dels Horts', sub: 'y área metropolitana sur de Barcelona' },
                 ].map((item, i) => {
                   const Ico = item.icon;
@@ -657,7 +657,7 @@ export default function Rediseno() {
               <h4 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-white mb-5">Contacto</h4>
               <ul className="space-y-3 text-[14px]">
                 <li><a href="tel:+34614134292" className="hover:text-white transition-colors">+34 614 134 292</a></li>
-                <li><a href="mailto:lfreire@frecoin.es" className="hover:text-white transition-colors">lfreire@frecoin.es</a></li>
+                <li><a href="mailto:info@frecoin.es" className="hover:text-white transition-colors">info@frecoin.es</a></li>
                 <li className="text-white/55">Sant Vicenç dels Horts<br />Barcelona, España</li>
               </ul>
             </div>

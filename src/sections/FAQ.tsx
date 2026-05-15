@@ -91,9 +91,6 @@ export default function FAQ() {
           {/* Left Column */}
           <div className="faq-left">
             <div className="section-tag mb-4">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-gripz-primary">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" />
-              </svg>
               READ OUR FAQ
             </div>
             <h2 className="font-montserrat font-extrabold text-[36px] sm:text-[48px] lg:text-[56px] leading-[1] tracking-[-0.02em] text-gripz-black mb-4">

@@ -109,7 +109,6 @@ export default function Contact() {
         <div className="container-gripz">
           <div className="text-center mb-10">
             <div className="section-tag justify-center mb-3">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-gripz-primary"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" /></svg>
               INFORMACION DE CONTACTO
             </div>
             <h2 className="font-montserrat font-extrabold text-[28px] lg:text-[40px] text-gripz-black">

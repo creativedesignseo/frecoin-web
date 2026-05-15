@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Search, Menu, X, ChevronDown, Zap } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, Zap } from 'lucide-react';
 import { services } from '@/data/services';
 
 interface NavLink {
@@ -13,7 +13,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { label: 'INICIO', href: '/', isRoute: true },
   { label: 'SERVICIOS', href: '#servicios', isRoute: false, hasDropdown: true },
-  { label: 'SOBRE NOSOTROS', href: '#sobre-nosotros', isRoute: false },
+  { label: 'SOBRE NOSOTROS', href: '/sobre-nosotros', isRoute: true },
   { label: 'TRABAJOS', href: '#trabajos', isRoute: false },
   { label: 'CONTACTO', href: '#contacto', isRoute: false },
 ];
@@ -50,7 +50,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-7">
+        <div className="hidden xl:flex items-center gap-7">
           {navLinks.map((link) => {
             const active = isActive(link);
 
@@ -139,12 +139,9 @@ export default function Navbar() {
               </a>
             );
           })}
-          <button className="w-8 h-8 rounded-full border border-gripz-gray-200 flex items-center justify-center hover:border-gripz-primary transition-colors">
-            <Search size={14} />
-          </button>
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden xl:flex items-center gap-4">
           <a
             href="#contacto"
             onClick={(e) => handleNavClick(e, { label: 'PRESUPUESTO', href: '#contacto', isRoute: false })}
@@ -159,7 +156,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="lg:hidden w-10 h-10 flex items-center justify-center"
+          className="xl:hidden w-10 h-10 flex items-center justify-center"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Abrir menú"
         >
@@ -169,7 +166,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="absolute top-20 left-0 right-0 bg-white shadow-lg border-t border-gripz-gray-200 lg:hidden max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="absolute top-20 left-0 right-0 bg-white shadow-lg border-t border-gripz-gray-200 xl:hidden max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="container-gripz py-6 flex flex-col gap-1">
             {navLinks.map((link) => {
               const active = isActive(link);

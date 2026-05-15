@@ -52,8 +52,6 @@ export default function ServiceLayout({ service }: Props) {
     trackEvent('service_cta_click', { service: service.slug, location });
   };
 
-  const HeroIcon = service.icon;
-
   return (
     <div ref={sectionRef} className="min-h-screen bg-white">
       <Navbar />
@@ -126,7 +124,6 @@ export default function ServiceLayout({ service }: Props) {
           <div className="container-gripz">
             <div className="text-center mb-12 lg:mb-16">
               <div className="section-fade section-tag justify-center mb-4">
-                <HeroIcon size={14} className="text-gripz-primary" strokeWidth={2.4} />
                 ¿QUÉ INCLUYE?
               </div>
               <h2 className="section-fade font-montserrat font-extrabold text-[28px] sm:text-[36px] lg:text-[44px] leading-[1.1] tracking-[-0.02em] text-gripz-black">

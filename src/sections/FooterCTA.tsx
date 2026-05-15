@@ -34,11 +34,10 @@ export default function FooterCTA() {
     <section ref={sectionRef} className="relative bg-gripz-dark overflow-hidden">
       <div className="absolute inset-0 opacity-30" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2322C55E' stroke-width='0.3' stroke-opacity='0.2'%3E%3Cpath d='M0 40h40M40 0v40M40 40l20-20M40 40l20 20M40 40l-20 20M40 40l-20-20'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='80' cy='0' r='2'/%3E%3Ccircle cx='0' cy='80' r='2'/%3E%3Ccircle cx='80' cy='80' r='2'/%3E%3C/g%3E%3C/svg%3E")` }} />
 
-      <div className="container-gripz relative z-[1] py-[100px] lg:py-[120px]">
+      <div className="container-gripz relative z-[1] py-[60px] sm:py-[80px] lg:py-[120px]">
         <div className="footer-cta text-center mb-16">
           <div className="section-tag justify-center mb-4">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-gripz-primary"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" /></svg>
-            CONTACTO
+              CONTACTO
           </div>
           <h2 className="footer-cta-title font-montserrat font-extrabold text-[28px] sm:text-[36px] lg:text-[44px] leading-[1.1] text-white mb-4">
             INSTALACIONES TECNOLÓGICAS A TU ALCANCE
@@ -93,7 +92,7 @@ export default function FooterCTA() {
               <li className="text-[14px] text-gripz-gray-400">Luis Freire Camino</li>
               <li className="text-[14px] text-gripz-gray-400">NIF: 48142086G</li>
               <li className="text-[14px] text-gripz-gray-400">Sant Vicenç dels Horts, Barcelona</li>
-              <li className="text-[14px] text-gripz-gray-400">lfreire@frecoin.es</li>
+              <li className="text-[14px] text-gripz-gray-400">info@frecoin.es</li>
             </ul>
           </div>
         </div>

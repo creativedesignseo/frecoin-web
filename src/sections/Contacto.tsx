@@ -19,8 +19,8 @@ const contactInfo = [
     title: 'EMAIL',
     // NOTA: info@frecoin.es aún no existe (pendiente decisión Google Workspace).
     // Usamos lfreire@ provisionalmente. Cambiar cuando se cree info@.
-    value: 'lfreire@frecoin.es',
-    href: 'mailto:lfreire@frecoin.es',
+    value: 'info@frecoin.es',
+    href: 'mailto:info@frecoin.es',
   },
   {
     icon: MessageCircle,
@@ -59,12 +59,11 @@ export default function Contacto() {
   };
 
   return (
-    <section ref={sectionRef} id="contacto" className="relative py-[100px] lg:py-[120px] bg-white overflow-hidden">
+    <section ref={sectionRef} id="contacto" className="relative py-[60px] sm:py-[80px] lg:py-[120px] bg-white overflow-hidden">
       <div className="container-gripz relative z-[1]">
         <div className="text-center mb-12 lg:mb-16">
           <div className="section-tag justify-center mb-4">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-gripz-primary"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" /></svg>
-            CONTACTO
+              CONTACTO
           </div>
           <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black">
             HABLEMOS DE TU PROYECTO
@@ -116,7 +115,7 @@ export default function Contacto() {
                     He leído y acepto la{' '}
                     <Link to="/politica-privacidad" className="text-gripz-primary hover:underline font-semibold">
                       Política de Privacidad
-                    </Link>. Tus datos serán tratados por <strong>Luis Freire Camino (FRECOIN)</strong> con la única finalidad de responder a tu consulta. Puedes ejercer tus derechos enviando un correo a lfreire@frecoin.es.
+                    </Link>. Tus datos serán tratados por <strong>Luis Freire Camino (FRECOIN)</strong> con la única finalidad de responder a tu consulta. Puedes ejercer tus derechos enviando un correo a info@frecoin.es.
                   </span>
                 </label>
 

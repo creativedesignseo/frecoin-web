@@ -34,29 +34,29 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="sobre-nosotros" className="relative py-[100px] lg:py-[120px] bg-white overflow-hidden">
+    <section ref={sectionRef} id="sobre-nosotros" className="relative py-[60px] sm:py-[80px] lg:py-[120px] bg-white overflow-hidden">
       <div className="container-gripz relative z-[1]">
-        <div className="grid lg:grid-cols-[45%_55%] gap-10 lg:gap-20 items-center">
+        <div className="grid xl:grid-cols-[45%_55%] gap-10 xl:gap-20 items-center">
           <div className="relative">
             <div className="about-img rounded-2xl overflow-hidden">
-              <img src="/assets/about-electrician-1.jpg" alt="Instalaciones Frecoin" className="w-full h-[400px] object-cover" />
+              <img src="/assets/about-network-1.jpg" alt="Instalación de red informática profesional Frecoin" className="w-full h-[260px] sm:h-[340px] lg:h-[400px] object-cover" />
             </div>
-            <div className="about-img rounded-2xl overflow-hidden mt-4 ml-10 w-[85%]">
-              <img src="/assets/about-electrician-2.jpg" alt="Trabajos Frecoin" className="w-full h-[300px] object-cover" />
+            <div className="about-img rounded-2xl overflow-hidden mt-4 ml-6 sm:ml-10 w-[85%]">
+              <img src="/assets/about-network-2.jpg" alt="Infraestructura tecnológica empresarial Frecoin" className="w-full h-[200px] sm:h-[260px] lg:h-[300px] object-cover" />
             </div>
-            <div className="about-badge absolute top-1/2 right-0 translate-x-1/4 -translate-y-1/2 w-[120px] h-[120px]">
-              <svg viewBox="0 0 120 120" className="w-full h-full animate-[spin-slow_20s_linear_infinite]">
-                <defs><path id="circlePath" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" /></defs>
-                <circle cx="60" cy="60" r="55" fill="none" stroke="#22C55E" strokeWidth="1.5" strokeDasharray="6 4" />
-                <text fill="#22C55E" fontSize="11" fontWeight="600" letterSpacing="3"><textPath href="#circlePath">+20 AÑOS DE EXPERIENCIA • +20 AÑOS DE EXPERIENCIA •</textPath></text>
-                <g transform="translate(48, 48)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22C55E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg></g>
+            <div className="about-badge absolute top-1/2 right-2 sm:right-0 sm:translate-x-1/4 -translate-y-1/2 w-[90px] h-[90px] sm:w-[120px] sm:h-[120px] flex items-center justify-center">
+              <svg viewBox="0 0 120 120" className="absolute inset-0 w-full h-full animate-[spin-slow_20s_linear_infinite]">
+                <defs><path id="circlePath" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0" /></defs>
+                <text fill="#22C55E" fontSize="9" fontWeight="700">
+                  <textPath href="#circlePath" textLength="263.89" lengthAdjust="spacing">+20 AÑOS DE EXPERIENCIA  •  +20 AÑOS DE EXPERIENCIA  •</textPath>
+                </text>
               </svg>
+              <img src="/assets/icono-frecoin.svg" alt="FRECOIN" className="relative w-[34px] h-auto" />
             </div>
           </div>
 
           <div className="about-text">
             <div className="section-tag mb-4">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-gripz-primary"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" /></svg>
               SOBRE NOSOTROS
             </div>
             <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black mb-5">
@@ -84,7 +84,7 @@ export default function About() {
               </a>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gripz-gray-200 overflow-hidden">
-                  <img src="/assets/about-electrician-1.jpg" alt="Luis Freire" className="w-full h-full object-cover" />
+                  <img src="/assets/luis-fundador.jpg" alt="Luis Freire Camino" className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
                   <p className="text-[14px] font-semibold text-gripz-black">Luis Freire Camino</p>

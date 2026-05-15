@@ -24,7 +24,7 @@ export default function AvisoLegal() {
         <li><strong>Nombre comercial:</strong> FRECOIN</li>
         <li><strong>NIF:</strong> 48142086G</li>
         <li><strong>Domicilio fiscal:</strong> C/ Balmes 33, 2º 4ª, 08620 Sant Vicenç dels Horts, Barcelona, España</li>
-        <li><strong>Correo electrónico de contacto:</strong> <a href="mailto:lfreire@frecoin.es">lfreire@frecoin.es</a></li>
+        <li><strong>Correo electrónico de contacto:</strong> <a href="mailto:info@frecoin.es">info@frecoin.es</a></li>
         <li><strong>Teléfono:</strong> <a href="tel:+34614134292">+34 614 134 292</a></li>
         <li><strong>Sitio web:</strong> <a href="https://frecoin.es">https://frecoin.es</a></li>
       </ul>
@@ -82,7 +82,7 @@ export default function AvisoLegal() {
 
       <div className="info-box">
         <p>
-          Para cualquier consulta relacionada con este Aviso Legal, puede contactar a través del correo <a href="mailto:lfreire@frecoin.es">lfreire@frecoin.es</a>.
+          Para cualquier consulta relacionada con este Aviso Legal, puede contactar a través del correo <a href="mailto:info@frecoin.es">info@frecoin.es</a>.
         </p>
       </div>
     </LegalLayout>

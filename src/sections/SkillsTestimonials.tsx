@@ -132,9 +132,6 @@ export default function SkillsTestimonials() {
         <div className="grid lg:grid-cols-[40%_60%] gap-10 lg:gap-16 items-center mb-20">
           <div className="skills-text">
             <div className="section-tag mb-4">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-gripz-primary">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" />
-              </svg>
               YOU CAN TRUST
             </div>
             <h2 className="section-title font-montserrat font-bold text-[32px] sm:text-[42px] leading-[1.1] tracking-[-0.01em] text-gripz-black mb-4">
@@ -161,10 +158,7 @@ export default function SkillsTestimonials() {
         {/* Testimonials Section */}
         <div className="testimonial-header text-center mb-12">
           <div className="section-tag justify-center mb-4">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-gripz-primary">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" />
-            </svg>
-            CLIENT TESTIMONIALS
+              CLIENT TESTIMONIALS
           </div>
           <h2 className="font-montserrat font-extrabold text-[36px] sm:text-[48px] lg:text-[56px] leading-[1] tracking-[-0.02em] text-gripz-black">
             SEE WHY OUR CLIENTS <span className="text-gripz-primary">SUCCESS</span> FEEDBACK

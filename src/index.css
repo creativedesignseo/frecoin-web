@@ -51,6 +51,11 @@
     @apply border-border;
   }
 
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
     color: #222222;
@@ -182,14 +187,17 @@
 }
 
 .legal-doc a {
-  color: var(--gripz-primary);
+  color: var(--gripz-black);
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: color 0.2s;
+  text-decoration-color: rgba(34, 197, 94, 0.45);
+  text-decoration-thickness: 1.5px;
+  transition: text-decoration-color 0.2s, color 0.2s;
 }
 
 .legal-doc a:hover {
-  color: var(--gripz-primary-dark);
+  color: var(--gripz-primary);
+  text-decoration-color: var(--gripz-primary);
 }
 
 .legal-doc strong {

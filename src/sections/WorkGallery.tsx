@@ -38,12 +38,11 @@ export default function WorkGallery() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="trabajos" className="relative py-[100px] lg:py-[120px] bg-gripz-cream overflow-hidden">
+    <section ref={sectionRef} id="trabajos" className="relative py-[60px] sm:py-[80px] lg:py-[120px] bg-gripz-cream overflow-hidden">
       <div className="container-gripz relative z-[1]">
         <div className="work-header flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
           <div>
             <div className="section-tag mb-4">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-gripz-primary"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" /></svg>
               TRABAJOS REALIZADOS
             </div>
             <h2 className="font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black">
