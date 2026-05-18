@@ -8,12 +8,12 @@
  * ServiceData y la página se generará automáticamente vía routing dinámico.
  */
 import {
-  Wifi, Plug, Cctv, BatteryCharging, Lock,
+  Wifi, PlugZap, Cctv, BatteryCharging, Fingerprint,
   Network, Cable, Settings, ShieldCheck, Headphones, FileSearch,
   Briefcase, Factory, Building2, Store, type LucideIcon,
   Zap, Lightbulb, Gauge, AlertTriangle, Eye, Video, MonitorPlay,
   ShieldAlert, Smartphone, Globe, Radio, Signal, Server,
-  Battery, Activity, Clock, KeyRound, Fingerprint, UserCheck,
+  Battery, Activity, Clock, KeyRound, UserCheck,
   ClipboardCheck, Warehouse, Hospital, Hotel,
 } from 'lucide-react';
 
@@ -191,7 +191,7 @@ const redesInformaticas: ServiceData = {
 
 const instalacionesElectricas: ServiceData = {
   slug: 'instalaciones-electricas',
-  icon: Plug,
+  icon: PlugZap,
   name: 'Instalaciones Eléctricas',
 
   metaTitle: 'Instalaciones eléctricas para empresas en Barcelona | FRECOIN',
@@ -419,7 +419,7 @@ const sai: ServiceData = {
 
 const controlesAcceso: ServiceData = {
   slug: 'controles-de-acceso',
-  icon: Lock,
+  icon: Fingerprint,
   name: 'Controles de Acceso',
 
   metaTitle: 'Sistemas de control de acceso en Barcelona | FRECOIN',
