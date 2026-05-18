@@ -8,7 +8,7 @@
  * ServiceData y la página se generará automáticamente vía routing dinámico.
  */
 import {
-  Wifi, Plug, Camera, BatteryCharging, Lock,
+  Wifi, Plug, Cctv, BatteryCharging, Lock,
   Network, Cable, Settings, ShieldCheck, Headphones, FileSearch,
   Briefcase, Factory, Building2, Store, type LucideIcon,
   Zap, Lightbulb, Gauge, AlertTriangle, Eye, Video, MonitorPlay,
@@ -248,7 +248,7 @@ const instalacionesElectricas: ServiceData = {
 
 const camarasVideovigilancia: ServiceData = {
   slug: 'camaras-videovigilancia',
-  icon: Camera,
+  icon: Cctv,
   name: 'Cámaras de Videovigilancia',
 
   metaTitle: 'Instalación de cámaras de seguridad en Barcelona | FRECOIN',
@@ -263,7 +263,7 @@ const camarasVideovigilancia: ServiceData = {
 
   includesTitle: '¿Qué incluye nuestro servicio de cámaras?',
   includes: [
-    { icon: Camera, title: 'Cámaras IP profesionales', description: 'Cámaras Full HD/4K con visión nocturna, detección inteligente y conexión por red.' },
+    { icon: Cctv, title: 'Cámaras IP profesionales', description: 'Cámaras Full HD/4K con visión nocturna, detección inteligente y conexión por red.' },
     { icon: Video, title: 'Grabador (NVR) configurado', description: 'Almacenamiento local seguro con disco duro dimensionado para los días de retención que necesites.' },
     { icon: Smartphone, title: 'Visualización remota', description: 'App móvil y acceso desde ordenador para ver tu negocio en directo desde cualquier lugar.' },
     { icon: Eye, title: 'Detección inteligente', description: 'Detección de movimiento por zonas, distinción entre personas/vehículos y alertas push al móvil.' },
