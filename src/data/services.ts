@@ -8,7 +8,7 @@
  * ServiceData y la página se generará automáticamente vía routing dinámico.
  */
 import {
-  Wifi, Plug, Camera, Antenna, BatteryCharging, Lock,
+  Wifi, Plug, Camera, BatteryCharging, Lock,
   Network, Cable, Settings, ShieldCheck, Headphones, FileSearch,
   Briefcase, Factory, Building2, Store, type LucideIcon,
   Zap, Lightbulb, Gauge, AlertTriangle, Eye, Video, MonitorPlay,
@@ -131,7 +131,7 @@ const audienciasGenericas = (extra1: ServiceAudience, extra2: ServiceAudience): 
 
 const redesInformaticas: ServiceData = {
   slug: 'redes-informaticas',
-  icon: Wifi,
+  icon: Network,
   name: 'Redes Informáticas',
   featured: true,
 
@@ -305,7 +305,7 @@ const camarasVideovigilancia: ServiceData = {
 
 const antenasWifi: ServiceData = {
   slug: 'antenas-wifi',
-  icon: Antenna,
+  icon: Wifi,
   name: 'Antenas WiFi',
 
   metaTitle: 'Instalación de antenas WiFi empresarial en Barcelona | FRECOIN',
