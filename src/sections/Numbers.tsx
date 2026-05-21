@@ -104,9 +104,7 @@ export default function Numbers() {
               key={i}
               className="stat-card flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left lg:gap-5"
             >
-              <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-gripz-primary/15 flex items-center justify-center flex-shrink-0 mb-3 lg:mb-0">
-                <stat.icon size={22} className="text-gripz-primary" strokeWidth={2} />
-              </div>
+              <stat.icon size={32} className="text-gripz-primary flex-shrink-0 mb-3 lg:mb-0 lg:mt-1" strokeWidth={2} />
               <div>
                 <p className="font-montserrat font-extrabold text-[36px] lg:text-[44px] leading-none text-white mb-1 tracking-[-0.02em]">
                   <CountUp end={stat.value} suffix={stat.suffix} trigger={trigger} />

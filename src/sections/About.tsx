@@ -71,9 +71,7 @@ export default function About() {
             <div className="flex flex-col gap-3 mb-8">
               {features.map((f, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-gripz-primary/10 flex items-center justify-center">
-                    <Check size={12} className="text-gripz-primary" />
-                  </div>
+                  <Check size={18} className="text-gripz-primary flex-shrink-0" strokeWidth={2.5} />
                   <span className="text-[15px] font-medium text-gripz-black">{f}</span>
                 </div>
               ))}

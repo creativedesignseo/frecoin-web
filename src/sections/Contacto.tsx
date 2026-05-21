@@ -75,9 +75,7 @@ export default function Contacto() {
           <div className="contact-left flex flex-col gap-6">
             {contactInfo.map((info, i) => (
               <a key={i} href={info.href} target={info.href.startsWith('http') ? '_blank' : undefined} rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="flex items-center gap-4 group">
-                <div className="w-14 h-14 rounded-full bg-gripz-primary/10 flex items-center justify-center group-hover:bg-gripz-primary transition-colors">
-                  <info.icon size={24} className="text-gripz-primary group-hover:text-white transition-colors" />
-                </div>
+                <info.icon size={28} className="text-gripz-primary flex-shrink-0" strokeWidth={2} />
                 <div>
                   <p className="text-[12px] text-gripz-gray-400 uppercase tracking-wider">{info.title}</p>
                   <p className="text-[16px] font-semibold text-gripz-black group-hover:text-gripz-primary transition-colors">{info.value}</p>

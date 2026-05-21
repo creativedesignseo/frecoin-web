@@ -136,9 +136,7 @@ export default function ServiceLayout({ service }: Props) {
                 const Icon = feat.icon;
                 return (
                   <div key={i} className="section-fade group bg-white border border-gripz-gray-200 rounded-xl p-6 lg:p-7 hover:border-gripz-primary/40 hover:shadow-md transition-all">
-                    <div className="w-11 h-11 rounded-full bg-gripz-primary/10 flex items-center justify-center mb-4 group-hover:bg-gripz-primary/20 transition-colors">
-                      <Icon size={20} className="text-gripz-primary" strokeWidth={2.2} />
-                    </div>
+                    <Icon size={28} className="text-gripz-primary mb-4" strokeWidth={2.2} />
                     <h3 className="font-montserrat font-bold text-[17px] text-gripz-black leading-tight mb-2">
                       {feat.title}
                     </h3>
@@ -166,9 +164,7 @@ export default function ServiceLayout({ service }: Props) {
                 const Icon = a.icon;
                 return (
                   <div key={i} className="bg-white rounded-xl p-6 lg:p-7 text-center hover:shadow-md transition-shadow">
-                    <div className="w-14 h-14 rounded-full bg-gripz-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <Icon size={26} className="text-gripz-primary" strokeWidth={2} />
-                    </div>
+                    <Icon size={36} className="text-gripz-primary mx-auto mb-4" strokeWidth={2} />
                     <h3 className="font-montserrat font-bold text-[15px] text-gripz-black mb-2">{a.name}</h3>
                     <p className="text-[13px] leading-[1.6] text-gripz-gray-600">{a.description}</p>
                   </div>
@@ -200,10 +196,8 @@ export default function ServiceLayout({ service }: Props) {
                   {service.benefits.map((b, i) => {
                     const Icon = b.icon;
                     return (
-                      <div key={i} className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-full bg-gripz-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Icon size={18} className="text-gripz-primary" strokeWidth={2.2} />
-                        </div>
+                      <div key={i} className="flex items-start gap-3">
+                        <Icon size={22} className="text-gripz-primary flex-shrink-0 mt-0.5" strokeWidth={2.2} />
                         <div>
                           <h3 className="font-inter font-bold text-[15px] text-gripz-black mb-1">{b.title}</h3>
                           <p className="text-[14px] leading-[1.6] text-gripz-gray-600">{b.description}</p>

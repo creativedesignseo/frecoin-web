@@ -91,9 +91,7 @@ export default function CookieBanner() {
       <div className="max-w-[640px] mx-auto pointer-events-auto bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] border border-gripz-gray-200 overflow-hidden">
         {/* Header con icono y cierre */}
         <div className="flex items-start gap-4 px-6 pt-6 pb-2">
-          <div className="w-11 h-11 rounded-full bg-gripz-primary/10 flex items-center justify-center flex-shrink-0">
-            <Cookie size={22} className="text-gripz-primary" />
-          </div>
+          <Cookie size={28} className="text-gripz-primary flex-shrink-0 mt-1" strokeWidth={2} />
           <div className="flex-1">
             <h3 className="font-montserrat font-bold text-[16px] text-gripz-black leading-tight mb-1">
               Tu privacidad nos importa
