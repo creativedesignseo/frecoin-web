@@ -62,17 +62,17 @@ export default function About() {
             <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black mb-5">
               FRECOIN: TECNOLOGÍA Y CONFIANZA DESDE 2004
             </h2>
-            <p className="text-[15px] leading-[1.7] text-gripz-gray-600 mb-6">
+            <p className="text-[16px] leading-[1.7] text-gripz-gray-600 mb-6">
               En FRECOIN llevamos más de 20 años ofreciendo soluciones integrales en infraestructuras tecnológicas para empresas. Nos especializamos en instalaciones de redes informáticas, sistemas eléctricos y SAI, garantizando infraestructuras seguras, eficientes y fiables.
             </p>
-            <p className="text-[15px] leading-[1.7] text-gripz-gray-600 mb-6">
+            <p className="text-[16px] leading-[1.7] text-gripz-gray-600 mb-6">
               Nuestra misión: asegurar la continuidad operativa de nuestros clientes con un servicio de alta calidad, adaptado a sus necesidades reales. Trabajamos en <strong>Sant Vicenç dels Horts</strong> y toda el área metropolitana sur de Barcelona.
             </p>
             <div className="flex flex-col gap-3 mb-8">
               {features.map((f, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <Check size={18} className="text-gripz-primary flex-shrink-0" strokeWidth={2.5} />
-                  <span className="text-[15px] font-medium text-gripz-black">{f}</span>
+                  <span className="text-[16px] font-medium text-gripz-black">{f}</span>
                 </div>
               ))}
             </div>

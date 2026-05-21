@@ -57,7 +57,7 @@ export default function SobreNosotros() {
           <h1 className="font-montserrat font-extrabold text-[32px] sm:text-[44px] lg:text-[64px] leading-[1.05] sm:leading-[1] tracking-[-0.03em] text-gripz-black mb-5 sm:mb-6 max-w-3xl">
             Tecnología cercana<br className="hidden sm:block" /> <span className="sm:hidden">para empresas del sur de Barcelona.</span><span className="hidden sm:inline">para empresas del sur<br />de Barcelona.</span>
           </h1>
-          <p className="text-[15px] sm:text-[17px] leading-[1.65] text-gripz-gray-600 max-w-2xl">
+          <p className="text-[16px] sm:text-[17px] leading-[1.65] text-gripz-gray-600 max-w-2xl">
             Más de 20 años cuidando la infraestructura tecnológica de las pymes de Sant Vicenç dels Horts y el área metropolitana. Sin oficina física, sin call centers, sin intermediarios. Te atiende quien hace el trabajo.
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function SobreNosotros() {
                   "Tu satisfacción es mi prioridad laboral."
                 </p>
               </blockquote>
-              <div className="space-y-5 text-[15px] leading-[1.75] text-gripz-gray-600">
+              <div className="space-y-5 text-[16px] leading-[1.75] text-gripz-gray-600">
                 <p>
                   Me llamo <strong className="text-gripz-black">Luis Freire Camino</strong> y fundé FRECOIN en 2004 con una idea muy simple: que las pequeñas y medianas empresas del sur de Barcelona pudieran acceder a servicios técnicos de calidad sin tener que recurrir a grandes consultoras anónimas con call centers infinitos.
                 </p>
@@ -198,7 +198,7 @@ export default function SobreNosotros() {
                   <h3 className="font-montserrat font-bold text-[22px] text-gripz-black mb-3">
                     {v.title}
                   </h3>
-                  <p className="text-[15px] leading-[1.7] text-gripz-gray-600">
+                  <p className="text-[16px] leading-[1.7] text-gripz-gray-600">
                     {v.text}
                   </p>
                 </div>
