@@ -70,7 +70,7 @@ export default function SobreNosotros() {
             <div className="fade-in relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="/assets/luis-fundador.jpg"
+                  src="/assets/luis-fundador.webp"
                   alt="Luis Freire Camino — fundador de FRECOIN"
                   className="w-full h-[360px] sm:h-[440px] lg:h-[500px] object-cover object-top"
                 />
