@@ -1,11 +1,42 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { Send, Phone } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
 
+type SubmitState = 'idle' | 'sending' | 'success' | 'error';
+
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState({ nombre: '', telefono: '', servicio: '', mensaje: '' });
+  const [status, setStatus] = useState<SubmitState>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
+    try {
+      const res = await fetch('/send-form.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, source: 'hero' }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) {
+        setStatus('success');
+        trackEvent('form_submit', { form_id: 'presupuesto_hero', location: 'hero' });
+        setFormData({ nombre: '', telefono: '', servicio: '', mensaje: '' });
+        setTimeout(() => setStatus('idle'), 6000);
+      } else {
+        setStatus('error');
+        setErrorMsg(data.error || 'No se pudo enviar. Llámanos por WhatsApp.');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMsg('Error de red. Llámanos por WhatsApp.');
+    }
+  };
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -82,32 +113,35 @@ export default function Hero() {
           }}
         >
           <h3 className="text-white font-montserrat font-bold text-lg mb-5">SOLICITA TU PRESUPUESTO</h3>
-          <form
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              trackEvent('form_submit', { form_id: 'presupuesto_hero', location: 'hero' });
-            }}
-          >
+          {status === 'success' ? (
+            <div className="bg-gripz-primary/15 border border-gripz-primary/40 rounded-lg p-5 text-center">
+              <p className="text-gripz-primary font-semibold text-[15px] mb-1">¡Mensaje enviado!</p>
+              <p className="text-white/70 text-[13px]">Te contactaremos lo antes posible.</p>
+            </div>
+          ) : (
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <input type="text" placeholder="Nombre completo*" className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
-              <input type="tel" placeholder="Teléfono*" className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
-              <select className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors appearance-none" defaultValue="">
+              <input type="text" required placeholder="Nombre completo*" value={formData.nombre} onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
+              <input type="tel" required placeholder="Teléfono*" value={formData.telefono} onChange={(e) => setFormData({ ...formData, telefono: e.target.value })} className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
+              <select required value={formData.servicio} onChange={(e) => setFormData({ ...formData, servicio: e.target.value })} className={`w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-sm focus:border-gripz-primary focus:outline-none transition-colors appearance-none ${formData.servicio ? 'text-white' : 'text-white/40'}`}>
                 <option value="" disabled>Selecciona un servicio*</option>
-                <option value="redes" className="text-gripz-black">Redes Informáticas</option>
-                <option value="electricas" className="text-gripz-black">Instalaciones Eléctricas</option>
-                <option value="camaras" className="text-gripz-black">Cámaras de Videovigilancia</option>
-                <option value="wifi" className="text-gripz-black">Antenas WiFi</option>
-                <option value="sai" className="text-gripz-black">SAI</option>
-                <option value="acceso" className="text-gripz-black">Controles de Acceso</option>
+                <option value="Redes Informáticas" className="text-gripz-black">Redes Informáticas</option>
+                <option value="Instalaciones Eléctricas" className="text-gripz-black">Instalaciones Eléctricas</option>
+                <option value="Cámaras de Videovigilancia" className="text-gripz-black">Cámaras de Videovigilancia</option>
+                <option value="Antenas WiFi" className="text-gripz-black">Antenas WiFi</option>
+                <option value="SAI" className="text-gripz-black">SAI</option>
+                <option value="Controles de Acceso" className="text-gripz-black">Controles de Acceso</option>
               </select>
             </div>
             <div className="flex gap-4">
-              <textarea placeholder="¿Qué necesitas?*" rows={2} className="flex-1 bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors resize-none" />
-              <button type="submit" className="w-14 h-14 rounded-full bg-gripz-primary flex items-center justify-center hover:scale-105 transition-transform shadow-[0_0_40px_rgba(34,197,94,0.3)] flex-shrink-0">
-                <Send size={20} className="text-white" />
+              <textarea required placeholder="¿Qué necesitas?*" rows={2} value={formData.mensaje} onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })} className="flex-1 bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors resize-none" />
+              <button type="submit" disabled={status === 'sending'} className="w-14 h-14 rounded-full bg-gripz-primary flex items-center justify-center hover:scale-105 transition-transform shadow-[0_0_40px_rgba(34,197,94,0.3)] flex-shrink-0 disabled:opacity-60 disabled:scale-100">
+                <Send size={20} className={`text-white ${status === 'sending' ? 'animate-pulse' : ''}`} />
               </button>
             </div>
+            {status === 'error' && (
+              <p className="text-[12px] text-red-300">{errorMsg}</p>
+            )}
             {/* Cláusula informativa RGPD/LSSI — obligatoria en cualquier formulario que recoja datos */}
             <label className="flex items-start gap-2 text-[11px] text-white/60 leading-[1.5] cursor-pointer">
               <input type="checkbox" required className="mt-0.5 accent-gripz-primary flex-shrink-0" />
@@ -119,6 +153,7 @@ export default function Hero() {
               </span>
             </label>
           </form>
+          )}
         </div>
       </div>
     </section>

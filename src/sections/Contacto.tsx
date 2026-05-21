@@ -50,12 +50,33 @@ export default function Contacto() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    trackEvent('form_submit', { form_id: 'contacto_main', location: 'contacto' });
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ nombre: '', telefono: '', mensaje: '' });
+    setSending(true);
+    setErrorMsg('');
+    try {
+      const res = await fetch('/send-form.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, source: 'contacto' }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) {
+        trackEvent('form_submit', { form_id: 'contacto_main', location: 'contacto' });
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 6000);
+        setFormData({ nombre: '', telefono: '', mensaje: '' });
+      } else {
+        setErrorMsg(data.error || 'No se pudo enviar. Llámanos por WhatsApp.');
+      }
+    } catch {
+      setErrorMsg('Error de red. Llámanos por WhatsApp.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -117,8 +138,12 @@ export default function Contacto() {
                   </span>
                 </label>
 
-                <button type="submit" className="btn-primary w-full justify-center text-[14px]">
-                  ENVIAR MENSAJE <Send size={14} />
+                {errorMsg && (
+                  <p className="text-[12px] text-red-600">{errorMsg}</p>
+                )}
+
+                <button type="submit" disabled={sending} className="btn-primary w-full justify-center text-[14px] disabled:opacity-60">
+                  {sending ? 'ENVIANDO...' : 'ENVIAR MENSAJE'} <Send size={14} />
                 </button>
               </form>
             )}
