@@ -32,7 +32,7 @@ const contactInfo = [
 
 export default function Contacto() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [formData, setFormData] = useState({ nombre: '', telefono: '', mensaje: '' });
+  const [formData, setFormData] = useState({ nombre: '', telefono: '', email: '', mensaje: '' });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function Contacto() {
         trackEvent('form_submit', { form_id: 'contacto_main', location: 'contacto' });
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 6000);
-        setFormData({ nombre: '', telefono: '', mensaje: '' });
+        setFormData({ nombre: '', telefono: '', email: '', mensaje: '' });
       } else {
         setErrorMsg(data.error || 'No se pudo enviar. Llámanos por WhatsApp.');
       }
@@ -124,7 +124,10 @@ export default function Contacto() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input type="text" required placeholder="Nombre completo*" value={formData.nombre} onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
-                <input type="tel" required placeholder="Teléfono*" value={formData.telefono} onChange={(e) => setFormData({ ...formData, telefono: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input type="tel" required placeholder="Teléfono*" value={formData.telefono} onChange={(e) => setFormData({ ...formData, telefono: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
+                  <input type="email" placeholder="Email (opcional)" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors" />
+                </div>
                 <textarea required rows={4} placeholder="¿Qué necesitas?*" value={formData.mensaje} onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors resize-none" />
 
                 {/* Cláusula informativa RGPD/LSSI — obligatoria en cualquier formulario que recoja datos */}

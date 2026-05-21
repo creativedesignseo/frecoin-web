@@ -8,7 +8,7 @@ type SubmitState = 'idle' | 'sending' | 'success' | 'error';
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [formData, setFormData] = useState({ nombre: '', telefono: '', servicio: '', mensaje: '' });
+  const [formData, setFormData] = useState({ nombre: '', telefono: '', email: '', servicio: '', mensaje: '' });
   const [status, setStatus] = useState<SubmitState>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -26,7 +26,7 @@ export default function Hero() {
       if (res.ok && data.ok) {
         setStatus('success');
         trackEvent('form_submit', { form_id: 'presupuesto_hero', location: 'hero' });
-        setFormData({ nombre: '', telefono: '', servicio: '', mensaje: '' });
+        setFormData({ nombre: '', telefono: '', email: '', servicio: '', mensaje: '' });
         setTimeout(() => setStatus('idle'), 6000);
       } else {
         setStatus('error');
@@ -120,9 +120,10 @@ export default function Hero() {
             </div>
           ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input type="text" required placeholder="Nombre completo*" value={formData.nombre} onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
               <input type="tel" required placeholder="Teléfono*" value={formData.telefono} onChange={(e) => setFormData({ ...formData, telefono: e.target.value })} className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
+              <input type="email" placeholder="Email (opcional)" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 text-sm focus:border-gripz-primary focus:outline-none transition-colors" />
               <select required value={formData.servicio} onChange={(e) => setFormData({ ...formData, servicio: e.target.value })} className={`w-full bg-[rgba(255,255,255,0.08)] border border-white/15 rounded-lg px-4 py-3 text-sm focus:border-gripz-primary focus:outline-none transition-colors appearance-none ${formData.servicio ? 'text-white' : 'text-white/40'}`}>
                 <option value="" disabled>Selecciona un servicio*</option>
                 <option value="Redes Informáticas" className="text-gripz-black">Redes Informáticas</option>
