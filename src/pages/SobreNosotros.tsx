@@ -66,7 +66,7 @@ export default function SobreNosotros() {
       {/* QUIÉN ESTÁ DETRÁS ================================================== */}
       <section className="py-[60px] sm:py-[80px] lg:py-[120px] bg-white">
         <div className="container-gripz">
-          <div className="grid lg:grid-cols-[42%_58%] gap-10 sm:gap-12 lg:gap-16 xl:gap-20 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-[42fr_58fr] gap-10 sm:gap-12 lg:gap-12 xl:gap-20 items-center max-w-6xl mx-auto">
             <div className="fade-in relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
