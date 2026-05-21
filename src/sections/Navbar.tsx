@@ -83,11 +83,6 @@ export default function Navbar() {
                               <span className="font-montserrat font-bold text-[13px] text-gripz-black leading-tight">
                                 {service.name}
                               </span>
-                              {service.featured && (
-                                <span className="text-[9px] font-bold text-gripz-primary bg-gripz-primary/10 px-1.5 py-0.5 rounded uppercase tracking-wider flex-shrink-0">
-                                  Estrella
-                                </span>
-                              )}
                             </div>
                             <p className="text-[11px] text-gripz-gray-600 leading-snug mt-1 line-clamp-2">
                               {service.tagline === 'Servicio estrella' ? 'Conectividad rápida, segura y fiable' : service.heroParagraph.split('.')[0] + '.'}
@@ -197,11 +192,6 @@ export default function Navbar() {
                             className="flex items-center gap-2 py-2.5 text-[13px] text-gripz-gray-800 hover:text-gripz-primary transition-colors"
                           >
                             <span className="font-medium">{service.name}</span>
-                            {service.featured && (
-                              <span className="text-[9px] font-bold text-gripz-primary bg-gripz-primary/10 px-1.5 py-0.5 rounded uppercase tracking-wider">
-                                ★
-                              </span>
-                            )}
                           </Link>
                         ))}
                         <a
