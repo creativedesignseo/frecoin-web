@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 gsap.registerPlugin(ScrollTrigger);
 
 const works = [
-  { title: 'RED CORPORATIVA COMPLETA', image: '/assets/work-solar.jpg', tag: 'REDES' },
+  { title: 'RED CORPORATIVA COMPLETA', image: '/assets/work-redes-corporativas.webp', tag: 'REDES' },
   { title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', image: '/assets/work-office.jpg', tag: 'ELÉCTRICAS' },
   { title: 'CIRCUITO CERRADO DE CÁMARAS', image: '/assets/work-industrial.jpg', tag: 'SEGURIDAD' },
   { title: 'COBERTURA WIFI EMPRESARIAL', image: '/assets/work-outdoor.jpg', tag: 'WIFI' },
