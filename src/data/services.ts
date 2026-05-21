@@ -133,13 +133,13 @@ const redesInformaticas: ServiceData = {
   slug: 'redes-informaticas',
   icon: Network,
   name: 'Redes Informáticas',
-  featured: true,
+  featured: false,
 
   metaTitle: 'Instalación de redes informáticas en Barcelona | FRECOIN',
   metaDescription: 'Diseño, instalación y mantenimiento de redes informáticas para empresas en Sant Vicenç dels Horts y área metropolitana sur de Barcelona. Más de 20 años de experiencia.',
   keywords: ['redes informáticas', 'instalación red empresa', 'cableado estructurado', 'red corporativa', 'wifi empresarial', 'Sant Vicenç dels Horts', 'Barcelona', 'redes Cat6', 'firewall empresa'],
 
-  tagline: 'Servicio estrella',
+  tagline: 'Conectividad empresarial',
   heroH1: 'Redes informáticas para empresas que no pueden permitirse caer.',
   heroParagraph: 'Diseñamos, instalamos y mantenemos redes corporativas estables, rápidas y seguras. Cableado estructurado, configuración de routers y switches, Wi-Fi empresarial y soporte continuo.',
   heroImage: '/assets/services/redes/hero-server-rack.jpg',

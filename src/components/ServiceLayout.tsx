@@ -73,7 +73,7 @@ export default function ServiceLayout({ service }: Props) {
             <div>
               {/* Eyebrow — estilo Apple: solo texto, sin fondo ni iconos */}
               <p className="hero-fade text-[13px] font-semibold uppercase tracking-[0.14em] text-gripz-primary mb-6">
-                {service.featured ? 'Servicio estrella' : service.tagline}
+                {service.tagline}
               </p>
 
               <h1 className="hero-fade font-montserrat font-extrabold text-[34px] sm:text-[42px] lg:text-[52px] leading-[1.05] tracking-[-0.02em] text-gripz-black mb-5">

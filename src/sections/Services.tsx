@@ -32,15 +32,8 @@ export default function Services() {
                 to={`/servicios/${service.slug}`}
                 key={service.slug}
                 onClick={() => trackEvent('service_card_click', { service: service.slug, location: 'home' })}
-                className={`section-card group relative bg-white border rounded-xl p-6 lg:p-8 transition-all duration-400 hover:-translate-y-1 hover:shadow-md overflow-hidden block ${
-                  service.featured ? 'border-gripz-primary/40 ring-1 ring-gripz-primary/20' : 'border-gripz-gray-200'
-                }`}
+                className="section-card group relative bg-white border border-gripz-gray-200 rounded-xl p-6 lg:p-8 transition-all duration-400 hover:-translate-y-1 hover:shadow-md overflow-hidden block"
               >
-                {service.featured && (
-                  <div className="absolute top-4 right-4 bg-gripz-primary text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                    Destacado
-                  </div>
-                )}
                 <Icon size={36} className="text-gripz-primary mb-5" strokeWidth={2.2} />
                 <h3 className="font-montserrat font-bold text-[17px] lg:text-[18px] text-gripz-black leading-tight mb-3 uppercase">
                   {service.name}
