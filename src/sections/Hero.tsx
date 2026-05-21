@@ -21,10 +21,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" ref={sectionRef} className="relative xl:min-h-screen w-full bg-white overflow-hidden pt-20">
+    <section id="hero" ref={sectionRef} className="relative lg:min-h-[640px] xl:min-h-screen w-full bg-white overflow-hidden pt-20">
       {/* Main Content */}
-      <div className="container-gripz relative pt-4 pb-2 sm:pt-8 sm:pb-2 xl:pt-20 xl:pb-2">
-        <div className="grid xl:grid-cols-[55%_45%] gap-8 items-center">
+      <div className="container-gripz relative pt-4 pb-2 sm:pt-8 sm:pb-2 lg:pt-14 xl:pt-20 xl:pb-2">
+        <div className="grid lg:grid-cols-[58%_42%] xl:grid-cols-[55%_45%] gap-8 items-center">
           {/* Left Column - Text */}
           <div className="relative z-10 max-w-xl">
             {/* Eyebrow tipográfica */}
@@ -60,8 +60,11 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Right Column - Image (solo desktop xl+ — en tablets/mobile se oculta) */}
-      <div className="hero-image hidden xl:block absolute right-0 top-20 w-[45%] h-[calc(100%-80px)]">
+      {/* Right Column - Image
+          - Mobile/tablet vertical (<lg): oculta (texto va a 1 columna sin imagen)
+          - Tablet horizontal (lg): crop más cuadrado (aspect 1:1 aprox)
+          - Desktop (xl+): full-height absolute, ocupando el 45% derecho */}
+      <div className="hero-image hidden lg:block absolute right-0 top-20 w-[42%] xl:w-[45%] h-[calc(100%-80px)]">
         <img
           src="/assets/hero-electrician.jpg"
           alt="Instalaciones tecnológicas Frecoin"
