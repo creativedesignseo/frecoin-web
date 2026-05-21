@@ -95,7 +95,7 @@ export default function SobreNosotros() {
               </blockquote>
               <div className="space-y-5 text-[16px] leading-[1.75] text-gripz-gray-600">
                 <p>
-                  Me llamo <strong className="text-gripz-black">Luis Freire Camino</strong> y fundé FRECOIN en 2004 con una idea muy simple: que las pequeñas y medianas empresas del sur de Barcelona pudieran acceder a servicios técnicos de calidad sin tener que recurrir a grandes consultoras anónimas con call centers infinitos.
+                  Me llamo <strong className="text-gripz-black">Luis Freire Camino</strong> y creé FRECOIN con una idea muy simple: que las pequeñas y medianas empresas del sur de Barcelona pudieran acceder a servicios técnicos de calidad sin tener que recurrir a grandes consultoras anónimas con call centers infinitos.
                 </p>
                 <p>
                   Llevo más de dos décadas montando redes informáticas, instalaciones eléctricas, sistemas de videovigilancia, antenas WiFi, SAI y controles de acceso. He visto evolucionar la tecnología — del cable Ethernet a la fibra óptica, de las cámaras analógicas a la videovigilancia IP de alta resolución — pero lo que no ha cambiado es mi forma de trabajar.
@@ -104,59 +104,6 @@ export default function SobreNosotros() {
                   <strong className="text-gripz-black">Cara a cara con el cliente.</strong> Si llamas, descuelgo yo. Si hay una incidencia, voy yo. Si te explico un presupuesto, te lo explico hasta que tenga sentido para ti.
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* NUESTRA HISTORIA — Timeline ======================================== */}
-      <section className="py-[60px] sm:py-[80px] lg:py-[120px] bg-gripz-cream border-y border-gripz-gray-200">
-        <div className="container-gripz">
-          <div className="max-w-5xl mx-auto">
-            <div className="fade-in text-center mb-14 lg:mb-20">
-              <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-gripz-primary mb-4">
-                Nuestra historia
-              </p>
-              <h2 className="font-montserrat font-extrabold text-[32px] sm:text-[40px] lg:text-[48px] leading-[1.05] tracking-[-0.02em] text-gripz-black max-w-3xl mx-auto">
-                Del primer rack al área metropolitana entera.
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-              {[
-                {
-                  year: '2004',
-                  title: 'Los primeros clientes',
-                  text: 'Arrancamos en Sant Vicenç dels Horts ofreciendo instalaciones eléctricas y de red a pequeños comercios y oficinas locales. El boca a boca hace el resto.',
-                },
-                {
-                  year: '2010',
-                  title: 'Especialización en redes',
-                  text: 'Pequeñas y medianas empresas industriales del Baix Llobregat empiezan a confiarnos sus infraestructuras críticas: cableado estructurado, racks, switches.',
-                },
-                {
-                  year: '2015',
-                  title: 'Videovigilancia y seguridad',
-                  text: 'Ampliamos a sistemas de cámaras IP, controles de acceso y SAI. Talleres, naves industriales, despachos y comunidades de vecinos se suman a la cartera.',
-                },
-                {
-                  year: '2026',
-                  title: 'Hoy: cobertura metropolitana',
-                  text: 'Damos servicio a empresas en Sant Vicenç dels Horts, Sant Boi, Cornellà, Sant Joan Despí, Esplugues y toda el área metropolitana sur de Barcelona.',
-                },
-              ].map((item, i) => (
-                <div key={i} className="fade-in bg-white rounded-2xl p-7 lg:p-8 border border-gripz-gray-200">
-                  <p className="font-montserrat font-extrabold text-[44px] leading-none text-gripz-primary mb-3">
-                    {item.year}
-                  </p>
-                  <h3 className="font-montserrat font-bold text-[20px] text-gripz-black mb-3 leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-[14px] leading-[1.65] text-gripz-gray-600">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </div>

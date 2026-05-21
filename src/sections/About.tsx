@@ -60,10 +60,10 @@ export default function About() {
               SOBRE NOSOTROS
             </div>
             <h2 className="section-title font-montserrat font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1] tracking-[-0.02em] text-gripz-black mb-5">
-              FRECOIN: TECNOLOGÍA Y CONFIANZA DESDE 2004
+              FRECOIN: TECNOLOGÍA Y CONFIANZA PARA TU EMPRESA
             </h2>
             <p className="text-[16px] leading-[1.7] text-gripz-gray-600 mb-6">
-              En FRECOIN llevamos más de 20 años ofreciendo soluciones integrales en infraestructuras tecnológicas para empresas. Nos especializamos en instalaciones de redes informáticas, sistemas eléctricos y SAI, garantizando infraestructuras seguras, eficientes y fiables.
+              FRECOIN está liderada por <strong>Luis Freire Camino</strong>, técnico con más de 20 años de experiencia en infraestructuras tecnológicas. Ofrecemos soluciones integrales en instalaciones de redes informáticas, sistemas eléctricos y SAI, garantizando infraestructuras seguras, eficientes y fiables.
             </p>
             <p className="text-[16px] leading-[1.7] text-gripz-gray-600 mb-6">
               Nuestra misión: asegurar la continuidad operativa de nuestros clientes con un servicio de alta calidad, adaptado a sus necesidades reales. Trabajamos en <strong>Sant Vicenç dels Horts</strong> y toda el área metropolitana sur de Barcelona.

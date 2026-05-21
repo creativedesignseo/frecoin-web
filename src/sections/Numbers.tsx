@@ -13,7 +13,7 @@ const stats = [
     value: 20,
     suffix: '+',
     label: 'Años de experiencia',
-    sublabel: 'Desde 2004',
+    sublabel: 'En el sector técnico',
   },
   {
     icon: Briefcase,
