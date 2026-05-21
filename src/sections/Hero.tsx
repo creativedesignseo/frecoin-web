@@ -70,9 +70,9 @@ export default function Hero() {
       </div>
 
       {/* Consultation Form — mobile: espacio respiro arriba; xl: superpuesto sobre imagen */}
-      <div className="hero-form relative z-10 container-gripz mt-8 sm:mt-10 xl:-mt-16 mb-12 sm:mb-16 xl:mb-0">
+      <div className="hero-form relative z-10 container-gripz mt-8 sm:mt-10 xl:mt-8 mb-12 sm:mb-16 xl:mb-16">
         <div
-          className="rounded-t-xl p-6 lg:p-8"
+          className="rounded-xl p-6 lg:p-8"
           style={{
             backgroundColor: '#1A1A1A',
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2322C55E' stroke-width='0.5' stroke-opacity='0.12'%3E%3Cpath d='M0 0h80v80H0z'/%3E%3Cpath d='M0 40h40M40 0v40M40 40l20-20M40 40l20 20M40 40l-20 20M40 40l-20-20'/%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='80' cy='0' r='2'/%3E%3Ccircle cx='0' cy='80' r='2'/%3E%3Ccircle cx='80' cy='80' r='2'/%3E%3C/g%3E%3C/svg%3E")`,
