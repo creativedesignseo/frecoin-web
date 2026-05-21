@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section id="hero" ref={sectionRef} className="relative xl:min-h-screen w-full bg-white overflow-hidden pt-20">
       {/* Main Content */}
-      <div className="container-gripz relative pt-4 pb-8 sm:pt-8 sm:pb-10 xl:pt-20 xl:pb-16">
+      <div className="container-gripz relative pt-4 pb-2 sm:pt-8 sm:pb-2 xl:pt-20 xl:pb-2">
         <div className="grid xl:grid-cols-[55%_45%] gap-8 items-center">
           {/* Left Column - Text */}
           <div className="relative z-10 max-w-xl">
@@ -70,7 +70,7 @@ export default function Hero() {
       </div>
 
       {/* Consultation Form — mobile: espacio respiro arriba; xl: superpuesto sobre imagen */}
-      <div className="hero-form relative z-10 container-gripz mt-8 sm:mt-10 xl:mt-8 mb-12 sm:mb-16 xl:mb-16">
+      <div className="hero-form relative z-10 container-gripz mt-2 mb-12 sm:mb-16 xl:mb-16">
         <div
           className="rounded-xl p-6 lg:p-8"
           style={{
