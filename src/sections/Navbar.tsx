@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, ChevronDown, Zap } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { services } from '@/data/services';
 
 interface NavLink {
@@ -147,7 +147,7 @@ export default function Navbar() {
             onClick={(e) => handleNavClick(e, { label: 'PRESUPUESTO', href: '#contacto', isRoute: false })}
             className="btn-primary text-[13px] py-3 px-5 flex items-center gap-2"
           >
-            PRESUPUESTO <Zap size={14} className="fill-white" />
+            PRESUPUESTO
           </a>
           <a href="tel:+34614134292" className="flex items-center gap-2 border border-gripz-primary rounded px-4 py-3">
             <Phone size={14} className="text-gripz-primary" />
@@ -250,7 +250,7 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, { label: 'PRESUPUESTO', href: '#contacto', isRoute: false })}
               className="btn-primary w-fit mt-3"
             >
-              PRESUPUESTO <Zap size={14} />
+              PRESUPUESTO
             </a>
           </div>
         </div>
