@@ -14,8 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 const works = [
   { title: 'RED CORPORATIVA COMPLETA', image: '/assets/work-redes-corporativas.webp', tag: 'REDES' },
   { title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', image: '/assets/work-electricas-cuadro.webp', tag: 'ELÉCTRICAS' },
-  { title: 'CIRCUITO CERRADO DE CÁMARAS', image: '/assets/work-industrial.jpg', tag: 'SEGURIDAD' },
-  { title: 'COBERTURA WIFI EMPRESARIAL', image: '/assets/work-outdoor.jpg', tag: 'WIFI' },
+  { title: 'CIRCUITO CERRADO DE CÁMARAS', image: '/assets/work-camaras-cctv.webp', tag: 'SEGURIDAD' },
+  { title: 'COBERTURA WIFI EMPRESARIAL', image: '/assets/work-wifi-cobertura.webp', tag: 'WIFI' },
 ];
 
 export default function WorkGallery() {
