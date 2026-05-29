@@ -24,14 +24,16 @@ completo + ajustes home + "Zona de cobertura: Barcelona y Cataluña"), subido
 
 - **URL:** https://frecoin.es
 - **Estado:** **en vivo el rediseño completo** (build del 29-may-2026:
-  nuevo diseño, fotos reales de Luis, formularios PHP, emails HTML, y los
-  ajustes de la home del 29-may — cobertura "toda Barcelona", icono WiFi
-  vectorial, imagen nueva de eléctricas). Verificado HTTP 200 + contenido
-  en el bundle servido.
-- **Pendiente en producción:** imagen de "Circuito cerrado de cámaras" (sigue
-  la antigua) y logo FRECOIN en camisa de las fotos — bloqueado por créditos.
-- **Revertir si hiciera falta:** restaurar `~/backup_public_html_20260529_141239`
-  → `domains/frecoin.es/public_html/` por SSH.
+  nuevo diseño, fotos reales de Luis, formularios PHP, emails HTML, cobertura
+  "toda Barcelona", "Zona de cobertura: Barcelona y Cataluña", e imágenes de
+  Trabajos realizados: eléctricas + **cámaras y cobertura WiFi con técnico de
+  logo frecoin** + icono WiFi router inline). Verificado HTTP 200.
+- **Pendiente (consistencia, no bloqueante):** las fotos de "Redes" y
+  "Eléctricas" son genéricas/IA sin el técnico de logo frecoin (cámaras y WiFi
+  sí lo llevan). Cambiar cuando haya más fotos reales.
+- **Revertir si hiciera falta:** restaurar el backup más reciente en el
+  servidor (`~/backup_public_html_20260529_164446`, y anteriores) →
+  `domains/frecoin.es/public_html/` por SSH.
 
 ---
 
