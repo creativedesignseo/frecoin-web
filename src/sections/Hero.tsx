@@ -73,7 +73,7 @@ export default function Hero() {
             {/* Subtitle */}
             <p className="hero-subtitle text-[16px] leading-[1.65] text-gripz-gray-600 max-w-md mb-8">
               <strong className="text-gripz-black">"Tu satisfacción es mi prioridad laboral"</strong><br />
-              Soluciones integrales en redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso en Sant Vicenç dels Horts y área metropolitana sur de Barcelona.
+              Soluciones integrales en redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso en Sant Vicenç dels Horts y toda Barcelona.
             </p>
 
             {/* CTAs — botones alineados visualmente (sólido + outline) */}

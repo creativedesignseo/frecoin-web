@@ -43,7 +43,7 @@ export default function FooterCTA() {
             INSTALACIONES TECNOLÓGICAS A TU ALCANCE
           </h2>
           <p className="text-[15px] leading-[1.65] text-gripz-gray-400 max-w-xl mx-auto mb-8">
-            Redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso. Servicio profesional en Sant Vicenç dels Horts y alrededores.
+            Redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso. Servicio profesional en Sant Vicenç dels Horts y toda Barcelona.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="tel:+34614134292" className="btn-primary shadow-[0_0_40px_rgba(34,197,94,0.3)] flex items-center gap-2">
@@ -60,7 +60,7 @@ export default function FooterCTA() {
           <div className="footer-col">
             <img src="/assets/logo-frecoin-light.png" alt="frecoin comunicaciones" className="h-[40px] w-auto object-contain mb-4" />
             <p className="text-[14px] leading-[1.7] text-gripz-gray-400">
-              Soluciones integrales en infraestructuras tecnológicas para empresas. Más de 20 años de experiencia en Sant Vicenç dels Horts y alrededores.
+              Soluciones integrales en infraestructuras tecnológicas para empresas. Más de 20 años de experiencia en Sant Vicenç dels Horts y toda Barcelona.
             </p>
           </div>
 

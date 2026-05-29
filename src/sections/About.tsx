@@ -66,7 +66,7 @@ export default function About() {
               FRECOIN está liderada por <strong>Luis Freire Camino</strong>, técnico con más de 20 años de experiencia en infraestructuras tecnológicas. Ofrecemos soluciones integrales en instalaciones de redes informáticas, sistemas eléctricos y SAI, garantizando infraestructuras seguras, eficientes y fiables.
             </p>
             <p className="text-[16px] leading-[1.7] text-gripz-gray-600 mb-6">
-              Nuestra misión: asegurar la continuidad operativa de nuestros clientes con un servicio de alta calidad, adaptado a sus necesidades reales. Trabajamos en <strong>Sant Vicenç dels Horts</strong> y toda el área metropolitana sur de Barcelona.
+              Nuestra misión: asegurar la continuidad operativa de nuestros clientes con un servicio de alta calidad, adaptado a sus necesidades reales. Trabajamos en <strong>Sant Vicenç dels Horts</strong> y toda Barcelona.
             </p>
             <div className="flex flex-col gap-3 mb-8">
               {features.map((f, i) => (

@@ -16,6 +16,7 @@ import {
   Battery, Activity, Clock, KeyRound, UserCheck,
   ClipboardCheck, Warehouse, Hospital, Hotel,
 } from 'lucide-react';
+import WifiHubIcon from '../components/icons/WifiHubIcon';
 
 export interface ServiceFeature {
   icon: LucideIcon;
@@ -305,7 +306,7 @@ const camarasVideovigilancia: ServiceData = {
 
 const antenasWifi: ServiceData = {
   slug: 'antenas-wifi',
-  icon: Wifi,
+  icon: WifiHubIcon,
   name: 'Antenas WiFi',
 
   metaTitle: 'Instalación de antenas WiFi empresarial en Barcelona | FRECOIN',
