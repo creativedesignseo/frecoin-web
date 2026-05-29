@@ -10,21 +10,28 @@
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
 **Last updated:** 2026-05-29
-**Estado git:** rama `draft/diseno`. 3 commits locales **sin pushear**
-(home 29-may + harness + esta documentación). Nada desplegado.
-**Producción (frecoin.es) servida desde:** build subido **manualmente el 21-may-2026** (estado anterior al rediseño en `draft/diseno`).
+**Estado git:** rama `draft/diseno`. Commits locales **sin pushear a GitHub**
+(home 29-may + harness + documentación).
+**Producción (frecoin.es) servida desde:** **build del 29-may-2026** (rediseño
+completo + ajustes home + "Zona de cobertura: Barcelona y Cataluña"), subido
+**manualmente por SSH** a `public_html`. Backups en el servidor:
+`~/backup_public_html_20260529_141239` (estado pre-rediseño, 21-may) y
+`~/backup_public_html_20260529_154754` (build intermedio 29-may).
 
 ---
 
 ## Qué hay en producción hoy
 
 - **URL:** https://frecoin.es
-- **Estado:** la web en vivo está **congelada en el build del 21-may-2026**
-  (mtime de `index.html` en el servidor: `2026-05-21 19:11`).
-- **El rediseño de la rama `draft/diseno` NO está publicado.** Toda la
-  tanda pre-entrega (nuevo diseño, fotos reales de Luis, formularios PHP,
-  emails HTML, ajustes de la home del 29-may) sigue **solo en git**, no en
-  el servidor.
+- **Estado:** **en vivo el rediseño completo** (build del 29-may-2026:
+  nuevo diseño, fotos reales de Luis, formularios PHP, emails HTML, y los
+  ajustes de la home del 29-may — cobertura "toda Barcelona", icono WiFi
+  vectorial, imagen nueva de eléctricas). Verificado HTTP 200 + contenido
+  en el bundle servido.
+- **Pendiente en producción:** imagen de "Circuito cerrado de cámaras" (sigue
+  la antigua) y logo FRECOIN en camisa de las fotos — bloqueado por créditos.
+- **Revertir si hiciera falta:** restaurar `~/backup_public_html_20260529_141239`
+  → `domains/frecoin.es/public_html/` por SSH.
 
 ---
 

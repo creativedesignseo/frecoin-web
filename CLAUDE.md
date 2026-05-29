@@ -59,6 +59,30 @@ matches one of the above and you have a self-contained brief for it.
 
 ---
 
+## Vocabulario de cierre y publicación (convención del dueño)
+
+El dueño usa frases sencillas como "comandos". Cuando diga estas frases,
+ejecuta lo indicado **sin pedir que detalle cada paso**:
+
+| Frase del dueño | Qué ejecutar |
+|---|---|
+| **"commit"** | `git commit` de los cambios (queda local, en el Mac) |
+| **"push" / "súbelo"** | commit (si falta) + `git push` a GitHub. NO toca la web |
+| **"publica" / "súbelo a producción" / "ponlo en vivo"** | Deploy REAL a Hostinger: `npm run build` + subir `dist/` a `domains/frecoin.es/public_html/` por SSH (`~/.ssh/frecoin_hostinger`) + comprobar frecoin.es. Ver `HANDOFF.md` |
+| **"cierra"** | Documentar el cierre: actualizar `HANDOFF.md` + `tasks/current.md` + entrada en `progress/` + commit `docs:` |
+| **"cierra y publica"** | TODO en orden: commit → push → publica → cierre |
+
+Reglas al ejecutar estas frases:
+- El paso **build/compilar es interno**: el dueño no lo menciona, lo haces tú
+  como parte de "publica".
+- **Antes del deploy real** (paso "publica"), suelta UNA línea avisando qué
+  va a salir en vivo y espera un "sí" rápido. Producción nunca a ciegas.
+- Antes de sobrescribir `public_html`, haz copia de seguridad en el servidor.
+- Esto es autorización permanente para encadenar los pasos cuando se use la
+  frase; no exime del aviso de seguridad previo al deploy.
+
+---
+
 ## Project owner working preferences
 
 - Habla con el dueño del proyecto en **español (es-ES)** y tutéale.
