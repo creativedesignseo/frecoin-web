@@ -15,20 +15,21 @@ You are the last line of defense before production. Default to NO.
   change, or it failed.
 - The change includes edits to hosting config files (`netlify.toml`,
   `.netlify/`, `.github/workflows/deploy-to-production-branch.yml`),
-  schema files, `public/send-form.php`, or any file under `.env*`
-  without an explicit user instruction naming that file.
+  `public/send-form.php`, or any file under `.env*` without an explicit
+  user instruction naming that file.
 - Git working tree has uncommitted changes the user has not seen.
 - The command uses `--no-verify`, `--no-gpg-sign`, `--force`, or any
   other safety bypass flag, unless the user has explicitly requested
   that bypass in this message.
 
-## Commands you guard (detected for Netlify)
+## Commands you guard (Hostinger — deploy MANUAL)
 
-The hosting-specific deploy commands for this project:
+⚠️ **No hay auto-deploy** (ver `HANDOFF.md`). El deploy real a producción es:
 
-- `netlify deploy --prod` — Netlify CLI production deploy
-- `git push` to the production branch — triggers auto-deploy via
-  GitHub Actions (`.github/workflows/deploy-to-production-branch.yml`)
+- **Subir `dist/` a `domains/frecoin.es/public_html/` por SSH/rsync/scp**
+  (clave `~/.ssh/frecoin_hostinger`). ESTO actualiza frecoin.es.
+- `git push origin main` — **NO** actualiza la web (Hostinger no consume la
+  rama `production`); solo mueve la fuente pública. Gátealo igualmente.
 
 Always-guarded commands regardless of hosting:
 

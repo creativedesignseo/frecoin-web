@@ -30,6 +30,10 @@ it does not execute the deploy.
      "production-shaped" files.
    - Any change here needs explicit user awareness.
 
+> ⚠️ Deploy real = MANUAL (ver `HANDOFF.md`): `npm run build` + subir
+> `dist/` a `domains/frecoin.es/public_html/` por SSH/rsync. `git push`
+> NO publica la web. Haz copia de `public_html` antes de sobrescribir.
+
 5. **HANDOFF.md will be updated post-deploy.**
    - Prepare the patch (do not commit yet): new `Last updated`,
      new `Last commit`, any new "What works" entry.

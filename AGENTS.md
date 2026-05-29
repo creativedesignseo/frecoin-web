@@ -16,7 +16,9 @@ controles de acceso, en Sant Vicenç dels Horts y toda Barcelona. Es una
 SPA de marketing (landing + páginas de servicio para SEO local / campañas
 Ads) con formularios de contacto. Lo desarrolla la agencia Adspubli.
 
-Stack: Node.js (React 19 + Vite + Tailwind + shadcn/Radix). Hosting: Netlify.
+Stack: Node.js (React 19 + Vite + Tailwind + shadcn/Radix). Hosting: Hostinger
+(deploy **manual** — ver `HANDOFF.md`; el `netlify.toml` del repo no es la
+vía de producción).
 
 ---
 
@@ -58,9 +60,12 @@ inventing tasks.
 - `.env*` files and anything under `secrets/`, `credentials/`,
   `**/*.key`, `**/token*.json` — secrets must never be read, logged,
   or transmitted.
-- Hosting config for Netlify (`netlify.toml`, `.netlify/`) and the
-  deploy workflow (`.github/workflows/deploy-to-production-branch.yml`)
-  — small comment edits are fine; config changes need a heads-up.
+- Hosting config (`netlify.toml`, `.netlify/`) and the deploy workflow
+  (`.github/workflows/deploy-to-production-branch.yml`) — small comment
+  edits are fine; config changes need a heads-up.
+- The live web root on Hostinger (`domains/frecoin.es/public_html/`) —
+  it is updated by **manual upload of `dist/`** (see `HANDOFF.md`). Never
+  overwrite it without explicit deploy approval.
 - `public/send-form.php` and `public/email-templates/` — el envío de
   formularios va por PHP nativo de Hostinger; tocar la lógica de envío
   o las plantillas de correo afecta a leads reales en producción.
@@ -79,9 +84,11 @@ Repeat the exact command back to the user and wait for a clear yes
 ("deploy", "envía", "ship", "go") in the same chat message before
 running.
 
-- `netlify deploy --prod` — Netlify CLI production deploy
-- `git push` to the production branch — triggers auto-deploy via GitHub
-  Actions (`.github/workflows/deploy-to-production-branch.yml`)
+- **Deploy real:** subir `dist/` a `domains/frecoin.es/public_html/` por
+  SSH/rsync (clave `~/.ssh/frecoin_hostinger`). Esto ES el deploy a
+  producción — ver `HANDOFF.md`.
+- `git push origin main` — NO despliega la web (Hostinger no consume la
+  rama `production`), pero actualiza la fuente pública. Confírmalo igual.
 - `git push --force` and `git push --force-with-lease`
 - Any command that prints or transmits the contents of `.env*`
 - Any database write against production

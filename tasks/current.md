@@ -11,18 +11,24 @@
 
 ## Current state
 
-Sitio en producción en Netlify. Rama de trabajo actual: `draft/diseno`.
-En curso una tanda de "ligeros cambios" pedidos por el cliente (Luis)
-sobre la home: copy de cobertura, icono WiFi y dos imágenes de
+Sitio en Hostinger. Rama de trabajo actual: `draft/diseno`.
+La web en vivo (frecoin.es) está **congelada en el build del 21-may-2026**;
+el rediseño de `draft/diseno` **NO está publicado**. El deploy es **manual**
+(subir `dist/` por SSH — ver `HANDOFF.md`). En curso una tanda de cambios de
+la home pedidos por Luis: copy de cobertura, icono WiFi y dos imágenes de
 "Trabajos realizados".
 
-Stack: Node.js · Hosting: Netlify · Live in production: true
+Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true (estado 21-may)
 
 ---
 
 ## P0 — blocking ship
 
-- [ ] *(sin P0 ahora mismo)*
+- [ ] **Publicar el rediseño de `draft/diseno`** — deploy MANUAL: `npm run
+      build` + subir `dist/` a `public_html` por SSH. Requiere autorización
+      de escritura en el servidor. Ver `HANDOFF.md`.
+- [ ] **Automatizar el deploy** (recomendado) — conectar Hostinger a la rama
+      `production` o cron `git pull`. Ver `docs/decisions/ADR-001-deploy-architecture.md`.
 
 ---
 
