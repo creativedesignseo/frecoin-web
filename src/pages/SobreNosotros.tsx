@@ -58,7 +58,7 @@ export default function SobreNosotros() {
             Tecnología cercana<br className="hidden sm:block" /> <span className="sm:hidden">para empresas del sur de Barcelona.</span><span className="hidden sm:inline">para empresas del sur<br />de Barcelona.</span>
           </h1>
           <p className="text-[16px] sm:text-[17px] leading-[1.65] text-gripz-gray-600 max-w-2xl">
-            Más de 20 años cuidando la infraestructura tecnológica de las pymes de Barcelona y Cataluña. Sin oficina física, sin call centers, sin intermediarios. Te atiende quien hace el trabajo.
+            Más de 20 años cuidando la infraestructura tecnológica de las pymes de Cataluña. Sin oficina física, sin call centers, sin intermediarios. Te atiende quien hace el trabajo.
           </p>
         </div>
       </header>
@@ -95,7 +95,7 @@ export default function SobreNosotros() {
               </blockquote>
               <div className="space-y-5 text-[16px] leading-[1.75] text-gripz-gray-600">
                 <p>
-                  Me llamo <strong className="text-gripz-black">Luis Freire Camino</strong> y creé FRECOIN con una idea muy simple: que las pequeñas y medianas empresas del sur de Barcelona pudieran acceder a servicios técnicos de calidad sin tener que recurrir a grandes consultoras anónimas con call centers infinitos.
+                  Me llamo <strong className="text-gripz-black">Luis Freire Camino</strong> y creé FRECOIN con una idea muy simple: que las pequeñas y medianas empresas de Barcelona y Cataluña pudieran acceder a servicios técnicos de calidad sin tener que recurrir a grandes consultoras anónimas con call centers infinitos.
                 </p>
                 <p>
                   Llevo más de dos décadas montando redes informáticas, instalaciones eléctricas, sistemas de videovigilancia, antenas WiFi, SAI y controles de acceso. He visto evolucionar la tecnología — del cable Ethernet a la fibra óptica, de las cámaras analógicas a la videovigilancia IP de alta resolución — pero lo que no ha cambiado es mi forma de trabajar.
