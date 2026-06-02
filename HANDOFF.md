@@ -10,16 +10,13 @@
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
 **Last updated:** 2026-06-02
-**Estado git:** rama `draft/diseno`. Commits locales **sin pushear a GitHub**
-(home 29-may + harness + documentación + lote 02-jun `4aca3ac`, `282f2b2`).
-**Producción (frecoin.es) servida desde:** **build del 29-may-2026** + cambio de
-copy del Hero del 02-jun (`4aca3ac`, "Barcelona y Cataluña"), subido
-**manualmente por SSH** a `public_html`.
-⚠️ **Pendiente de publicar:** el lote `282f2b2` del 02-jun (zona de servicio
-"Barcelona y Cataluña" en toda la web + SEO + imágenes SAI profesionales +
-"certificación" en card Redes) está **commiteado en local pero NO en vivo**.
-Backups en el servidor: `~/backup_public_html_20260529_141239` (pre-rediseño,
-21-may) y `~/backup_public_html_20260529_154754` (build intermedio 29-may).
+**Estado git:** rama `draft/diseno`, **pusheada a GitHub** hasta `92ec66e`.
+**Producción (frecoin.es) servida desde:** **build del 02-jun-2026** (`92ec66e`),
+subido **manualmente por SSH** a `public_html`. Incluye: zona de servicio
+"Barcelona y Cataluña" en toda la web + SEO/JSON-LD, "certificación" en card
+Redes, imágenes SAI profesionales (hero + benefits) y textos de "Sobre
+nosotros" a "Cataluña" / "Barcelona y Cataluña". Verificado HTTP 200.
+Backup pre-deploy: `~/backup_public_html_20260602_174437`.
 
 ---
 
@@ -30,11 +27,10 @@ Backups en el servidor: `~/backup_public_html_20260529_141239` (pre-rediseño,
   nuevo diseño, fotos reales de Luis, formularios PHP, emails HTML, cobertura
   "toda Barcelona", "Zona de cobertura: Barcelona y Cataluña", e imágenes de
   Trabajos realizados: eléctricas + **cámaras y cobertura WiFi con técnico de
-  logo frecoin** + icono WiFi router inline) + Hero "Barcelona y Cataluña"
-  (`4aca3ac`, 02-jun). Verificado HTTP 200.
-- **NO en vivo todavía:** lote `282f2b2` (02-jun) — "Barcelona y Cataluña" en
-  toda la web/SEO/JSON-LD, imágenes SAI profesionales, "certificación" en
-  card Redes. Commiteado en local; pendiente de deploy manual.
+  logo frecoin** + icono WiFi router inline) + lote 02-jun (`92ec66e`):
+  "Barcelona y Cataluña" en toda la web/SEO/JSON-LD, imágenes SAI
+  profesionales (hero + benefits), "certificación" en card Redes y textos de
+  "Sobre nosotros". Verificado HTTP 200.
 - **Pendiente (consistencia, no bloqueante):** las fotos de "Redes" y
   "Eléctricas" son genéricas/IA sin el técnico de logo frecoin (cámaras y WiFi
   sí lo llevan). Cambiar cuando haya más fotos reales.

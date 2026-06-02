@@ -12,22 +12,17 @@
 ## Current state
 
 Sitio en Hostinger. Rama de trabajo actual: `draft/diseno`.
-La web en vivo (frecoin.es) está en el **build del 29-may-2026 + Hero
-"Barcelona y Cataluña"** (`4aca3ac`, 02-jun). El deploy es **manual** (subir
-`dist/` por SSH — ver `HANDOFF.md`). Hoy (02-jun) se commiteó el lote
-`282f2b2` (zona de servicio "Barcelona y Cataluña" en toda la web + SEO +
-imágenes SAI profesionales + "certificación" en card Redes) — **commiteado en
-local pero aún SIN publicar**.
+La web en vivo (frecoin.es) está en el **build del 02-jun-2026** (`92ec66e`,
+pusheado a GitHub): "Barcelona y Cataluña" en toda la web + SEO, imágenes SAI
+profesionales, "certificación" en card Redes y textos de "Sobre nosotros".
+El deploy es **manual** (subir `dist/` por SSH — ver `HANDOFF.md`).
 
-Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true (29-may + 4aca3ac)
+Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true (02-jun, 92ec66e)
 
 ---
 
 ## P0 — blocking ship
 
-- [ ] **Publicar el lote `282f2b2`** (02-jun) — deploy MANUAL: `npm run build`
-      + subir `dist/` a `public_html` por SSH. Requiere autorización de
-      escritura en el servidor. Ver `HANDOFF.md`.
 - [ ] **Automatizar el deploy** (recomendado) — conectar Hostinger a la rama
       `production` o cron `git pull`. Ver `docs/decisions/ADR-001-deploy-architecture.md`.
 
