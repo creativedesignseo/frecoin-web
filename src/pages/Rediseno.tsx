@@ -156,7 +156,7 @@ export default function Rediseno() {
             <span className="inline-flex items-center gap-1.5">
               {IconClock()} Soporte 24h para clientes
             </span>
-            <span>Sant Vicenç dels Horts · Barcelona</span>
+            <span>Barcelona · Cataluña</span>
           </div>
           <div className="flex items-center gap-5">
             <a href="tel:+34614134292" className="hover:text-white inline-flex items-center gap-1.5">
@@ -503,7 +503,7 @@ export default function Rediseno() {
                 {[
                   { icon: IconPhone, label: 'Teléfono / WhatsApp', value: '+34 614 134 292', href: 'tel:+34614134292' },
                   { icon: IconMail, label: 'Email', value: 'info@frecoin.es', href: 'mailto:info@frecoin.es' },
-                  { icon: IconPin, label: 'Zona de servicio', value: 'Sant Vicenç dels Horts', sub: 'y área metropolitana sur de Barcelona' },
+                  { icon: IconPin, label: 'Zona de servicio', value: 'Barcelona y Cataluña', sub: 'Cobertura en toda Cataluña' },
                 ].map((item, i) => {
                   const Ico = item.icon;
                   const content = (
@@ -630,7 +630,7 @@ export default function Rediseno() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#5E9E7E] mb-1" />
               </a>
               <p className="text-[14px] leading-[1.6] text-white/55 max-w-xs">
-                Infraestructuras tecnológicas para empresas en Sant Vicenç dels Horts y el área metropolitana sur de Barcelona desde 2004.
+                Infraestructuras tecnológicas para empresas en Barcelona y Cataluña desde 2004.
               </p>
             </div>
 

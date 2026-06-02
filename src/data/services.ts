@@ -137,12 +137,12 @@ const redesInformaticas: ServiceData = {
   featured: false,
 
   metaTitle: 'Instalación de redes informáticas en Barcelona | FRECOIN',
-  metaDescription: 'Diseño, instalación y mantenimiento de redes informáticas para empresas en Sant Vicenç dels Horts y área metropolitana sur de Barcelona. Más de 20 años de experiencia.',
-  keywords: ['redes informáticas', 'instalación red empresa', 'cableado estructurado', 'red corporativa', 'wifi empresarial', 'Sant Vicenç dels Horts', 'Barcelona', 'redes Cat6', 'firewall empresa'],
+  metaDescription: 'Diseño, instalación y mantenimiento de redes informáticas para empresas en Barcelona y Cataluña. Más de 20 años de experiencia.',
+  keywords: ['redes informáticas', 'instalación red empresa', 'cableado estructurado', 'red corporativa', 'wifi empresarial', 'Cataluña', 'Barcelona', 'redes Cat6', 'firewall empresa'],
 
   tagline: 'Conectividad empresarial',
   heroH1: 'Redes informáticas para empresas que no pueden permitirse caer.',
-  heroParagraph: 'Diseñamos, instalamos y mantenemos redes corporativas estables, rápidas y seguras. Cableado estructurado, configuración de routers y switches, Wi-Fi empresarial y soporte continuo.',
+  heroParagraph: 'Diseñamos, instalamos y mantenemos redes corporativas estables, rápidas y seguras. Cableado estructurado, certificación, configuración de routers y switches, Wi-Fi empresarial y soporte continuo.',
   heroImage: '/assets/services/redes/hero-server-rack.jpg',
   heroImageAlt: 'Rack de servidores con iluminación azul en sala técnica',
 
@@ -179,7 +179,7 @@ const redesInformaticas: ServiceData = {
     { question: '¿Trabajáis en fines de semana o por la noche?', answer: 'Sí. Para empresas que no pueden parar su actividad durante el horario laboral, organizamos la instalación en horarios nocturnos o fines de semana. Avísanos en el presupuesto y lo planificamos.' },
     { question: '¿Aprovecháis la red que ya tengo o hay que cambiar todo?', answer: 'Siempre que sea técnicamente viable y seguro, reutilizamos el cableado y equipos existentes. Si algo ya no cumple normativa o limita el rendimiento, te lo decimos claramente y proponemos alternativas, pero no cambiamos por cambiar.' },
     { question: '¿Qué pasa si hay una incidencia después de la instalación?', answer: 'Te atendemos. Todas nuestras instalaciones incluyen un período de garantía y servicio post-venta. Para empresas con necesidades críticas ofrecemos contratos de mantenimiento con tiempos de respuesta garantizados.' },
-    { question: '¿Trabajáis fuera de Sant Vicenç dels Horts?', answer: 'Sí, atendemos toda el área metropolitana sur de Barcelona y alrededores. Si tu empresa está en otra zona, cuéntanoslo y valoramos el desplazamiento sin compromiso.' },
+    { question: '¿En qué zonas trabajáis?', answer: 'Damos servicio en Barcelona y toda Cataluña. Si tu empresa está en otra zona, cuéntanoslo y valoramos el desplazamiento sin compromiso.' },
   ],
 
   ctaTitle: '¿Listo para una red profesional que no te deje colgado?',
@@ -196,8 +196,8 @@ const instalacionesElectricas: ServiceData = {
   name: 'Instalaciones Eléctricas',
 
   metaTitle: 'Instalaciones eléctricas para empresas en Barcelona | FRECOIN',
-  metaDescription: 'Ejecución de instalaciones eléctricas seguras y certificadas en Sant Vicenç dels Horts y Barcelona. Cableado, cuadros eléctricos, protecciones y mantenimiento. +20 años.',
-  keywords: ['instalaciones eléctricas', 'electricista empresa', 'cuadro eléctrico', 'cableado industrial', 'reforma eléctrica', 'Sant Vicenç dels Horts', 'Barcelona', 'boletín eléctrico'],
+  metaDescription: 'Ejecución de instalaciones eléctricas seguras y certificadas en Barcelona y Cataluña. Cableado, cuadros eléctricos, protecciones y mantenimiento. +20 años.',
+  keywords: ['instalaciones eléctricas', 'electricista empresa', 'cuadro eléctrico', 'cableado industrial', 'reforma eléctrica', 'Cataluña', 'Barcelona', 'boletín eléctrico'],
 
   tagline: 'Normativa y seguridad',
   heroH1: 'Instalaciones eléctricas seguras, certificadas y bien hechas.',
@@ -253,8 +253,8 @@ const camarasVideovigilancia: ServiceData = {
   name: 'Cámaras de Videovigilancia',
 
   metaTitle: 'Instalación de cámaras de seguridad en Barcelona | FRECOIN',
-  metaDescription: 'Sistemas de videovigilancia CCTV e IP para empresas, naves industriales y comunidades en Sant Vicenç dels Horts y Barcelona. Visión nocturna, acceso remoto, normativa RGPD.',
-  keywords: ['cámaras de seguridad', 'videovigilancia', 'CCTV', 'cámaras IP empresa', 'sistemas videovigilancia Barcelona', 'cámaras nave industrial', 'Sant Vicenç dels Horts', 'normativa cámaras'],
+  metaDescription: 'Sistemas de videovigilancia CCTV e IP para empresas, naves industriales y comunidades en Barcelona y Cataluña. Visión nocturna, acceso remoto, normativa RGPD.',
+  keywords: ['cámaras de seguridad', 'videovigilancia', 'CCTV', 'cámaras IP empresa', 'sistemas videovigilancia Barcelona', 'cámaras nave industrial', 'Cataluña', 'normativa cámaras'],
 
   tagline: 'Vigilancia activa',
   heroH1: 'Sistemas de videovigilancia profesionales y siempre operativos.',
@@ -310,8 +310,8 @@ const antenasWifi: ServiceData = {
   name: 'Antenas WiFi',
 
   metaTitle: 'Instalación de antenas WiFi empresarial en Barcelona | FRECOIN',
-  metaDescription: 'Cobertura WiFi profesional para empresas, naves y locales en Sant Vicenç dels Horts y Barcelona. Antenas exteriores, puntos de acceso, redes mesh y soporte continuo.',
-  keywords: ['antenas WiFi', 'WiFi empresarial', 'cobertura WiFi nave', 'WiFi profesional Barcelona', 'puntos de acceso', 'mesh WiFi', 'WiFi 6', 'Sant Vicenç dels Horts'],
+  metaDescription: 'Cobertura WiFi profesional para empresas, naves y locales en Barcelona y Cataluña. Antenas exteriores, puntos de acceso, redes mesh y soporte continuo.',
+  keywords: ['antenas WiFi', 'WiFi empresarial', 'cobertura WiFi nave', 'WiFi profesional Barcelona', 'puntos de acceso', 'mesh WiFi', 'WiFi 6', 'Cataluña'],
 
   tagline: 'Cobertura empresarial',
   heroH1: 'WiFi sin cortes en cada rincón de tu empresa.',
@@ -367,14 +367,14 @@ const sai: ServiceData = {
   name: 'Sistemas SAI',
 
   metaTitle: 'Sistemas SAI para empresas en Barcelona | FRECOIN',
-  metaDescription: 'Instalación de Sistemas de Alimentación Ininterrumpida (SAI/UPS) para servidores, equipos críticos y comercios. Evita pérdidas por cortes eléctricos. Sant Vicenç dels Horts y Barcelona.',
+  metaDescription: 'Instalación de Sistemas de Alimentación Ininterrumpida (SAI/UPS) para servidores, equipos críticos y comercios. Evita pérdidas por cortes eléctricos. Barcelona y Cataluña.',
   keywords: ['SAI', 'UPS', 'sistema alimentación ininterrumpida', 'protección eléctrica', 'SAI servidor', 'UPS empresa Barcelona', 'cortes de luz', 'protección equipos'],
 
   tagline: 'Continuidad operativa',
   heroH1: 'No pierdas dinero por un corte de luz.',
   heroParagraph: 'Instalamos Sistemas de Alimentación Ininterrumpida (SAI/UPS) que mantienen tus servidores, ordenadores y equipos críticos funcionando durante cortes y picos eléctricos. Cero pérdidas de datos, cero interrupciones.',
-  heroImage: '/assets/services/sai/hero.jpg',
-  heroImageAlt: 'Técnico inspeccionando sistema de baterías de respaldo en sala industrial',
+  heroImage: '/assets/services/sai/hero.webp',
+  heroImageAlt: 'Gama de sistemas SAI/UPS profesionales para empresas: torres y equipos rack',
 
   includesTitle: '¿Qué incluye nuestro servicio SAI?',
   includes: [
@@ -394,8 +394,8 @@ const sai: ServiceData = {
 
   benefitsTitle: '¿Por qué elegirnos para tu SAI?',
   benefits: beneficiosFRECOIN('sistemas de alimentación ininterrumpida'),
-  benefitsImage: '/assets/services/sai/benefits.jpg',
-  benefitsImageAlt: 'Baterías y sistemas de respaldo eléctrico',
+  benefitsImage: '/assets/services/sai/benefits.webp',
+  benefitsImageAlt: 'Equipos SAI/UPS profesionales en una sala de servidores empresarial',
 
   processTitle: 'Cómo trabajamos',
   process: procesoFRECOIN,
@@ -424,8 +424,8 @@ const controlesAcceso: ServiceData = {
   name: 'Controles de Acceso',
 
   metaTitle: 'Sistemas de control de acceso en Barcelona | FRECOIN',
-  metaDescription: 'Instalación de sistemas de control de acceso para empresas: tarjetas RFID, huella, código y app. Sant Vicenç dels Horts y Barcelona. Sin llaves físicas, todo trazado.',
-  keywords: ['control de acceso', 'control accesos empresa', 'tarjeta RFID', 'lector huella', 'cerradura electrónica', 'control horario', 'Sant Vicenç dels Horts', 'Barcelona'],
+  metaDescription: 'Instalación de sistemas de control de acceso para empresas: tarjetas RFID, huella, código y app. Barcelona y Cataluña. Sin llaves físicas, todo trazado.',
+  keywords: ['control de acceso', 'control accesos empresa', 'tarjeta RFID', 'lector huella', 'cerradura electrónica', 'control horario', 'Cataluña', 'Barcelona'],
 
   tagline: 'Trazabilidad y seguridad',
   heroH1: 'Adiós a las llaves perdidas. Hola a un control real.',

@@ -35,8 +35,8 @@ export default function Servicio() {
 
     return () => {
       // Al desmontar volvemos a los meta por defecto de la home
-      document.title = 'FRECOIN — Infraestructuras tecnológicas para empresas | Sant Vicenç dels Horts';
-      setMeta('meta[name="description"]', 'FRECOIN: instalaciones de redes informáticas, eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso. Más de 20 años de experiencia en Sant Vicenç dels Horts y área metropolitana sur de Barcelona.');
+      document.title = 'FRECOIN — Infraestructuras tecnológicas para empresas | Barcelona y Cataluña';
+      setMeta('meta[name="description"]', 'FRECOIN: instalaciones de redes informáticas, eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso. Más de 20 años de experiencia en Barcelona y Cataluña.');
       setMeta('meta[property="og:url"]', 'https://frecoin.es/');
       if (canonical) canonical.setAttribute('href', 'https://frecoin.es/');
     };

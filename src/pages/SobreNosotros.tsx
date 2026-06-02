@@ -58,7 +58,7 @@ export default function SobreNosotros() {
             Tecnología cercana<br className="hidden sm:block" /> <span className="sm:hidden">para empresas del sur de Barcelona.</span><span className="hidden sm:inline">para empresas del sur<br />de Barcelona.</span>
           </h1>
           <p className="text-[16px] sm:text-[17px] leading-[1.65] text-gripz-gray-600 max-w-2xl">
-            Más de 20 años cuidando la infraestructura tecnológica de las pymes de Sant Vicenç dels Horts y el área metropolitana. Sin oficina física, sin call centers, sin intermediarios. Te atiende quien hace el trabajo.
+            Más de 20 años cuidando la infraestructura tecnológica de las pymes de Barcelona y Cataluña. Sin oficina física, sin call centers, sin intermediarios. Te atiende quien hace el trabajo.
           </p>
         </div>
       </header>

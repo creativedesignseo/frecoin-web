@@ -347,8 +347,8 @@ export default function ServiceLayout({ service }: Props) {
               'name': 'FRECOIN',
             },
             'areaServed': [
-              { '@type': 'City', 'name': 'Sant Vicenç dels Horts' },
               { '@type': 'City', 'name': 'Barcelona' },
+              { '@type': 'AdministrativeArea', 'name': 'Cataluña' },
             ],
             'url': `https://frecoin.es/servicios/${service.slug}`,
           }),
