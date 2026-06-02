@@ -10,13 +10,14 @@
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
 **Last updated:** 2026-06-02
-**Estado git:** rama `draft/diseno`, **pusheada a GitHub** hasta `92ec66e`.
-**Producción (frecoin.es) servida desde:** **build del 02-jun-2026** (`92ec66e`),
+**Estado git:** rama `draft/diseno`, **pusheada a GitHub** hasta `906e71b`.
+**Producción (frecoin.es) servida desde:** **build del 02-jun-2026** (`906e71b`),
 subido **manualmente por SSH** a `public_html`. Incluye: zona de servicio
 "Barcelona y Cataluña" en toda la web + SEO/JSON-LD, "certificación" en card
 Redes, imágenes SAI profesionales (hero + benefits) y textos de "Sobre
-nosotros" a "Cataluña" / "Barcelona y Cataluña". Verificado HTTP 200.
-Backup pre-deploy: `~/backup_public_html_20260602_174437`.
+nosotros" (hero "para empresas de Barcelona" + titular "trabajando con el
+corazón..."). Verificado HTTP 200.
+Backup pre-deploy: `~/backup_public_html_20260602_195112`.
 
 ---
 
