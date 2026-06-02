@@ -5,28 +5,29 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-05-29
+**Last updated:** 2026-06-02
 
 ---
 
 ## Current state
 
 Sitio en Hostinger. Rama de trabajo actual: `draft/diseno`.
-La web en vivo (frecoin.es) está **congelada en el build del 21-may-2026**;
-el rediseño de `draft/diseno` **NO está publicado**. El deploy es **manual**
-(subir `dist/` por SSH — ver `HANDOFF.md`). En curso una tanda de cambios de
-la home pedidos por Luis: copy de cobertura, icono WiFi y dos imágenes de
-"Trabajos realizados".
+La web en vivo (frecoin.es) está en el **build del 29-may-2026 + Hero
+"Barcelona y Cataluña"** (`4aca3ac`, 02-jun). El deploy es **manual** (subir
+`dist/` por SSH — ver `HANDOFF.md`). Hoy (02-jun) se commiteó el lote
+`282f2b2` (zona de servicio "Barcelona y Cataluña" en toda la web + SEO +
+imágenes SAI profesionales + "certificación" en card Redes) — **commiteado en
+local pero aún SIN publicar**.
 
-Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true (estado 21-may)
+Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true (29-may + 4aca3ac)
 
 ---
 
 ## P0 — blocking ship
 
-- [ ] **Publicar el rediseño de `draft/diseno`** — deploy MANUAL: `npm run
-      build` + subir `dist/` a `public_html` por SSH. Requiere autorización
-      de escritura en el servidor. Ver `HANDOFF.md`.
+- [ ] **Publicar el lote `282f2b2`** (02-jun) — deploy MANUAL: `npm run build`
+      + subir `dist/` a `public_html` por SSH. Requiere autorización de
+      escritura en el servidor. Ver `HANDOFF.md`.
 - [ ] **Automatizar el deploy** (recomendado) — conectar Hostinger a la rama
       `production` o cron `git pull`. Ver `docs/decisions/ADR-001-deploy-architecture.md`.
 
@@ -71,7 +72,6 @@ de FRECOIN con el logo.
 
 ## Out of scope right now
 
-- Tocar SEO meta / keywords en `src/data/services.ts` (ya mencionan
-  "Barcelona"; fuera del alcance de la tanda de la home).
-- Páginas standalone (`SobreNosotros`, `Contact`, `Rediseno`) — la
-  revisión actual del cliente es solo sobre la home.
+- (02-jun) El SEO de `src/data/services.ts` y las páginas standalone
+  (`SobreNosotros`, `Rediseno`) **sí se actualizaron** en el lote `282f2b2`
+  ("Barcelona y Cataluña"). Ya no aplica la exclusión previa.
