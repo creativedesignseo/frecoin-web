@@ -55,7 +55,7 @@ export default function SobreNosotros() {
             Conócenos
           </p>
           <h1 className="font-montserrat font-extrabold text-[32px] sm:text-[44px] lg:text-[64px] leading-[1.05] sm:leading-[1] tracking-[-0.03em] text-gripz-black mb-5 sm:mb-6 max-w-3xl">
-            Tecnología cercana<br className="hidden sm:block" /> <span className="sm:hidden">para empresas del sur de Barcelona.</span><span className="hidden sm:inline">para empresas del sur<br />de Barcelona.</span>
+            Tecnología cercana<br className="hidden sm:block" /> <span className="sm:hidden">para empresas de Barcelona.</span><span className="hidden sm:inline">para empresas<br />de Barcelona.</span>
           </h1>
           <p className="text-[16px] sm:text-[17px] leading-[1.65] text-gripz-gray-600 max-w-2xl">
             Más de 20 años cuidando la infraestructura tecnológica de las pymes de Cataluña. Sin oficina física, sin call centers, sin intermediarios. Te atiende quien hace el trabajo.
@@ -86,7 +86,7 @@ export default function SobreNosotros() {
                 Quién está detrás
               </p>
               <h2 className="font-montserrat font-extrabold text-[32px] sm:text-[40px] lg:text-[48px] leading-[1.05] tracking-[-0.02em] text-gripz-black mb-6">
-                Más de 20 años haciendo lo mismo que el primer día.
+                Más de 20 años trabajando con el corazón, la misma ilusión y el compromiso del primer día.
               </h2>
               <blockquote className="border-l-4 border-gripz-primary pl-5 mb-6">
                 <p className="text-[18px] leading-[1.6] text-gripz-black font-medium italic">
