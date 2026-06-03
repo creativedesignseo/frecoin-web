@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-06-02
+**Last updated:** 2026-06-03
 
 ---
 
@@ -37,6 +37,19 @@ Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true
       Trabajos realizados (eléctricas + cámaras). Requiere regenerar
       con el logo como referencia → también bloqueado por créditos.
       Logo real: `/Users/aimac/Downloads/Logo frecoin.svg`.
+
+---
+
+## Diferido (medio plazo, sin compromiso)
+
+- [ ] **Panel de auto-edición de contenido (CMS)** para que el cliente edite
+      textos/imágenes solo. Evaluado el 03-jun: NO es un quita-y-pon (el
+      contenido está horneado en el build; habría que pasar la web a leer
+      contenido en runtime + construir panel). Aparcado: la web funciona bien
+      hoy y los cambios son ocasionales. Plan detallado guardado fuera del repo
+      en `~/.claude/plans/el-cliente-solicit-que-tingly-trinket.md`. Ver
+      `progress/2026-06-03-cms-autoedicion-diferido.md`. Retomar solo si el
+      cliente quiere edición frecuente y autónoma.
 
 ---
 
