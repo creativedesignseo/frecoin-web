@@ -9,15 +9,21 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-02
-**Estado git:** rama `draft/diseno`, **pusheada a GitHub** hasta `906e71b`.
-**Producción (frecoin.es) servida desde:** **build del 02-jun-2026** (`906e71b`),
-subido **manualmente por SSH** a `public_html`. Incluye: zona de servicio
-"Barcelona y Cataluña" en toda la web + SEO/JSON-LD, "certificación" en card
-Redes, imágenes SAI profesionales (hero + benefits) y textos de "Sobre
-nosotros" (hero "para empresas de Barcelona" + titular "trabajando con el
-corazón..."). Verificado HTTP 200.
-Backup pre-deploy: `~/backup_public_html_20260602_195112`.
+**Last updated:** 2026-06-08
+**Estado git:** rama `draft/diseno`, **pusheada a GitHub** hasta `b4e4340`.
+**Producción (frecoin.es) servida desde:** **build del 08-jun-2026** (`b4e4340`,
+bundle `index-MaD9V3xZ.js`), subido **manualmente por SSH** a `public_html`.
+Cambio del 08-jun: **cláusulas informativas RGPD oficiales** (validadas por la
+asesoría jurídica del cliente, correo Luis 05-jun) en texto completo visible bajo
+los formularios de Presupuesto (Hero) y Contacto, con casilla de aceptación
+obligatoria. Verificado en vivo: ambas cláusulas presentes + `send-form.php`
+responde HTTP 400 a POST vacío (envío de leads intacto).
+Backup pre-deploy: `~/backup_public_html_20260608_175211`.
+
+**Histórico (02-jun-2026, `906e71b`):** zona de servicio "Barcelona y Cataluña"
+en toda la web + SEO/JSON-LD, "certificación" en card Redes, imágenes SAI
+profesionales (hero + benefits) y textos de "Sobre nosotros". Verificado HTTP 200.
+Backup: `~/backup_public_html_20260602_195112`.
 
 ---
 
