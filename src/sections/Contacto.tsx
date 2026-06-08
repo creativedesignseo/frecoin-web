@@ -131,17 +131,11 @@ export default function Contacto() {
                 <textarea required rows={4} placeholder="¿Qué necesitas?*" value={formData.mensaje} onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })} className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[14px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors resize-none" />
 
                 {/* Cláusula informativa RGPD — formulario de Contacto (texto oficial validado por la asesoría jurídica del cliente, 05-jun-2026) */}
-                <div className="text-[11px] text-gripz-gray-600 leading-[1.5] space-y-2">
-                  <details className="group">
-                    <summary className="flex items-center gap-1.5 cursor-pointer select-none text-gripz-gray-500 hover:text-gripz-black transition-colors [&::-webkit-details-marker]:hidden marker:hidden">
-                      <span className="transition-transform group-open:rotate-90 text-[8px]">▶</span>
-                      Información básica sobre protección de datos
-                    </summary>
-                    <p className="mt-2 pl-3">
-                      De conformidad con lo dispuesto en la normativa vigente de Protección de datos, le informamos que los datos que nos facilite serán tratados por el responsable del tratamiento, con la finalidad de atender su solicitud, consulta o petición de información. La base jurídica del tratamiento es su consentimiento y/o la aplicación de medidas precontractuales a petición del interesado. Sus datos no se comunicarán a terceros salvo obligación legal. Puede ejercitar los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante petición escrita dirigida al email info@frecoin.es. Más información sobre protección de datos en nuestra{' '}
-                      <Link to="/politica-privacidad" className="text-gripz-primary hover:underline font-semibold">Política de Privacidad</Link>.
-                    </p>
-                  </details>
+                <div className="text-[11px] text-gripz-gray-600 leading-[1.55] space-y-2.5">
+                  <p>
+                    De conformidad con lo dispuesto en la normativa vigente de Protección de datos, le informamos que los datos que nos facilite serán tratados por el responsable del tratamiento, con la finalidad de atender su solicitud, consulta o petición de información. La base jurídica del tratamiento es su consentimiento y/o la aplicación de medidas precontractuales a petición del interesado. Sus datos no se comunicarán a terceros salvo obligación legal. Puede ejercitar los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante petición escrita dirigida al email info@frecoin.es. Más información sobre protección de datos en nuestra{' '}
+                    <Link to="/politica-privacidad" className="text-gripz-primary hover:underline font-semibold">Política de Privacidad</Link>.
+                  </p>
                   <label className="flex items-start gap-2 cursor-pointer">
                     <input type="checkbox" required className="mt-0.5 accent-gripz-primary flex-shrink-0" />
                     <span>
