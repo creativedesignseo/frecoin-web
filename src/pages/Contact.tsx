@@ -173,18 +173,6 @@ export default function Contact() {
                     </div>
                   </div>
                   <textarea placeholder="¿Que necesitas?*" rows={3} required className="w-full bg-white border border-gripz-gray-200 rounded-lg px-4 py-3 text-[13px] text-gripz-black placeholder:text-gripz-gray-400 focus:border-gripz-primary focus:outline-none transition-colors resize-none" />
-                  {/* Cláusula informativa RGPD — formulario de Presupuesto (texto oficial validado por asesoría jurídica del cliente) */}
-                  <div className="text-[11px] text-gripz-gray-600 leading-[1.5] space-y-2">
-                    <p>
-                      De conformidad con lo dispuesto en la normativa vigente de Protección de datos, le informamos que los datos que nos facilite serán tratados por el responsable del tratamiento, con la finalidad de atender su petición y enviar el presupuesto solicitado. La base jurídica del tratamiento es su consentimiento y/o la aplicación de medidas precontractuales a petición del interesado. Sus datos no se comunicarán a terceros salvo obligación legal. Puede ejercitar los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante petición escrita dirigida al email info@frecoin.es. Más información sobre protección de datos en nuestra <Link to="/politica-privacidad" className="text-gripz-primary hover:underline font-semibold">Política de Privacidad</Link>.
-                    </p>
-                    <label className="flex items-start gap-2 cursor-pointer">
-                      <input type="checkbox" required className="mt-0.5 accent-gripz-primary flex-shrink-0" />
-                      <span>
-                        He leído y acepto la <Link to="/politica-privacidad" className="text-gripz-primary hover:underline font-semibold">Política de Privacidad</Link>
-                      </span>
-                    </label>
-                  </div>
                   <button type="submit" className="btn-primary text-[13px] py-3 px-7">
                     ENVIAR <Send size={14} />
                   </button>
