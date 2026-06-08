@@ -145,10 +145,16 @@ export default function Hero() {
             )}
             {/* Cláusula informativa RGPD — formulario de Presupuesto (texto oficial validado por la asesoría jurídica del cliente, 05-jun-2026) */}
             <div className="text-[10px] text-white/55 leading-[1.5] space-y-2">
-              <p>
-                De conformidad con lo dispuesto en la normativa vigente de Protección de datos, le informamos que los datos que nos facilite serán tratados por el responsable del tratamiento, con la finalidad de atender su petición y enviar el presupuesto solicitado. La base jurídica del tratamiento es su consentimiento y/o la aplicación de medidas precontractuales a petición del interesado. Sus datos no se comunicarán a terceros salvo obligación legal. Puede ejercitar los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante petición escrita dirigida al email info@frecoin.es. Más información sobre protección de datos en nuestra{' '}
-                <Link to="/politica-privacidad" className="text-gripz-primary hover:underline">Política de Privacidad</Link>.
-              </p>
+              <details className="group">
+                <summary className="flex items-center gap-1.5 cursor-pointer select-none text-white/70 hover:text-white/90 transition-colors [&::-webkit-details-marker]:hidden marker:hidden">
+                  <span className="transition-transform group-open:rotate-90 text-[8px]">▶</span>
+                  Información básica sobre protección de datos
+                </summary>
+                <p className="mt-2 pl-3">
+                  De conformidad con lo dispuesto en la normativa vigente de Protección de datos, le informamos que los datos que nos facilite serán tratados por el responsable del tratamiento, con la finalidad de atender su petición y enviar el presupuesto solicitado. La base jurídica del tratamiento es su consentimiento y/o la aplicación de medidas precontractuales a petición del interesado. Sus datos no se comunicarán a terceros salvo obligación legal. Puede ejercitar los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante petición escrita dirigida al email info@frecoin.es. Más información sobre protección de datos en nuestra{' '}
+                  <Link to="/politica-privacidad" className="text-gripz-primary hover:underline">Política de Privacidad</Link>.
+                </p>
+              </details>
               <label className="flex items-start gap-2 cursor-pointer">
                 <input type="checkbox" required className="mt-0.5 accent-gripz-primary flex-shrink-0" />
                 <span>
