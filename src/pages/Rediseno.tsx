@@ -600,12 +600,17 @@ export default function Rediseno() {
                     />
                   </div>
 
-                  <label className="flex items-start gap-2.5 text-[12px] text-[#58617A] leading-[1.5] cursor-pointer">
-                    <input type="checkbox" required className="mt-0.5 flex-shrink-0 accent-[#1A6B40]" />
-                    <span>
-                      Acepto la <a href="#" className="text-[#1A6B40] underline underline-offset-2 font-medium">Política de Privacidad</a>. Mis datos serán tratados por Luis Freire Camino (FRECOIN) con la única finalidad de responder a esta consulta.
-                    </span>
-                  </label>
+                  <div className="text-[11px] text-[#58617A] leading-[1.5] space-y-2">
+                    <p>
+                      De conformidad con lo dispuesto en la normativa vigente de Protección de datos, le informamos que los datos que nos facilite serán tratados por el responsable del tratamiento, con la finalidad de atender su petición y enviar el presupuesto solicitado. La base jurídica del tratamiento es su consentimiento y/o la aplicación de medidas precontractuales a petición del interesado. Sus datos no se comunicarán a terceros salvo obligación legal. Puede ejercitar los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante petición escrita dirigida al email info@frecoin.es. Más información sobre protección de datos en nuestra <a href="/politica-privacidad" className="text-[#1A6B40] underline underline-offset-2 font-medium">Política de Privacidad</a>.
+                    </p>
+                    <label className="flex items-start gap-2.5 cursor-pointer">
+                      <input type="checkbox" required className="mt-0.5 flex-shrink-0 accent-[#1A6B40]" />
+                      <span>
+                        He leído y acepto la <a href="/politica-privacidad" className="text-[#1A6B40] underline underline-offset-2 font-medium">Política de Privacidad</a>
+                      </span>
+                    </label>
+                  </div>
 
                   <Button href="#" variant="primary" className="!w-full" onClick={(e) => { e.preventDefault(); handleSubmit(e as unknown as React.FormEvent); }}>
                     Enviar mensaje

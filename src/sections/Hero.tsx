@@ -109,16 +109,20 @@ export default function Hero() {
                 <Send size={20} className="text-white" />
               </button>
             </div>
-            {/* Cláusula informativa RGPD/LSSI — obligatoria en cualquier formulario que recoja datos */}
-            <label className="flex items-start gap-2 text-[11px] text-white/60 leading-[1.5] cursor-pointer">
-              <input type="checkbox" required className="mt-0.5 accent-gripz-primary flex-shrink-0" />
-              <span>
-                He leído y acepto la{' '}
-                <Link to="/politica-privacidad" className="text-gripz-primary hover:underline">
-                  Política de Privacidad
-                </Link>. Tus datos serán tratados por Luis Freire Camino (FRECOIN) con la única finalidad de responder a tu consulta.
-              </span>
-            </label>
+            {/* Cláusula informativa RGPD — formulario de Presupuesto (texto oficial validado por asesoría jurídica del cliente) */}
+            <div className="text-[10px] text-white/55 leading-[1.5] space-y-2">
+              <p>
+                De conformidad con lo dispuesto en la normativa vigente de Protección de datos, le informamos que los datos que nos facilite serán tratados por el responsable del tratamiento, con la finalidad de atender su petición y enviar el presupuesto solicitado. La base jurídica del tratamiento es su consentimiento y/o la aplicación de medidas precontractuales a petición del interesado. Sus datos no se comunicarán a terceros salvo obligación legal. Puede ejercitar los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante petición escrita dirigida al email info@frecoin.es. Más información sobre protección de datos en nuestra{' '}
+                <Link to="/politica-privacidad" className="text-gripz-primary hover:underline">Política de Privacidad</Link>.
+              </p>
+              <label className="flex items-start gap-2 cursor-pointer">
+                <input type="checkbox" required className="mt-0.5 accent-gripz-primary flex-shrink-0" />
+                <span>
+                  He leído y acepto la{' '}
+                  <Link to="/politica-privacidad" className="text-gripz-primary hover:underline">Política de Privacidad</Link>
+                </span>
+              </label>
+            </div>
           </form>
         </div>
       </div>
