@@ -5,19 +5,25 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-06-03
+**Last updated:** 2026-06-08
 
 ---
 
 ## Current state
 
 Sitio en Hostinger. Rama de trabajo actual: `draft/diseno`.
-La web en vivo (frecoin.es) está en el **build del 02-jun-2026** (`92ec66e`,
-pusheado a GitHub): "Barcelona y Cataluña" en toda la web + SEO, imágenes SAI
-profesionales, "certificación" en card Redes y textos de "Sobre nosotros".
+La web en vivo (frecoin.es) está en el **build del 08-jun-2026** (`b4e4340`,
+bundle `index-MaD9V3xZ.js`): incluye lo del 02-jun ("Barcelona y Cataluña",
+SEO, imágenes SAI, "certificación", "Sobre nosotros") **+ las cláusulas
+informativas RGPD oficiales** de los abogados de Luis bajo los formularios de
+Presupuesto (Hero) y Contacto, con casilla de aceptación obligatoria.
+Verificado en vivo (cláusulas presentes + send-form.php responde HTTP 400).
 El deploy es **manual** (subir `dist/` por SSH — ver `HANDOFF.md`).
 
-Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true (02-jun, 92ec66e)
+Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true (08-jun, b4e4340)
+
+**Hecho recientemente:** 08-jun cláusulas RGPD (ver
+`progress/2026-06-08-clausulas-rgpd-formularios.md`). Proyecto 100% cobrado.
 
 ---
 
