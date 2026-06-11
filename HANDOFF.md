@@ -104,7 +104,7 @@ ese pipeline está **huérfano**. Un push a `main` actualiza GitHub, **no la web
 |---|---|---|---|
 | Ajustes "Sobre nosotros" | Ajustes en tu web · FRECOIN | `19e97a91ffbcdde5` | Listo. Incluye capturas inline (sobre-hero + sobre-bio). |
 | Respuesta RGPD + fotos | Re: Protección de Datos | `19eb6ecac95e9a42` | Listo. Responde correo 05-jun de Luis (RGPD implementado + fotos pendientes). |
-| Propuesta SEO | Propuesta: Que te encuentren en Google · FRECOIN | `19eb72b01238cc66` | **Definitivo.** PDF adjunto. |
+| Propuesta SEO | Propuesta: Que te encuentren en Google · FRECOIN | `19eb72b01238cc66` | **ENVIADO** 2026-06-11. PDF adjunto. Esperando respuesta de Luis. |
 
 > Obsoletos — **borrar manualmente desde Gmail:**
 > `19eadef1dc95f012` (700€), `19eb6f49e3298838` (300+200/mes), `19eb71ff916fa246` (subtítulo incorrecto).
@@ -177,7 +177,7 @@ y toda el área metropolitana de Barcelona.
 
 ## Pendiente / riesgos abiertos
 
-- [ ] **Enviar propuesta SEO a Luis** — borrador `19eb72b01238cc66`.
+- [x] **Propuesta SEO enviada a Luis** — 2026-06-11. Esperando confirmación.
 - [ ] **Enviar respuesta RGPD + fotos** — borrador `19eb6ecac95e9a42`.
 - [ ] **Enviar aviso "Sobre nosotros" publicado** — borrador `19e97a91ffbcdde5`.
 - [ ] **Fotos de trabajos** — Luis envía fotos reales de instalaciones para la web.

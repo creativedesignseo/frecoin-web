@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-06-11
+**Last updated:** 2026-06-11 (cierre de sesión — propuesta SEO enviada)
 
 ---
 
@@ -34,9 +34,8 @@ Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true
 
 ## P1 — important, not blocking
 
-- [ ] **Enviar propuesta SEO a Luis** — borrador `19eb72b01238cc66` listo en Gmail.
-      499€ / 2 pagos (250€ + 249€). PDF `Propuesta-Adspubli-SEO-FRECOIN.pdf` adjunto.
-      Detalles completos en `HANDOFF.md` § Propuesta SEO FRECOIN.
+- [x] **Propuesta SEO enviada a Luis** — 2026-06-11. 499€/2 bloques. PDF adjunto.
+      **Esperando respuesta.** Al confirmar: solicitar NAP exacto + accesos Google.
 
 - [ ] **Enviar respuesta RGPD + fotos** — borrador `19eb6ecac95e9a42`.
       Responde correo 05-jun de Luis. Enviar antes o junto con la propuesta.
