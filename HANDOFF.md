@@ -9,17 +9,20 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-11
-**Estado git:** rama `draft/diseno`, **pusheada a GitHub** hasta `e078b21`.
-**Producción (frecoin.es) servida desde:** **build del 08-jun-2026** (`b4e4340`,
-bundle `index-MaD9V3xZ.js`), subido **manualmente por SSH** a `public_html`.
-Verificado HTTP 200 en 2026-06-11.
+**Last updated:** 2026-06-12 (verificación completa en vivo — Playwright)
+**Estado git:** rama `draft/diseno`, **pusheada a GitHub** hasta `2498c2d`.
+**Producción (frecoin.es) servida desde:** **build del 08-jun-2026** (`b4e4340`),
+subido **manualmente por SSH** a `public_html`.
+**Verificado en vivo el 2026-06-12:** HTTP 200, todas las secciones y rutas cargando.
+
+**WEB ENTREGADA AL CLIENTE — PROYECTO CERRADO.**
+Luis Freire respondió el 09-jun-2026: *"Muy amable gracias por todo, muy conforme
+con tu trabajo."* (thread `19eac6a8af11da7d`, remitente `lfreire@frecoin.es`).
 
 Contenido del 08-jun: **cláusulas informativas RGPD oficiales** (validadas por la
 asesoría jurídica del cliente, correo Luis 05-jun) en texto completo visible bajo
 los formularios de Presupuesto (Hero) y Contacto, con casilla de aceptación
-obligatoria. Verificado en vivo: ambas cláusulas presentes + `send-form.php`
-responde HTTP 400 a POST vacío (envío de leads intacto).
+obligatoria. Verificado en vivo 2026-06-12: cláusula completa + checkbox visible.
 Backup pre-deploy: `~/backup_public_html_20260608_175211`.
 
 **Histórico (02-jun-2026, `906e71b`):** zona de servicio "Barcelona y Cataluña"
@@ -29,21 +32,24 @@ Backup: `~/backup_public_html_20260602_195112`.
 
 ---
 
-## Qué hay en producción hoy
+## Qué hay en producción hoy (verificado en vivo 2026-06-12)
 
 - **URL:** https://frecoin.es
-- **Estado HTTP:** 200 — en vivo y respondiendo (verificado 2026-06-11).
+- **Estado HTTP:** 200 — en vivo y respondiendo.
 - **Title en prod:** `FRECOIN — Infraestructuras tecnológicas para empresas | Barcelona y Cataluña`
+- **Páginas verificadas en vivo:**
+  - `/` — Home completa: hero dark, formulario RGPD, números (20+/50+/6/5), 6 servicios, por qué elegirnos, sobre nosotros (foto Luis), trabajos realizados (4 fotos), contacto, CTA final, footer con datos fiscales y legales.
+  - `/servicios/redes-informaticas` — Title propio: "Instalación de redes informáticas en Barcelona | FRECOIN". Breadcrumb + hero + contenido OK.
+  - `/sobre-nosotros` — Hero "Tecnología cercana para empresas de Barcelona.", bio Luis Freire, "Cuatro principios que no negociamos."
 - **Contenido activo (build acumulado 08-jun):**
   - Zona de servicio "Barcelona y Cataluña" en toda la web, SEO y JSON-LD.
   - Imágenes SAI profesionales (hero + benefits).
   - "Certificación" en card Redes.
-  - Textos "Sobre nosotros": titular "Más de 20 años trabajando con el corazón,
-    la misma ilusión y el compromiso del primer día".
-  - **Cláusulas RGPD oficiales** bajo formularios de Presupuesto y Contacto,
-    con checkbox de aceptación obligatorio.
-  - Fotos reales de Luis en Trabajos realizados (cámaras + WiFi con técnico logo
-    FRECOIN + icono WiFi router). Redes y Eléctricas siguen con fotos genéricas.
+  - **Cláusulas RGPD oficiales** bajo formulario hero, texto completo visible + checkbox obligatorio.
+  - 6 servicios con página propia cada uno: Redes Informáticas, Instalaciones Eléctricas, Cámaras de Videovigilancia, Antenas WiFi, Sistemas SAI, Controles de Acceso.
+  - Fotos reales de Luis en Trabajos realizados (cámaras + WiFi). Redes y Eléctricas siguen con fotos genéricas.
+  - Footer: logo, lista servicios, Aviso Legal + Política Privacidad + Política Cookies, datos fiscales (NIF 48142086G, Sant Vicenç dels Horts Barcelona, info@frecoin.es).
+  - WhatsApp flotante + botón llamada en navbar.
 - **Backups en servidor:**
   - `~/backup_public_html_20260608_175211` (más reciente)
   - `~/backup_public_html_20260602_195112`
@@ -93,20 +99,25 @@ ese pipeline está **huérfano**. Un push a `main` actualiza GitHub, **no la web
 
 ---
 
-## Comunicaciones con el cliente — borradores (2026-06-11)
+## Comunicaciones con el cliente (historial verificado 2026-06-12)
 
 > Los archivos `.html` y `.pdf` viven en `correos/` (carpeta **ignorada
 > por git** — repo público). Todo lo que está aquí es para referencia operativa.
 
-### Borradores activos en Gmail (info@one.adspubli.com)
+### Historial de correos FRECOIN (info@one.adspubli.com) — verificado 2026-06-12
 
-| Borrador | Asunto | messageId | Estado |
-|---|---|---|---|
-| Ajustes "Sobre nosotros" | Ajustes en tu web · FRECOIN | `19e97a91ffbcdde5` | Listo. Incluye capturas inline (sobre-hero + sobre-bio). |
-| Respuesta RGPD + fotos | Re: Protección de Datos | `19eb6ecac95e9a42` | Listo. Responde correo 05-jun de Luis (RGPD implementado + fotos pendientes). |
-| Propuesta SEO | Propuesta: Que te encuentren en Google · FRECOIN | `19eb72b01238cc66` | **ENVIADO** 2026-06-11. PDF adjunto. Esperando respuesta de Luis. |
+| Fecha | Asunto | messageId / Estado |
+|---|---|---|
+| 09-jun | **Luis responde: "muy conforme con tu trabajo"** | `19eac6a8af11da7d` — CONFIRMACIÓN ENTREGA WEB |
+| 08-jun | Frecoin · Cambios legales aplicados en la web | `19eaaf7632aa1f43` — ENVIADO |
+| 05-jun | Re: Protección de Datos (respuesta a Luis) | `19eb6ecac95e9a42` — ENVIADO |
+| 05-jun | FRECOIN — ajustes «Sobre nosotros» ya aplicados | `19e97aa110887084` — ENVIADO |
+| 05-jun | Frecoin · Entrega del logotipo rediseñado | `19e97b30a756736f` — ENVIADO |
+| 11-jun | **Propuesta SEO · Que te encuentren en Google** | `19eb73fc6501f59c` — **ENVIADO, esperando respuesta** |
 
-> Obsoletos — **borrar manualmente desde Gmail:**
+> Correo de Luis: `lfreire@frecoin.es`
+
+> Borradores obsoletos — **borrar manualmente desde Gmail:**
 > `19eadef1dc95f012` (700€), `19eb6f49e3298838` (300+200/mes), `19eb71ff916fa246` (subtítulo incorrecto).
 
 ### Propuesta SEO FRECOIN — detalle
@@ -177,10 +188,12 @@ y toda el área metropolitana de Barcelona.
 
 ## Pendiente / riesgos abiertos
 
+- [x] **Web entregada y aceptada** — Luis confirmó conformidad el 09-jun-2026.
+- [x] **RGPD aplicado** — correo enviado el 08-jun, Luis acusó recibo.
 - [x] **Propuesta SEO enviada a Luis** — 2026-06-11. Esperando confirmación.
-- [ ] **Enviar respuesta RGPD + fotos** — borrador `19eb6ecac95e9a42`.
-- [ ] **Enviar aviso "Sobre nosotros" publicado** — borrador `19e97a91ffbcdde5`.
-- [ ] **Fotos de trabajos** — Luis envía fotos reales de instalaciones para la web.
+- [x] **Correo "Sobre nosotros" y logo** — enviados el 05-jun.
+- [ ] **Respuesta propuesta SEO** — pendiente de Luis. Al confirmar: solicitar NAP exacto + accesos Google.
+- [ ] **Fotos de trabajos** — Luis envía fotos reales para "Redes" y "Eléctricas" (hoy genéricas/IA).
 - [ ] **Automatizar el deploy** — conectar Hostinger a rama `production` o cron.
 - [ ] Imagen "Circuito cerrado de cámaras" + logo FRECOIN — bloqueado por créditos IA.
 
