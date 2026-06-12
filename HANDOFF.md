@@ -9,198 +9,220 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-12 (verificación completa en vivo — Playwright)
-**Estado git:** rama `draft/diseno`, **pusheada a GitHub** hasta `2498c2d`.
-**Producción (frecoin.es) servida desde:** **build del 08-jun-2026** (`b4e4340`),
-subido **manualmente por SSH** a `public_html`.
-**Verificado en vivo el 2026-06-12:** HTTP 200, todas las secciones y rutas cargando.
+**Last updated:** 2026-06-12 (verificación completa — código + producción)
+**Estado git:** rama `draft/diseno`, pusheada hasta `518c877`.
+**Producción (frecoin.es):** build del **08-jun-2026** (`b4e4340`), subido
+manualmente por SSH a `public_html`. `last-modified` del servidor: Mon, 08 Jun 2026 17:51:40 GMT.
+
+**Divergencia código↔prod:** NINGUNA en código. Los únicos commits posteriores a
+`b4e4340` son docs (`HANDOFF.md`, `tasks/current.md`, `progress/`). El código en
+`src/` y `public/` en `draft/diseno` es idéntico a lo desplegado.
 
 **WEB ENTREGADA AL CLIENTE — PROYECTO CERRADO.**
-Luis Freire respondió el 09-jun-2026: *"Muy amable gracias por todo, muy conforme
-con tu trabajo."* (thread `19eac6a8af11da7d`, remitente `lfreire@frecoin.es`).
-
-Contenido del 08-jun: **cláusulas informativas RGPD oficiales** (validadas por la
-asesoría jurídica del cliente, correo Luis 05-jun) en texto completo visible bajo
-los formularios de Presupuesto (Hero) y Contacto, con casilla de aceptación
-obligatoria. Verificado en vivo 2026-06-12: cláusula completa + checkbox visible.
-Backup pre-deploy: `~/backup_public_html_20260608_175211`.
-
-**Histórico (02-jun-2026, `906e71b`):** zona de servicio "Barcelona y Cataluña"
-en toda la web + SEO/JSON-LD, "certificación" en card Redes, imágenes SAI
-profesionales (hero + benefits) y textos de "Sobre nosotros". Verificado HTTP 200.
-Backup: `~/backup_public_html_20260602_195112`.
+Luis Freire confirmó el 09-jun-2026: *"Muy amable gracias por todo, muy conforme
+con tu trabajo."* (thread `19eac6a8af11da7d`, desde `lfreire@frecoin.es`).
 
 ---
 
-## Qué hay en producción hoy (verificado en vivo 2026-06-12)
+## Producción verificada en vivo (2026-06-12)
 
-- **URL:** https://frecoin.es
-- **Estado HTTP:** 200 — en vivo y respondiendo.
-- **Title en prod:** `FRECOIN — Infraestructuras tecnológicas para empresas | Barcelona y Cataluña`
-- **Páginas verificadas en vivo:**
-  - `/` — Home completa: hero dark, formulario RGPD, números (20+/50+/6/5), 6 servicios, por qué elegirnos, sobre nosotros (foto Luis), trabajos realizados (4 fotos), contacto, CTA final, footer con datos fiscales y legales.
-  - `/servicios/redes-informaticas` — Title propio: "Instalación de redes informáticas en Barcelona | FRECOIN". Breadcrumb + hero + contenido OK.
-  - `/sobre-nosotros` — Hero "Tecnología cercana para empresas de Barcelona.", bio Luis Freire, "Cuatro principios que no negociamos."
-- **Contenido activo (build acumulado 08-jun):**
-  - Zona de servicio "Barcelona y Cataluña" en toda la web, SEO y JSON-LD.
-  - Imágenes SAI profesionales (hero + benefits).
-  - "Certificación" en card Redes.
-  - **Cláusulas RGPD oficiales** bajo formulario hero, texto completo visible + checkbox obligatorio.
-  - 6 servicios con página propia cada uno: Redes Informáticas, Instalaciones Eléctricas, Cámaras de Videovigilancia, Antenas WiFi, Sistemas SAI, Controles de Acceso.
-  - Fotos reales de Luis en Trabajos realizados (cámaras + WiFi). Redes y Eléctricas siguen con fotos genéricas.
-  - Footer: logo, lista servicios, Aviso Legal + Política Privacidad + Política Cookies, datos fiscales (NIF 48142086G, Sant Vicenç dels Horts Barcelona, info@frecoin.es).
-  - WhatsApp flotante + botón llamada en navbar.
-- **Backups en servidor:**
-  - `~/backup_public_html_20260608_175211` (más reciente)
-  - `~/backup_public_html_20260602_195112`
-  - `~/backup_public_html_20260529_164446`
-- **Pendiente (no bloqueante):** fotos de "Redes" y "Eléctricas" son genéricas/IA
-  sin el técnico con logo FRECOIN. Cambiar cuando se tengan fotos reales o créditos IA.
+### HTTP y cabeceras
+
+| Check | Resultado |
+|---|---|
+| HTTP status | **200** (HTTP/2) |
+| last-modified | Mon, 08 Jun 2026 17:51:40 GMT ✓ |
+| CSP | `upgrade-insecure-requests` ✓ |
+| X-Content-Type-Options | `nosniff` ✓ |
+| X-Frame-Options | `SAMEORIGIN` ✓ |
+| Referrer-Policy | `strict-origin-when-cross-origin` ✓ |
+| Permissions-Policy | `geolocation=(), microphone=(), camera=()` ✓ |
+| Platform | Hostinger / hpanel ✓ |
+
+### Rutas verificadas (todas HTTP 200)
+
+| Ruta | Contenido verificado |
+|---|---|
+| `/` | Hero dark + formulario RGPD completo + checkbox · Números 20+/50+/6/5 · 6 tarjetas servicios · Por qué elegirnos · Sobre nosotros (foto Luis) · Trabajos realizados (4 fotos) · Contacto · CTA final · Footer completo |
+| `/servicios/redes-informaticas` | Title: "Instalación de redes informáticas en Barcelona | FRECOIN" · Breadcrumb · Hero + contenido |
+| `/servicios/instalaciones-electricas` | 200 ✓ |
+| `/servicios/camaras-videovigilancia` | 200 ✓ |
+| `/servicios/antenas-wifi` | 200 ✓ |
+| `/servicios/sai` | 200 ✓ |
+| `/servicios/controles-de-acceso` | 200 ✓ |
+| `/sobre-nosotros` | "Tecnología cercana para empresas de Barcelona." · Bio Luis · "Cuatro principios que no negociamos." |
+| `/aviso-legal` | 200 ✓ |
+| `/politica-privacidad` | 200 ✓ |
+| `/politica-cookies` | 200 ✓ |
+| `/sitemap.xml` | Existe · 9 URLs · todas las rutas de servicio y legales ✓ |
+| `/robots.txt` | `Allow: *` + pointer a sitemap ✓ |
+| `send-form.php` | POST vacío → **400** ✓ (protección anti-spam activa) |
+
+### Contenido en vivo (build acumulado 08-jun)
+
+- **RGPD:** cláusula informativa oficial completa visible bajo formulario hero, con checkbox de aceptación obligatorio.
+- **6 servicios** con landing propia: Redes Informáticas, Instalaciones Eléctricas, Cámaras de Videovigilancia, Antenas WiFi, Sistemas SAI, Controles de Acceso.
+- **Footer:** logo, lista 6 servicios, Aviso Legal + Política Privacidad + Política Cookies, datos fiscales (Luis Freire Camino · NIF 48142086G · Sant Vicenç dels Horts, Barcelona · info@frecoin.es · © 2026).
+- **Zona de servicio:** "Barcelona y Cataluña" en toda la web, SEO/JSON-LD.
+- **Imágenes SAI** profesionales (hero + benefits) · hero electrician.
+- **Fotos de trabajos:** 4 cards (Red Corporativa Completa · Instalación Eléctrica Industrial · Circuito Cerrado de Cámaras · Cobertura WiFi Empresarial). Las de Redes y Eléctricas son genéricas/IA (pendiente fotos reales de Luis).
+- **WhatsApp flotante** + botón llamada en navbar + CTA "Llamar ahora" / "WhatsApp" en footer CTA.
+- **Cookie banner** + analytics condicional al consentimiento (`src/lib/analytics.ts`).
+
+### Rutas del código (App.tsx) — mapa completo
+
+| Ruta | Componente | Notas |
+|---|---|---|
+| `/` | `HomePage` | Home principal |
+| `/servicios/:slug` | `Servicio` | 6 slugs en `src/data/services.ts` |
+| `/sobre-nosotros` | `SobreNosotros` | — |
+| `/aviso-legal` | `AvisoLegal` | — |
+| `/politica-privacidad` | `PoliticaPrivacidad` | — |
+| `/politica-cookies` | `PoliticaCookies` | — |
+| `/contacto` | redirect → `/#contacto` | Ancla en la home |
+| `/rediseno` | `Rediseno` | Página interna (no en sitemap ni en nav) |
+| `*` | redirect → `/` | 404 → home |
+
+### Observaciones técnicas
+
+- **Sitemap `lastmod`:** fijo a `2026-05-11` en todos los URLs — no se actualiza automáticamente. No crítico para funcionamiento, pero Google puede ignorar fechas antiguas.
+- **`/rediseno`:** ruta en código no visible desde la navegación pública ni en sitemap. Probablemente propuesta interna de rediseño. No interfiere.
+- **SPA + .htaccess:** todas las rutas sirven `index.html`; React Router gestiona el enrutado client-side. Por eso las rutas devuelven 200 incluso si el slug no existe — React redirige a `/`.
+
+### Backups en servidor Hostinger
+
+- `~/backup_public_html_20260608_175211` ← más reciente (pre-deploy RGPD)
+- `~/backup_public_html_20260602_195112`
+- `~/backup_public_html_20260529_164446`
 
 ---
 
-## Cómo se despliega DE VERDAD (proceso real, verificado 29-may-2026)
+## Cómo se despliega DE VERDAD
 
-**No hay auto-deploy.** Se comprobaron y descartaron las 3 vías:
+**No hay auto-deploy.** Verificado y descartado en mayo 2026:
 
 | Vía | Estado |
 |---|---|
 | Panel Hostinger "Despliegue desde GitHub" (OAuth) | ❌ no conectado |
-| `public_html` como repo git con `git pull` | ❌ no es repo git (son archivos sueltos) |
-| Cron job con `git pull` | ❌ no existe (`crontab -l` vacío) |
+| `public_html` como repo git | ❌ son archivos sueltos, no git |
+| Cron job | ❌ `crontab -l` vacío |
 
-El deploy real es **manual**:
+**Deploy manual:**
 
-1. `npm run build` en local → genera `dist/`.
-2. Subir el **contenido de `dist/`** al servidor por SSH/rsync, a la raíz
-   web `domains/frecoin.es/public_html/` (sobrescribiendo).
-3. Verificar que `frecoin.es` carga.
+1. `npm run build` en local → `dist/`
+2. Rsync/SSH de `dist/` a `domains/frecoin.es/public_html/` (sobrescribir)
+3. Hacer backup del `public_html` actual antes de subir
+4. Verificar que `frecoin.es` carga (HTTP 200)
 
-> Conexión SSH: detalles en **Hostinger → Avanzado → Acceso SSH**. Clave
-> local: `~/.ssh/frecoin_hostinger` (par `.pub` registrado en Hostinger
-> como `frecoin-deploy-mac`). No se documentan IP/usuario aquí por ser
-> repo público.
+> Clave SSH local: `~/.ssh/frecoin_hostinger` (registrada en Hostinger como
+> `frecoin-deploy-mac`). Credenciales de conexión: Hostinger → Avanzado → Acceso SSH.
 
-### Sobre el workflow de GitHub Actions
+### GitHub Actions
 
-`.github/workflows/deploy-to-production-branch.yml` **sí funciona a medias**:
-en cada push a `main` compila y empuja el `dist/` a la rama `production`.
-**Pero nadie consume esa rama en Hostinger** (ver tabla arriba), así que
-ese pipeline está **huérfano**. Un push a `main` actualiza GitHub, **no la web**.
+`.github/workflows/deploy-to-production-branch.yml` compila y empuja `dist/` a la
+rama `production` en cada push a `main`. **Nadie consume esa rama en Hostinger**
+— el pipeline está huérfano. Un push a `main` actualiza GitHub, no la web.
 
 ---
 
 ## Qué funciona
 
-- Build local (`npm run build`) y `bash scripts/verify.sh` → verde.
-- Pipeline GitHub Actions → rama `production` (build correcto, sin consumidor).
-- Formularios vía PHP nativo de Hostinger (`public/send-form.php`).
-- Cláusulas RGPD + checkbox en formularios de Presupuesto y Contacto (08-jun).
+- `npm run build` y `bash scripts/verify.sh` → verde (lint tiene 31 errores preexistentes en `Navbar.tsx`, desactivado en el script).
+- GitHub Actions → rama `production` (build OK, sin consumidor en Hostinger).
+- Formularios vía PHP nativo Hostinger (`public/send-form.php`) + plantillas en `public/email-templates/`.
+- Cookie banner + analytics condicional al consentimiento.
+- RGPD en formulario hero: texto completo + checkbox obligatorio.
 
 ---
 
-## Comunicaciones con el cliente (historial verificado 2026-06-12)
+## Comunicaciones con el cliente (verificado 2026-06-12)
 
-> Los archivos `.html` y `.pdf` viven en `correos/` (carpeta **ignorada
-> por git** — repo público). Todo lo que está aquí es para referencia operativa.
+> Archivos `.html` y `.pdf` en `correos/` (gitignored). Email de Luis: `lfreire@frecoin.es`.
 
-### Historial de correos FRECOIN (info@one.adspubli.com) — verificado 2026-06-12
-
-| Fecha | Asunto | messageId / Estado |
+| Fecha | Asunto | Estado |
 |---|---|---|
-| 09-jun | **Luis responde: "muy conforme con tu trabajo"** | `19eac6a8af11da7d` — CONFIRMACIÓN ENTREGA WEB |
-| 08-jun | Frecoin · Cambios legales aplicados en la web | `19eaaf7632aa1f43` — ENVIADO |
-| 05-jun | Re: Protección de Datos (respuesta a Luis) | `19eb6ecac95e9a42` — ENVIADO |
-| 05-jun | FRECOIN — ajustes «Sobre nosotros» ya aplicados | `19e97aa110887084` — ENVIADO |
-| 05-jun | Frecoin · Entrega del logotipo rediseñado | `19e97b30a756736f` — ENVIADO |
-| 11-jun | **Propuesta SEO · Que te encuentren en Google** | `19eb73fc6501f59c` — **ENVIADO, esperando respuesta** |
+| 04-05-jun | Frecoin · Entrega del logotipo rediseñado | ENVIADO ✓ |
+| 05-jun | FRECOIN — ajustes «Sobre nosotros» ya aplicados | ENVIADO ✓ |
+| 05-jun | Re: Protección de Datos | ENVIADO ✓ |
+| 08-jun | Frecoin · Cambios legales aplicados en la web | ENVIADO ✓ |
+| **09-jun** | **Luis responde: "muy conforme con tu trabajo"** | **CONFIRMACIÓN ENTREGA** ✓ |
+| 11-jun | Propuesta: Que te encuentren en Google · FRECOIN | ENVIADO · **esperando respuesta** |
 
-> Correo de Luis: `lfreire@frecoin.es`
-
-> Borradores obsoletos — **borrar manualmente desde Gmail:**
+> Borradores obsoletos (borrar manualmente desde Gmail):
 > `19eadef1dc95f012` (700€), `19eb6f49e3298838` (300+200/mes), `19eb71ff916fa246` (subtítulo incorrecto).
 
-### Propuesta SEO FRECOIN — detalle
+---
+
+## Propuesta SEO FRECOIN (fase siguiente)
 
 **Archivos locales (gitignored):**
 - `correos/Propuesta-Adspubli-SEO-FRECOIN.pdf` — PDF 3 páginas, ~450KB
 - `correos/Propuesta-SEO-FRECOIN.html` — fuente HTML del PDF
 - `correos/Email-Propuesta-SEO-Luis.html` — email cover
+- `correos/Guia-Trabajo-Abraham-SEO-FRECOIN.md` — guía operativa para delegar en Abraham
 
 **Precio:** 499€ total · 250€ al confirmar + 249€ al entregar. Sin mensualidades.
 
 **Qué incluye:**
-- SEO técnico + keyword research (20-30 kw, Barcelona · Baix Llobregat)
-- Google My Business profesional (categorías, servicios, fotos, Q&A, zona)
-- Google Tag Manager: container + eventos (formulario, teléfono, WhatsApp, scroll)
+- SEO técnico + keyword research (20-30 kw · Barcelona · Baix Llobregat)
+- Google Business Profile profesional (categorías, servicios, fotos, Q&A, zona, verificación)
+- Google Tag Manager: container + eventos (form_submit, phone_click, whatsapp_click)
 - GA4: propiedad + eventos + vinculación GA4↔Google Ads + audiencias remarketing
-- Trustpilot Business: cuenta + widget en web + sección opiniones vinculada a GBP
+- Trustpilot Business: cuenta + widget en web + sección opiniones
 - Search Console + sitemap + robots.txt
-- Alta en 10-15 directorios locales (ver guía abajo)
+- Alta en 10-15 directorios locales
 - Informe de entrega
 
-**Extras opcionales (sin precio en el PDF):**
-- Menciones en medios digitales (Setroi — 50+ periódicos, mejora E-E-A-T)
-- Google Ads (tracking y audiencias quedan listos con el setup base)
+**Extras opcionales (sin precio):** menciones medios (Setroi) · Google Ads.
 
-### Alta en directorios locales — guía de implementación
+**Al confirmar Luis:** solicitar NAP exacto (nombre/dirección/teléfono exactos del Registro Mercantil) + acceso email Google del negocio + acceso web para instalar GTM.
 
-**NAP exacto e idéntico en todos los directorios:**
+### Directorios locales — NAP y guía
+
 ```
 Nombre:    FRECOIN
 Web:       https://frecoin.es
-Categoría: Infraestructuras tecnológicas / Redes informáticas / Videovigilancia
-```
-*(Dirección y teléfono: confirmar con Luis — deben coincidir con el Registro Mercantil.)*
-
-**Descripción SEO (adaptar si hay límite de caracteres):**
-```
-FRECOIN es una empresa especializada en infraestructuras tecnológicas para empresas
-en Barcelona y el Baix Llobregat. Instalamos y mantenemos redes informáticas,
-instalaciones eléctricas, sistemas de videovigilancia (CCTV), redes WiFi corporativas,
-SAI (sistemas de alimentación ininterrumpida) y controles de acceso. Más de 20 años
-de experiencia. Servicio en Sant Vicenç dels Horts, Cornellà, El Prat, L'Hospitalet
-y toda el área metropolitana de Barcelona.
+Teléfono:  [confirmar con Luis]
+Dirección: [confirmar con Luis — exacta, con CP]
 ```
 
-**Directorios por prioridad SEO:**
+Descripción SEO:
+```
+FRECOIN es una empresa especializada en infraestructuras tecnológicas para
+empresas en Barcelona y el Baix Llobregat. Instalamos y mantenemos redes
+informáticas, instalaciones eléctricas, sistemas de videovigilancia (CCTV),
+redes WiFi corporativas, SAI y controles de acceso. Más de 20 años de
+experiencia. Servicio en Sant Vicenç dels Horts, Cornellà, El Prat,
+L'Hospitalet y toda el área metropolitana de Barcelona.
+```
 
-| Prioridad | Directorio | Verificación | Nota |
-|---|---|---|---|
-| ★★★★★ | Google Business Profile | Vídeo/teléfono/carta | Principal — incluido en el trabajo |
-| ★★★★ | Bing Places | Email / importar GBP | Rápido |
-| ★★★ | Apple Maps Connect | SMS | ~10 min |
-| ★★★ | Páginas Amarillas | Email | Básico gratis |
-| ★★★ | Yelp.es | Llamada automática | Verificación por teléfono |
-| ★★★ | Einforma / Axesor | Email | Ya tienen ficha del Registro — solo reclamar |
-| ★★★ | Europages | Email | B2B, muy relevante para FRECOIN |
-| ★★ | Hotfrog.es | Email | — |
-| ★★ | Cylex.es | Email | — |
-| ★★ | Infobel.es | Email | — |
-| ★★ | Cambra de Comerç del Baix Llobregat | Web/teléfono | Autoridad local |
-| ★★ | Ajuntament Sant Vicenç dels Horts | Contacto directo | Cita local |
-
-**Reglas:** NAP idéntico en todos. Si un directorio ya tiene datos incorrectos, reclamar y corregir.
-**Tiempo estimado:** 4-5h activas + 1-2 días de espera para verificaciones.
-**No usar** Yext/BrightLocal — suscripción no rentable a este volumen.
+| Prioridad | Directorio | Verificación |
+|---|---|---|
+| ★★★★★ | Google Business Profile | Vídeo/teléfono/carta |
+| ★★★★ | Bing Places | Email / importar GBP |
+| ★★★ | Apple Maps Connect | SMS |
+| ★★★ | Páginas Amarillas | Email |
+| ★★★ | Yelp.es | Llamada automática |
+| ★★★ | Einforma / Axesor | Email — ya tienen ficha del Registro, solo reclamar |
+| ★★★ | Europages | Email |
+| ★★ | Hotfrog.es | Email |
+| ★★ | Cylex.es | Email |
+| ★★ | Infobel.es | Email |
 
 ---
 
 ## Pendiente / riesgos abiertos
 
-- [x] **Web entregada y aceptada** — Luis confirmó conformidad el 09-jun-2026.
-- [x] **RGPD aplicado** — correo enviado el 08-jun, Luis acusó recibo.
-- [x] **Propuesta SEO enviada a Luis** — 2026-06-11. Esperando confirmación.
-- [x] **Correo "Sobre nosotros" y logo** — enviados el 05-jun.
-- [ ] **Respuesta propuesta SEO** — pendiente de Luis. Al confirmar: solicitar NAP exacto + accesos Google.
-- [ ] **Fotos de trabajos** — Luis envía fotos reales para "Redes" y "Eléctricas" (hoy genéricas/IA).
-- [ ] **Automatizar el deploy** — conectar Hostinger a rama `production` o cron.
-- [ ] Imagen "Circuito cerrado de cámaras" + logo FRECOIN — bloqueado por créditos IA.
+- [ ] **Respuesta de Luis a la propuesta SEO** — enviada 11-jun. Al confirmar: pedir NAP + accesos Google.
+- [ ] **Fotos de trabajos reales** — Luis debe enviar fotos de instalaciones de Redes y Eléctricas.
+- [ ] **Sitemap `lastmod`** — fechas fijas a 2026-05-11; actualizarlas en el próximo deploy que toque código.
+- [ ] **Automatizar deploy** — conectar Hostinger a rama `production` o cron (ADR-001).
+- [ ] **Fotos con logo FRECOIN** — Circuito cerrado de cámaras + técnico en eléctricas. Bloqueado: créditos IA a 0.
 
 ---
 
 ## Al cerrar cada sesión que despliegue
 
-1. Anota aquí el nuevo "Producción servida desde" (fecha + commit subido).
+1. Anota el nuevo "Producción servida desde" (fecha + commit).
 2. Bump `Last updated`.
-3. Si fue un cambio multi-archivo, añade entrada en `progress/`.
+3. Si fue cambio multi-archivo, añade entrada en `progress/`.
