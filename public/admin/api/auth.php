@@ -56,7 +56,7 @@ if (!is_string($rawEmail) || trim($rawEmail) === '' || !is_string($password) || 
 }
 $email = strtolower(trim($rawEmail));
 
-$register_failure = function () use (&$_SESSION, $now, $limit) {
+$register_failure = function () use ($now, $limit) {
     $_SESSION['login_attempts'] = ($_SESSION['login_attempts'] ?? 0) + 1;
     if ($_SESSION['login_attempts'] >= ($limit['max_attempts'] ?? 5)) {
         $_SESSION['login_block_until'] = $now + ($limit['block_seconds'] ?? 300);
@@ -64,7 +64,7 @@ $register_failure = function () use (&$_SESSION, $now, $limit) {
     }
 };
 
-$establish = function (array $user) use (&$_SESSION, $now) {
+$establish = function (array $user) use ($now) {
     // Fija la sesión a este usuario y rota el id de sesión (anti fixation).
     session_regenerate_id(true);
     $_SESSION['admin_id']       = (int) $user['id'];
