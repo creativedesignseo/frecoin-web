@@ -1,0 +1,12 @@
+# Panel FRECOIN — SPA servida bajo /panel/.
+# Las rutas internas (/panel/login, etc.) deben servir el index.html del panel,
+# no la web pública. Los archivos reales (assets, .php) se sirven directos.
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /panel/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /panel/index.html [L]
+</IfModule>

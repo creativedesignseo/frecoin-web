@@ -37,3 +37,6 @@ public/admin/api/config.php
 public/assets/uploads/
 # PHP per-dir overrides may carry env-specific limits
 public/**/.user.ini
+
+# TypeScript incremental build artifacts
+*.tsbuildinfo
