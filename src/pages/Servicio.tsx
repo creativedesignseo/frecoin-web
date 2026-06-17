@@ -18,7 +18,7 @@ export default function Servicio() {
   useEffect(() => {
     if (!slug) return;
     let active = true;
-    fetch('/assets/services.json', { cache: 'no-cache' })
+    fetch(`/assets/services.json?v=${Date.now()}`, { cache: 'no-cache' })
       .then((r) => (r.ok ? r.json() : []))
       .then((list: ServiceOverride[]) => {
         if (active && Array.isArray(list)) setOverride(list.find((s) => s.slug === slug));
