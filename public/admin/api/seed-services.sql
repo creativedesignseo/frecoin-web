@@ -4,8 +4,12 @@
 -- Idempotente: ejecutar con `mysql --force` (el ALTER falla si la columna ya
 -- existe, pero --force continúa; INSERT IGNORE no pisa lo ya editado).
 
--- La tabla services se creó sin `tagline`; añadirla (MySQL 8 no tiene IF NOT EXISTS).
+-- La tabla services se creó sin estas columnas; añadirlas (MySQL 8 no tiene
+-- IF NOT EXISTS para columnas; con `mysql --force` los ALTER repetidos se ignoran).
 ALTER TABLE services ADD COLUMN tagline VARCHAR(160) NOT NULL DEFAULT '' AFTER name;
+ALTER TABLE services ADD COLUMN hero_image_alt VARCHAR(255) NOT NULL DEFAULT '' AFTER hero_image;
+ALTER TABLE services ADD COLUMN benefits_image VARCHAR(512) NOT NULL DEFAULT '' AFTER hero_image_alt;
+ALTER TABLE services ADD COLUMN benefits_image_alt VARCHAR(255) NOT NULL DEFAULT '' AFTER benefits_image;
 
 INSERT IGNORE INTO services
   (slug, name, tagline, meta_title, meta_description, hero_h1, hero_paragraph, sort_order, active)

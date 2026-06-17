@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import { Loader2, Pencil, ArrowLeft, Check, Wrench } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Loader2, Pencil, ArrowLeft, Check, Wrench, Upload, ImageOff } from 'lucide-react';
 import { api, type Service, type ServiceUpdate } from '../lib/api';
+import { compressImage } from '../lib/imageUtils';
 
 function priceLabel(s: Service): string {
   if (s.price === null || s.price === '') return 'Sin precio';
@@ -84,6 +85,50 @@ function Field({ label, children, hint }: { label: string; children: React.React
 
 const inputCls = 'w-full rounded-lg border border-neutral-300 px-3 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20';
 
+function ImageField({ label, url, alt, onUrl, onAlt }: {
+  label: string; url: string; alt: string; onUrl: (u: string) => void; onAlt: (a: string) => void;
+}) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+
+  const handle = async (file: File) => {
+    setUploading(true); setErr(null);
+    try {
+      const b64 = await compressImage(file);
+      const { url: newUrl } = await api.uploadImage(b64, 'services');
+      onUrl(newUrl);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : 'Error al subir');
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  return (
+    <div>
+      <label className="mb-1 block text-sm font-semibold">{label}</label>
+      <div className="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50">
+        {url
+          ? <img src={url} alt={alt} className="h-32 w-full object-cover" />
+          : <div className="flex h-32 items-center justify-center text-neutral-300"><ImageOff className="h-6 w-6" /></div>}
+        <div className="p-2">
+          <input ref={inputRef} type="file" accept="image/*" className="hidden"
+            onChange={(e) => e.target.files?.[0] && handle(e.target.files[0])} />
+          <button type="button" onClick={() => inputRef.current?.click()} disabled={uploading}
+            className="inline-flex items-center gap-1.5 rounded-md border border-neutral-300 px-2.5 py-1.5 text-xs font-medium hover:bg-neutral-100 disabled:opacity-50">
+            {uploading ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Upload className="h-3.5 w-3.5" />}
+            {uploading ? 'Subiendo…' : 'Cambiar imagen'}
+          </button>
+        </div>
+      </div>
+      <input className={`${inputCls} mt-2 text-xs`} value={alt} onChange={(e) => onAlt(e.target.value)}
+        placeholder="Texto alternativo (accesibilidad / SEO)" />
+      {err && <p className="mt-1 text-xs text-red-600">{err}</p>}
+    </div>
+  );
+}
+
 function ServiceEditor({ service, onBack, onSaved }: { service: Service; onBack: () => void; onSaved: () => void }) {
   const [form, setForm] = useState({
     name: service.name,
@@ -92,6 +137,10 @@ function ServiceEditor({ service, onBack, onSaved }: { service: Service; onBack:
     meta_description: service.meta_description,
     hero_h1: service.hero_h1,
     hero_paragraph: service.hero_paragraph,
+    hero_image: service.hero_image,
+    hero_image_alt: service.hero_image_alt,
+    benefits_image: service.benefits_image,
+    benefits_image_alt: service.benefits_image_alt,
     price: service.price ?? '',
     price_unit: service.price_unit,
     price_note: service.price_note,
@@ -109,6 +158,8 @@ function ServiceEditor({ service, onBack, onSaved }: { service: Service; onBack:
         name: form.name, tagline: form.tagline,
         meta_title: form.meta_title, meta_description: form.meta_description,
         hero_h1: form.hero_h1, hero_paragraph: form.hero_paragraph,
+        hero_image: form.hero_image, hero_image_alt: form.hero_image_alt,
+        benefits_image: form.benefits_image, benefits_image_alt: form.benefits_image_alt,
         price_unit: form.price_unit, price_note: form.price_note,
         active: form.active,
         price: form.price === '' ? null : Number(form.price),
@@ -152,6 +203,13 @@ function ServiceEditor({ service, onBack, onSaved }: { service: Service; onBack:
         <Field label="Párrafo de cabecera">
           <textarea rows={3} className={inputCls} value={form.hero_paragraph} onChange={(e) => set('hero_paragraph', e.target.value)} />
         </Field>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <ImageField label="Imagen principal (hero)" url={form.hero_image} alt={form.hero_image_alt}
+            onUrl={(u) => set('hero_image', u)} onAlt={(a) => set('hero_image_alt', a)} />
+          <ImageField label="Imagen de beneficios" url={form.benefits_image} alt={form.benefits_image_alt}
+            onUrl={(u) => set('benefits_image', u)} onAlt={(a) => set('benefits_image_alt', a)} />
+        </div>
 
         <div className="border-t border-neutral-100 pt-5">
           <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-neutral-400">SEO</p>

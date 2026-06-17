@@ -44,6 +44,10 @@ export interface Service {
   meta_description: string;
   hero_h1: string;
   hero_paragraph: string;
+  hero_image: string;
+  hero_image_alt: string;
+  benefits_image: string;
+  benefits_image_alt: string;
   price: string | null;
   price_unit: string;
   price_note: string;
@@ -52,7 +56,7 @@ export interface Service {
 }
 
 export type ServiceUpdate = Partial<
-  Pick<Service, 'name' | 'tagline' | 'meta_title' | 'meta_description' | 'hero_h1' | 'hero_paragraph' | 'price_unit' | 'price_note'>
+  Pick<Service, 'name' | 'tagline' | 'meta_title' | 'meta_description' | 'hero_h1' | 'hero_paragraph' | 'hero_image' | 'hero_image_alt' | 'benefits_image' | 'benefits_image_alt' | 'price_unit' | 'price_note'>
 > & { price?: number | null; active?: boolean };
 
 async function request<T>(path: string, opts: RequestInit = {}): Promise<T> {
@@ -116,4 +120,10 @@ export const api = {
         body: JSON.stringify(data),
       }),
   },
+
+  uploadImage: (imageBase64: string, folder = 'services') =>
+    request<{ url: string; publicId: string }>('/upload.php', {
+      method: 'POST',
+      body: JSON.stringify({ imageBase64, folder }),
+    }),
 };

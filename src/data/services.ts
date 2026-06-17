@@ -93,6 +93,9 @@ export interface ServiceOverride {
   hero_h1?: string;
   hero_paragraph?: string;
   hero_image?: string;
+  hero_image_alt?: string;
+  benefits_image?: string;
+  benefits_image_alt?: string;
   price?: number | string | null;
   price_unit?: string;
   price_note?: string;
@@ -116,6 +119,9 @@ export function applyOverride(base: ServiceData, o: ServiceOverride | undefined)
     heroH1: o.hero_h1 || base.heroH1,
     heroParagraph: o.hero_paragraph || base.heroParagraph,
     heroImage: o.hero_image || base.heroImage,
+    heroImageAlt: o.hero_image_alt || base.heroImageAlt,
+    benefitsImage: o.benefits_image || base.benefitsImage,
+    benefitsImageAlt: o.benefits_image_alt || base.benefitsImageAlt,
     price,
     priceUnit: o.price_unit ?? base.priceUnit,
     priceNote: o.price_note ?? base.priceNote,
