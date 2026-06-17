@@ -4,6 +4,7 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 import { Layout } from './components/Layout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Leads from './pages/Leads';
 
 export default function App() {
   return (
@@ -20,7 +21,17 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-        {/* Las secciones (blog, servicios, contenido, leads, usuarios) se añaden por fases. */}
+        <Route
+          path="/leads"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Leads />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        {/* Las secciones restantes (blog, servicios, contenido, usuarios) se añaden por fases. */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AuthProvider>

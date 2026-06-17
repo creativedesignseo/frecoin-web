@@ -13,6 +13,28 @@ export interface AdminUser {
   name: string | null;
 }
 
+export type LeadStatus = 'new' | 'read' | 'handled' | 'spam';
+
+export interface Lead {
+  id: number;
+  name: string;
+  phone: string;
+  email: string;
+  service: string;
+  message: string | null;
+  source: string;
+  status: LeadStatus;
+  created_at: string;
+}
+
+export interface LeadCounts {
+  new: number;
+  read: number;
+  handled: number;
+  spam: number;
+  total: number;
+}
+
 async function request<T>(path: string, opts: RequestInit = {}): Promise<T> {
   const method = (opts.method || 'GET').toUpperCase();
   const headers: Record<string, string> = {
@@ -53,4 +75,16 @@ export const api = {
   whoami: () => request<{ user: AdminUser; csrf: string }>('/auth.php', { method: 'GET' }),
 
   logout: () => request<{ ok: boolean }>('/auth.php', { method: 'DELETE' }),
+
+  leads: {
+    list: (status?: LeadStatus) =>
+      request<{ leads: Lead[]; counts: LeadCounts }>(
+        `/leads.php${status ? `?status=${status}` : ''}`
+      ),
+    updateStatus: (id: number, status: LeadStatus) =>
+      request<{ ok: boolean }>(`/leads.php?id=${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ status }),
+      }),
+  },
 };
