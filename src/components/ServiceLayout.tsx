@@ -84,6 +84,16 @@ export default function ServiceLayout({ service }: Props) {
                 {service.heroParagraph}
               </p>
 
+              {typeof service.price === 'number' && (
+                <div className="hero-fade mb-8">
+                  <span className="inline-flex items-baseline gap-1.5 rounded-xl bg-gripz-primary/10 px-4 py-2.5">
+                    {service.priceUnit && <span className="text-[14px] font-medium text-gripz-gray-600">{service.priceUnit}</span>}
+                    <span className="font-montserrat font-extrabold text-[26px] text-gripz-black">{service.price}€</span>
+                    {service.priceNote && <span className="text-[14px] text-gripz-gray-600">{service.priceNote}</span>}
+                  </span>
+                </div>
+              )}
+
               <div className="hero-fade flex items-center gap-4 flex-wrap">
                 <Link
                   to="/#contacto"

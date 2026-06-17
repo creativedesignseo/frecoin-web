@@ -1,7 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ServiceLayout from '@/components/ServiceLayout';
-import { getServiceBySlug } from '@/data/services';
+import { getServiceBySlug, applyOverride, type ServiceOverride } from '@/data/services';
 
 /**
  * Página de servicio individual: /servicios/:slug
@@ -10,7 +10,24 @@ import { getServiceBySlug } from '@/data/services';
  */
 export default function Servicio() {
   const { slug } = useParams<{ slug: string }>();
-  const service = slug ? getServiceBySlug(slug) : undefined;
+  const base = slug ? getServiceBySlug(slug) : undefined;
+  const [override, setOverride] = useState<ServiceOverride | undefined>(undefined);
+
+  // Cargar overrides editados desde el panel (snapshot). Si falla la red o el
+  // snapshot no existe, el servicio sigue mostrándose desde el código (fallback).
+  useEffect(() => {
+    if (!slug) return;
+    let active = true;
+    fetch('/assets/services.json', { cache: 'no-cache' })
+      .then((r) => (r.ok ? r.json() : []))
+      .then((list: ServiceOverride[]) => {
+        if (active && Array.isArray(list)) setOverride(list.find((s) => s.slug === slug));
+      })
+      .catch(() => { /* sin overrides: se usa el base de services.ts */ });
+    return () => { active = false; };
+  }, [slug]);
+
+  const service = base ? applyOverride(base, override) : undefined;
 
   useEffect(() => {
     if (!service) return;

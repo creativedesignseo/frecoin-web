@@ -27,7 +27,8 @@ function regenerate_snapshot(): void
 {
     $cfg = config();
     $rows = db()->query(
-        'SELECT slug, name, tagline, hero_h1, hero_paragraph, price, price_unit, price_note, active
+        'SELECT slug, name, tagline, meta_title, meta_description, hero_h1, hero_paragraph,
+                hero_image, price, price_unit, price_note, active
          FROM services WHERE active = 1 ORDER BY sort_order ASC, id ASC'
     )->fetchAll();
     $dir = $cfg['snapshots_dir'] ?? (__DIR__ . '/../../assets');

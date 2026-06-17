@@ -76,6 +76,50 @@ export interface ServiceData {
 
   ctaTitle: string;
   ctaSubtitle: string;
+
+  // Precio (editable desde el panel; opcional — si no hay, no se muestra).
+  price?: number | null;
+  priceUnit?: string;
+  priceNote?: string;
+}
+
+/** Override que llega del panel vía el snapshot /assets/services.json. */
+export interface ServiceOverride {
+  slug: string;
+  name?: string;
+  tagline?: string;
+  meta_title?: string;
+  meta_description?: string;
+  hero_h1?: string;
+  hero_paragraph?: string;
+  hero_image?: string;
+  price?: number | string | null;
+  price_unit?: string;
+  price_note?: string;
+}
+
+/**
+ * Aplica sobre un servicio base (de este archivo) los campos editados en el
+ * panel. Lo no editado aún (includes, audience, FAQ, iconos, proceso) se
+ * mantiene de este archivo. Permite reflejar ediciones en producción sin
+ * perder los bloques ricos.
+ */
+export function applyOverride(base: ServiceData, o: ServiceOverride | undefined): ServiceData {
+  if (!o) return base;
+  const price = o.price === '' || o.price === undefined || o.price === null ? (base.price ?? null) : Number(o.price);
+  return {
+    ...base,
+    name: o.name || base.name,
+    tagline: o.tagline || base.tagline,
+    metaTitle: o.meta_title || base.metaTitle,
+    metaDescription: o.meta_description || base.metaDescription,
+    heroH1: o.hero_h1 || base.heroH1,
+    heroParagraph: o.hero_paragraph || base.heroParagraph,
+    heroImage: o.hero_image || base.heroImage,
+    price,
+    priceUnit: o.price_unit ?? base.priceUnit,
+    priceNote: o.price_note ?? base.priceNote,
+  };
 }
 
 // ============================================================================
