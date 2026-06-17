@@ -9,10 +9,16 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-12 (verificación completa — código + producción)
-**Estado git:** rama `draft/diseno`, pusheada hasta `518c877`.
+**Last updated:** 2026-06-12 · **re-verificado 2026-06-17 (sin cambios)**
+**Estado git:** rama `draft/diseno`, pusheada hasta `8ef628f`.
 **Producción (frecoin.es):** build del **08-jun-2026** (`b4e4340`), subido
 manualmente por SSH a `public_html`. `last-modified` del servidor: Mon, 08 Jun 2026 17:51:40 GMT.
+
+**Re-verificación 2026-06-17 (código + prod, no supuesto):** frecoin.es → HTTP 200,
+`last-modified` sigue siendo 08-jun (cero redeploys desde entonces), bundle en vivo
+`index-MaD9V3xZ.js` (= `b4e4340`), cláusulas RGPD presentes, `send-form.php` → HTTP 400.
+`src/` y `public/` en `draft/diseno` (HEAD `8ef628f`) idénticos a lo desplegado. Todo
+vigente; el estado descrito abajo sigue siendo la realidad.
 
 **Divergencia código↔prod:** NINGUNA en código. Los únicos commits posteriores a
 `b4e4340` son docs (`HANDOFF.md`, `tasks/current.md`, `progress/`). El código en
