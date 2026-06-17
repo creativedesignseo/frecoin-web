@@ -5,6 +5,7 @@ import { Layout } from './components/Layout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Leads from './pages/Leads';
+import Servicios from './pages/Servicios';
 
 export default function App() {
   return (
@@ -27,6 +28,16 @@ export default function App() {
             <ProtectedRoute>
               <Layout>
                 <Leads />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/servicios"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Servicios />
               </Layout>
             </ProtectedRoute>
           }

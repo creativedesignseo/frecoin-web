@@ -35,6 +35,26 @@ export interface LeadCounts {
   total: number;
 }
 
+export interface Service {
+  id: number;
+  slug: string;
+  name: string;
+  tagline: string;
+  meta_title: string;
+  meta_description: string;
+  hero_h1: string;
+  hero_paragraph: string;
+  price: string | null;
+  price_unit: string;
+  price_note: string;
+  active: number;
+  sort_order: number;
+}
+
+export type ServiceUpdate = Partial<
+  Pick<Service, 'name' | 'tagline' | 'meta_title' | 'meta_description' | 'hero_h1' | 'hero_paragraph' | 'price_unit' | 'price_note'>
+> & { price?: number | null; active?: boolean };
+
 async function request<T>(path: string, opts: RequestInit = {}): Promise<T> {
   const method = (opts.method || 'GET').toUpperCase();
   const headers: Record<string, string> = {
@@ -85,6 +105,15 @@ export const api = {
       request<{ ok: boolean }>(`/leads.php?id=${id}`, {
         method: 'PUT',
         body: JSON.stringify({ status }),
+      }),
+  },
+
+  services: {
+    list: () => request<{ services: Service[] }>('/services.php'),
+    update: (id: number, data: ServiceUpdate) =>
+      request<{ ok: boolean; service: Service }>(`/services.php?id=${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
       }),
   },
 };
