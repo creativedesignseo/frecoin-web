@@ -154,20 +154,22 @@ CREATE TABLE IF NOT EXISTS media (
 -- Los valores van vacíos: el front usa su copy hardcodeado como fallback hasta
 -- que se rellenen desde el panel. INSERT IGNORE = no pisa lo ya editado.
 -- ============================================================================
-INSERT IGNORE INTO page_content (section, content_key, value_type, label, sort_order) VALUES
-  ('hero',     'h1',          'text',     'Hero — Título principal',        1),
-  ('hero',     'subtitle',    'textarea', 'Hero — Subtítulo',               2),
-  ('hero',     'phone',       'text',     'Hero — Teléfono',                3),
-  ('numbers',  'years',       'number',   'Números — Años de experiencia',  1),
-  ('numbers',  'projects',    'number',   'Números — Proyectos',            2),
-  ('numbers',  'services',    'number',   'Números — Servicios',            3),
-  ('numbers',  'rating',      'number',   'Números — Valoración',           4),
-  ('about',    'bio',         'textarea', 'Sobre nosotros — Biografía',     1),
-  ('about',    'avatar',      'image',    'Sobre nosotros — Foto de Luis',  2),
-  ('contacto', 'email',       'text',     'Contacto — Email',               1),
-  ('contacto', 'phone',       'text',     'Contacto — Teléfono',            2),
-  ('contacto', 'address',     'text',     'Contacto — Dirección',           3),
-  ('work',     'img_redes',      'image',  'Trabajos — Red corporativa',    1),
-  ('work',     'img_electricas', 'image',  'Trabajos — Instalación eléctrica', 2),
-  ('work',     'img_camaras',    'image',  'Trabajos — Cámaras / CCTV',     3),
-  ('work',     'img_wifi',       'image',  'Trabajos — Cobertura WiFi',     4);
+-- value sembrado con el contenido ACTUAL del sitio (imágenes) para que el panel
+-- muestre la referencia existente; los textos quedan vacíos (el front usa su copy).
+INSERT IGNORE INTO page_content (section, content_key, value_type, value, label, sort_order) VALUES
+  ('hero',     'h1',          'text',     '', 'Hero — Título principal',        1),
+  ('hero',     'subtitle',    'textarea', '', 'Hero — Subtítulo',               2),
+  ('hero',     'phone',       'text',     '', 'Hero — Teléfono',                3),
+  ('numbers',  'years',       'number',   '', 'Números — Años de experiencia',  1),
+  ('numbers',  'projects',    'number',   '', 'Números — Proyectos',            2),
+  ('numbers',  'services',    'number',   '', 'Números — Servicios',            3),
+  ('numbers',  'rating',      'number',   '', 'Números — Valoración',           4),
+  ('about',    'bio',         'textarea', '', 'Sobre nosotros — Biografía',     1),
+  ('about',    'avatar',      'image',    '/assets/luis-avatar-v2.webp', 'Sobre nosotros — Foto de Luis',  2),
+  ('contacto', 'email',       'text',     '', 'Contacto — Email',               1),
+  ('contacto', 'phone',       'text',     '', 'Contacto — Teléfono',            2),
+  ('contacto', 'address',     'text',     '', 'Contacto — Dirección',           3),
+  ('work',     'img_redes',      'image',  '/assets/work-redes-corporativas.webp', 'Trabajos — Red corporativa',    1),
+  ('work',     'img_electricas', 'image',  '/assets/work-electricas-cuadro.webp',  'Trabajos — Instalación eléctrica', 2),
+  ('work',     'img_camaras',    'image',  '/assets/work-camaras-cctv.webp',       'Trabajos — Cámaras / CCTV',     3),
+  ('work',     'img_wifi',       'image',  '/assets/work-wifi-cobertura.webp',     'Trabajos — Cobertura WiFi',     4);
