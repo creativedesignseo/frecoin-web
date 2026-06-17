@@ -68,6 +68,32 @@ $ip        = (string) ($_SERVER['REMOTE_ADDR'] ?? 'desconocida');
 $userAgent = substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? 'desconocido'), 0, 200);
 
 /* ============================================================
+ *  Guardar el lead en MySQL (best-effort).
+ *  Si la BD falla, NUNCA bloquea el email ni cambia la respuesta:
+ *  el correo sigue siendo el canal primario; esto solo evita perder leads.
+ * ============================================================ */
+try {
+    $cfg = require __DIR__ . '/admin/api/config.php';
+    $dbc = $cfg['db'];
+    $pdo = new PDO(
+        "mysql:host={$dbc['host']};dbname={$dbc['name']};charset=utf8mb4",
+        $dbc['user'],
+        $dbc['pass'],
+        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+    );
+    $stmt = $pdo->prepare(
+        'INSERT INTO contact_leads (name, phone, email, service, message, source, status, ip_hash, user_agent)
+         VALUES (?, ?, ?, ?, ?, ?, "new", ?, ?)'
+    );
+    $stmt->execute([
+        $nombre, $telefono, $email, $servicio, $mensaje, $source,
+        hash('sha256', $ip), $userAgent,
+    ]);
+} catch (Throwable $e) {
+    error_log('FRECOIN form: no se pudo guardar el lead en BD: ' . $e->getMessage());
+}
+
+/* ============================================================
  *  EMAIL 1 — Notificación interna a FRECOIN
  * ============================================================ */
 ob_start();
