@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Leads from './pages/Leads';
 import Servicios from './pages/Servicios';
+import Contenido from './pages/Contenido';
 
 export default function App() {
   return (
@@ -38,6 +39,16 @@ export default function App() {
             <ProtectedRoute>
               <Layout>
                 <Servicios />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/contenido"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Contenido />
               </Layout>
             </ProtectedRoute>
           }

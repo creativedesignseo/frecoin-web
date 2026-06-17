@@ -126,4 +126,23 @@ export const api = {
       method: 'POST',
       body: JSON.stringify({ imageBase64, folder }),
     }),
+
+  content: {
+    list: (section?: string) =>
+      request<{ items: ContentItem[] }>(`/content.php${section ? `?section=${section}` : ''}`),
+    save: (items: { section: string; content_key: string; value: string }[]) =>
+      request<{ ok: boolean }>('/content.php', {
+        method: 'PUT',
+        body: JSON.stringify({ items }),
+      }),
+  },
 };
+
+export interface ContentItem {
+  section: string;
+  content_key: string;
+  value_type: 'text' | 'textarea' | 'html' | 'image' | 'number';
+  value: string | null;
+  label: string;
+  sort_order: number;
+}

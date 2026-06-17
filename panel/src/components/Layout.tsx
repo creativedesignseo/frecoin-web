@@ -11,7 +11,7 @@ const NAV: NavItem[] = [
   { label: 'Inicio', to: '/', icon: LayoutDashboard },
   { label: 'Blog', to: '/blog', icon: FileText, soon: true },
   { label: 'Servicios', to: '/servicios', icon: Wrench },
-  { label: 'Contenido', to: '/contenido', icon: Type, soon: true },
+  { label: 'Contenido', to: '/contenido', icon: Type },
   { label: 'Leads', to: '/leads', icon: Inbox },
   { label: 'Usuarios', to: '/usuarios', icon: Users, soon: true, superOnly: true },
 ];

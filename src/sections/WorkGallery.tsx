@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,16 +11,28 @@ import 'swiper/css/pagination';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// slot = clave en page_content (sección "work"); image = fallback del código.
 const works = [
-  { title: 'RED CORPORATIVA COMPLETA', image: '/assets/work-redes-corporativas.webp', tag: 'REDES' },
-  { title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', image: '/assets/work-electricas-cuadro.webp', tag: 'ELÉCTRICAS' },
-  { title: 'CIRCUITO CERRADO DE CÁMARAS', image: '/assets/work-camaras-cctv.webp', tag: 'SEGURIDAD' },
-  { title: 'COBERTURA WIFI EMPRESARIAL', image: '/assets/work-wifi-cobertura.webp', tag: 'WIFI' },
+  { slot: 'img_redes', title: 'RED CORPORATIVA COMPLETA', image: '/assets/work-redes-corporativas.webp', tag: 'REDES' },
+  { slot: 'img_electricas', title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', image: '/assets/work-electricas-cuadro.webp', tag: 'ELÉCTRICAS' },
+  { slot: 'img_camaras', title: 'CIRCUITO CERRADO DE CÁMARAS', image: '/assets/work-camaras-cctv.webp', tag: 'SEGURIDAD' },
+  { slot: 'img_wifi', title: 'COBERTURA WIFI EMPRESARIAL', image: '/assets/work-wifi-cobertura.webp', tag: 'WIFI' },
 ];
 
 export default function WorkGallery() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
+  const [overrides, setOverrides] = useState<Record<string, string>>({});
+
+  // Imágenes editadas desde el panel (snapshot). Fallback a las del código.
+  useEffect(() => {
+    let active = true;
+    fetch(`/assets/content.json?v=${Date.now()}`, { cache: 'no-cache' })
+      .then((r) => (r.ok ? r.json() : {}))
+      .then((data: { work?: Record<string, string> }) => { if (active && data && data.work) setOverrides(data.work); })
+      .catch(() => { /* sin overrides: imágenes del código */ });
+    return () => { active = false; };
+  }, []);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -63,7 +75,7 @@ export default function WorkGallery() {
           {works.map((work, i) => (
             <SwiperSlide key={i}>
               <div className="work-card group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer">
-                <img src={work.image} alt={work.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={overrides[work.slot] || work.image} alt={work.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <span className="inline-block text-[11px] font-semibold text-white bg-white/15 rounded px-2.5 py-1 mb-2">{work.tag}</span>
