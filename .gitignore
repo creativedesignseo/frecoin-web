@@ -29,3 +29,11 @@ dist-ssr
 # Client communications — internal, never publish to this public repo
 correos/
 .playwright-mcp/
+
+# Backoffice CMS — SERVER-ONLY secrets (NEVER commit — this is a PUBLIC repo)
+public/admin/api/config.php
+**/admin/api/config.php
+# User-uploaded media — lives on the server, not in git
+public/assets/uploads/
+# PHP per-dir overrides may carry env-specific limits
+public/**/.user.ini

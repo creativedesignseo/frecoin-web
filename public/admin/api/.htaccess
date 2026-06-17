@@ -1,0 +1,14 @@
+# FRECOIN Backoffice CMS — protección de la carpeta /admin/api/
+# Los endpoints (*.php en la raíz de api/) se sirven normal.
+# Los archivos internos NO deben ser accesibles por URL directa.
+
+# Bloquear acceso directo a config, conexión, esquema y datos sensibles.
+<FilesMatch "(?i)(config(\.example)?\.php|db\.php|schema\.sql|\.user\.ini)$">
+  Require all denied
+</FilesMatch>
+
+# Bloquear toda la carpeta lib/ (helpers incluidos, nunca servidos directos).
+RedirectMatch 404 (?i)/admin/api/lib/
+
+# No listar el directorio.
+Options -Indexes
