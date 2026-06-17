@@ -5,23 +5,46 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-06-12 (verificación completa en vivo — web entregada y aceptada)
+**Last updated:** 2026-06-17 (sesión backoffice CMS — verificado en vivo)
 
 ---
 
 ## Current state
 
-**WEB ENTREGADA AL CLIENTE.** Luis Freire confirmó el 09-jun: "muy conforme con tu trabajo."
-Frecoin.es en producción (build 08-jun `b4e4340`), HTTP 200, todas las páginas cargando.
-Proyecto web cerrado — fase activa: SEO (propuesta enviada 11-jun, pendiente respuesta).
+**WEB PÚBLICA ENTREGADA** (09-jun, Luis conforme). Encima se ha construido un
+**BACKOFFICE CMS EN VIVO** (`frecoin.es/panel/`): React + PHP + MySQL, reflejo del
+admin de DoodleForever. Rama `feat/backoffice-cms` (HEAD `df5ea8c`), subido por SSH.
+Detalle en `HANDOFF.md` § Backoffice CMS y `progress/2026-06-17-backoffice-cms.md`.
 
-Stack: Node.js · Hosting: Hostinger (deploy manual) · Live in production: true (08-jun, b4e4340)
+Stack: React/Vite (público + panel) · PHP + MySQL (backoffice) · Hostinger (deploy
+manual SSH, no auto-deploy) · Live: true.
 
-**Hecho recientemente:**
-- 08-jun: cláusulas RGPD en formularios. Luis acusó recibo.
-- 09-jun: Luis confirma conformidad con todo el trabajo web.
-- 11-jun: propuesta SEO 499€ enviada a Luis. Esperando respuesta.
-- 12-jun: verificación completa en vivo (Playwright). Web 100% correcta.
+**Hecho en esta sesión (backoffice, todo verificado en vivo):**
+- Backend PHP + login (sesión + CSRF), panel React en `/panel/`.
+- Leads: formulario real → `contact_leads` + bandeja en el panel.
+- Servicios: textos + precio + imágenes + SEO editables, reflejados en la web.
+- Contenido: galería de Trabajos editable con recorte 3:4 automático + WebP.
+- Fix de caché: snapshots de datos `no-cache` (cambios instantáneos).
+
+---
+
+## ✅ Backoffice — completado (sesión 2026-06-17)
+
+- [x] BD MySQL (7 tablas) + backend PHP (`db.php`, `bootstrap.php`, `auth.php`)
+- [x] Panel React (login, dashboard, layout, roles)
+- [x] Leads (`leads.php` + página + persistencia en `send-form.php`)
+- [x] Servicios (`services.php` + editor textos/precio/imágenes + merge en el front)
+- [x] Subida de imágenes (`upload.php`) + recorte 3:4 (`cropToRatioWebp`)
+- [x] Contenido (`content.php` + página) — imágenes de Trabajos conectadas al front
+- [x] Caché de snapshots arreglada
+
+## 🟡 Backoffice — pendiente
+
+- [ ] Conectar TEXTOS de Contenido (hero/about/números/contacto) al front público
+- [ ] Bloques de servicios editables (qué incluye, FAQ, audiencias, proceso) + iconos
+- [ ] Blog (tablas listas; falta editor BlockNote + sección pública)
+- [ ] Cambiar contraseña `123456` (débil, temporal)
+- [ ] Decidir si `feat/backoffice-cms` se mergea a `draft/diseno`/`main`
 
 ---
 

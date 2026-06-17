@@ -9,24 +9,69 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-12 · **re-verificado 2026-06-17 (sin cambios)**
-**Estado git:** rama `draft/diseno`, pusheada hasta `8ef628f`.
-**Producción (frecoin.es):** build del **08-jun-2026** (`b4e4340`), subido
-manualmente por SSH a `public_html`. `last-modified` del servidor: Mon, 08 Jun 2026 17:51:40 GMT.
+**Last updated:** 2026-06-17 (sesión backoffice CMS)
+**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `df5ea8c`), 11 commits
+del backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
+**Producción (frecoin.es):** front re-desplegado por SSH con el backoffice (bundle
+en vivo `index-dllWHAsN.js`); backend PHP + panel React subidos a `public_html`.
 
-**Re-verificación 2026-06-17 (código + prod, no supuesto):** frecoin.es → HTTP 200,
-`last-modified` sigue siendo 08-jun (cero redeploys desde entonces), bundle en vivo
-`index-MaD9V3xZ.js` (= `b4e4340`), cláusulas RGPD presentes, `send-form.php` → HTTP 400.
-`src/` y `public/` en `draft/diseno` (HEAD `8ef628f`) idénticos a lo desplegado. Todo
-vigente; el estado descrito abajo sigue siendo la realidad.
+**Re-verificación 2026-06-17 (código + prod, no supuesto):** verificado en vivo con
+Node `fetch` + Playwright headless contra frecoin.es: `/` y `/servicios/sai` → 200
+(web pública intacta), `/panel/` → 200, `send-form.php` POST → 400 (vivo),
+`admin/api/{auth,leads,services,content,upload}.php` sin sesión → **401** (protegidos),
+`assets/services.json` → `no-cache` (caché de datos arreglada), `assets/content.json`
+→ 4 imágenes de trabajos. Login `lfreire@frecoin.es` → 200 + super_admin.
 
-**Divergencia código↔prod:** NINGUNA en código. Los únicos commits posteriores a
-`b4e4340` son docs (`HANDOFF.md`, `tasks/current.md`, `progress/`). El código en
-`src/` y `public/` en `draft/diseno` es idéntico a lo desplegado.
+**NOVEDAD — BACKOFFICE CMS (nueva fase, EN VIVO).** La web pública entregada el
+09-jun sigue funcionando; encima se ha añadido un panel de autoedición para que
+Luis cambie contenido sin tocar código. Reflejo del admin de DoodleForever sobre
+el stack de frecoin (**React + PHP + MySQL**, todo en su servidor). Detalle abajo
+y en `progress/2026-06-17-backoffice-cms.md`.
 
-**WEB ENTREGADA AL CLIENTE — PROYECTO CERRADO.**
-Luis Freire confirmó el 09-jun-2026: *"Muy amable gracias por todo, muy conforme
-con tu trabajo."* (thread `19eac6a8af11da7d`, desde `lfreire@frecoin.es`).
+**WEB PÚBLICA ENTREGADA AL CLIENTE (09-jun-2026).** Luis Freire confirmó:
+*"Muy amable gracias por todo, muy conforme con tu trabajo."*
+(thread `19eac6a8af11da7d`, desde `lfreire@frecoin.es`).
+
+---
+
+## BACKOFFICE CMS (sesión 2026-06-17) — EN VIVO
+
+> Panel de autoedición en `frecoin.es/panel/`. Reflejo del admin de DoodleForever
+> adaptado al stack de Hostinger. Código en `feat/backoffice-cms`; **subido por SSH**
+> (no por push — frecoin no tiene auto-deploy). config.php real solo en el servidor.
+
+**Arquitectura:** React (panel, build separado en `public_html/panel/`) + API REST
+PHP en `public_html/admin/api/*.php` (PDO) + **MySQL** (`u949041093_frecoin`). Auth
+por **sesión PHP + cookie HttpOnly + CSRF** (no JWT). Imágenes a `/assets/uploads/`
+(no Cloudinary). El front público lee **snapshots JSON** (`/assets/services.json`,
+`/assets/content.json`) regenerados al guardar, con **fallback al código** si fallan.
+
+**Módulos en vivo y verificados:**
+- **Login + roles** (`admin_users`, super_admin/admin). Acceso: `lfreire@frecoin.es`.
+  ⚠️ **Contraseña `123456` (débil, temporal de pruebas)** — cambiar antes de uso real.
+- **Leads** — `send-form.php` guarda cada contacto en `contact_leads` (best-effort,
+  el email sigue siendo el canal primario); panel los lista/filtra/cambia estado.
+- **Servicios + precios** — los 6 servicios editables (textos, **precio**, SEO,
+  **imágenes** hero/beneficios); se reflejan en `/servicios/:slug` vía merge sobre
+  `src/data/services.ts`. Precio mostrado en el hero.
+- **Contenido** — `page_content` (textos + imágenes). Galería "Trabajos realizados"
+  editable con **recorte automático centrado 3:4 + WebP** al subir; conectada a la
+  home (`WorkGallery`). Imágenes actuales sembradas como referencia. (Los TEXTOS del
+  panel aún NO están conectados al front público — pendiente.)
+
+**Tablas MySQL:** `admin_users`, `blog_posts` (sin usar aún), `services` +
+`service_blocks` (blocks sin usar aún), `page_content`, `contact_leads`, `media`.
+DDL + seed en `public/admin/api/schema.sql` + `seed-services.sql`.
+
+**Pendientes del backoffice (no bloquean lo entregado):**
+- Conectar los TEXTOS de Contenido (hero, about, números, contacto) al front público
+  (hoy solo las imágenes lo están).
+- **Bloques de servicios** (qué incluye, FAQ, audiencias, proceso) editables — la
+  parte más grande (cada item lleva icono; ~150 items + selector de iconos).
+- **Blog** (tablas listas, editor BlockNote pendiente; frecoin no tiene blog público
+  aún → habría que crear la sección).
+- Cambiar la contraseña `123456`.
+- `feat/backoffice-cms` sin pushear a GitHub al inicio de la sesión (se publica al cierre).
 
 ---
 
