@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { useNavigate, Navigate } from 'react-router';
-import { Loader2, LockKeyhole } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { useAuth } from '../store/AuthContext';
 
 export default function Login() {
@@ -31,11 +31,12 @@ export default function Login() {
     <div className="flex min-h-full items-center justify-center bg-brand-ink px-4">
       <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl">
         <div className="mb-6 flex flex-col items-center text-center">
-          <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-brand/15 text-brand">
-            <LockKeyhole className="h-6 w-6" />
-          </div>
-          <h1 className="text-xl font-extrabold tracking-tight">FRECOIN</h1>
-          <p className="mt-1 text-sm text-neutral-500">Panel de administración</p>
+          <img
+            src={`${import.meta.env.BASE_URL}logo-frecoin-dark.png`}
+            alt="FRECOIN"
+            className="h-11 w-auto object-contain mb-3"
+          />
+          <p className="text-sm text-neutral-500">Panel de administración</p>
         </div>
 
         {error && (
