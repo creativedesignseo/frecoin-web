@@ -9,11 +9,12 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-18 (logo panel actualizado)
-**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `0e39bba`), 12 commits
+**Last updated:** 2026-06-18 (logo panel actualizado + .htaccess fixed)
+**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `0b2901c`), 13 commits
 del backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
 **Producción (frecoin.es):** front re-desplegado por SSH con el backoffice (bundle
-en vivo `index-dllWHAsN.js`); backend PHP + panel React con nuevo logo subidos a `public_html`.
+en vivo `index-dllWHAsN.js`); backend PHP + panel React con nuevo logo subidos a `public_html`. 
+`.htaccess` actualizado para SPA routing correcto en `/admin/`.
 
 **Re-verificación 2026-06-17 (código + prod, no supuesto):** verificado en vivo con
 Node `fetch` + Playwright headless contra frecoin.es: `/` y `/servicios/sai` → 200
