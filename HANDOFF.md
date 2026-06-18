@@ -9,11 +9,11 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-17 (sesión backoffice CMS)
-**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `df5ea8c`), 11 commits
+**Last updated:** 2026-06-18 (logo panel actualizado)
+**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `0e39bba`), 12 commits
 del backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
 **Producción (frecoin.es):** front re-desplegado por SSH con el backoffice (bundle
-en vivo `index-dllWHAsN.js`); backend PHP + panel React subidos a `public_html`.
+en vivo `index-dllWHAsN.js`); backend PHP + panel React con nuevo logo subidos a `public_html`.
 
 **Re-verificación 2026-06-17 (código + prod, no supuesto):** verificado en vivo con
 Node `fetch` + Playwright headless contra frecoin.es: `/` y `/servicios/sai` → 200
@@ -34,11 +34,14 @@ y en `progress/2026-06-17-backoffice-cms.md`.
 
 ---
 
-## BACKOFFICE CMS (sesión 2026-06-17) — EN VIVO
+## BACKOFFICE CMS (sesión 2026-06-18) — EN VIVO
 
 > Panel de autoedición en `frecoin.es/panel/`. Reflejo del admin de DoodleForever
 > adaptado al stack de Hostinger. Código en `feat/backoffice-cms`; **subido por SSH**
 > (no por push — frecoin no tiene auto-deploy). config.php real solo en el servidor.
+> 
+> **Actualización 2026-06-18:** Logo del panel actualizado a `logo-frecoin-dark.png`.
+> Deploy: `npm run build` + rsync a `public_html` vía SSH (backup previo creado).
 
 **Arquitectura:** React (panel, build separado en `public_html/panel/`) + API REST
 PHP en `public_html/admin/api/*.php` (PDO) + **MySQL** (`u949041093_frecoin`). Auth
