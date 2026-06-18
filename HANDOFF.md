@@ -10,8 +10,8 @@
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
 **Last updated:** 2026-06-18 (módulo de usuarios del panel desplegado + verificado en vivo)
-**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `1b258ff`), commits del
-backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
+**Estado git:** rama de trabajo `feat/backoffice-cms` (feature en `611d260`), commits
+del backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
 **Producción (frecoin.es):** web pública (`index-dllWHAsN.js`) + API PHP `/admin/api/`
 (ahora con `account.php` + `users.php`) + **panel React en `/panel/` con bundle
 `index-Bgd_vbqu.js` (logo `logo-frecoin-dark.png`)**.
