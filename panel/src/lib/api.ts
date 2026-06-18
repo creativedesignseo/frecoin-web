@@ -6,11 +6,24 @@ const API_BASE = '/admin/api';
 let csrfToken: string | null = null;
 export function setCsrf(token: string | null) { csrfToken = token; }
 
+export type AdminRole = 'super_admin' | 'admin';
+
 export interface AdminUser {
   id: number;
   email: string;
-  role: 'super_admin' | 'admin';
+  role: AdminRole;
   name: string | null;
+}
+
+// Vista completa para la gestión de usuarios (solo super_admin).
+export interface AdminUserFull {
+  id: number;
+  email: string;
+  name: string | null;
+  role: AdminRole;
+  active: number;
+  last_login: string | null;
+  created_at: string;
 }
 
 export type LeadStatus = 'new' | 'read' | 'handled' | 'spam';
@@ -135,6 +148,35 @@ export const api = {
         method: 'PUT',
         body: JSON.stringify({ items }),
       }),
+  },
+
+  // Cuenta propia: cualquier usuario cambia su contraseña.
+  account: {
+    changePassword: (current_password: string, new_password: string) =>
+      request<{ ok: boolean }>('/account.php', {
+        method: 'PUT',
+        body: JSON.stringify({ current_password, new_password }),
+      }),
+  },
+
+  // Gestión de usuarios (solo super_admin).
+  users: {
+    list: () => request<{ users: AdminUserFull[] }>('/users.php'),
+    create: (data: { email: string; name: string; role: AdminRole; password: string }) =>
+      request<{ ok: boolean; user: AdminUserFull }>('/users.php', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      }),
+    update: (
+      id: number,
+      data: { name?: string; role?: AdminRole; active?: boolean; new_password?: string },
+    ) =>
+      request<{ ok: boolean; user: AdminUserFull }>(`/users.php?id=${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+      }),
+    remove: (id: number) =>
+      request<{ ok: boolean }>(`/users.php?id=${id}`, { method: 'DELETE' }),
   },
 };
 

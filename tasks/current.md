@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-06-18 (logo del panel desplegado + recuperación de incidente — verificado en vivo)
+**Last updated:** 2026-06-18 (módulo de usuarios + cambio de contraseña en el panel — desplegado y verificado en vivo)
 
 ---
 
@@ -20,6 +20,12 @@ Detalle en `HANDOFF.md` § Backoffice CMS y `progress/2026-06-17-backoffice-cms.
 `/panel/` (bundle `index-B4CHSoqR.js`). Hubo un incidente de deploy (rsync borró
 `/panel/` + `config.php`); recuperado desde backup y re-desplegado correctamente.
 Secuencia completa en `progress/2026-06-18-logo-panel-incidente-recuperacion.md`.
+
+**18-jun (tarde):** Tras un lockout (clave robusta perdida) se reseteó la contraseña
+de `lfreire@frecoin.es` por phpMyAdmin (hash bcrypt 60 chars) y se construyó el
+**módulo de Usuarios + Mi cuenta** (`account.php`, `users.php`, páginas React).
+Desplegado a `/panel/` (bundle `index-Bgd_vbqu.js`) y verificado en vivo.
+Detalle en `progress/2026-06-18-modulo-usuarios-panel.md`.
 
 Stack: React/Vite (público + panel) · PHP + MySQL (backoffice) · Hostinger (deploy
 manual SSH, no auto-deploy) · Live: true.
@@ -42,6 +48,9 @@ manual SSH, no auto-deploy) · Live: true.
 - [x] Subida de imágenes (`upload.php`) + recorte 3:4 (`cropToRatioWebp`)
 - [x] Contenido (`content.php` + página) — imágenes de Trabajos conectadas al front
 - [x] Caché de snapshots arreglada
+- [x] **Usuarios + Mi cuenta** (`account.php`, `users.php`, `MiCuenta.tsx`, `Usuarios.tsx`):
+      cambio de contraseña propia (todos) + alta/roles/activar/reset/eliminar (solo
+      super_admin), con guardas anti-bloqueo. Desplegado y verificado en vivo 2026-06-18.
 
 ## 🟡 Backoffice — pendiente
 

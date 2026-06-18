@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard';
 import Leads from './pages/Leads';
 import Servicios from './pages/Servicios';
 import Contenido from './pages/Contenido';
+import Usuarios from './pages/Usuarios';
+import MiCuenta from './pages/MiCuenta';
 
 export default function App() {
   return (
@@ -53,7 +55,27 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-        {/* Las secciones restantes (blog, servicios, contenido, usuarios) se añaden por fases. */}
+        <Route
+          path="/usuarios"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Usuarios />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mi-cuenta"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <MiCuenta />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        {/* La sección de Blog se añadirá en una fase posterior. */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AuthProvider>

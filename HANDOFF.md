@@ -9,17 +9,22 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-18 (logo del panel desplegado correctamente + recuperación de incidente · cierre verificado)
-**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `1d7e015`), commits del
+**Last updated:** 2026-06-18 (módulo de usuarios del panel desplegado + verificado en vivo)
+**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `1b258ff`), commits del
 backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
 **Producción (frecoin.es):** web pública (`index-dllWHAsN.js`) + API PHP `/admin/api/`
-+ **panel React en `/panel/` con bundle `index-B4CHSoqR.js` (logo `logo-frecoin-dark.png`)**.
+(ahora con `account.php` + `users.php`) + **panel React en `/panel/` con bundle
+`index-Bgd_vbqu.js` (logo `logo-frecoin-dark.png`)**.
 
 **Verificación de cierre 2026-06-18 (código + prod en vivo, no supuesto):**
 `scripts/verify.sh` → `✓ all checks passed` (build raíz OK, `index-dllWHAsN.js`).
-Producción vía curl: `/panel/` sirve `index-B4CHSoqR.js` (200) · `/panel/logo-frecoin-dark.png`
-(200) · `/panel/assets/index-B4CHSoqR.js` (200) · `/admin/api/auth.php` → 401
-(protegida) · `/` y `/servicios/sai` → 200 · `send-form.php` POST → 400.
+`cd panel && npm run build` → OK (bundle `index-Bgd_vbqu.js`). `php -l` de `account.php`
+y `users.php` contra el PHP 8.3 del servidor → sin errores. Producción vía curl:
+`/panel/` sirve `index-Bgd_vbqu.js` (200) · `/` y `/servicios/sai` → 200 ·
+`/admin/api/{auth,users,account}.php` sin sesión → **401** (protegidos) · login
+super_admin → 200 + `GET users.php` devuelve la lista · `account.php` con clave
+actual errónea → 403 · `users.php` crear con clave corta → 400. `send-form.php`
+POST → 400. (Sin crear usuarios de prueba ni cambiar contraseñas reales.)
 
 **⚠️ NOTA de honestidad (commits `0b2901c` y `b12c2be` describen mal lo ocurrido):**
 El 18-jun hubo un incidente al desplegar el logo. El cambio del logo es a la app
@@ -76,6 +81,13 @@ por **sesión PHP + cookie HttpOnly + CSRF** (no JWT). Imágenes a `/assets/uplo
 - **Login + roles** (`admin_users`, super_admin/admin). Acceso: `lfreire@frecoin.es`.
   ✅ Contraseña robusta establecida el 2026-06-18 (hash bcrypt cost 12 en BD; la
   clave en claro NO vive en el repo — está fuera de control de versiones).
+- **Usuarios + Mi cuenta** (`account.php`, `users.php` · páginas `MiCuenta`/`Usuarios`).
+  Cualquier usuario cambia su propia contraseña desde **Mi cuenta** (verifica la
+  actual). Solo el **super_admin** ve y usa **Usuarios**: crear usuario (email, nombre,
+  rol, contraseña), cambiar rol, activar/desactivar, restablecer contraseña, eliminar.
+  Backend fuerza 403 si no es super_admin. Guardas anti-bloqueo: nadie puede
+  degradarse/desactivarse/eliminarse a sí mismo ni dejar el sistema sin ningún
+  super_admin activo. **No requirió cambios de BD** (las columnas ya existían).
 - **Leads** — `send-form.php` guarda cada contacto en `contact_leads` (best-effort,
   el email sigue siendo el canal primario); panel los lista/filtra/cambia estado.
 - **Servicios + precios** — los 6 servicios editables (textos, **precio**, SEO,
@@ -97,7 +109,8 @@ DDL + seed en `public/admin/api/schema.sql` + `seed-services.sql`.
   parte más grande (cada item lleva icono; ~150 items + selector de iconos).
 - **Blog** (tablas listas, editor BlockNote pendiente; frecoin no tiene blog público
   aún → habría que crear la sección).
-- `feat/backoffice-cms` sin pushear a GitHub al inicio de la sesión (se publica al cierre).
+- ~~Gestión de usuarios / cambio de contraseña en el panel~~ ✅ **HECHO 2026-06-18**
+  (módulo Usuarios + Mi cuenta en vivo; ya no depende de tocar la BD a mano).
 
 ---
 
