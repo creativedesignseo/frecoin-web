@@ -9,12 +9,27 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-18 (logo panel actualizado + .htaccess fixed)
-**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `0b2901c`), 13 commits
-del backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
-**Producción (frecoin.es):** front re-desplegado por SSH con el backoffice (bundle
-en vivo `index-dllWHAsN.js`); backend PHP + panel React con nuevo logo subidos a `public_html`. 
-`.htaccess` actualizado para SPA routing correcto en `/admin/`.
+**Last updated:** 2026-06-18 (logo del panel desplegado correctamente + recuperación de incidente)
+**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `b12c2be`), commits del
+backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
+**Producción (frecoin.es):** web pública (`index-dllWHAsN.js`) + API PHP `/admin/api/`
++ **panel React en `/panel/` con bundle `index-B4CHSoqR.js` (logo `logo-frecoin-dark.png`)**.
+
+**⚠️ NOTA de honestidad (commits `0b2901c` y `b12c2be` describen mal lo ocurrido):**
+El 18-jun hubo un incidente al desplegar el logo. El cambio del logo es a la app
+**`panel/` (build Vite separado, `base:/panel/`)**, NO al build raíz. En el primer
+intento se construyó el build equivocado (`dist/` de la web pública) y un
+`rsync --delete dist/ → public_html/` **borró `/panel/` y `/admin/api/config.php`**
+(API quedó en 500) y se reescribió mal el `.htaccess` raíz. Se restauró todo desde
+el backup `public_html_backup_20260618_161534` (panel, config.php modo 600, .htaccess
+original 5125 B) y **luego** se desplegó el panel CORRECTAMENTE: `cd panel && npm run
+build` → `rsync panel/dist/ → public_html/panel/`. **Verificado en vivo:** `/panel/`
+sirve `index-B4CHSoqR.js`, `/panel/logo-frecoin-dark.png` 200, `/admin/api/auth.php`
+401, `/` 200, `send-form.php` 400.
+
+**Lección para el próximo deploy del panel:** el panel se construye en `panel/`
+(NO en la raíz) y se sube SOLO a `public_html/panel/` — nunca un `rsync --delete`
+de `dist/` (web pública) contra la raíz, porque arrasa `/panel/` y `/admin/`.
 
 **Re-verificación 2026-06-17 (código + prod, no supuesto):** verificado en vivo con
 Node `fetch` + Playwright headless contra frecoin.es: `/` y `/servicios/sai` → 200
@@ -42,7 +57,8 @@ y en `progress/2026-06-17-backoffice-cms.md`.
 > (no por push — frecoin no tiene auto-deploy). config.php real solo en el servidor.
 > 
 > **Actualización 2026-06-18:** Logo del panel actualizado a `logo-frecoin-dark.png`.
-> Deploy: `npm run build` + rsync a `public_html` vía SSH (backup previo creado).
+> Deploy CORRECTO: `cd panel && npm run build` → `rsync panel/dist/ →
+> public_html/panel/` (acotado a `/panel/`, backup `panel_backup_20260618_163943`).
 
 **Arquitectura:** React (panel, build separado en `public_html/panel/`) + API REST
 PHP en `public_html/admin/api/*.php` (PDO) + **MySQL** (`u949041093_frecoin`). Auth
@@ -52,7 +68,8 @@ por **sesión PHP + cookie HttpOnly + CSRF** (no JWT). Imágenes a `/assets/uplo
 
 **Módulos en vivo y verificados:**
 - **Login + roles** (`admin_users`, super_admin/admin). Acceso: `lfreire@frecoin.es`.
-  ⚠️ **Contraseña `123456` (débil, temporal de pruebas)** — cambiar antes de uso real.
+  ✅ Contraseña robusta establecida el 2026-06-18 (hash bcrypt cost 12 en BD; la
+  clave en claro NO vive en el repo — está fuera de control de versiones).
 - **Leads** — `send-form.php` guarda cada contacto en `contact_leads` (best-effort,
   el email sigue siendo el canal primario); panel los lista/filtra/cambia estado.
 - **Servicios + precios** — los 6 servicios editables (textos, **precio**, SEO,
@@ -74,7 +91,6 @@ DDL + seed en `public/admin/api/schema.sql` + `seed-services.sql`.
   parte más grande (cada item lleva icono; ~150 items + selector de iconos).
 - **Blog** (tablas listas, editor BlockNote pendiente; frecoin no tiene blog público
   aún → habría que crear la sección).
-- Cambiar la contraseña `123456`.
 - `feat/backoffice-cms` sin pushear a GitHub al inicio de la sesión (se publica al cierre).
 
 ---
