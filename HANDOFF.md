@@ -9,11 +9,17 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-18 (logo del panel desplegado correctamente + recuperación de incidente)
-**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `b12c2be`), commits del
+**Last updated:** 2026-06-18 (logo del panel desplegado correctamente + recuperación de incidente · cierre verificado)
+**Estado git:** rama de trabajo `feat/backoffice-cms` (HEAD `1d7e015`), commits del
 backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
 **Producción (frecoin.es):** web pública (`index-dllWHAsN.js`) + API PHP `/admin/api/`
 + **panel React en `/panel/` con bundle `index-B4CHSoqR.js` (logo `logo-frecoin-dark.png`)**.
+
+**Verificación de cierre 2026-06-18 (código + prod en vivo, no supuesto):**
+`scripts/verify.sh` → `✓ all checks passed` (build raíz OK, `index-dllWHAsN.js`).
+Producción vía curl: `/panel/` sirve `index-B4CHSoqR.js` (200) · `/panel/logo-frecoin-dark.png`
+(200) · `/panel/assets/index-B4CHSoqR.js` (200) · `/admin/api/auth.php` → 401
+(protegida) · `/` y `/servicios/sai` → 200 · `send-form.php` POST → 400.
 
 **⚠️ NOTA de honestidad (commits `0b2901c` y `b12c2be` describen mal lo ocurrido):**
 El 18-jun hubo un incidente al desplegar el logo. El cambio del logo es a la app

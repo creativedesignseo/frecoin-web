@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-06-17 (sesión backoffice CMS — verificado en vivo)
+**Last updated:** 2026-06-18 (logo del panel desplegado + recuperación de incidente — verificado en vivo)
 
 ---
 
@@ -13,8 +13,13 @@
 
 **WEB PÚBLICA ENTREGADA** (09-jun, Luis conforme). Encima se ha construido un
 **BACKOFFICE CMS EN VIVO** (`frecoin.es/panel/`): React + PHP + MySQL, reflejo del
-admin de DoodleForever. Rama `feat/backoffice-cms` (HEAD `df5ea8c`), subido por SSH.
+admin de DoodleForever. Rama `feat/backoffice-cms` (HEAD `1d7e015`), subido por SSH.
 Detalle en `HANDOFF.md` § Backoffice CMS y `progress/2026-06-17-backoffice-cms.md`.
+
+**18-jun:** Logo del panel actualizado a `logo-frecoin-dark.png` y desplegado a
+`/panel/` (bundle `index-B4CHSoqR.js`). Hubo un incidente de deploy (rsync borró
+`/panel/` + `config.php`); recuperado desde backup y re-desplegado correctamente.
+Secuencia completa en `progress/2026-06-18-logo-panel-incidente-recuperacion.md`.
 
 Stack: React/Vite (público + panel) · PHP + MySQL (backoffice) · Hostinger (deploy
 manual SSH, no auto-deploy) · Live: true.
@@ -43,7 +48,7 @@ manual SSH, no auto-deploy) · Live: true.
 - [ ] Conectar TEXTOS de Contenido (hero/about/números/contacto) al front público
 - [ ] Bloques de servicios editables (qué incluye, FAQ, audiencias, proceso) + iconos
 - [ ] Blog (tablas listas; falta editor BlockNote + sección pública)
-- [ ] Cambiar contraseña `123456` (débil, temporal)
+- [x] Cambiar contraseña `123456` → clave robusta (bcrypt cost 12, 2026-06-18; verificado en vivo)
 - [ ] Decidir si `feat/backoffice-cms` se mergea a `draft/diseno`/`main`
 
 ---
