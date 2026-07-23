@@ -83,6 +83,37 @@ snapshot; y devolver `null` si `fetch_gallery` no encuentra la fila (defensivo).
 Redeploy solo de `gallery.php` (scp). Verificado en vivo: `POST gallery.php` → 201 con
 item; DELETE de prueba → 200; limpieza sin dejar basura.
 
+## Rediseño (mismo día) — drag&drop + descripción + reordenar
+
+Petición de Luis/Jonatan tras usarla: el recuadro "Añadir foto" pegado a cada foto
+confundía; querían botón claro + arrastrar-soltar, título **y descripción**, y reordenar.
+
+Cambios:
+- **BD**: `ALTER TABLE work_gallery ADD COLUMN description VARCHAR(500) NULL AFTER title`.
+- `gallery.php` reescrito: `description` en add/update/snapshot; **`PUT ?action=reorder`**
+  atómico (transacción, sort_order por índice); guarda de null en PUT; snapshot que
+  **lanza** si no puede escribir (antes lo silenciaba); al **DELETE**, si la imagen es
+  local y no la usa otra fila, se borra el archivo + su fila en `media` (evita fuga de disco).
+- Panel `Trabajos.tsx` reescrito con **`@dnd-kit`** (sortable): botón "Añadir foto" +
+  **zona de arrastrar-soltar** archivos, **arrastrar el asa ⠿ para reordenar**, título +
+  descripción por foto (guardan on-blur), reset del `<input file>` (permite re-subir mismo
+  archivo). Deps nuevas: `@dnd-kit/core`, `@dnd-kit/sortable`, `@dnd-kit/utilities`.
+- Público `WorkGallery.tsx`: muestra la **descripción** como pie de foto.
+
+Verificado en vivo (super_admin, sin dejar datos de prueba): add con título+descripción
+→ 201 · reorder → 200 (orden invertido) · editar descripción → 200 · borrar → 200 con
+`uploads/work-sai` a 0 archivos · home pinta las 3 fotos actuales desde el snapshot.
+Bundles: público `index-Dti3xGD2.js`, panel `index-iq5qEiVB.js`. Backup:
+`~/backup_public_html_20260723_203212`.
+
+### Auditoría adversarial del backoffice (workflow, 29 agentes)
+
+13 hallazgos reales. Arreglados aquí: guarda de null en gallery PUT, snapshot que lanza,
+limpieza de archivo al borrar, reset del selector en Trabajos. **Pendientes** en
+`tasks/current.md` § Auditoría (login rate-limit por sesión = el más serio, reset de
+selector en Contenido/Servicios, feedback de reset en Usuarios, typo `.htaccess`
+`work-manifest`→`work-gallery`, swallow en content.php, filas muertas `work`, etc.).
+
 ## Next step
 
 Responder a Luis (borrador ya creado en Gmail) que ya puede añadir fotos por área desde

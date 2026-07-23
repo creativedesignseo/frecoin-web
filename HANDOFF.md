@@ -9,23 +9,24 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-07-23 (galería "Trabajos realizados" multi-foto por área desplegada + verificada en vivo)
+**Last updated:** 2026-07-23 (galería "Trabajos" rediseñada: drag&drop, título+descripción y reordenar — desplegada + verificada en vivo)
 **Estado git:** rama de trabajo `feat/backoffice-cms`, commits del backoffice sobre
 `draft/diseno`. **La web pública original sigue entregada.**
-**Producción (frecoin.es):** web pública (`index-BzfjJSdE.js`) + API PHP `/admin/api/`
+**Producción (frecoin.es):** web pública (`index-Dti3xGD2.js`) + API PHP `/admin/api/`
 (`account.php`, `users.php`, `gallery.php`) + **panel React en `/panel/` con bundle
-`index-DIiFnGMX.js`**. Tabla nueva `work_gallery` (galería de trabajos, N fotos/área).
+`index-iq5qEiVB.js`**. Tabla `work_gallery` (N fotos/área, con columna `description`).
 
 **Verificación de cierre 2026-07-23 (código + prod en vivo, no supuesto):**
-`scripts/verify.sh` → `✓ all checks passed` (build raíz `index-BzfjJSdE.js`).
-`panel npm run build` → OK (`index-DIiFnGMX.js`). `php -l gallery.php` contra el PHP 8.3
-del servidor → sin errores. Producción: `/assets/work-gallery.json` servido como JSON
-(4 fotos · 4 áreas) · la home renderiza 4 tarjetas leídas del snapshot (verificado en
-navegador: 4 `.work-card` con sus URLs y títulos) · `/` y `/servicios/sai` → 200 ·
-panel sirve `index-DIiFnGMX.js` · `/admin/api/{auth,gallery}.php` sin sesión → **401** ·
-login super_admin → `GET gallery.php` = 4 items · `gallery.php` POST área inválida → 400 ·
-`send-form.php` POST → 400. Backup completo previo: `~/backup_public_html_20260723_175321`.
-(Sin crear fotos de prueba.)
+`scripts/verify.sh` → `✓ all checks passed` (build raíz `index-Dti3xGD2.js`). `panel npm
+run build` → OK (`index-iq5qEiVB.js`). `php -l gallery.php` (PHP 8.3 del servidor) → sin
+errores. Migración `ALTER TABLE work_gallery ADD COLUMN description` aplicada. Producción,
+como super_admin: añadir foto con título+descripción → 201 · **reordenar**
+(`?action=reorder`) → 200 (orden invertido OK) · editar descripción → 200 · borrar → 200
+**con limpieza del archivo subido** (`uploads/work-sai` quedó a 0) · endpoints sin sesión
+→ 401. Home: 3 `.work-card` leídas del snapshot (`work-gallery.json` con campo
+`description`, servido como JSON). `send-form.php` POST → 400. Backup completo:
+`~/backup_public_html_20260723_203212`. (Sin dejar datos de prueba.)
+Estado del contenido: 3 fotos activas (redes, electricas, wifi); Luis borró las de cámaras.
 
 **⚠️ Lección de deploy de la web pública (raíz):** el build raíz (`dist/`) INCLUYE una
 copia de `admin/` (Vite copia `public/`). Para desplegar la web pública se hace
@@ -106,10 +107,13 @@ por **sesión PHP + cookie HttpOnly + CSRF** (no JWT). Imágenes a `/assets/uplo
 - **Trabajos** (`gallery.php` · página `Trabajos` · tabla `work_gallery` · snapshot
   `/assets/work-gallery.json`) — galería "Trabajos realizados" con **N fotos por área**
   (6 áreas: redes, electricas, camaras, wifi, sai, controles). Luis **añade y acumula**
-  fotos por área (antes solo podía sustituir 1 por área), con recorte 3:4 + WebP,
-  título opcional y borrado. La home (`WorkGallery`) lee el snapshot; fallback a las 4
-  por defecto. Seed inicial con las 4 fotos que ya mostraba la home. Áreas sin fotos no
-  aparecen en la web. **Motivo:** petición de Luis por email (04-jul y 22-jul-2026).
+  fotos (antes solo sustituía 1/área). **Rediseño 2026-07-23** (petición suya): botón
+  "Añadir foto" + **arrastrar-soltar** el archivo, **arrastrar para reordenar** (drag&drop,
+  `@dnd-kit`, persiste vía `PUT ?action=reorder` atómico), y **título + descripción** por
+  foto (la descripción se muestra en la home como pie de foto). Recorte 3:4 + WebP.
+  Al **borrar** se elimina también el archivo subido si ya no lo usa nadie (sin fuga de
+  disco). La home (`WorkGallery`) lee el snapshot; fallback a las 4 por defecto. Áreas sin
+  fotos no aparecen en la web. **Motivo:** emails de Luis (04-jul, 22-jul-2026).
 
 **Tablas MySQL:** `admin_users`, `blog_posts` (sin usar aún), `services` +
 `service_blocks` (blocks sin usar aún), `page_content`, `contact_leads`, `media`.

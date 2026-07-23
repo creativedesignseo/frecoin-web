@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-07-23 (galería "Trabajos realizados" multi-foto por área — desplegada y verificada en vivo)
+**Last updated:** 2026-07-23 (galería "Trabajos" rediseñada: drag&drop + título/descripción + reordenar — desplegada y verificada en vivo)
 
 ---
 
@@ -56,6 +56,28 @@ manual SSH, no auto-deploy) · Live: true.
       **acumula** fotos por área (6 áreas), antes solo sustituía 1. Petición suya por email
       (04-jul y 22-jul). Desplegado + verificado en vivo 2026-07-23. Ver
       `progress/2026-07-23-galeria-trabajos.md`.
+- [x] **Trabajos — rediseño** (2026-07-23): botón "Añadir foto" + arrastrar-soltar,
+      **reordenar arrastrando** (`@dnd-kit`, `PUT ?action=reorder`), **título + descripción**
+      por foto (descripción visible en la web), limpieza del archivo al borrar. Migración
+      `ADD COLUMN description`. Verificado en vivo. Ver `progress/2026-07-23-galeria-trabajos.md`.
+
+## 🔍 Auditoría del backoffice (2026-07-23) — pendientes
+
+Auditoría adversarial (13 hallazgos reales). Ya arreglados en `gallery.php`/`Trabajos.tsx`:
+guarda de null en PUT, snapshot que lanza si no puede escribir, limpieza de archivo al
+borrar, reset del selector de archivo. **Quedan pendientes** (no urgentes, panel interno):
+- [ ] **Seguridad — login sin límite real**: el rate-limit vive en `$_SESSION`; se salta
+      sin cookie. Pasar a límite por IP+email persistente (`auth.php`). *(el más serio)*
+- [ ] `auth.php`: enumeración de emails por tiempo de respuesta (bcrypt solo si el user existe).
+- [ ] Reset del selector de archivo en `Contenido.tsx` y `Servicios.tsx` (como en Trabajos).
+- [ ] `Usuarios.tsx`: "Restablecer contraseña" cierra/borra el campo aunque falle (parece OK).
+- [ ] `Usuarios.tsx`: carga `users.php` para un admin normal antes de redirigirlo.
+- [ ] `.htaccess` (raíz + `dist/`): la regla no-cache apunta a `work-manifest.json` (typo);
+      debe ser `work-gallery.json` (hoy lo salva el `?v=` anti-caché).
+- [ ] `content.php`: mismo swallow de fallo al escribir snapshot que ya se arregló en gallery.
+- [ ] `schema.sql`: filas muertas `section='work'` en `page_content` (duplican datos sin uso).
+- [ ] `users.php`: crear email duplicado a la vez → 500 en vez de 409; y PUT sin guarda de null.
+- [ ] `upload.php`: valida tamaño tras decodificar todo en memoria (endurecer).
 
 ## 🟡 Backoffice — pendiente
 

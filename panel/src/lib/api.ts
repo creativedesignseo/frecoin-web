@@ -159,18 +159,26 @@ export const api = {
       }),
   },
 
-  // Galería "Trabajos realizados": añadir/listar/editar/borrar fotos por área.
+  // Galería "Trabajos realizados": añadir/listar/editar/borrar/reordenar fotos por área.
   gallery: {
     list: () => request<{ items: GalleryItem[] }>('/gallery.php'),
-    add: (area: WorkArea, image_url: string, title = '') =>
+    add: (area: WorkArea, image_url: string, title = '', description = '') =>
       request<{ ok: boolean; item: GalleryItem }>('/gallery.php', {
         method: 'POST',
-        body: JSON.stringify({ area, image_url, title }),
+        body: JSON.stringify({ area, image_url, title, description }),
       }),
-    update: (id: number, data: { title?: string; active?: boolean; sort_order?: number }) =>
+    update: (
+      id: number,
+      data: { title?: string; description?: string; active?: boolean; sort_order?: number },
+    ) =>
       request<{ ok: boolean; item: GalleryItem }>(`/gallery.php?id=${id}`, {
         method: 'PUT',
         body: JSON.stringify(data),
+      }),
+    reorder: (area: WorkArea, ids: number[]) =>
+      request<{ ok: boolean }>('/gallery.php?action=reorder', {
+        method: 'PUT',
+        body: JSON.stringify({ area, ids }),
       }),
     remove: (id: number) =>
       request<{ ok: boolean }>(`/gallery.php?id=${id}`, { method: 'DELETE' }),
@@ -214,6 +222,7 @@ export interface GalleryItem {
   area: WorkArea;
   image_url: string;
   title: string | null;
+  description: string | null;
   active: number;
   sort_order: number;
 }

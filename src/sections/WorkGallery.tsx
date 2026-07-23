@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Work { image: string; title: string; tag: string }
+interface Work { image: string; title: string; description: string; tag: string }
 
 // Orden de áreas + etiqueta visible. Debe coincidir con los slugs del panel/BD.
 const AREA_META: { slug: string; tag: string; label: string }[] = [
@@ -25,13 +25,13 @@ const AREA_META: { slug: string; tag: string; label: string }[] = [
 
 // Fallback: lo que se muestra si aún no hay fotos gestionadas desde el panel.
 const DEFAULT_WORKS: Work[] = [
-  { image: '/assets/work-redes-corporativas.webp', title: 'RED CORPORATIVA COMPLETA', tag: 'REDES' },
-  { image: '/assets/work-electricas-cuadro.webp', title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', tag: 'ELÉCTRICAS' },
-  { image: '/assets/work-camaras-cctv.webp', title: 'CIRCUITO CERRADO DE CÁMARAS', tag: 'SEGURIDAD' },
-  { image: '/assets/work-wifi-cobertura.webp', title: 'COBERTURA WIFI EMPRESARIAL', tag: 'WIFI' },
+  { image: '/assets/work-redes-corporativas.webp', title: 'RED CORPORATIVA COMPLETA', description: '', tag: 'REDES' },
+  { image: '/assets/work-electricas-cuadro.webp', title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', description: '', tag: 'ELÉCTRICAS' },
+  { image: '/assets/work-camaras-cctv.webp', title: 'CIRCUITO CERRADO DE CÁMARAS', description: '', tag: 'SEGURIDAD' },
+  { image: '/assets/work-wifi-cobertura.webp', title: 'COBERTURA WIFI EMPRESARIAL', description: '', tag: 'WIFI' },
 ];
 
-type Snapshot = Record<string, { url: string; title: string | null }[]>;
+type Snapshot = Record<string, { url: string; title: string | null; description?: string | null }[]>;
 
 export default function WorkGallery() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -48,7 +48,7 @@ export default function WorkGallery() {
         const list: Work[] = [];
         for (const { slug, tag, label } of AREA_META) {
           for (const photo of data[slug] ?? []) {
-            if (photo && photo.url) list.push({ image: photo.url, title: photo.title || label, tag });
+            if (photo && photo.url) list.push({ image: photo.url, title: photo.title || label, description: photo.description || '', tag });
           }
         }
         if (list.length > 0) setWorks(list);
@@ -102,7 +102,8 @@ export default function WorkGallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <span className="inline-block text-[11px] font-semibold text-white bg-white/15 rounded px-2.5 py-1 mb-2">{work.tag}</span>
-                  <h3 className="font-inter font-semibold text-[16px] text-white leading-tight mb-3">{work.title}</h3>
+                  <h3 className="font-inter font-semibold text-[16px] text-white leading-tight mb-1">{work.title}</h3>
+                  {work.description && <p className="font-inter text-[13px] text-white/80 leading-snug mb-3 line-clamp-3">{work.description}</p>}
                 </div>
                 <div className="absolute bottom-6 right-6 w-9 h-9 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <ArrowRight size={16} className="text-gripz-black" />

@@ -40,3 +40,6 @@ public/**/.user.ini
 
 # TypeScript incremental build artifacts
 *.tsbuildinfo
+
+# graphify build cache (no versionar)
+graphify-out/cache/
