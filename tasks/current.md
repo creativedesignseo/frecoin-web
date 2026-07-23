@@ -69,7 +69,9 @@ borrar, reset del selector de archivo. **Quedan pendientes** (no urgentes, panel
 - [ ] **Seguridad — login sin límite real**: el rate-limit vive en `$_SESSION`; se salta
       sin cookie. Pasar a límite por IP+email persistente (`auth.php`). *(el más serio)*
 - [ ] `auth.php`: enumeración de emails por tiempo de respuesta (bcrypt solo si el user existe).
-- [ ] Reset del selector de archivo en `Contenido.tsx` y `Servicios.tsx` (como en Trabajos).
+- [x] Reset del selector de archivo en `Servicios.tsx` (2026-07-23, con el rework de imágenes) · [ ] falta `Contenido.tsx`.
+- [ ] **Decidir: ¿cada servicio necesita VARIAS imágenes (galería por servicio) o basta hero+beneficios?**
+      (petición de Luis/Jonatan "poner otras más" en Servicios — pendiente de confirmar alcance).
 - [ ] `Usuarios.tsx`: "Restablecer contraseña" cierra/borra el campo aunque falle (parece OK).
 - [ ] `Usuarios.tsx`: carga `users.php` para un admin normal antes de redirigirlo.
 - [ ] `.htaccess` (raíz + `dist/`): la regla no-cache apunta a `work-manifest.json` (typo);

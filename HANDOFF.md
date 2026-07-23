@@ -9,12 +9,22 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-07-23 (galería "Trabajos" rediseñada: drag&drop, título+descripción y reordenar — desplegada + verificada en vivo)
+**Last updated:** 2026-07-23 (Servicios: imagen reemplazable/quitable, sin etiqueta "por defecto" — panel desplegado + verificado en vivo)
 **Estado git:** rama de trabajo `feat/backoffice-cms`, commits del backoffice sobre
 `draft/diseno`. **La web pública original sigue entregada.**
 **Producción (frecoin.es):** web pública (`index-Dti3xGD2.js`) + API PHP `/admin/api/`
 (`account.php`, `users.php`, `gallery.php`) + **panel React en `/panel/` con bundle
-`index-iq5qEiVB.js`**. Tabla `work_gallery` (N fotos/área, con columna `description`).
+`index-em3vuUVY.js`**. Tabla `work_gallery` (N fotos/área, con columna `description`).
+
+**Fix Servicios 2026-07-23 (panel):** cada servicio tiene UNA imagen hero + UNA de
+beneficios (no es galería; la galería es "Trabajos"). El panel **muestra la imagen actual**
+(sea propia o la que trae la web) y ofrece **Reemplazar** siempre + **Quitar** (si es
+propia, vuelve a la original) + reset del selector de archivo. **Sin** etiquetas de "por
+defecto" (confundían: parecía que no se podía cambiar). El front público ya hacía
+`db || default` ([services.ts](src/data/services.ts)). Verificado en vivo (Redes: 2 botones
+"Reemplazar imagen", "Quitar" en la propia, sin badge). Bundle `index-em3vuUVY.js`.
+**Abierto:** decidir si cada servicio necesita VARIAS imágenes (galería por servicio) o
+basta con hero+beneficios.
 
 **Verificación de cierre 2026-07-23 (código + prod en vivo, no supuesto):**
 `scripts/verify.sh` → `✓ all checks passed` (build raíz `index-Dti3xGD2.js`). `panel npm

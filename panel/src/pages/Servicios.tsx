@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Loader2, Pencil, ArrowLeft, Check, Wrench, Upload, ImageOff } from 'lucide-react';
+import { Loader2, Pencil, ArrowLeft, Check, Wrench, Upload, ImageOff, X } from 'lucide-react';
 import { api, type Service, type ServiceUpdate } from '../lib/api';
 import { compressImage } from '../lib/imageUtils';
 
@@ -85,8 +85,20 @@ function Field({ label, children, hint }: { label: string; children: React.React
 
 const inputCls = 'w-full rounded-lg border border-neutral-300 px-3 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20';
 
-function ImageField({ label, url, alt, onUrl, onAlt }: {
-  label: string; url: string; alt: string; onUrl: (u: string) => void; onAlt: (a: string) => void;
+// Imágenes por defecto de cada servicio (las que muestra la web si no subes una
+// propia). Deben coincidir con src/data/services.ts. Cada servicio tiene UNA imagen
+// hero y UNA de beneficios — no es una galería (esa es la sección "Trabajos").
+const SERVICE_DEFAULT_IMAGES: Record<string, { hero: string; benefits: string }> = {
+  'redes-informaticas':       { hero: '/assets/services/redes/hero-server-rack.jpg', benefits: '/assets/services/redes/data-center.jpg' },
+  'instalaciones-electricas': { hero: '/assets/services/electricas/hero.jpg',        benefits: '/assets/services/electricas/benefits.jpg' },
+  'camaras-videovigilancia':  { hero: '/assets/services/camaras/hero.jpg',           benefits: '/assets/services/camaras/benefits.jpg' },
+  'antenas-wifi':             { hero: '/assets/services/wifi/hero.jpg',               benefits: '/assets/services/wifi/benefits.jpg' },
+  'sai':                      { hero: '/assets/services/sai/hero.webp',               benefits: '/assets/services/sai/benefits.webp' },
+  'controles-de-acceso':      { hero: '/assets/services/accesos/hero.jpg',            benefits: '/assets/services/accesos/benefits.jpg' },
+};
+
+function ImageField({ label, url, defaultUrl, alt, onUrl, onAlt }: {
+  label: string; url: string; defaultUrl?: string; alt: string; onUrl: (u: string) => void; onAlt: (a: string) => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [uploading, setUploading] = useState(false);
@@ -105,21 +117,32 @@ function ImageField({ label, url, alt, onUrl, onAlt }: {
     }
   };
 
+  const isCustom = !!url;                 // hay imagen propia subida
+  const shown = url || defaultUrl || '';  // lo que se ve: propia, o la por defecto de la web
+
   return (
     <div>
       <label className="mb-1 block text-sm font-semibold">{label}</label>
       <div className="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50">
-        {url
-          ? <img src={url} alt={alt} className="h-32 w-full object-cover" />
-          : <div className="flex h-32 items-center justify-center text-neutral-300"><ImageOff className="h-6 w-6" /></div>}
-        <div className="p-2">
+        <div className="relative">
+          {shown
+            ? <img src={shown} alt={alt} className="h-32 w-full object-cover" />
+            : <div className="flex h-32 items-center justify-center text-neutral-300"><ImageOff className="h-6 w-6" /></div>}
+        </div>
+        <div className="flex flex-wrap items-center gap-2 p-2">
           <input ref={inputRef} type="file" accept="image/*" className="hidden"
-            onChange={(e) => e.target.files?.[0] && handle(e.target.files[0])} />
+            onChange={(e) => { if (e.target.files?.[0]) handle(e.target.files[0]); e.target.value = ''; }} />
           <button type="button" onClick={() => inputRef.current?.click()} disabled={uploading}
             className="inline-flex items-center gap-1.5 rounded-md border border-neutral-300 px-2.5 py-1.5 text-xs font-medium hover:bg-neutral-100 disabled:opacity-50">
             {uploading ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Upload className="h-3.5 w-3.5" />}
-            {uploading ? 'Subiendo…' : 'Cambiar imagen'}
+            {uploading ? 'Subiendo…' : shown ? 'Reemplazar imagen' : 'Subir imagen'}
           </button>
+          {isCustom && (
+            <button type="button" onClick={() => onUrl('')} disabled={uploading}
+              className="inline-flex items-center gap-1.5 rounded-md border border-neutral-200 px-2.5 py-1.5 text-xs font-medium text-neutral-600 hover:bg-neutral-100 disabled:opacity-50">
+              <X className="h-3.5 w-3.5" /> Quitar
+            </button>
+          )}
         </div>
       </div>
       <input className={`${inputCls} mt-2 text-xs`} value={alt} onChange={(e) => onAlt(e.target.value)}
@@ -149,6 +172,7 @@ function ServiceEditor({ service, onBack, onSaved }: { service: Service; onBack:
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const set = (k: keyof typeof form, v: string | boolean) => setForm((f) => ({ ...f, [k]: v }));
+  const defaults = SERVICE_DEFAULT_IMAGES[service.slug];
 
   const save = async () => {
     setSaving(true);
@@ -205,9 +229,9 @@ function ServiceEditor({ service, onBack, onSaved }: { service: Service; onBack:
         </Field>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <ImageField label="Imagen principal (hero)" url={form.hero_image} alt={form.hero_image_alt}
+          <ImageField label="Imagen principal (hero)" url={form.hero_image} defaultUrl={defaults?.hero} alt={form.hero_image_alt}
             onUrl={(u) => set('hero_image', u)} onAlt={(a) => set('hero_image_alt', a)} />
-          <ImageField label="Imagen de beneficios" url={form.benefits_image} alt={form.benefits_image_alt}
+          <ImageField label="Imagen de beneficios" url={form.benefits_image} defaultUrl={defaults?.benefits} alt={form.benefits_image_alt}
             onUrl={(u) => set('benefits_image', u)} onAlt={(a) => set('benefits_image_alt', a)} />
         </div>
 
