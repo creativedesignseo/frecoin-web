@@ -39,12 +39,24 @@ if ($method === 'GET') {
 // ---- LOGIN -----------------------------------------------------------------
 $cfg   = config();
 $limit = $cfg['rate_limit'] ?? ['max_attempts' => 5, 'block_seconds' => 300];
+$maxAttempts  = (int) ($limit['max_attempts'] ?? 5);
+$blockSeconds = (int) ($limit['block_seconds'] ?? 300);
 $now   = time();
+$ip    = (string) ($_SERVER['REMOTE_ADDR'] ?? '');
+// Hash bcrypt señuelo (no es de ninguna cuenta): se verifica cuando el email no
+// existe para igualar el tiempo de respuesta y evitar enumeración de usuarios.
+$dummyHash = '$2b$12$BjzazjywLYww3NLxRRFElOdtf4xNocPX8xL1kQB9ObNVi0UvDLILe';
 
-// Rate limiting por sesión (mismo patrón que el panel PHP previo).
-if (!empty($_SESSION['login_block_until']) && $now < $_SESSION['login_block_until']) {
-    $wait = (int) ceil(($_SESSION['login_block_until'] - $now) / 60);
-    json_error("Demasiados intentos. Espera {$wait} minuto(s).", 429);
+// Rate limiting PERSISTENTE por IP en BD: no depende de la cookie de sesión (que se
+// podía omitir para saltarse el bloqueo). REMOTE_ADDR es la IP real del cliente (verificado).
+if ($ip !== '') {
+    $bstmt = db()->prepare('SELECT blocked_until FROM login_attempts WHERE ip = ? LIMIT 1');
+    $bstmt->execute([$ip]);
+    $brow = $bstmt->fetch();
+    if ($brow && $brow['blocked_until'] !== null && strtotime((string) $brow['blocked_until']) > $now) {
+        $wait = (int) ceil((strtotime((string) $brow['blocked_until']) - $now) / 60);
+        json_error("Demasiados intentos. Espera {$wait} minuto(s).", 429);
+    }
 }
 
 $body     = read_json_body();
@@ -56,20 +68,24 @@ if (!is_string($rawEmail) || trim($rawEmail) === '' || !is_string($password) || 
 }
 $email = strtolower(trim($rawEmail));
 
-$register_failure = function () use ($now, $limit) {
-    $_SESSION['login_attempts'] = ($_SESSION['login_attempts'] ?? 0) + 1;
-    if ($_SESSION['login_attempts'] >= ($limit['max_attempts'] ?? 5)) {
-        $_SESSION['login_block_until'] = $now + ($limit['block_seconds'] ?? 300);
-        $_SESSION['login_attempts']    = 0;
+$register_failure = function () use ($ip, $now, $maxAttempts, $blockSeconds) {
+    if ($ip === '') return;
+    db()->prepare('INSERT INTO login_attempts (ip, attempts) VALUES (?, 1)
+                   ON DUPLICATE KEY UPDATE attempts = attempts + 1')->execute([$ip]);
+    $s = db()->prepare('SELECT attempts FROM login_attempts WHERE ip = ?');
+    $s->execute([$ip]);
+    $att = (int) ($s->fetch()['attempts'] ?? 0);
+    if ($att >= $maxAttempts) {
+        db()->prepare('UPDATE login_attempts SET attempts = 0, blocked_until = ? WHERE ip = ?')
+            ->execute([date('Y-m-d H:i:s', $now + $blockSeconds), $ip]);
     }
 };
 
-$establish = function (array $user) use ($now) {
+$establish = function (array $user) use ($ip) {
     // Fija la sesión a este usuario y rota el id de sesión (anti fixation).
     session_regenerate_id(true);
-    $_SESSION['admin_id']       = (int) $user['id'];
-    $_SESSION['login_attempts'] = 0;
-    unset($_SESSION['login_block_until']);
+    $_SESSION['admin_id'] = (int) $user['id'];
+    if ($ip !== '') db()->prepare('DELETE FROM login_attempts WHERE ip = ?')->execute([$ip]);
     db()->prepare('UPDATE admin_users SET last_login = NOW() WHERE id = ?')->execute([(int) $user['id']]);
     json_out([
         'user' => [
@@ -115,5 +131,7 @@ if ($count === 0 && $bootEmail !== '' && $email === $bootEmail && $bootHash !== 
     ]);
 }
 
+// Email inexistente: verify contra el hash señuelo para igualar el tiempo antes del 401.
+password_verify($password, $dummyHash);
 $register_failure();
 json_error('Email o contraseña incorrectos', 401);

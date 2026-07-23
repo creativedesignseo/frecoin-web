@@ -81,10 +81,17 @@ try {
         if ($chk->fetch()) json_error('Ya existe un usuario con ese email', 409);
 
         $hash = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 12]);
-        db()->prepare('INSERT INTO admin_users (email, password_hash, role, name, active) VALUES (?, ?, ?, ?, 1)')
-            ->execute([$email, $hash, $role, $name !== '' ? $name : null]);
+        try {
+            db()->prepare('INSERT INTO admin_users (email, password_hash, role, name, active) VALUES (?, ?, ?, ?, 1)')
+                ->execute([$email, $hash, $role, $name !== '' ? $name : null]);
+        } catch (PDOException $e) {
+            // Carrera con la clave única de email: devolver 409 en vez de un 500 opaco.
+            if ((int) ($e->errorInfo[1] ?? 0) === 1062) json_error('Ya existe un usuario con ese email', 409);
+            throw $e;
+        }
 
-        json_out(['ok' => true, 'user' => user_public(fetch_user((int) db()->lastInsertId()))], 201);
+        $created = fetch_user((int) db()->lastInsertId());
+        json_out(['ok' => true, 'user' => $created ? user_public($created) : null], 201);
     }
 
     // ---- ACTUALIZAR --------------------------------------------------------
@@ -141,7 +148,8 @@ try {
         $vals[] = $id;
         db()->prepare('UPDATE admin_users SET ' . implode(', ', $sets) . ' WHERE id = ?')->execute($vals);
 
-        json_out(['ok' => true, 'user' => user_public(fetch_user($id))]);
+        $updated = fetch_user($id);
+        json_out(['ok' => true, 'user' => $updated ? user_public($updated) : null]);
     }
 
     // ---- ELIMINAR ----------------------------------------------------------

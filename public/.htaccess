@@ -88,7 +88,7 @@
   # Snapshots de datos del CMS (services/blog/content): cambian al editar desde
   # el panel, así que NO se cachean — el visitante ve los cambios en la siguiente
   # recarga, sin esperar. ETag permite respuestas 304 si no cambió (eficiente).
-  <FilesMatch "^(services|blog|content|work-manifest)\.json$">
+  <FilesMatch "^(services|blog|content|work-gallery)\.json$">
     Header set Cache-Control "no-cache, must-revalidate"
     Header unset Expires
   </FilesMatch>

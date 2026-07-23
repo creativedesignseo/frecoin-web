@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "panel/src/pages/Contenido.tsx": {
-    "mtime": 1784818271.9780524,
-    "ast_hash": "1ac60a489a92cd552d52ddc4c9a17d1b",
+    "mtime": 1784849074.5294075,
+    "ast_hash": "03f419a754735b0567ed2a117ba2cd94",
     "semantic_hash": ""
   },
   "panel/src/pages/Dashboard.tsx": {
@@ -80,8 +80,8 @@
     "semantic_hash": ""
   },
   "panel/src/pages/Servicios.tsx": {
-    "mtime": 1781729754.6503167,
-    "ast_hash": "58be325ef93a70722a6d1d8bd52d8d7a",
+    "mtime": 1784842969.4577932,
+    "ast_hash": "336e54bb8cd373ce06bb5cdeb0581b36",
     "semantic_hash": ""
   },
   "panel/src/pages/Trabajos.tsx": {
@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   "panel/src/pages/Usuarios.tsx": {
-    "mtime": 1781798038.2642946,
-    "ast_hash": "6d2f396eeace2b656fdfe9c16b3d1d12",
+    "mtime": 1784849118.0590265,
+    "ast_hash": "72a7f9d2ad54fcea140e6a202a780d22",
     "semantic_hash": ""
   },
   "panel/src/store/AuthContext.tsx": {
@@ -130,8 +130,8 @@
     "semantic_hash": ""
   },
   "public/admin/api/auth.php": {
-    "mtime": 1781723279.3674872,
-    "ast_hash": "0df7f3ec4d343730239463ed517e1fcf",
+    "mtime": 1784849400.79825,
+    "ast_hash": "c29ec50bf4e1ac2ce2914859ab072440",
     "semantic_hash": ""
   },
   "public/admin/api/config.example.php": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "public/admin/api/content.php": {
-    "mtime": 1781731033.0829287,
-    "ast_hash": "c46d13fce20f5b290275bd63e346cf14",
+    "mtime": 1784849171.8278058,
+    "ast_hash": "42b539f3c57f2fbee8de9995d5392ad9",
     "semantic_hash": ""
   },
   "public/admin/api/db.php": {
@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "public/admin/api/schema.sql": {
-    "mtime": 1784830769.8048244,
-    "ast_hash": "5db75104eb77117c14f2d856827e8b1a",
+    "mtime": 1784849419.1802695,
+    "ast_hash": "26cec2190ddf11020fcc2d5230245fd7",
     "semantic_hash": ""
   },
   "public/admin/api/seed-services.sql": {
@@ -180,13 +180,13 @@
     "semantic_hash": ""
   },
   "public/admin/api/upload.php": {
-    "mtime": 1781729542.316084,
-    "ast_hash": "709924d036adaf4dedfc05e3a55427d2",
+    "mtime": 1784849226.2384486,
+    "ast_hash": "9dc42e7dae449b123c45ef0508ee4e0f",
     "semantic_hash": ""
   },
   "public/admin/api/users.php": {
-    "mtime": 1781797905.3438501,
-    "ast_hash": "0f6635ac1fd6123f9c3d232239473d54",
+    "mtime": 1784849214.1731372,
+    "ast_hash": "4c67e6a8e52933c0a35aaf8c6f254b25",
     "semantic_hash": ""
   },
   "public/email-templates/confirmation-customer.html.php": {
@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "HANDOFF.md": {
-    "mtime": 1784832115.4434273,
-    "ast_hash": "2917baabf29d15fa406cfe8223a167d7",
+    "mtime": 1784842640.1117635,
+    "ast_hash": "045613afdf4b96c8edc9fd2d7ab3c2a2",
     "semantic_hash": ""
   },
   "README.md": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "tasks/current.md": {
-    "mtime": 1784832225.7694168,
-    "ast_hash": "4b5c4e6a457a9cb2a6dba0d558f66393",
+    "mtime": 1784842655.0311105,
+    "ast_hash": "a909abbc5aa1a148f2d9281569277b30",
     "semantic_hash": ""
   },
   "panel/public/logo-frecoin-dark.png": {

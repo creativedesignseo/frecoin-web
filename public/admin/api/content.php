@@ -18,22 +18,37 @@ $method = require_method(['GET', 'PUT']);
 function regenerate_content_snapshot(): void
 {
     $cfg = config();
-    $rows = db()->query('SELECT section, content_key, value FROM page_content')->fetchAll();
+    // Excluir la sección 'work' (obsoleta: la galería de Trabajos vive en work_gallery /
+    // work-gallery.json; estas filas ya no las consume nadie).
+    $rows = db()->query("SELECT section, content_key, value FROM page_content WHERE section <> 'work'")->fetchAll();
     $grouped = [];
     foreach ($rows as $r) {
         $grouped[$r['section']][$r['content_key']] = $r['value'];
     }
     $dir = $cfg['snapshots_dir'] ?? (__DIR__ . '/../../assets');
+    if (!is_dir($dir) && !@mkdir($dir, 0755, true) && !is_dir($dir)) {
+        throw new RuntimeException('snapshots_dir no disponible: ' . $dir);
+    }
     $path = rtrim($dir, '/') . '/content.json';
     $json = json_encode($grouped, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    if ($json === false) {
+        throw new RuntimeException('json_encode falló: ' . json_last_error_msg());
+    }
+    // No silenciar fallos de escritura: si no se persiste, que el PUT devuelva 500
+    // (antes respondía ok:true aunque el snapshot no se escribiera).
     $fp = fopen($path, 'c');
-    if ($fp && flock($fp, LOCK_EX)) {
-        ftruncate($fp, 0);
-        rewind($fp);
-        fwrite($fp, $json !== false ? $json : '{}');
-        fflush($fp);
-        flock($fp, LOCK_UN);
-        fclose($fp);
+    if (!$fp || !flock($fp, LOCK_EX)) {
+        if ($fp) fclose($fp);
+        throw new RuntimeException('no se pudo abrir content.json para escritura: ' . $path);
+    }
+    ftruncate($fp, 0);
+    rewind($fp);
+    $ok = fwrite($fp, $json);
+    fflush($fp);
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    if ($ok === false) {
+        throw new RuntimeException('no se pudo escribir content.json: ' . $path);
     }
 }
 

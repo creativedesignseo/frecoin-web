@@ -9,12 +9,22 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-07-23 (Servicios: imagen reemplazable/quitable, sin etiqueta "por defecto" — panel desplegado + verificado en vivo)
+**Last updated:** 2026-07-24 (auditoría del backoffice remediada: rate-limit de login por IP + hardening — desplegado + verificado en vivo)
+
+**Seguridad/hardening 2026-07-24 (auditoría remediada, verificado en vivo):** login
+ahora con **rate-limit por IP** en tabla `login_attempts` (persistente, no se salta
+omitiendo la cookie; `REMOTE_ADDR` es la IP real tras el CDN — verificado); anti-enumeración
+por tiempo (`password_verify` señuelo); `.htaccess` sirve `work-gallery.json` como `no-cache`
+(typo corregido); `users.php` email duplicado → 409; `content.php`/`gallery.php` lanzan si no
+pueden escribir el snapshot; `upload.php` corta por tamaño antes de decodificar; reset del
+`<input file>` en Servicios/Contenido; feedback de "restablecer contraseña" en Usuarios solo
+en éxito. **Login verificado OK tras el cambio.** Panel `index-BlcpRtEO.js`. Backup:
+`~/api_backup_20260724_013125` + `~/backup_public_html_20260723_203212`.
 **Estado git:** rama de trabajo `feat/backoffice-cms`, commits del backoffice sobre
 `draft/diseno`. **La web pública original sigue entregada.**
 **Producción (frecoin.es):** web pública (`index-Dti3xGD2.js`) + API PHP `/admin/api/`
 (`account.php`, `users.php`, `gallery.php`) + **panel React en `/panel/` con bundle
-`index-em3vuUVY.js`**. Tabla `work_gallery` (N fotos/área, con columna `description`).
+`index-BlcpRtEO.js`**. Tablas `work_gallery` (N fotos/área, `description`) + `login_attempts`.
 
 **Fix Servicios 2026-07-23 (panel):** cada servicio tiene UNA imagen hero + UNA de
 beneficios (no es galería; la galería es "Trabajos"). El panel **muestra la imagen actual**

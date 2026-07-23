@@ -171,6 +171,16 @@ INSERT INTO work_gallery (area, image_url, title, sort_order) VALUES
   ('camaras',    '/assets/work-camaras-cctv.webp',       'Circuito cerrado de cámaras',      1),
   ('wifi',       '/assets/work-wifi-cobertura.webp',     'Cobertura WiFi empresarial',       1);
 
+-- Rate limiting de login por IP (persistente; no depende de la cookie de sesión,
+-- que se podía omitir para saltarse el bloqueo).
+CREATE TABLE IF NOT EXISTS login_attempts (
+  ip VARCHAR(45) NOT NULL,
+  attempts INT NOT NULL DEFAULT 0,
+  blocked_until DATETIME NULL,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (ip)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- ============================================================================
 -- SEED — catálogo de page_content (claves fijas; Luis edita el valor, no el esquema).
 -- Los valores van vacíos: el front usa su copy hardcodeado como fallback hasta

@@ -56,7 +56,9 @@ export default function Usuarios() {
     }
   }, []);
 
-  useEffect(() => { load(); }, [load]);
+  // Solo carga si es super_admin (evita un GET innecesario a users.php si un admin
+  // normal llega a la ruta antes de ser redirigido).
+  useEffect(() => { if (me?.role === 'super_admin') load(); }, [load, me]);
 
   // Solo super_admin entra aquí (el backend también lo fuerza con 403).
   if (me && me.role !== 'super_admin') return <Navigate to="/" replace />;
@@ -79,14 +81,16 @@ export default function Usuarios() {
     }
   };
 
-  const runAction = async (id: number, fn: () => Promise<unknown>) => {
+  const runAction = async (id: number, fn: () => Promise<unknown>): Promise<boolean> => {
     setActingId(id);
     setError(null);
     try {
       await fn();
       await load();
+      return true;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'No se pudo completar la acción');
+      return false;
     } finally {
       setActingId(null);
     }
@@ -100,9 +104,9 @@ export default function Usuarios() {
 
   const doReset = async (u: AdminUserFull) => {
     if (resetValue.length < 8) { setError('La contraseña debe tener al menos 8 caracteres.'); return; }
-    await runAction(u.id, () => api.users.update(u.id, { new_password: resetValue }));
-    setResetId(null);
-    setResetValue('');
+    const ok = await runAction(u.id, () => api.users.update(u.id, { new_password: resetValue }));
+    // Solo cerrar/limpiar si de verdad se guardó (antes se cerraba aunque fallara).
+    if (ok) { setResetId(null); setResetValue(''); }
   };
 
   const doDelete = (u: AdminUserFull) => {

@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-07-23 (galería "Trabajos" rediseñada: drag&drop + título/descripción + reordenar — desplegada y verificada en vivo)
+**Last updated:** 2026-07-24 (auditoría del backoffice REMEDIADA: rate-limit de login por IP + 8 fixes más — desplegado y verificado en vivo)
 
 ---
 
@@ -61,25 +61,29 @@ manual SSH, no auto-deploy) · Live: true.
       por foto (descripción visible en la web), limpieza del archivo al borrar. Migración
       `ADD COLUMN description`. Verificado en vivo. Ver `progress/2026-07-23-galeria-trabajos.md`.
 
-## 🔍 Auditoría del backoffice (2026-07-23) — pendientes
+## 🔍 Auditoría del backoffice (2026-07-23/24) — REMEDIADA
 
-Auditoría adversarial (13 hallazgos reales). Ya arreglados en `gallery.php`/`Trabajos.tsx`:
-guarda de null en PUT, snapshot que lanza si no puede escribir, limpieza de archivo al
-borrar, reset del selector de archivo. **Quedan pendientes** (no urgentes, panel interno):
-- [ ] **Seguridad — login sin límite real**: el rate-limit vive en `$_SESSION`; se salta
-      sin cookie. Pasar a límite por IP+email persistente (`auth.php`). *(el más serio)*
-- [ ] `auth.php`: enumeración de emails por tiempo de respuesta (bcrypt solo si el user existe).
-- [x] Reset del selector de archivo en `Servicios.tsx` (2026-07-23, con el rework de imágenes) · [ ] falta `Contenido.tsx`.
+Auditoría adversarial (13 hallazgos reales). **Todos aplicados y verificados en vivo el
+2026-07-24** (además de los ya resueltos en el rediseño de galería):
+- [x] **Seguridad — rate-limit de login**: ahora por IP en tabla `login_attempts`
+      (persistente; no se salta sin cookie). `REMOTE_ADDR` = IP real del cliente (verificado).
+      Bloqueo a 5 intentos/5 min; el login OK limpia el contador. (`auth.php` + migración)
+- [x] `auth.php`: anti-enumeración por tiempo — `password_verify` contra hash señuelo cuando
+      el email no existe.
+- [x] Reset del selector de archivo en `Servicios.tsx` y `Contenido.tsx` (falta solo si aparece otro input).
+- [x] `Usuarios.tsx`: "Restablecer contraseña" solo cierra/limpia si de verdad se guardó.
+- [x] `Usuarios.tsx`: no carga `users.php` si no es super_admin.
+- [x] `.htaccess`: typo `work-manifest`→`work-gallery` (verificado: `work-gallery.json` sirve `no-cache`).
+- [x] `content.php`: snapshot que lanza en fallo + excluye la sección obsoleta `work`.
+- [x] `users.php`: email duplicado → 409 (no 500); guarda de null en PUT.
+- [x] `upload.php`: rechaza por tamaño ANTES de decodificar (no materializa payloads gigantes).
+- Residual menor (no bloquea): las filas físicas `section='work'` siguen en `page_content`
+  (ya no se escriben al snapshot); el `sort_order` de gallery.add usa MAX+1 (reorder sí es atómico).
+
+**Pendiente de PRODUCTO (no bug):**
 - [ ] **Decidir: ¿cada servicio necesita VARIAS imágenes (galería por servicio) o basta hero+beneficios?**
-      (petición de Luis/Jonatan "poner otras más" en Servicios — pendiente de confirmar alcance).
-- [ ] `Usuarios.tsx`: "Restablecer contraseña" cierra/borra el campo aunque falle (parece OK).
-- [ ] `Usuarios.tsx`: carga `users.php` para un admin normal antes de redirigirlo.
-- [ ] `.htaccess` (raíz + `dist/`): la regla no-cache apunta a `work-manifest.json` (typo);
-      debe ser `work-gallery.json` (hoy lo salva el `?v=` anti-caché).
-- [ ] `content.php`: mismo swallow de fallo al escribir snapshot que ya se arregló en gallery.
-- [ ] `schema.sql`: filas muertas `section='work'` en `page_content` (duplican datos sin uso).
-- [ ] `users.php`: crear email duplicado a la vez → 500 en vez de 409; y PUT sin guarda de null.
-- [ ] `upload.php`: valida tamaño tras decodificar todo en memoria (endurecer).
+      2026-07-24 Jonatan indicó "haz tú lo mejor": se dejó hero+beneficios reemplazables/quitables
+      (estándar de landing de servicio); las galerías multi-foto son "Trabajos". Reabrir solo si lo pide.
 
 ## 🟡 Backoffice — pendiente
 

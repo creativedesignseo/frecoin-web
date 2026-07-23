@@ -158,7 +158,7 @@ function ImageContentField({ label, url, ratio, folder, onUrl }: {
         </div>
         <div className="p-2">
           <input ref={inputRef} type="file" accept="image/*" className="hidden"
-            onChange={(e) => e.target.files?.[0] && handle(e.target.files[0])} />
+            onChange={(e) => { if (e.target.files?.[0]) handle(e.target.files[0]); e.target.value = ''; }} />
           <button type="button" onClick={() => inputRef.current?.click()} disabled={uploading}
             className="inline-flex items-center gap-1.5 rounded-md border border-neutral-300 px-2.5 py-1.5 text-xs font-medium hover:bg-neutral-100 disabled:opacity-50">
             {uploading ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Upload className="h-3.5 w-3.5" />}

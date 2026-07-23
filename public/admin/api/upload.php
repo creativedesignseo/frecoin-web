@@ -23,10 +23,16 @@ try {
         json_error('Imagen no válida', 400);
     }
 
-    $bin = base64_decode(substr($dataUrl, strlen($m[0])), true);
-    if ($bin === false) json_error('Codificación de imagen inválida', 400);
-
     $max = $cfg['max_bytes'] ?? (5 * 1024 * 1024);
+    // Rechazar por longitud del base64 ANTES de decodificar: evita materializar en
+    // memoria payloads enormes solo para descartarlos después.
+    $b64 = substr($dataUrl, strlen($m[0]));
+    if (strlen($b64) > (int) ($max * 4 / 3) + 1024) {
+        json_error('La imagen supera el tamaño máximo (5 MB)', 400);
+    }
+
+    $bin = base64_decode($b64, true);
+    if ($bin === false) json_error('Codificación de imagen inválida', 400);
     if (strlen($bin) > $max) json_error('La imagen supera el tamaño máximo (5 MB)', 400);
 
     // MIME real del binario (ignora lo que diga el data URL).
