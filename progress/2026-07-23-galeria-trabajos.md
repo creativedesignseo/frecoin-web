@@ -65,6 +65,24 @@ botón "Cambiar imagen") → una foto nueva pisaba la anterior.
 - Backups servidor a limpiar cuando ya no hagan falta: `~/backup_public_html_20260723_175321`,
   `~/panel_backup_20260618_211701`, `~/api_backup_20260618_211701`.
 
+## Bugfix (mismo día) — 500 al añadir foto
+
+Síntoma: al pulsar "Añadir foto" el panel mostraba "Error del servidor", pero la foto
+SÍ se guardaba (fila + archivo + snapshot). Log del servidor
+(`~/.logs/error_log_frecoin_es`):
+`gallery.php: gallery_item(): Argument #1 ($r) must be of type array, null given`.
+
+Causa: en el POST se leía `db()->lastInsertId()` **después** de
+`regenerate_gallery_snapshot()` (que hace un `SELECT`); el SELECT intermedio invalida
+`lastInsertId()` → devuelve 0 → `fetch_gallery(0)` = null → `gallery_item(null)` → 500.
+El INSERT ya había cometido, por eso la foto aparecía pese al error.
+
+Fix: capturar `$newId = db()->lastInsertId()` **justo tras el INSERT**, antes del
+snapshot; y devolver `null` si `fetch_gallery` no encuentra la fila (defensivo).
+`users.php` NO tiene el bug (llama a `lastInsertId()` sin query intermedia).
+Redeploy solo de `gallery.php` (scp). Verificado en vivo: `POST gallery.php` → 201 con
+item; DELETE de prueba → 200; limpieza sin dejar basura.
+
 ## Next step
 
 Responder a Luis (borrador ya creado en Gmail) que ya puede añadir fotos por área desde

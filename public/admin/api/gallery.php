@@ -90,9 +90,14 @@ try {
 
         db()->prepare('INSERT INTO work_gallery (area, image_url, title, sort_order, active) VALUES (?, ?, ?, ?, 1)')
             ->execute([$area, $url, $title !== '' ? $title : null, $next]);
+        // Capturar el id ANTES de cualquier otra consulta: regenerate_gallery_snapshot()
+        // hace un SELECT que invalida lastInsertId() (devolvería 0).
+        $newId = (int) db()->lastInsertId();
 
         regenerate_gallery_snapshot();
-        json_out(['ok' => true, 'item' => gallery_item(fetch_gallery((int) db()->lastInsertId()))], 201);
+
+        $created = fetch_gallery($newId);
+        json_out(['ok' => true, 'item' => $created ? gallery_item($created) : null], 201);
     }
 
     if ($method === 'PUT') {
