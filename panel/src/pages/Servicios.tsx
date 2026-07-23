@@ -103,6 +103,7 @@ function ImageField({ label, url, defaultUrl, alt, onUrl, onAlt }: {
   const inputRef = useRef<HTMLInputElement>(null);
   const [uploading, setUploading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [over, setOver] = useState(false);
 
   const handle = async (file: File) => {
     setUploading(true); setErr(null);
@@ -123,7 +124,17 @@ function ImageField({ label, url, defaultUrl, alt, onUrl, onAlt }: {
   return (
     <div>
       <label className="mb-1 block text-sm font-semibold">{label}</label>
-      <div className="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50">
+      <div
+        onDragOver={(e) => { e.preventDefault(); setOver(true); }}
+        onDragLeave={() => setOver(false)}
+        onDrop={(e) => {
+          e.preventDefault();
+          setOver(false);
+          const f = e.dataTransfer.files?.[0];
+          if (f && f.type.startsWith('image/')) handle(f);
+        }}
+        className={`overflow-hidden rounded-lg border bg-neutral-50 transition-colors ${over ? 'border-brand ring-2 ring-brand/30' : 'border-neutral-200'}`}
+      >
         <div className="relative">
           {shown
             ? <img src={shown} alt={alt} className="h-32 w-full object-cover" />
