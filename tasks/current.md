@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-06-18 (módulo de usuarios + cambio de contraseña en el panel — desplegado y verificado en vivo)
+**Last updated:** 2026-07-23 (galería "Trabajos realizados" multi-foto por área — desplegada y verificada en vivo)
 
 ---
 
@@ -51,6 +51,11 @@ manual SSH, no auto-deploy) · Live: true.
 - [x] **Usuarios + Mi cuenta** (`account.php`, `users.php`, `MiCuenta.tsx`, `Usuarios.tsx`):
       cambio de contraseña propia (todos) + alta/roles/activar/reset/eliminar (solo
       super_admin), con guardas anti-bloqueo. Desplegado y verificado en vivo 2026-06-18.
+- [x] **Trabajos — galería multi-foto por área** (`gallery.php`, `Trabajos.tsx`, tabla
+      `work_gallery`, snapshot `work-gallery.json`, `WorkGallery` público): Luis añade y
+      **acumula** fotos por área (6 áreas), antes solo sustituía 1. Petición suya por email
+      (04-jul y 22-jul). Desplegado + verificado en vivo 2026-07-23. Ver
+      `progress/2026-07-23-galeria-trabajos.md`.
 
 ## 🟡 Backoffice — pendiente
 

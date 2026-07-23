@@ -149,6 +149,27 @@ CREATE TABLE IF NOT EXISTS media (
   CONSTRAINT fk_media_user FOREIGN KEY (uploaded_by) REFERENCES admin_users(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Galería "Trabajos realizados": N fotos por área (redes, electricas, camaras,
+-- wifi, sai, controles). Reemplaza los 4 huecos fijos de page_content.section='work'.
+CREATE TABLE IF NOT EXISTS work_gallery (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  area VARCHAR(40) NOT NULL,
+  image_url VARCHAR(512) NOT NULL,
+  title VARCHAR(160) NULL,
+  sort_order INT NOT NULL DEFAULT 0,
+  active TINYINT(1) NOT NULL DEFAULT 1,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY ix_work_gallery_area (area, sort_order)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Seed: las 4 fotos por defecto que ya muestra la home (una por área).
+INSERT INTO work_gallery (area, image_url, title, sort_order) VALUES
+  ('redes',      '/assets/work-redes-corporativas.webp', 'Red corporativa completa',        1),
+  ('electricas', '/assets/work-electricas-cuadro.webp',  'Instalación eléctrica industrial', 1),
+  ('camaras',    '/assets/work-camaras-cctv.webp',       'Circuito cerrado de cámaras',      1),
+  ('wifi',       '/assets/work-wifi-cobertura.webp',     'Cobertura WiFi empresarial',       1);
+
 -- ============================================================================
 -- SEED — catálogo de page_content (claves fijas; Luis edita el valor, no el esquema).
 -- Los valores van vacíos: el front usa su copy hardcodeado como fallback hasta

@@ -76,9 +76,9 @@ export default function Contenido() {
 
   if (loading) return <div className="mt-10 flex justify-center"><Loader2 className="h-6 w-6 animate-spin text-brand" /></div>;
 
-  const sections = [...new Set(items.map((i) => i.section))].sort(
-    (a, b) => (SECTION_ORDER.indexOf(a) + 1 || 99) - (SECTION_ORDER.indexOf(b) + 1 || 99)
-  );
+  const sections = [...new Set(items.map((i) => i.section))]
+    .filter((s) => s !== 'work') // La galería "Trabajos realizados" tiene su propia página (multi-foto por área).
+    .sort((a, b) => (SECTION_ORDER.indexOf(a) + 1 || 99) - (SECTION_ORDER.indexOf(b) + 1 || 99));
 
   return (
     <div className="mx-auto max-w-3xl pb-24">

@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import Leads from './pages/Leads';
 import Servicios from './pages/Servicios';
 import Contenido from './pages/Contenido';
+import Trabajos from './pages/Trabajos';
 import Usuarios from './pages/Usuarios';
 import MiCuenta from './pages/MiCuenta';
 
@@ -51,6 +52,16 @@ export default function App() {
             <ProtectedRoute>
               <Layout>
                 <Contenido />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/trabajos"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Trabajos />
               </Layout>
             </ProtectedRoute>
           }

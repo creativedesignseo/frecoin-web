@@ -11,26 +11,49 @@ import 'swiper/css/pagination';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// slot = clave en page_content (sección "work"); image = fallback del código.
-const works = [
-  { slot: 'img_redes', title: 'RED CORPORATIVA COMPLETA', image: '/assets/work-redes-corporativas.webp', tag: 'REDES' },
-  { slot: 'img_electricas', title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', image: '/assets/work-electricas-cuadro.webp', tag: 'ELÉCTRICAS' },
-  { slot: 'img_camaras', title: 'CIRCUITO CERRADO DE CÁMARAS', image: '/assets/work-camaras-cctv.webp', tag: 'SEGURIDAD' },
-  { slot: 'img_wifi', title: 'COBERTURA WIFI EMPRESARIAL', image: '/assets/work-wifi-cobertura.webp', tag: 'WIFI' },
+interface Work { image: string; title: string; tag: string }
+
+// Orden de áreas + etiqueta visible. Debe coincidir con los slugs del panel/BD.
+const AREA_META: { slug: string; tag: string; label: string }[] = [
+  { slug: 'redes',      tag: 'REDES',      label: 'Red corporativa' },
+  { slug: 'electricas', tag: 'ELÉCTRICAS', label: 'Instalación eléctrica' },
+  { slug: 'camaras',    tag: 'SEGURIDAD',  label: 'Circuito de cámaras' },
+  { slug: 'wifi',       tag: 'WIFI',       label: 'Cobertura WiFi' },
+  { slug: 'sai',        tag: 'SAI',        label: 'Sistema SAI' },
+  { slug: 'controles',  tag: 'ACCESOS',    label: 'Control de acceso' },
 ];
+
+// Fallback: lo que se muestra si aún no hay fotos gestionadas desde el panel.
+const DEFAULT_WORKS: Work[] = [
+  { image: '/assets/work-redes-corporativas.webp', title: 'RED CORPORATIVA COMPLETA', tag: 'REDES' },
+  { image: '/assets/work-electricas-cuadro.webp', title: 'INSTALACIÓN ELÉCTRICA INDUSTRIAL', tag: 'ELÉCTRICAS' },
+  { image: '/assets/work-camaras-cctv.webp', title: 'CIRCUITO CERRADO DE CÁMARAS', tag: 'SEGURIDAD' },
+  { image: '/assets/work-wifi-cobertura.webp', title: 'COBERTURA WIFI EMPRESARIAL', tag: 'WIFI' },
+];
+
+type Snapshot = Record<string, { url: string; title: string | null }[]>;
 
 export default function WorkGallery() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
-  const [overrides, setOverrides] = useState<Record<string, string>>({});
+  const [works, setWorks] = useState<Work[]>(DEFAULT_WORKS);
 
-  // Imágenes editadas desde el panel (snapshot). Fallback a las del código.
+  // Fotos gestionadas desde el panel (snapshot). Fallback a las del código.
   useEffect(() => {
     let active = true;
-    fetch(`/assets/content.json?v=${Date.now()}`, { cache: 'no-cache' })
+    fetch(`/assets/work-gallery.json?v=${Date.now()}`, { cache: 'no-cache' })
       .then((r) => (r.ok ? r.json() : {}))
-      .then((data: { work?: Record<string, string> }) => { if (active && data && data.work) setOverrides(data.work); })
-      .catch(() => { /* sin overrides: imágenes del código */ });
+      .then((data: Snapshot) => {
+        if (!active || !data || typeof data !== 'object') return;
+        const list: Work[] = [];
+        for (const { slug, tag, label } of AREA_META) {
+          for (const photo of data[slug] ?? []) {
+            if (photo && photo.url) list.push({ image: photo.url, title: photo.title || label, tag });
+          }
+        }
+        if (list.length > 0) setWorks(list);
+      })
+      .catch(() => { /* sin snapshot: fotos por defecto */ });
     return () => { active = false; };
   }, []);
 
@@ -47,7 +70,7 @@ export default function WorkGallery() {
       });
     }, sectionRef);
     return () => ctx.revert();
-  }, []);
+  }, [works]);
 
   return (
     <section ref={sectionRef} id="trabajos" className="relative py-[60px] sm:py-[80px] lg:py-[120px] bg-gripz-cream overflow-hidden">
@@ -75,7 +98,7 @@ export default function WorkGallery() {
           {works.map((work, i) => (
             <SwiperSlide key={i}>
               <div className="work-card group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer">
-                <img src={overrides[work.slot] || work.image} alt={work.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={work.image} alt={work.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <span className="inline-block text-[11px] font-semibold text-white bg-white/15 rounded px-2.5 py-1 mb-2">{work.tag}</span>

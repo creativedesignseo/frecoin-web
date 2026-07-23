@@ -159,6 +159,23 @@ export const api = {
       }),
   },
 
+  // Galería "Trabajos realizados": añadir/listar/editar/borrar fotos por área.
+  gallery: {
+    list: () => request<{ items: GalleryItem[] }>('/gallery.php'),
+    add: (area: WorkArea, image_url: string, title = '') =>
+      request<{ ok: boolean; item: GalleryItem }>('/gallery.php', {
+        method: 'POST',
+        body: JSON.stringify({ area, image_url, title }),
+      }),
+    update: (id: number, data: { title?: string; active?: boolean; sort_order?: number }) =>
+      request<{ ok: boolean; item: GalleryItem }>(`/gallery.php?id=${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+      }),
+    remove: (id: number) =>
+      request<{ ok: boolean }>(`/gallery.php?id=${id}`, { method: 'DELETE' }),
+  },
+
   // Gestión de usuarios (solo super_admin).
   users: {
     list: () => request<{ users: AdminUserFull[] }>('/users.php'),
@@ -186,5 +203,17 @@ export interface ContentItem {
   value_type: 'text' | 'textarea' | 'html' | 'image' | 'number';
   value: string | null;
   label: string;
+  sort_order: number;
+}
+
+// Galería "Trabajos realizados": una foto por fila, agrupadas por área.
+export type WorkArea = 'redes' | 'electricas' | 'camaras' | 'wifi' | 'sai' | 'controles';
+
+export interface GalleryItem {
+  id: number;
+  area: WorkArea;
+  image_url: string;
+  title: string | null;
+  active: number;
   sort_order: number;
 }

@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router';
 import {
-  LayoutDashboard, FileText, Wrench, Type, Inbox, Users, UserCog, LogOut, Menu, X,
+  LayoutDashboard, FileText, Wrench, Type, Images, Inbox, Users, UserCog, LogOut, Menu, X,
 } from 'lucide-react';
 import { useAuth } from '../store/AuthContext';
 
@@ -11,6 +11,7 @@ const NAV: NavItem[] = [
   { label: 'Inicio', to: '/', icon: LayoutDashboard },
   { label: 'Blog', to: '/blog', icon: FileText, soon: true },
   { label: 'Servicios', to: '/servicios', icon: Wrench },
+  { label: 'Trabajos', to: '/trabajos', icon: Images },
   { label: 'Contenido', to: '/contenido', icon: Type },
   { label: 'Leads', to: '/leads', icon: Inbox },
   { label: 'Usuarios', to: '/usuarios', icon: Users, superOnly: true },

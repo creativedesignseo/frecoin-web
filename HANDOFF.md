@@ -9,22 +9,29 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-06-18 (módulo de usuarios del panel desplegado + verificado en vivo)
-**Estado git:** rama de trabajo `feat/backoffice-cms` (feature en `611d260`), commits
-del backoffice sobre `draft/diseno`. **La web pública original sigue entregada.**
-**Producción (frecoin.es):** web pública (`index-dllWHAsN.js`) + API PHP `/admin/api/`
-(ahora con `account.php` + `users.php`) + **panel React en `/panel/` con bundle
-`index-Bgd_vbqu.js` (logo `logo-frecoin-dark.png`)**.
+**Last updated:** 2026-07-23 (galería "Trabajos realizados" multi-foto por área desplegada + verificada en vivo)
+**Estado git:** rama de trabajo `feat/backoffice-cms`, commits del backoffice sobre
+`draft/diseno`. **La web pública original sigue entregada.**
+**Producción (frecoin.es):** web pública (`index-BzfjJSdE.js`) + API PHP `/admin/api/`
+(`account.php`, `users.php`, `gallery.php`) + **panel React en `/panel/` con bundle
+`index-DIiFnGMX.js`**. Tabla nueva `work_gallery` (galería de trabajos, N fotos/área).
 
-**Verificación de cierre 2026-06-18 (código + prod en vivo, no supuesto):**
-`scripts/verify.sh` → `✓ all checks passed` (build raíz OK, `index-dllWHAsN.js`).
-`cd panel && npm run build` → OK (bundle `index-Bgd_vbqu.js`). `php -l` de `account.php`
-y `users.php` contra el PHP 8.3 del servidor → sin errores. Producción vía curl:
-`/panel/` sirve `index-Bgd_vbqu.js` (200) · `/` y `/servicios/sai` → 200 ·
-`/admin/api/{auth,users,account}.php` sin sesión → **401** (protegidos) · login
-super_admin → 200 + `GET users.php` devuelve la lista · `account.php` con clave
-actual errónea → 403 · `users.php` crear con clave corta → 400. `send-form.php`
-POST → 400. (Sin crear usuarios de prueba ni cambiar contraseñas reales.)
+**Verificación de cierre 2026-07-23 (código + prod en vivo, no supuesto):**
+`scripts/verify.sh` → `✓ all checks passed` (build raíz `index-BzfjJSdE.js`).
+`panel npm run build` → OK (`index-DIiFnGMX.js`). `php -l gallery.php` contra el PHP 8.3
+del servidor → sin errores. Producción: `/assets/work-gallery.json` servido como JSON
+(4 fotos · 4 áreas) · la home renderiza 4 tarjetas leídas del snapshot (verificado en
+navegador: 4 `.work-card` con sus URLs y títulos) · `/` y `/servicios/sai` → 200 ·
+panel sirve `index-DIiFnGMX.js` · `/admin/api/{auth,gallery}.php` sin sesión → **401** ·
+login super_admin → `GET gallery.php` = 4 items · `gallery.php` POST área inválida → 400 ·
+`send-form.php` POST → 400. Backup completo previo: `~/backup_public_html_20260723_175321`.
+(Sin crear fotos de prueba.)
+
+**⚠️ Lección de deploy de la web pública (raíz):** el build raíz (`dist/`) INCLUYE una
+copia de `admin/` (Vite copia `public/`). Para desplegar la web pública se hace
+`rsync dist/ → public_html/` **SIN `--delete`** y **excluyendo `/admin/` y `/.htaccess`**,
+así nunca pisa `config.php`, `/panel/`, `/assets/uploads/` ni los snapshots del servidor.
+El `--delete` solo se usa acotado a `/panel/`. Los endpoints PHP se suben aparte por `scp`.
 
 **⚠️ NOTA de honestidad (commits `0b2901c` y `b12c2be` describen mal lo ocurrido):**
 El 18-jun hubo un incidente al desplegar el logo. El cambio del logo es a la app
@@ -93,10 +100,16 @@ por **sesión PHP + cookie HttpOnly + CSRF** (no JWT). Imágenes a `/assets/uplo
 - **Servicios + precios** — los 6 servicios editables (textos, **precio**, SEO,
   **imágenes** hero/beneficios); se reflejan en `/servicios/:slug` vía merge sobre
   `src/data/services.ts`. Precio mostrado en el hero.
-- **Contenido** — `page_content` (textos + imágenes). Galería "Trabajos realizados"
-  editable con **recorte automático centrado 3:4 + WebP** al subir; conectada a la
-  home (`WorkGallery`). Imágenes actuales sembradas como referencia. (Los TEXTOS del
-  panel aún NO están conectados al front público — pendiente.)
+- **Contenido** — `page_content` (textos + imágenes). (Los TEXTOS del panel aún NO
+  están conectados al front público — pendiente. La galería de Trabajos se movió a su
+  propia sección, ver abajo.)
+- **Trabajos** (`gallery.php` · página `Trabajos` · tabla `work_gallery` · snapshot
+  `/assets/work-gallery.json`) — galería "Trabajos realizados" con **N fotos por área**
+  (6 áreas: redes, electricas, camaras, wifi, sai, controles). Luis **añade y acumula**
+  fotos por área (antes solo podía sustituir 1 por área), con recorte 3:4 + WebP,
+  título opcional y borrado. La home (`WorkGallery`) lee el snapshot; fallback a las 4
+  por defecto. Seed inicial con las 4 fotos que ya mostraba la home. Áreas sin fotos no
+  aparecen en la web. **Motivo:** petición de Luis por email (04-jul y 22-jul-2026).
 
 **Tablas MySQL:** `admin_users`, `blog_posts` (sin usar aún), `services` +
 `service_blocks` (blocks sin usar aún), `page_content`, `contact_leads`, `media`.
