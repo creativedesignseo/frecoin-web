@@ -9,7 +9,19 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-07-24 23:45 (auditoría remediada + verificación de cierre — código + prod en vivo OK; rama `feat/backoffice-cms` lista para merge)
+**Last updated:** 2026-07-28 (Luis avisado por email de que la galería "Trabajos" está lista — enviado y verificado en Gmail)
+
+**Comunicación con cliente 2026-07-28 (verificado en Gmail, no supuesto):** Luis
+había pedido (4 y 10 de julio, y de nuevo 22 de julio) poder acumular varias fotos
+por área sin que se borren, y añadir SAI/Controles. Se le envió el correo
+`Re: Página Web — Galería de trabajos lista` explicando que ya está activo (subir,
+acumular, reordenar drag&drop, título/descripción por foto en las 6 áreas).
+**Confirmado en Enviados** (`gmail list --query "in:sent to:lfreire@frecoin.es"`):
+id `19fa9a0669a6e6f7`, 2026-07-28 18:48, desde `info@adspubli.com`, con el HTML
+branded Adspubli (plantilla fuera de este repo, en
+`frecoin-tracking/correos/Email-Galeria-Trabajos-Lista-Luis.html`).
+Dos borradores previos en texto plano (sin diseño) quedaron sin enviar en Gmail;
+pendiente que el usuario los borre manualmente (el CLI no soporta delete-draft).
 
 **Seguridad/hardening 2026-07-24 (auditoría remediada, verificado en vivo):** login
 ahora con **rate-limit por IP** en tabla `login_attempts` (persistente, no se salta
