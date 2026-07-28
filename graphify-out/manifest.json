@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "HANDOFF.md": {
-    "mtime": 1784842640.1117635,
-    "ast_hash": "045613afdf4b96c8edc9fd2d7ab3c2a2",
+    "mtime": 1785255654.0811617,
+    "ast_hash": "244a194fd6789f9a6a946caf56700c2e",
     "semantic_hash": ""
   },
   "README.md": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "tasks/current.md": {
-    "mtime": 1784842655.0311105,
-    "ast_hash": "a909abbc5aa1a148f2d9281569277b30",
+    "mtime": 1784849754.3367062,
+    "ast_hash": "28dce7bb8017a35fd1c053f64a3a86a2",
     "semantic_hash": ""
   },
   "panel/public/logo-frecoin-dark.png": {
@@ -1082,6 +1082,11 @@
   "public/assets/work-wifi-cobertura.webp": {
     "mtime": 1780942127.364057,
     "ast_hash": "5d252887bc65430c48ac70a865390921",
+    "semantic_hash": ""
+  },
+  "progress/2026-07-24-auditoria-remediacion.md": {
+    "mtime": 1784849820.332402,
+    "ast_hash": "a747ce4d49b839cdba46a61c2d66fc6a",
     "semantic_hash": ""
   }
 }

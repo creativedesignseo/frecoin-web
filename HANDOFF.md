@@ -9,7 +9,7 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-07-24 (auditoría del backoffice remediada: rate-limit de login por IP + hardening — desplegado + verificado en vivo)
+**Last updated:** 2026-07-24 23:45 (auditoría remediada + verificación de cierre — código + prod en vivo OK; rama `feat/backoffice-cms` lista para merge)
 
 **Seguridad/hardening 2026-07-24 (auditoría remediada, verificado en vivo):** login
 ahora con **rate-limit por IP** en tabla `login_attempts` (persistente, no se salta

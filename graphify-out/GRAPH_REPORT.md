@@ -1,16 +1,16 @@
-# Graph Report - frecoin-web-produccion  (2026-07-24)
+# Graph Report - frecoin-web-produccion  (2026-07-28)
 
 ## Corpus Check
-- 164 files · ~343,146 words
+- 165 files · ~343,680 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1034 nodes · 1455 edges · 95 communities (92 shown, 3 thin omitted)
+- 1042 nodes · 1462 edges · 94 communities (91 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cac8fcb3`
+- Built from commit: `c8903194`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -78,7 +78,6 @@
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
-- [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 66|Community 66]]
 - [[_COMMUNITY_Community 67|Community 67]]
@@ -114,7 +113,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (95 total, 3 thin omitted)
+## Communities (94 total, 3 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
@@ -122,19 +121,19 @@ Nodes (37): Layout(), NAV, NavItem, ProtectedRoute(), AdminRole, AdminUser, Admi
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
-Nodes (46): cn(), Avatar(), AvatarFallback(), AvatarImage(), BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList() (+38 more)
+Nodes (41): cn(), AccordionContent(), AccordionItem(), AccordionTrigger(), Avatar(), AvatarFallback(), AvatarImage(), BreadcrumbEllipsis() (+33 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.05
-Nodes (42): useIsMobile(), Input(), Separator(), Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader() (+34 more)
+Cohesion: 0.06
+Nodes (40): useIsMobile(), Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle() (+32 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.04
 Nodes (50): dependencies, class-variance-authority, clsx, cmdk, date-fns, embla-carousel-react, gsap, @hookform/resolvers (+42 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.11
-Nodes (19): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, kimi-plugin-inspect-react (+11 more)
+Cohesion: 0.07
+Nodes (28): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, kimi-plugin-inspect-react (+20 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.09
@@ -165,8 +164,8 @@ Cohesion: 0.11
 Nodes (18): aliases, components, hooks, lib, ui, utils, iconLibrary, registries (+10 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.50
-Nodes (4): ButtonGroup(), ButtonGroupSeparator(), ButtonGroupText(), buttonGroupVariants
+Cohesion: 0.13
+Nodes (16): ButtonGroup(), ButtonGroupSeparator(), ButtonGroupText(), buttonGroupVariants, Field(), FieldContent(), FieldDescription(), FieldError() (+8 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.14
@@ -197,8 +196,8 @@ Cohesion: 0.21
 Nodes (5): LegalLayout(), LegalLayoutProps, WhatsAppFloat(), AvisoLegal(), PoliticaPrivacidad()
 
 ### Community 20 - "Community 20"
-Cohesion: 0.06
-Nodes (14): Badge(), badgeVariants, Checkbox(), HoverCardContent(), InputOTP(), InputOTPGroup(), InputOTPSlot(), PopoverContent() (+6 more)
+Cohesion: 0.08
+Nodes (11): Badge(), badgeVariants, Checkbox(), HoverCardContent(), PopoverContent(), Progress(), ResizableHandle(), ResizablePanelGroup() (+3 more)
 
 ### Community 21 - "Community 21"
 Cohesion: 0.10
@@ -234,7 +233,7 @@ Nodes (12): 2026-06-11 — Propuesta SEO FRECOIN + borradores Gmail + RGPD, Alta
 
 ### Community 29 - "Community 29"
 Cohesion: 0.15
-Nodes (12): 🔍 Auditoría del backoffice (2026-07-23) — pendientes, ✅ Backoffice — completado (sesión 2026-06-17), 🟡 Backoffice — pendiente, Blocked, Borradores obsoletos a eliminar manualmente desde Gmail, Current state, Diferido (medio plazo, sin compromiso), Known pre-existing failures (not blockers) (+4 more)
+Nodes (12): 🔍 Auditoría del backoffice (2026-07-23/24) — REMEDIADA, ✅ Backoffice — completado (sesión 2026-06-17), 🟡 Backoffice — pendiente, Blocked, Borradores obsoletos a eliminar manualmente desde Gmail, Current state, Diferido (medio plazo, sin compromiso), Known pre-existing failures (not blockers) (+4 more)
 
 ### Community 30 - "Community 30"
 Cohesion: 0.18
@@ -257,8 +256,8 @@ Cohesion: 0.18
 Nodes (6): DrawerContent(), DrawerDescription(), DrawerFooter(), DrawerHeader(), DrawerOverlay(), DrawerTitle()
 
 ### Community 35 - "Community 35"
-Cohesion: 0.24
-Nodes (9): InputGroup(), InputGroupAddon(), inputGroupAddonVariants, InputGroupButton(), inputGroupButtonVariants, InputGroupInput(), InputGroupText(), InputGroupTextarea() (+1 more)
+Cohesion: 0.21
+Nodes (10): InputGroup(), InputGroupAddon(), inputGroupAddonVariants, InputGroupButton(), inputGroupButtonVariants, InputGroupInput(), InputGroupText(), InputGroupTextarea() (+2 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.18
@@ -301,8 +300,8 @@ Cohesion: 0.25
 Nodes (7): 2026-06-08 — Cláusulas RGPD oficiales bajo formularios, Archivos cambiados, Comandos / verificación, Commits (rama draft/diseno), Contexto / decisión, Objetivo, Riesgos abiertos / siguiente paso
 
 ### Community 46 - "Community 46"
-Cohesion: 0.20
-Nodes (9): name, private, scripts, build, dev, lint, preview, type (+1 more)
+Cohesion: 0.25
+Nodes (7): Commands run, Files changed, Next step, Objective, Open risks, Remediación de la auditoría del backoffice, Verification result (prod en vivo)
 
 ### Community 47 - "Community 47"
 Cohesion: 0.29
@@ -360,10 +359,6 @@ Nodes (4): Checklist, Commands you may NOT run from this skill, Commands you may
 Cohesion: 0.40
 Nodes (4): Do not, Procedure, Report back, session-start
 
-### Community 63 - "Community 63"
-Cohesion: 0.40
-Nodes (3): AccordionContent(), AccordionItem(), AccordionTrigger()
-
 ### Community 64 - "Community 64"
 Cohesion: 0.50
 Nodes (4): Alert(), AlertDescription(), AlertTitle(), alertVariants
@@ -389,24 +384,24 @@ Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
 ## Knowledge Gaps
-- **415 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+410 more)
+- **421 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+416 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 1` to `Community 2`, `Community 9`, `Community 12`, `Community 16`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 24`, `Community 30`, `Community 32`, `Community 33`, `Community 34`, `Community 35`, `Community 36`, `Community 40`, `Community 47`, `Community 52`, `Community 63`, `Community 64`?**
-  _High betweenness centrality (0.101) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `Community 3` to `Community 46`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `Community 4` to `Community 46`?**
-  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 1` to `Community 2`, `Community 9`, `Community 12`, `Community 16`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 24`, `Community 30`, `Community 32`, `Community 33`, `Community 34`, `Community 35`, `Community 36`, `Community 40`, `Community 47`, `Community 52`, `Community 64`?**
+  _High betweenness centrality (0.100) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `Community 3` to `Community 4`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _415 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _421 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.05687645687645688 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.06493506493506493 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0649895178197065 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.05279034690799397 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05673758865248227 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.04 - nodes in this community are weakly interconnected._
