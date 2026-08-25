@@ -5,7 +5,24 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-07-24 (auditoría del backoffice REMEDIADA: rate-limit de login por IP + 8 fixes más — desplegado y verificado en vivo)
+**Last updated:** 2026-08-25 (proyecto SEO arrancado — plan de ejecución completo, correo de arranque en borrador)
+
+---
+
+## 🟢 Proyecto SEO (arrancado 2026-08-25)
+
+- [x] Investigación de precio de mercado real (4 agentes) → confirmó que los 499€ cotizados están
+      por debajo de mercado; decisión: honrar el precio ya dado, no renegociar con Luis.
+- [x] Plan de ejecución completo (4 planes de bloque + maestro, ≈79h, roadmap ≈7 semanas) en
+      `frecoin-tracking/entregables/` (repo de contexto, fuera de este repo de código).
+- [x] Correo de arranque + checklist de 9 puntos (NAP, accesos, fotos, Trustpilot) — borrador en
+      Gmail, plantilla en `frecoin-tracking/correos/Email-Arranque-SEO-Luis.html`.
+- [ ] **Confirmar y enviar** el correo de arranque (sigue en borrador).
+- [ ] Respuesta de Luis al checklist (NAP, acceso a cuenta Google, fotos, datos Trustpilot).
+- [ ] **Siguiente sesión de trabajo: configurar GTM+GA4** (no keyword research) — no depende de
+      Luis, arranca antes la captura de datos de referencia. Ver `plan-gtm-ga4.md` Fases 1-4
+      (≈10.4h): alta de cuentas con Google dedicado, código (`phone_click`, `trackPageView()`,
+      Consent Mode v2), configuración de tags/triggers en GTM.
 
 ---
 

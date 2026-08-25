@@ -3108,7 +3108,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_breadcrumb",
-      "community": 1,
+      "community": 35,
       "norm_label": "breadcrumb.tsx"
     },
     {
@@ -3118,7 +3118,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumb",
-      "community": 1,
+      "community": 35,
       "norm_label": "breadcrumb()"
     },
     {
@@ -3128,7 +3128,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumblist",
-      "community": 1,
+      "community": 35,
       "norm_label": "breadcrumblist()"
     },
     {
@@ -3138,7 +3138,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbitem",
-      "community": 1,
+      "community": 35,
       "norm_label": "breadcrumbitem()"
     },
     {
@@ -3148,7 +3148,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumblink",
-      "community": 1,
+      "community": 35,
       "norm_label": "breadcrumblink()"
     },
     {
@@ -3158,7 +3158,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbpage",
-      "community": 1,
+      "community": 35,
       "norm_label": "breadcrumbpage()"
     },
     {
@@ -3168,7 +3168,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbseparator",
-      "community": 1,
+      "community": 35,
       "norm_label": "breadcrumbseparator()"
     },
     {
@@ -3178,7 +3178,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbellipsis",
-      "community": 1,
+      "community": 35,
       "norm_label": "breadcrumbellipsis()"
     },
     {
@@ -3188,7 +3188,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_button_group",
-      "community": 12,
+      "community": 30,
       "norm_label": "button-group.tsx"
     },
     {
@@ -3198,7 +3198,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_button_group_buttongroupvariants",
-      "community": 12,
+      "community": 30,
       "norm_label": "buttongroupvariants"
     },
     {
@@ -3208,7 +3208,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "ui_button_group_buttongroup",
-      "community": 12,
+      "community": 30,
       "norm_label": "buttongroup()"
     },
     {
@@ -3218,7 +3218,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "ui_button_group_buttongrouptext",
-      "community": 12,
+      "community": 30,
       "norm_label": "buttongrouptext()"
     },
     {
@@ -3228,7 +3228,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "ui_button_group_buttongroupseparator",
-      "community": 12,
+      "community": 30,
       "norm_label": "buttongroupseparator()"
     },
     {
@@ -4058,7 +4058,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_drawer",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawer.tsx"
     },
     {
@@ -4068,7 +4068,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_drawer_drawer",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawer()"
     },
     {
@@ -4078,7 +4078,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "ui_drawer_drawertrigger",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawertrigger()"
     },
     {
@@ -4088,7 +4088,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "ui_drawer_drawerportal",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawerportal()"
     },
     {
@@ -4098,7 +4098,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_drawer_drawerclose",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawerclose()"
     },
     {
@@ -4108,7 +4108,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "ui_drawer_draweroverlay",
-      "community": 34,
+      "community": 1,
       "norm_label": "draweroverlay()"
     },
     {
@@ -4118,7 +4118,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "ui_drawer_drawercontent",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawercontent()"
     },
     {
@@ -4128,7 +4128,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "ui_drawer_drawerheader",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawerheader()"
     },
     {
@@ -4138,7 +4138,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "ui_drawer_drawerfooter",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawerfooter()"
     },
     {
@@ -4148,7 +4148,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "ui_drawer_drawertitle",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawertitle()"
     },
     {
@@ -4158,7 +4158,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "ui_drawer_drawerdescription",
-      "community": 34,
+      "community": 1,
       "norm_label": "drawerdescription()"
     },
     {
@@ -4688,7 +4688,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input_group",
-      "community": 35,
+      "community": 21,
       "norm_label": "input-group.tsx"
     },
     {
@@ -4698,7 +4698,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_input_group_inputgroup",
-      "community": 35,
+      "community": 21,
       "norm_label": "inputgroup()"
     },
     {
@@ -4708,7 +4708,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupaddonvariants",
-      "community": 35,
+      "community": 21,
       "norm_label": "inputgroupaddonvariants"
     },
     {
@@ -4718,7 +4718,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupaddon",
-      "community": 35,
+      "community": 21,
       "norm_label": "inputgroupaddon()"
     },
     {
@@ -4728,7 +4728,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupbuttonvariants",
-      "community": 35,
+      "community": 21,
       "norm_label": "inputgroupbuttonvariants"
     },
     {
@@ -4738,7 +4738,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupbutton",
-      "community": 35,
+      "community": 21,
       "norm_label": "inputgroupbutton()"
     },
     {
@@ -4748,7 +4748,7 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "ui_input_group_inputgrouptext",
-      "community": 35,
+      "community": 21,
       "norm_label": "inputgrouptext()"
     },
     {
@@ -4758,7 +4758,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupinput",
-      "community": 35,
+      "community": 21,
       "norm_label": "inputgroupinput()"
     },
     {
@@ -4768,7 +4768,7 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "ui_input_group_inputgrouptextarea",
-      "community": 35,
+      "community": 21,
       "norm_label": "inputgrouptextarea()"
     },
     {
@@ -4828,7 +4828,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input",
-      "community": 35,
+      "community": 2,
       "norm_label": "input.tsx"
     },
     {
@@ -4838,7 +4838,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_input_input",
-      "community": 35,
+      "community": 2,
       "norm_label": "input()"
     },
     {
@@ -4978,7 +4978,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_kbd",
-      "community": 1,
+      "community": 20,
       "norm_label": "kbd.tsx"
     },
     {
@@ -4988,7 +4988,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "ui_kbd_kbd",
-      "community": 1,
+      "community": 20,
       "norm_label": "kbd()"
     },
     {
@@ -4998,7 +4998,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "ui_kbd_kbdgroup",
-      "community": 1,
+      "community": 20,
       "norm_label": "kbdgroup()"
     },
     {
@@ -5008,7 +5008,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_label",
-      "community": 24,
+      "community": 12,
       "norm_label": "label.tsx"
     },
     {
@@ -5018,7 +5018,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_label_label",
-      "community": 24,
+      "community": 12,
       "norm_label": "label()"
     },
     {
@@ -5668,7 +5668,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_separator",
-      "community": 12,
+      "community": 30,
       "norm_label": "separator.tsx"
     },
     {
@@ -5678,7 +5678,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_separator_separator",
-      "community": 12,
+      "community": 30,
       "norm_label": "separator()"
     },
     {
@@ -6318,7 +6318,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_textarea",
-      "community": 35,
+      "community": 21,
       "norm_label": "textarea.tsx"
     },
     {
@@ -6328,7 +6328,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_textarea_textarea",
-      "community": 35,
+      "community": 21,
       "norm_label": "textarea()"
     },
     {
@@ -8682,6 +8682,76 @@
       "norm_label": "working language"
     },
     {
+      "label": "BOOTSTRAP.md",
+      "file_type": "document",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "bootstrap",
+      "community": 63,
+      "norm_label": "bootstrap.md"
+    },
+    {
+      "label": "BOOTSTRAP.md \u2014 arranque r\u00e1pido para otra IA",
+      "file_type": "document",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
+      "community": 63,
+      "norm_label": "bootstrap.md \u2014 arranque rapido para otra ia"
+    },
+    {
+      "label": "C\u00f3mo invocarlo en otro lugar",
+      "file_type": "document",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "bootstrap_c\u00f3mo_invocarlo_en_otro_lugar",
+      "community": 63,
+      "norm_label": "como invocarlo en otro lugar"
+    },
+    {
+      "label": "Qu\u00e9 es este proyecto (una frase)",
+      "file_type": "document",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "bootstrap_qu\u00e9_es_este_proyecto_una_frase",
+      "community": 63,
+      "norm_label": "que es este proyecto (una frase)"
+    },
+    {
+      "label": "Orden de lectura (de m\u00e1s a menos autoridad)",
+      "file_type": "document",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "bootstrap_orden_de_lectura_de_m\u00e1s_a_menos_autoridad",
+      "community": 63,
+      "norm_label": "orden de lectura (de mas a menos autoridad)"
+    },
+    {
+      "label": "Qu\u00e9 NO es portable fuera de esta m\u00e1quina/cuenta",
+      "file_type": "document",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "bootstrap_qu\u00e9_no_es_portable_fuera_de_esta_m\u00e1quina_cuenta",
+      "community": 63,
+      "norm_label": "que no es portable fuera de esta maquina/cuenta"
+    },
+    {
+      "label": "Verificaci\u00f3n (funciona en cualquier IA con shell)",
+      "file_type": "document",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "bootstrap_verificaci\u00f3n_funciona_en_cualquier_ia_con_shell",
+      "community": 63,
+      "norm_label": "verificacion (funciona en cualquier ia con shell)"
+    },
+    {
       "label": "CLAUDE.md",
       "file_type": "document",
       "source_file": "CLAUDE.md",
@@ -8785,7 +8855,7 @@
       "label": "BACKOFFICE CMS (sesi\u00f3n 2026-06-18) \u2014 EN VIVO",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L92",
+      "source_location": "L136",
       "_origin": "ast",
       "id": "handoff_backoffice_cms_sesi\u00f3n_2026_06_18_en_vivo",
       "community": 14,
@@ -8795,7 +8865,7 @@
       "label": "Producci\u00f3n verificada en vivo (2026-06-12)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L154",
+      "source_location": "L198",
       "_origin": "ast",
       "id": "handoff_producci\u00f3n_verificada_en_vivo_2026_06_12",
       "community": 14,
@@ -8805,7 +8875,7 @@
       "label": "HTTP y cabeceras",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L156",
+      "source_location": "L200",
       "_origin": "ast",
       "id": "handoff_http_y_cabeceras",
       "community": 14,
@@ -8815,7 +8885,7 @@
       "label": "Rutas verificadas (todas HTTP 200)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L169",
+      "source_location": "L213",
       "_origin": "ast",
       "id": "handoff_rutas_verificadas_todas_http_200",
       "community": 14,
@@ -8825,7 +8895,7 @@
       "label": "Contenido en vivo (build acumulado 08-jun)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L188",
+      "source_location": "L232",
       "_origin": "ast",
       "id": "handoff_contenido_en_vivo_build_acumulado_08_jun",
       "community": 14,
@@ -8835,7 +8905,7 @@
       "label": "Rutas del c\u00f3digo (App.tsx) \u2014 mapa completo",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L199",
+      "source_location": "L243",
       "_origin": "ast",
       "id": "handoff_rutas_del_c\u00f3digo_app_tsx_mapa_completo",
       "community": 14,
@@ -8845,7 +8915,7 @@
       "label": "Observaciones t\u00e9cnicas",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L213",
+      "source_location": "L257",
       "_origin": "ast",
       "id": "handoff_observaciones_t\u00e9cnicas",
       "community": 14,
@@ -8855,7 +8925,7 @@
       "label": "Backups en servidor Hostinger",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L219",
+      "source_location": "L263",
       "_origin": "ast",
       "id": "handoff_backups_en_servidor_hostinger",
       "community": 14,
@@ -8865,7 +8935,7 @@
       "label": "C\u00f3mo se despliega DE VERDAD",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L227",
+      "source_location": "L271",
       "_origin": "ast",
       "id": "handoff_c\u00f3mo_se_despliega_de_verdad",
       "community": 14,
@@ -8875,7 +8945,7 @@
       "label": "GitHub Actions",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L247",
+      "source_location": "L291",
       "_origin": "ast",
       "id": "handoff_github_actions",
       "community": 14,
@@ -8885,7 +8955,7 @@
       "label": "Qu\u00e9 funciona",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L255",
+      "source_location": "L299",
       "_origin": "ast",
       "id": "handoff_qu\u00e9_funciona",
       "community": 14,
@@ -8895,7 +8965,7 @@
       "label": "Comunicaciones con el cliente (verificado 2026-06-12)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L265",
+      "source_location": "L309",
       "_origin": "ast",
       "id": "handoff_comunicaciones_con_el_cliente_verificado_2026_06_12",
       "community": 14,
@@ -8905,7 +8975,7 @@
       "label": "Propuesta SEO FRECOIN (fase siguiente)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L283",
+      "source_location": "L327",
       "_origin": "ast",
       "id": "handoff_propuesta_seo_frecoin_fase_siguiente",
       "community": 14,
@@ -8915,7 +8985,7 @@
       "label": "Directorios locales \u2014 NAP y gu\u00eda",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L307",
+      "source_location": "L351",
       "_origin": "ast",
       "id": "handoff_directorios_locales_nap_y_gu\u00eda",
       "community": 14,
@@ -8925,7 +8995,7 @@
       "label": "Pendiente / riesgos abiertos",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L341",
+      "source_location": "L385",
       "_origin": "ast",
       "id": "handoff_pendiente_riesgos_abiertos",
       "community": 14,
@@ -8935,7 +9005,7 @@
       "label": "Al cerrar cada sesi\u00f3n que despliegue",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L351",
+      "source_location": "L397",
       "_origin": "ast",
       "id": "handoff_al_cerrar_cada_sesi\u00f3n_que_despliegue",
       "community": 14,
@@ -10262,6 +10332,96 @@
       "norm_label": "next step"
     },
     {
+      "label": "2026-08-25-arranque-proyecto-seo.md",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo",
+      "community": 34,
+      "norm_label": "2026-08-25-arranque-proyecto-seo.md"
+    },
+    {
+      "label": "Arranque del proyecto SEO FRECOIN",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "community": 34,
+      "norm_label": "arranque del proyecto seo frecoin"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo_objective",
+      "community": 34,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Files inspected",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo_files_inspected",
+      "community": 34,
+      "norm_label": "files inspected"
+    },
+    {
+      "label": "Files changed",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo_files_changed",
+      "community": 34,
+      "norm_label": "files changed"
+    },
+    {
+      "label": "Commands run",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo_commands_run",
+      "community": 34,
+      "norm_label": "commands run"
+    },
+    {
+      "label": "Verification result",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo_verification_result",
+      "community": 34,
+      "norm_label": "verification result"
+    },
+    {
+      "label": "Open risks",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo_open_risks",
+      "community": 34,
+      "norm_label": "open risks"
+    },
+    {
+      "label": "Next step",
+      "file_type": "document",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "progress_2026_08_25_arranque_proyecto_seo_next_step",
+      "community": 34,
+      "norm_label": "next step"
+    },
+    {
       "label": "README.md",
       "file_type": "document",
       "source_file": "progress/README.md",
@@ -10342,10 +10502,20 @@
       "norm_label": "tasks/current.md \u2014 frecoin-web active task queue"
     },
     {
-      "label": "Current state",
+      "label": "\ud83d\udfe2 Proyecto SEO (arrancado 2026-08-25)",
       "file_type": "document",
       "source_file": "tasks/current.md",
       "source_location": "L12",
+      "_origin": "ast",
+      "id": "tasks_current_proyecto_seo_arrancado_2026_08_25",
+      "community": 29,
+      "norm_label": "\ud83d\udfe2 proyecto seo (arrancado 2026-08-25)"
+    },
+    {
+      "label": "Current state",
+      "file_type": "document",
+      "source_file": "tasks/current.md",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "tasks_current_current_state",
       "community": 29,
@@ -10355,7 +10525,7 @@
       "label": "\u2705 Backoffice \u2014 completado (sesi\u00f3n 2026-06-17)",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L42",
+      "source_location": "L59",
       "_origin": "ast",
       "id": "tasks_current_backoffice_completado_sesi\u00f3n_2026_06_17",
       "community": 29,
@@ -10365,7 +10535,7 @@
       "label": "\ud83d\udd0d Auditor\u00eda del backoffice (2026-07-23/24) \u2014 REMEDIADA",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L64",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "tasks_current_auditor\u00eda_del_backoffice_2026_07_23_24_remediada",
       "community": 29,
@@ -10375,7 +10545,7 @@
       "label": "\ud83d\udfe1 Backoffice \u2014 pendiente",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L88",
+      "source_location": "L105",
       "_origin": "ast",
       "id": "tasks_current_backoffice_pendiente",
       "community": 29,
@@ -10385,7 +10555,7 @@
       "label": "P0 \u2014 blocking ship",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L98",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "tasks_current_p0_blocking_ship",
       "community": 29,
@@ -10395,7 +10565,7 @@
       "label": "P1 \u2014 important, not blocking",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L104",
+      "source_location": "L121",
       "_origin": "ast",
       "id": "tasks_current_p1_important_not_blocking",
       "community": 29,
@@ -10405,7 +10575,7 @@
       "label": "P2 \u2014 backlog",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L121",
+      "source_location": "L138",
       "_origin": "ast",
       "id": "tasks_current_p2_backlog",
       "community": 29,
@@ -10415,7 +10585,7 @@
       "label": "Diferido (medio plazo, sin compromiso)",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L130",
+      "source_location": "L147",
       "_origin": "ast",
       "id": "tasks_current_diferido_medio_plazo_sin_compromiso",
       "community": 29,
@@ -10425,7 +10595,7 @@
       "label": "Blocked",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L137",
+      "source_location": "L154",
       "_origin": "ast",
       "id": "tasks_current_blocked",
       "community": 29,
@@ -10435,7 +10605,7 @@
       "label": "Borradores obsoletos a eliminar manualmente desde Gmail",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L143",
+      "source_location": "L160",
       "_origin": "ast",
       "id": "tasks_current_borradores_obsoletos_a_eliminar_manualmente_desde_gmail",
       "community": 29,
@@ -10445,7 +10615,7 @@
       "label": "Known pre-existing failures (not blockers)",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L151",
+      "source_location": "L168",
       "_origin": "ast",
       "id": "tasks_current_known_pre_existing_failures_not_blockers",
       "community": 29,
@@ -24080,6 +24250,66 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "bootstrap",
+      "target": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
+      "target": "bootstrap_c\u00f3mo_invocarlo_en_otro_lugar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
+      "target": "bootstrap_orden_de_lectura_de_m\u00e1s_a_menos_autoridad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
+      "target": "bootstrap_qu\u00e9_es_este_proyecto_una_frase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
+      "target": "bootstrap_qu\u00e9_no_es_portable_fuera_de_esta_m\u00e1quina_cuenta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BOOTSTRAP.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
+      "target": "bootstrap_verificaci\u00f3n_funciona_en_cualquier_ia_con_shell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -25423,9 +25653,9 @@
       "source_file": "progress/2026-07-24-auditoria-remediacion.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_07_24_auditoria_remediacion",
-      "target": "progress_2026_07_24_auditoria_remediacion_remediaci\u00f3n_de_la_auditor\u00eda_del_backoffice",
-      "confidence_score": 1.0
+      "target": "progress_2026_07_24_auditoria_remediacion_remediaci\u00f3n_de_la_auditor\u00eda_del_backoffice"
     },
     {
       "relation": "contains",
@@ -25433,9 +25663,9 @@
       "source_file": "progress/2026-07-24-auditoria-remediacion.md",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_07_24_auditoria_remediacion_remediaci\u00f3n_de_la_auditor\u00eda_del_backoffice",
-      "target": "progress_2026_07_24_auditoria_remediacion_commands_run",
-      "confidence_score": 1.0
+      "target": "progress_2026_07_24_auditoria_remediacion_commands_run"
     },
     {
       "relation": "contains",
@@ -25443,9 +25673,9 @@
       "source_file": "progress/2026-07-24-auditoria-remediacion.md",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_07_24_auditoria_remediacion_remediaci\u00f3n_de_la_auditor\u00eda_del_backoffice",
-      "target": "progress_2026_07_24_auditoria_remediacion_files_changed",
-      "confidence_score": 1.0
+      "target": "progress_2026_07_24_auditoria_remediacion_files_changed"
     },
     {
       "relation": "contains",
@@ -25453,9 +25683,9 @@
       "source_file": "progress/2026-07-24-auditoria-remediacion.md",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_07_24_auditoria_remediacion_remediaci\u00f3n_de_la_auditor\u00eda_del_backoffice",
-      "target": "progress_2026_07_24_auditoria_remediacion_next_step",
-      "confidence_score": 1.0
+      "target": "progress_2026_07_24_auditoria_remediacion_next_step"
     },
     {
       "relation": "contains",
@@ -25463,9 +25693,9 @@
       "source_file": "progress/2026-07-24-auditoria-remediacion.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_07_24_auditoria_remediacion_remediaci\u00f3n_de_la_auditor\u00eda_del_backoffice",
-      "target": "progress_2026_07_24_auditoria_remediacion_objective",
-      "confidence_score": 1.0
+      "target": "progress_2026_07_24_auditoria_remediacion_objective"
     },
     {
       "relation": "contains",
@@ -25473,9 +25703,9 @@
       "source_file": "progress/2026-07-24-auditoria-remediacion.md",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_07_24_auditoria_remediacion_remediaci\u00f3n_de_la_auditor\u00eda_del_backoffice",
-      "target": "progress_2026_07_24_auditoria_remediacion_open_risks",
-      "confidence_score": 1.0
+      "target": "progress_2026_07_24_auditoria_remediacion_open_risks"
     },
     {
       "relation": "contains",
@@ -25483,8 +25713,88 @@
       "source_file": "progress/2026-07-24-auditoria-remediacion.md",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_07_24_auditoria_remediacion_remediaci\u00f3n_de_la_auditor\u00eda_del_backoffice",
-      "target": "progress_2026_07_24_auditoria_remediacion_verification_result_prod_en_vivo",
+      "target": "progress_2026_07_24_auditoria_remediacion_verification_result_prod_en_vivo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "progress_2026_08_25_arranque_proyecto_seo",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_commands_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_files_changed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_files_inspected",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_next_step",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_objective",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_open_risks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_verification_result",
       "confidence_score": 1.0
     },
     {
@@ -25553,9 +25863,9 @@
       "source_file": "tasks/current.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tasks_current_tasks_current_md_frecoin_web_active_task_queue",
-      "target": "tasks_current_auditor\u00eda_del_backoffice_2026_07_23_24_remediada",
-      "confidence_score": 1.0
+      "target": "tasks_current_auditor\u00eda_del_backoffice_2026_07_23_24_remediada"
     },
     {
       "relation": "contains",
@@ -25656,8 +25966,18 @@
       "confidence_score": 1.0,
       "source": "tasks_current_tasks_current_md_frecoin_web_active_task_queue",
       "target": "tasks_current_p2_backlog"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tasks/current.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tasks_current_tasks_current_md_frecoin_web_active_task_queue",
+      "target": "tasks_current_proyecto_seo_arrancado_2026_08_25",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c8903194b841469c8852ae403c9535c50704ecae"
+  "built_at_commit": "6b222a5a13f45b4984e5abeec0eff4f296073dac"
 }

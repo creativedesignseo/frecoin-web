@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "HANDOFF.md": {
-    "mtime": 1785255654.0811617,
-    "ast_hash": "244a194fd6789f9a6a946caf56700c2e",
+    "mtime": 1787616259.672763,
+    "ast_hash": "eb45282352d127bbf24d0a438cefc557",
     "semantic_hash": ""
   },
   "README.md": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "tasks/current.md": {
-    "mtime": 1784849754.3367062,
-    "ast_hash": "28dce7bb8017a35fd1c053f64a3a86a2",
+    "mtime": 1787616273.6972203,
+    "ast_hash": "2e41f582ad710cd34451170bb5b486b1",
     "semantic_hash": ""
   },
   "panel/public/logo-frecoin-dark.png": {
@@ -1087,6 +1087,16 @@
   "progress/2026-07-24-auditoria-remediacion.md": {
     "mtime": 1784849820.332402,
     "ast_hash": "a747ce4d49b839cdba46a61c2d66fc6a",
+    "semantic_hash": ""
+  },
+  "BOOTSTRAP.md": {
+    "mtime": 1785259323.9668548,
+    "ast_hash": "08bd938dbcde64f888a6f5a7fda7786e",
+    "semantic_hash": ""
+  },
+  "progress/2026-08-25-arranque-proyecto-seo.md": {
+    "mtime": 1787616299.2981849,
+    "ast_hash": "80e9eb9e731e8335973ff95cd77f63e5",
     "semantic_hash": ""
   }
 }

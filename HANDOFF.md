@@ -9,7 +9,39 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-07-28 (Luis avisado por email de que la galería "Trabajos" está lista — enviado y verificado en Gmail)
+**Last updated:** 2026-08-25 (arranque del proyecto SEO — verificado código+prod; sin cambios de código esta sesión)
+
+**Verificación 2026-08-25 (comprobado, no supuesto):** `npm install` fue necesario (`node_modules`
+no existía en este entorno — recurrente, no es una regresión). Con eso, `bash scripts/verify.sh`
+→ `✓ all checks passed`. Producción en vivo: `/` → 200 (bundle `index-Dti3xGD2.js`, sin cambios),
+`/panel/` → 200 (`index-BlcpRtEO.js`, sin cambios), `/admin/api/auth.php` sin sesión → 401,
+`/assets/work-gallery.json` → 200. **Ningún archivo de código se tocó en esta sesión** — todo el
+trabajo fue de planificación/negocio, documentado abajo y en el repo de contexto privado
+`frecoin-tracking` (separado de este repo de código).
+
+**Proyecto SEO — ARRANCADO 2026-08-25.** Luis aprobó por llamada la propuesta de 499€ del 12-jun
+(ver `## Propuesta SEO FRECOIN` más abajo) y, según indica Jonatan, hizo hoy el primer pago de 250€
+por Bizum/transferencia — **este pago no está verificado de forma independiente por no tener acceso
+a la cuenta bancaria/Bizum de Adspubli; se registra tal cual lo reportó el dueño del proyecto**.
+Se construyó un plan de ejecución completo (4 planes de bloque + 1 maestro, verificados contra el
+código real de frecoin.es y fuentes actuales de cada plataforma) guardado en
+`frecoin-tracking/entregables/` (fuera de este repo): `plan-seo-tecnico-keyword-onpage.md`,
+`plan-google-business-profile.md`, `plan-gtm-ga4.md`, `plan-reputacion-online.md`,
+`plan-maestro-SEO-FRECOIN.md`. **Total estimado: ≈79h**, muy por encima de las "2-3 semanas"
+prometidas en el PDF original — roadmap realista de **≈7 semanas** a 2.5h/día. Se decidió honrar
+el precio de 499€ ya cotizado (valor de la relación con el cliente > margen de este proyecto) y
+avisar del plazo real por adelantado en vez de renegociar precio.
+
+Correo de confirmación de arranque + checklist de datos/accesos: **borrador creado en Gmail**
+(`info@one.adspubli.com`, asunto "Frecoin · Confirmado — arrancamos con el SEO", verificado que
+existe en la bandeja el 2026-08-25 — **no confirmado como enviado**), plantilla HTML en
+`frecoin-tracking/correos/Email-Arranque-SEO-Luis.html` (repo privado — contiene el IBAN/Bizum
+real de Adspubli, por eso vive fuera de este repo público).
+
+**Siguiente paso de ejecución (decidido en esta sesión):** empezar por la configuración de
+medición (GTM+GA4) en vez de por keyword research — no depende de que Luis responda (se puede
+crear con una cuenta de Google dedicada y transferir después) y arranca antes la captura de datos
+de referencia ("antes" de los cambios SEO). Detalle paso a paso en `plan-gtm-ga4.md`.
 
 **Comunicación con cliente 2026-07-28 (verificado en Gmail, no supuesto):** Luis
 había pedido (4 y 10 de julio, y de nuevo 22 de julio) poder acumular varias fotos
@@ -352,7 +384,9 @@ L'Hospitalet y toda el área metropolitana de Barcelona.
 
 ## Pendiente / riesgos abiertos
 
-- [ ] **Respuesta de Luis a la propuesta SEO** — enviada 11-jun. Al confirmar: pedir NAP + accesos Google.
+- [x] **Respuesta de Luis a la propuesta SEO** — ✅ aprobada por llamada 2026-08-25 (ver bloque
+      "Proyecto SEO — ARRANCADO" arriba). Sigue pendiente: que responda el checklist de
+      NAP/accesos/fotos enviado por email (borrador creado, no confirmado como enviado).
 - [ ] **Fotos de trabajos reales** — Luis debe enviar fotos de instalaciones de Redes y Eléctricas.
 - [ ] **Sitemap `lastmod`** — fechas fijas a 2026-05-11; actualizarlas en el próximo deploy que toque código.
 - [ ] **Automatizar deploy** — conectar Hostinger a rama `production` o cron (ADR-001).
