@@ -2798,7 +2798,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_accordion",
-      "community": 1,
+      "community": 65,
       "norm_label": "accordion.tsx"
     },
     {
@@ -2808,7 +2808,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_accordion_accordion",
-      "community": 1,
+      "community": 65,
       "norm_label": "accordion()"
     },
     {
@@ -2818,7 +2818,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_accordion_accordionitem",
-      "community": 1,
+      "community": 65,
       "norm_label": "accordionitem()"
     },
     {
@@ -2828,7 +2828,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_accordion_accordiontrigger",
-      "community": 1,
+      "community": 65,
       "norm_label": "accordiontrigger()"
     },
     {
@@ -2838,7 +2838,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "ui_accordion_accordioncontent",
-      "community": 1,
+      "community": 65,
       "norm_label": "accordioncontent()"
     },
     {
@@ -3108,7 +3108,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_breadcrumb",
-      "community": 35,
+      "community": 1,
       "norm_label": "breadcrumb.tsx"
     },
     {
@@ -3118,7 +3118,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumb",
-      "community": 35,
+      "community": 1,
       "norm_label": "breadcrumb()"
     },
     {
@@ -3128,7 +3128,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumblist",
-      "community": 35,
+      "community": 1,
       "norm_label": "breadcrumblist()"
     },
     {
@@ -3138,7 +3138,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbitem",
-      "community": 35,
+      "community": 1,
       "norm_label": "breadcrumbitem()"
     },
     {
@@ -3148,7 +3148,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumblink",
-      "community": 35,
+      "community": 1,
       "norm_label": "breadcrumblink()"
     },
     {
@@ -3158,7 +3158,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbpage",
-      "community": 35,
+      "community": 1,
       "norm_label": "breadcrumbpage()"
     },
     {
@@ -3168,7 +3168,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbseparator",
-      "community": 35,
+      "community": 1,
       "norm_label": "breadcrumbseparator()"
     },
     {
@@ -3178,7 +3178,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbellipsis",
-      "community": 35,
+      "community": 1,
       "norm_label": "breadcrumbellipsis()"
     },
     {
@@ -3238,7 +3238,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_button",
-      "community": 21,
+      "community": 20,
       "norm_label": "button.tsx"
     },
     {
@@ -3258,7 +3258,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "ui_button_button",
-      "community": 21,
+      "community": 20,
       "norm_label": "button()"
     },
     {
@@ -3268,7 +3268,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_calendar",
-      "community": 21,
+      "community": 20,
       "norm_label": "calendar.tsx"
     },
     {
@@ -3288,7 +3288,7 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "ui_calendar_calendardaybutton",
-      "community": 21,
+      "community": 20,
       "norm_label": "calendardaybutton()"
     },
     {
@@ -3788,7 +3788,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_context_menu",
-      "community": 32,
+      "community": 1,
       "norm_label": "context-menu.tsx"
     },
     {
@@ -3798,7 +3798,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenu",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenu()"
     },
     {
@@ -3808,7 +3808,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenutrigger",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenutrigger()"
     },
     {
@@ -3818,7 +3818,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenugroup",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenugroup()"
     },
     {
@@ -3828,7 +3828,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenuportal",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenuportal()"
     },
     {
@@ -3838,7 +3838,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenusub",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenusub()"
     },
     {
@@ -3848,7 +3848,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenuradiogroup",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenuradiogroup()"
     },
     {
@@ -3858,7 +3858,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenusubtrigger",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenusubtrigger()"
     },
     {
@@ -3868,7 +3868,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenusubcontent",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenusubcontent()"
     },
     {
@@ -3878,7 +3878,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenucontent",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenucontent()"
     },
     {
@@ -3888,7 +3888,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenuitem",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenuitem()"
     },
     {
@@ -3898,7 +3898,7 @@
       "source_location": "L137",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenucheckboxitem",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenucheckboxitem()"
     },
     {
@@ -3908,7 +3908,7 @@
       "source_location": "L163",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenuradioitem",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenuradioitem()"
     },
     {
@@ -3918,7 +3918,7 @@
       "source_location": "L187",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenulabel",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenulabel()"
     },
     {
@@ -3928,7 +3928,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenuseparator",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenuseparator()"
     },
     {
@@ -3938,7 +3938,7 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "ui_context_menu_contextmenushortcut",
-      "community": 32,
+      "community": 1,
       "norm_label": "contextmenushortcut()"
     },
     {
@@ -4058,7 +4058,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_drawer",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawer.tsx"
     },
     {
@@ -4068,7 +4068,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_drawer_drawer",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawer()"
     },
     {
@@ -4078,7 +4078,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "ui_drawer_drawertrigger",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawertrigger()"
     },
     {
@@ -4088,7 +4088,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "ui_drawer_drawerportal",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawerportal()"
     },
     {
@@ -4098,7 +4098,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_drawer_drawerclose",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawerclose()"
     },
     {
@@ -4108,7 +4108,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "ui_drawer_draweroverlay",
-      "community": 1,
+      "community": 32,
       "norm_label": "draweroverlay()"
     },
     {
@@ -4118,7 +4118,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "ui_drawer_drawercontent",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawercontent()"
     },
     {
@@ -4128,7 +4128,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "ui_drawer_drawerheader",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawerheader()"
     },
     {
@@ -4138,7 +4138,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "ui_drawer_drawerfooter",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawerfooter()"
     },
     {
@@ -4148,7 +4148,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "ui_drawer_drawertitle",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawertitle()"
     },
     {
@@ -4158,7 +4158,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "ui_drawer_drawerdescription",
-      "community": 1,
+      "community": 32,
       "norm_label": "drawerdescription()"
     },
     {
@@ -4648,7 +4648,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_hover_card",
-      "community": 20,
+      "community": 74,
       "norm_label": "hover-card.tsx"
     },
     {
@@ -4658,7 +4658,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_hover_card_hovercard",
-      "community": 20,
+      "community": 74,
       "norm_label": "hovercard()"
     },
     {
@@ -4668,7 +4668,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "ui_hover_card_hovercardtrigger",
-      "community": 20,
+      "community": 74,
       "norm_label": "hovercardtrigger()"
     },
     {
@@ -4678,7 +4678,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "ui_hover_card_hovercardcontent",
-      "community": 20,
+      "community": 74,
       "norm_label": "hovercardcontent()"
     },
     {
@@ -4688,7 +4688,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input_group",
-      "community": 21,
+      "community": 20,
       "norm_label": "input-group.tsx"
     },
     {
@@ -4698,7 +4698,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_input_group_inputgroup",
-      "community": 21,
+      "community": 20,
       "norm_label": "inputgroup()"
     },
     {
@@ -4708,7 +4708,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupaddonvariants",
-      "community": 21,
+      "community": 20,
       "norm_label": "inputgroupaddonvariants"
     },
     {
@@ -4718,7 +4718,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupaddon",
-      "community": 21,
+      "community": 20,
       "norm_label": "inputgroupaddon()"
     },
     {
@@ -4728,7 +4728,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupbuttonvariants",
-      "community": 21,
+      "community": 20,
       "norm_label": "inputgroupbuttonvariants"
     },
     {
@@ -4738,7 +4738,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupbutton",
-      "community": 21,
+      "community": 20,
       "norm_label": "inputgroupbutton()"
     },
     {
@@ -4748,7 +4748,7 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "ui_input_group_inputgrouptext",
-      "community": 21,
+      "community": 20,
       "norm_label": "inputgrouptext()"
     },
     {
@@ -4758,7 +4758,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "ui_input_group_inputgroupinput",
-      "community": 21,
+      "community": 20,
       "norm_label": "inputgroupinput()"
     },
     {
@@ -4768,7 +4768,7 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "ui_input_group_inputgrouptextarea",
-      "community": 21,
+      "community": 20,
       "norm_label": "inputgrouptextarea()"
     },
     {
@@ -4778,7 +4778,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input_otp",
-      "community": 1,
+      "community": 73,
       "norm_label": "input-otp.tsx"
     },
     {
@@ -4788,7 +4788,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_input_otp_inputotp",
-      "community": 1,
+      "community": 73,
       "norm_label": "inputotp()"
     },
     {
@@ -4798,7 +4798,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpgroup",
-      "community": 1,
+      "community": 73,
       "norm_label": "inputotpgroup()"
     },
     {
@@ -4808,7 +4808,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpslot",
-      "community": 1,
+      "community": 73,
       "norm_label": "inputotpslot()"
     },
     {
@@ -4818,7 +4818,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpseparator",
-      "community": 1,
+      "community": 73,
       "norm_label": "inputotpseparator()"
     },
     {
@@ -4828,7 +4828,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input",
-      "community": 2,
+      "community": 20,
       "norm_label": "input.tsx"
     },
     {
@@ -4838,7 +4838,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_input_input",
-      "community": 2,
+      "community": 20,
       "norm_label": "input()"
     },
     {
@@ -4978,7 +4978,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_kbd",
-      "community": 20,
+      "community": 1,
       "norm_label": "kbd.tsx"
     },
     {
@@ -4988,7 +4988,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "ui_kbd_kbd",
-      "community": 20,
+      "community": 1,
       "norm_label": "kbd()"
     },
     {
@@ -4998,7 +4998,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "ui_kbd_kbdgroup",
-      "community": 20,
+      "community": 1,
       "norm_label": "kbdgroup()"
     },
     {
@@ -5388,7 +5388,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_popover",
-      "community": 20,
+      "community": 21,
       "norm_label": "popover.tsx"
     },
     {
@@ -5398,7 +5398,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_popover_popover",
-      "community": 20,
+      "community": 21,
       "norm_label": "popover()"
     },
     {
@@ -5408,7 +5408,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "ui_popover_popovertrigger",
-      "community": 20,
+      "community": 21,
       "norm_label": "popovertrigger()"
     },
     {
@@ -5418,7 +5418,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "ui_popover_popovercontent",
-      "community": 20,
+      "community": 21,
       "norm_label": "popovercontent()"
     },
     {
@@ -5428,7 +5428,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "ui_popover_popoveranchor",
-      "community": 20,
+      "community": 21,
       "norm_label": "popoveranchor()"
     },
     {
@@ -5488,7 +5488,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_resizable",
-      "community": 20,
+      "community": 98,
       "norm_label": "resizable.tsx"
     },
     {
@@ -5498,7 +5498,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_resizable_resizablepanelgroup",
-      "community": 20,
+      "community": 98,
       "norm_label": "resizablepanelgroup()"
     },
     {
@@ -5508,7 +5508,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "ui_resizable_resizablepanel",
-      "community": 20,
+      "community": 98,
       "norm_label": "resizablepanel()"
     },
     {
@@ -5518,7 +5518,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "ui_resizable_resizablehandle",
-      "community": 20,
+      "community": 98,
       "norm_label": "resizablehandle()"
     },
     {
@@ -6318,7 +6318,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_textarea",
-      "community": 21,
+      "community": 20,
       "norm_label": "textarea.tsx"
     },
     {
@@ -6328,7 +6328,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_textarea_textarea",
-      "community": 21,
+      "community": 20,
       "norm_label": "textarea()"
     },
     {
@@ -8855,7 +8855,7 @@
       "label": "BACKOFFICE CMS (sesi\u00f3n 2026-06-18) \u2014 EN VIVO",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L136",
+      "source_location": "L147",
       "_origin": "ast",
       "id": "handoff_backoffice_cms_sesi\u00f3n_2026_06_18_en_vivo",
       "community": 14,
@@ -8865,7 +8865,7 @@
       "label": "Producci\u00f3n verificada en vivo (2026-06-12)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L198",
+      "source_location": "L209",
       "_origin": "ast",
       "id": "handoff_producci\u00f3n_verificada_en_vivo_2026_06_12",
       "community": 14,
@@ -8875,7 +8875,7 @@
       "label": "HTTP y cabeceras",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L200",
+      "source_location": "L211",
       "_origin": "ast",
       "id": "handoff_http_y_cabeceras",
       "community": 14,
@@ -8885,7 +8885,7 @@
       "label": "Rutas verificadas (todas HTTP 200)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L213",
+      "source_location": "L224",
       "_origin": "ast",
       "id": "handoff_rutas_verificadas_todas_http_200",
       "community": 14,
@@ -8895,7 +8895,7 @@
       "label": "Contenido en vivo (build acumulado 08-jun)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L232",
+      "source_location": "L243",
       "_origin": "ast",
       "id": "handoff_contenido_en_vivo_build_acumulado_08_jun",
       "community": 14,
@@ -8905,7 +8905,7 @@
       "label": "Rutas del c\u00f3digo (App.tsx) \u2014 mapa completo",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L243",
+      "source_location": "L254",
       "_origin": "ast",
       "id": "handoff_rutas_del_c\u00f3digo_app_tsx_mapa_completo",
       "community": 14,
@@ -8915,7 +8915,7 @@
       "label": "Observaciones t\u00e9cnicas",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L257",
+      "source_location": "L268",
       "_origin": "ast",
       "id": "handoff_observaciones_t\u00e9cnicas",
       "community": 14,
@@ -8925,7 +8925,7 @@
       "label": "Backups en servidor Hostinger",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L263",
+      "source_location": "L274",
       "_origin": "ast",
       "id": "handoff_backups_en_servidor_hostinger",
       "community": 14,
@@ -8935,7 +8935,7 @@
       "label": "C\u00f3mo se despliega DE VERDAD",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L271",
+      "source_location": "L282",
       "_origin": "ast",
       "id": "handoff_c\u00f3mo_se_despliega_de_verdad",
       "community": 14,
@@ -8945,7 +8945,7 @@
       "label": "GitHub Actions",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L291",
+      "source_location": "L302",
       "_origin": "ast",
       "id": "handoff_github_actions",
       "community": 14,
@@ -8955,7 +8955,7 @@
       "label": "Qu\u00e9 funciona",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L299",
+      "source_location": "L310",
       "_origin": "ast",
       "id": "handoff_qu\u00e9_funciona",
       "community": 14,
@@ -8965,7 +8965,7 @@
       "label": "Comunicaciones con el cliente (verificado 2026-06-12)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L309",
+      "source_location": "L320",
       "_origin": "ast",
       "id": "handoff_comunicaciones_con_el_cliente_verificado_2026_06_12",
       "community": 14,
@@ -8975,7 +8975,7 @@
       "label": "Propuesta SEO FRECOIN (fase siguiente)",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L327",
+      "source_location": "L338",
       "_origin": "ast",
       "id": "handoff_propuesta_seo_frecoin_fase_siguiente",
       "community": 14,
@@ -8985,7 +8985,7 @@
       "label": "Directorios locales \u2014 NAP y gu\u00eda",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L351",
+      "source_location": "L362",
       "_origin": "ast",
       "id": "handoff_directorios_locales_nap_y_gu\u00eda",
       "community": 14,
@@ -8995,7 +8995,7 @@
       "label": "Pendiente / riesgos abiertos",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L385",
+      "source_location": "L396",
       "_origin": "ast",
       "id": "handoff_pendiente_riesgos_abiertos",
       "community": 14,
@@ -9005,7 +9005,7 @@
       "label": "Al cerrar cada sesi\u00f3n que despliegue",
       "file_type": "document",
       "source_file": "HANDOFF.md",
-      "source_location": "L397",
+      "source_location": "L408",
       "_origin": "ast",
       "id": "handoff_al_cerrar_cada_sesi\u00f3n_que_despliegue",
       "community": 14,
@@ -10422,6 +10422,86 @@
       "norm_label": "next step"
     },
     {
+      "label": "2026-08-28-accesos-google-confirmados.md",
+      "file_type": "document",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "progress_2026_08_28_accesos_google_confirmados",
+      "community": 35,
+      "norm_label": "2026-08-28-accesos-google-confirmados.md"
+    },
+    {
+      "label": "Accesos Google \u2014 correos enviados, Luis confirma por WhatsApp",
+      "file_type": "document",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "progress_2026_08_28_accesos_google_confirmados_accesos_google_correos_enviados_luis_confirma_por_whatsapp",
+      "community": 35,
+      "norm_label": "accesos google \u2014 correos enviados, luis confirma por whatsapp"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "progress_2026_08_28_accesos_google_confirmados_objective",
+      "community": 35,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Files changed",
+      "file_type": "document",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "progress_2026_08_28_accesos_google_confirmados_files_changed",
+      "community": 35,
+      "norm_label": "files changed"
+    },
+    {
+      "label": "Commands run",
+      "file_type": "document",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "progress_2026_08_28_accesos_google_confirmados_commands_run",
+      "community": 35,
+      "norm_label": "commands run"
+    },
+    {
+      "label": "Verification result",
+      "file_type": "document",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "progress_2026_08_28_accesos_google_confirmados_verification_result",
+      "community": 35,
+      "norm_label": "verification result"
+    },
+    {
+      "label": "Open risks",
+      "file_type": "document",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "progress_2026_08_28_accesos_google_confirmados_open_risks",
+      "community": 35,
+      "norm_label": "open risks"
+    },
+    {
+      "label": "Next step",
+      "file_type": "document",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "progress_2026_08_28_accesos_google_confirmados_next_step",
+      "community": 35,
+      "norm_label": "next step"
+    },
+    {
       "label": "README.md",
       "file_type": "document",
       "source_file": "progress/README.md",
@@ -10515,7 +10595,7 @@
       "label": "Current state",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L29",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "tasks_current_current_state",
       "community": 29,
@@ -10525,7 +10605,7 @@
       "label": "\u2705 Backoffice \u2014 completado (sesi\u00f3n 2026-06-17)",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L59",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "tasks_current_backoffice_completado_sesi\u00f3n_2026_06_17",
       "community": 29,
@@ -10535,7 +10615,7 @@
       "label": "\ud83d\udd0d Auditor\u00eda del backoffice (2026-07-23/24) \u2014 REMEDIADA",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L81",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "tasks_current_auditor\u00eda_del_backoffice_2026_07_23_24_remediada",
       "community": 29,
@@ -10545,7 +10625,7 @@
       "label": "\ud83d\udfe1 Backoffice \u2014 pendiente",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L105",
+      "source_location": "L107",
       "_origin": "ast",
       "id": "tasks_current_backoffice_pendiente",
       "community": 29,
@@ -10555,7 +10635,7 @@
       "label": "P0 \u2014 blocking ship",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L115",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "tasks_current_p0_blocking_ship",
       "community": 29,
@@ -10565,7 +10645,7 @@
       "label": "P1 \u2014 important, not blocking",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L121",
+      "source_location": "L123",
       "_origin": "ast",
       "id": "tasks_current_p1_important_not_blocking",
       "community": 29,
@@ -10575,7 +10655,7 @@
       "label": "P2 \u2014 backlog",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L138",
+      "source_location": "L140",
       "_origin": "ast",
       "id": "tasks_current_p2_backlog",
       "community": 29,
@@ -10585,7 +10665,7 @@
       "label": "Diferido (medio plazo, sin compromiso)",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L147",
+      "source_location": "L149",
       "_origin": "ast",
       "id": "tasks_current_diferido_medio_plazo_sin_compromiso",
       "community": 29,
@@ -10595,7 +10675,7 @@
       "label": "Blocked",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L154",
+      "source_location": "L156",
       "_origin": "ast",
       "id": "tasks_current_blocked",
       "community": 29,
@@ -10605,7 +10685,7 @@
       "label": "Borradores obsoletos a eliminar manualmente desde Gmail",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L160",
+      "source_location": "L162",
       "_origin": "ast",
       "id": "tasks_current_borradores_obsoletos_a_eliminar_manualmente_desde_gmail",
       "community": 29,
@@ -10615,7 +10695,7 @@
       "label": "Known pre-existing failures (not blockers)",
       "file_type": "document",
       "source_file": "tasks/current.md",
-      "source_location": "L168",
+      "source_location": "L170",
       "_origin": "ast",
       "id": "tasks_current_known_pre_existing_failures_not_blockers",
       "community": 29,
@@ -24253,9 +24333,9 @@
       "source_file": "BOOTSTRAP.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bootstrap",
-      "target": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
-      "confidence_score": 1.0
+      "target": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia"
     },
     {
       "relation": "contains",
@@ -24263,9 +24343,9 @@
       "source_file": "BOOTSTRAP.md",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
-      "target": "bootstrap_c\u00f3mo_invocarlo_en_otro_lugar",
-      "confidence_score": 1.0
+      "target": "bootstrap_c\u00f3mo_invocarlo_en_otro_lugar"
     },
     {
       "relation": "contains",
@@ -24273,9 +24353,9 @@
       "source_file": "BOOTSTRAP.md",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
-      "target": "bootstrap_orden_de_lectura_de_m\u00e1s_a_menos_autoridad",
-      "confidence_score": 1.0
+      "target": "bootstrap_orden_de_lectura_de_m\u00e1s_a_menos_autoridad"
     },
     {
       "relation": "contains",
@@ -24283,9 +24363,9 @@
       "source_file": "BOOTSTRAP.md",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
-      "target": "bootstrap_qu\u00e9_es_este_proyecto_una_frase",
-      "confidence_score": 1.0
+      "target": "bootstrap_qu\u00e9_es_este_proyecto_una_frase"
     },
     {
       "relation": "contains",
@@ -24293,9 +24373,9 @@
       "source_file": "BOOTSTRAP.md",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
-      "target": "bootstrap_qu\u00e9_no_es_portable_fuera_de_esta_m\u00e1quina_cuenta",
-      "confidence_score": 1.0
+      "target": "bootstrap_qu\u00e9_no_es_portable_fuera_de_esta_m\u00e1quina_cuenta"
     },
     {
       "relation": "contains",
@@ -24303,9 +24383,9 @@
       "source_file": "BOOTSTRAP.md",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bootstrap_bootstrap_md_arranque_r\u00e1pido_para_otra_ia",
-      "target": "bootstrap_verificaci\u00f3n_funciona_en_cualquier_ia_con_shell",
-      "confidence_score": 1.0
+      "target": "bootstrap_verificaci\u00f3n_funciona_en_cualquier_ia_con_shell"
     },
     {
       "relation": "contains",
@@ -25723,9 +25803,9 @@
       "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_08_25_arranque_proyecto_seo",
-      "target": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
-      "confidence_score": 1.0
+      "target": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin"
     },
     {
       "relation": "contains",
@@ -25733,9 +25813,9 @@
       "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
-      "target": "progress_2026_08_25_arranque_proyecto_seo_commands_run",
-      "confidence_score": 1.0
+      "target": "progress_2026_08_25_arranque_proyecto_seo_commands_run"
     },
     {
       "relation": "contains",
@@ -25743,9 +25823,9 @@
       "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
-      "target": "progress_2026_08_25_arranque_proyecto_seo_files_changed",
-      "confidence_score": 1.0
+      "target": "progress_2026_08_25_arranque_proyecto_seo_files_changed"
     },
     {
       "relation": "contains",
@@ -25753,9 +25833,9 @@
       "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
-      "target": "progress_2026_08_25_arranque_proyecto_seo_files_inspected",
-      "confidence_score": 1.0
+      "target": "progress_2026_08_25_arranque_proyecto_seo_files_inspected"
     },
     {
       "relation": "contains",
@@ -25763,9 +25843,9 @@
       "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
-      "target": "progress_2026_08_25_arranque_proyecto_seo_next_step",
-      "confidence_score": 1.0
+      "target": "progress_2026_08_25_arranque_proyecto_seo_next_step"
     },
     {
       "relation": "contains",
@@ -25773,9 +25853,9 @@
       "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
-      "target": "progress_2026_08_25_arranque_proyecto_seo_objective",
-      "confidence_score": 1.0
+      "target": "progress_2026_08_25_arranque_proyecto_seo_objective"
     },
     {
       "relation": "contains",
@@ -25783,9 +25863,9 @@
       "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
-      "target": "progress_2026_08_25_arranque_proyecto_seo_open_risks",
-      "confidence_score": 1.0
+      "target": "progress_2026_08_25_arranque_proyecto_seo_open_risks"
     },
     {
       "relation": "contains",
@@ -25793,8 +25873,78 @@
       "source_file": "progress/2026-08-25-arranque-proyecto-seo.md",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "progress_2026_08_25_arranque_proyecto_seo_arranque_del_proyecto_seo_frecoin",
-      "target": "progress_2026_08_25_arranque_proyecto_seo_verification_result",
+      "target": "progress_2026_08_25_arranque_proyecto_seo_verification_result"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "progress_2026_08_28_accesos_google_confirmados",
+      "target": "progress_2026_08_28_accesos_google_confirmados_accesos_google_correos_enviados_luis_confirma_por_whatsapp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "progress_2026_08_28_accesos_google_confirmados_accesos_google_correos_enviados_luis_confirma_por_whatsapp",
+      "target": "progress_2026_08_28_accesos_google_confirmados_commands_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "progress_2026_08_28_accesos_google_confirmados_accesos_google_correos_enviados_luis_confirma_por_whatsapp",
+      "target": "progress_2026_08_28_accesos_google_confirmados_files_changed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "progress_2026_08_28_accesos_google_confirmados_accesos_google_correos_enviados_luis_confirma_por_whatsapp",
+      "target": "progress_2026_08_28_accesos_google_confirmados_next_step",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "progress_2026_08_28_accesos_google_confirmados_accesos_google_correos_enviados_luis_confirma_por_whatsapp",
+      "target": "progress_2026_08_28_accesos_google_confirmados_objective",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "progress_2026_08_28_accesos_google_confirmados_accesos_google_correos_enviados_luis_confirma_por_whatsapp",
+      "target": "progress_2026_08_28_accesos_google_confirmados_open_risks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "progress/2026-08-28-accesos-google-confirmados.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "progress_2026_08_28_accesos_google_confirmados_accesos_google_correos_enviados_luis_confirma_por_whatsapp",
+      "target": "progress_2026_08_28_accesos_google_confirmados_verification_result",
       "confidence_score": 1.0
     },
     {
@@ -25973,11 +26123,11 @@
       "source_file": "tasks/current.md",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tasks_current_tasks_current_md_frecoin_web_active_task_queue",
-      "target": "tasks_current_proyecto_seo_arrancado_2026_08_25",
-      "confidence_score": 1.0
+      "target": "tasks_current_proyecto_seo_arrancado_2026_08_25"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6b222a5a13f45b4984e5abeec0eff4f296073dac"
+  "built_at_commit": "bfcb6b4c847876c34fc937788f77c9cd6ec253ec"
 }

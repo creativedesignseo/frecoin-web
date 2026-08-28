@@ -1,16 +1,16 @@
-# Graph Report - frecoin-web-produccion  (2026-08-25)
+# Graph Report - frecoin-web-produccion  (2026-08-28)
 
 ## Corpus Check
-- 167 files · ~345,301 words
+- 168 files · ~345,895 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1059 nodes · 1477 edges · 95 communities (92 shown, 3 thin omitted)
+- 1067 nodes · 1484 edges · 99 communities (94 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6b222a5a`
+- Built from commit: `bfcb6b4c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -80,12 +80,16 @@
 - [[_COMMUNITY_Community 62|Community 62]]
 - [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
+- [[_COMMUNITY_Community 65|Community 65]]
 - [[_COMMUNITY_Community 66|Community 66]]
 - [[_COMMUNITY_Community 67|Community 67]]
 - [[_COMMUNITY_Community 68|Community 68]]
 - [[_COMMUNITY_Community 69|Community 69]]
 - [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
+- [[_COMMUNITY_Community 73|Community 73]]
+- [[_COMMUNITY_Community 74|Community 74]]
+- [[_COMMUNITY_Community 98|Community 98]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 270 edges
@@ -114,7 +118,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (95 total, 3 thin omitted)
+## Communities (99 total, 5 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
@@ -122,11 +126,11 @@ Nodes (37): Layout(), NAV, NavItem, ProtectedRoute(), AdminRole, AdminUser, Admi
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
-Nodes (39): cn(), AccordionContent(), AccordionItem(), AccordionTrigger(), Avatar(), AvatarFallback(), AvatarImage(), Card() (+31 more)
+Nodes (44): cn(), Avatar(), AvatarFallback(), AvatarImage(), BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList() (+36 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.05
-Nodes (41): useIsMobile(), Input(), Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay() (+33 more)
+Cohesion: 0.06
+Nodes (40): useIsMobile(), Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle() (+32 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.04
@@ -197,12 +201,12 @@ Cohesion: 0.21
 Nodes (5): LegalLayout(), LegalLayoutProps, WhatsAppFloat(), AvisoLegal(), PoliticaPrivacidad()
 
 ### Community 20 - "Community 20"
-Cohesion: 0.07
-Nodes (13): Badge(), badgeVariants, Checkbox(), HoverCardContent(), Kbd(), KbdGroup(), PopoverContent(), Progress() (+5 more)
+Cohesion: 0.09
+Nodes (19): Badge(), badgeVariants, Button(), CalendarDayButton(), Checkbox(), InputGroup(), InputGroupAddon(), inputGroupAddonVariants (+11 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.07
-Nodes (28): AlertDialogAction(), AlertDialogCancel(), AlertDialogContent(), AlertDialogDescription(), AlertDialogFooter(), AlertDialogHeader(), AlertDialogOverlay(), AlertDialogTitle() (+20 more)
+Cohesion: 0.08
+Nodes (18): AlertDialogAction(), AlertDialogCancel(), AlertDialogContent(), AlertDialogDescription(), AlertDialogFooter(), AlertDialogHeader(), AlertDialogOverlay(), AlertDialogTitle() (+10 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.23
@@ -245,8 +249,8 @@ Cohesion: 0.17
 Nodes (11): Auditoría adversarial del backoffice (workflow, 29 agentes), Bugfix (mismo día) — 500 al añadir foto, Commands run, Files changed, Galería "Trabajos realizados" — multi-foto por área (acumular), Next step, Objective, Open risks (+3 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.12
-Nodes (9): ContextMenuCheckboxItem(), ContextMenuContent(), ContextMenuItem(), ContextMenuLabel(), ContextMenuRadioItem(), ContextMenuSeparator(), ContextMenuShortcut(), ContextMenuSubContent() (+1 more)
+Cohesion: 0.18
+Nodes (6): DrawerContent(), DrawerDescription(), DrawerFooter(), DrawerHeader(), DrawerOverlay(), DrawerTitle()
 
 ### Community 33 - "Community 33"
 Cohesion: 0.22
@@ -258,7 +262,7 @@ Nodes (8): Arranque del proyecto SEO FRECOIN, Commands run, Files changed, Files
 
 ### Community 35 - "Community 35"
 Cohesion: 0.25
-Nodes (6): BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList(), BreadcrumbPage(), BreadcrumbSeparator()
+Nodes (7): Accesos Google — correos enviados, Luis confirma por WhatsApp, Commands run, Files changed, Next step, Objective, Open risks, Verification result
 
 ### Community 36 - "Community 36"
 Cohesion: 0.18
@@ -368,6 +372,10 @@ Nodes (6): BOOTSTRAP.md — arranque rápido para otra IA, Cómo invocarlo en ot
 Cohesion: 0.50
 Nodes (4): Alert(), AlertDescription(), AlertTitle(), alertVariants
 
+### Community 65 - "Community 65"
+Cohesion: 0.40
+Nodes (3): AccordionContent(), AccordionItem(), AccordionTrigger()
+
 ### Community 66 - "Community 66"
 Cohesion: 0.40
 Nodes (4): Do not, Interpret results, Procedure, verify
@@ -388,25 +396,29 @@ Nodes (3): Hard rules, Output format, What to check, in order
 Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
+### Community 73 - "Community 73"
+Cohesion: 0.40
+Nodes (3): InputOTP(), InputOTPGroup(), InputOTPSlot()
+
 ## Knowledge Gaps
-- **434 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+429 more)
+- **440 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+435 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 1` to `Community 64`, `Community 33`, `Community 32`, `Community 35`, `Community 2`, `Community 36`, `Community 40`, `Community 9`, `Community 12`, `Community 47`, `Community 16`, `Community 18`, `Community 20`, `Community 21`, `Community 52`, `Community 23`, `Community 24`, `Community 30`?**
+- **Why does `cn()` connect `Community 1` to `Community 2`, `Community 9`, `Community 12`, `Community 16`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 24`, `Community 30`, `Community 32`, `Community 33`, `Community 36`, `Community 40`, `Community 47`, `Community 52`, `Community 64`, `Community 65`, `Community 73`, `Community 74`, `Community 98`?**
   _High betweenness centrality (0.115) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `Community 3` to `Community 4`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _434 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _440 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.05687645687645688 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.06359189378057302 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0576271186440678 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.054693877551020405 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05673758865248227 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.04 - nodes in this community are weakly interconnected._

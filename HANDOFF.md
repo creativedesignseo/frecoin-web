@@ -9,14 +9,14 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-08-25 (arranque del proyecto SEO — verificado código+prod; sin cambios de código esta sesión)
+**Last updated:** 2026-08-28 (Luis confirmó por WhatsApp que se da de alta en Google hoy/mañana — verificado código+prod, sin cambios de código)
 
-**Verificación 2026-08-25 (comprobado, no supuesto):** `npm install` fue necesario (`node_modules`
-no existía en este entorno — recurrente, no es una regresión). Con eso, `bash scripts/verify.sh`
-→ `✓ all checks passed`. Producción en vivo: `/` → 200 (bundle `index-Dti3xGD2.js`, sin cambios),
-`/panel/` → 200 (`index-BlcpRtEO.js`, sin cambios), `/admin/api/auth.php` sin sesión → 401,
+**Verificación 2026-08-28 (comprobado, no supuesto):** `bash scripts/verify.sh` → `✓ all checks
+passed` (sin necesidad de `npm install`, ya estaba instalado desde la verificación previa).
+Producción en vivo: `/` → 200 (`index-Dti3xGD2.js`, sin cambios), `/panel/` → 200
+(`index-BlcpRtEO.js`, sin cambios), `/admin/api/auth.php` sin sesión → 401,
 `/assets/work-gallery.json` → 200. **Ningún archivo de código se tocó en esta sesión** — todo el
-trabajo fue de planificación/negocio, documentado abajo y en el repo de contexto privado
+trabajo sigue siendo de planificación/negocio, documentado abajo y en el repo de contexto privado
 `frecoin-tracking` (separado de este repo de código).
 
 **Proyecto SEO — ARRANCADO 2026-08-25.** Luis aprobó por llamada la propuesta de 499€ del 12-jun
@@ -32,16 +32,27 @@ prometidas en el PDF original — roadmap realista de **≈7 semanas** a 2.5h/d�
 el precio de 499€ ya cotizado (valor de la relación con el cliente > margen de este proyecto) y
 avisar del plazo real por adelantado en vez de renegociar precio.
 
-Correo de confirmación de arranque + checklist de datos/accesos: **borrador creado en Gmail**
-(`info@one.adspubli.com`, asunto "Frecoin · Confirmado — arrancamos con el SEO", verificado que
-existe en la bandeja el 2026-08-25 — **no confirmado como enviado**), plantilla HTML en
-`frecoin-tracking/correos/Email-Arranque-SEO-Luis.html` (repo privado — contiene el IBAN/Bizum
-real de Adspubli, por eso vive fuera de este repo público).
+**Comunicación de arranque — verificado en Gmail Enviados, no supuesto:**
+1. **25-ago:** correo "Frecoin · Confirmado — arrancamos con el SEO" (checklist de NAP/fotos/
+   Trustpilot) — confirmado enviado (`id 1a037810ee27146a`, `in:sent`).
+2. **26-ago:** correo de seguimiento "Re: ... — arrancamos con el SEO" pidiendo que Luis se dé de
+   alta él mismo en Search Console, Google Analytics y Tag Manager (con links directos y pasos
+   verificados contra la interfaz actual de Google) y luego añada a `info@one.adspubli.com` como
+   colaborador en las 3 — confirmado enviado (`id 1a03ca76b4a929ac`, `in:sent`).
+Plantillas HTML en `frecoin-tracking/correos/Email-Arranque-SEO-Luis.html` y
+`Email-Accesos-Google-Luis.html` (repo privado — el primero contiene el IBAN/Bizum real de
+Adspubli, por eso viven fuera de este repo público).
 
-**Siguiente paso de ejecución (decidido en esta sesión):** empezar por la configuración de
-medición (GTM+GA4) en vez de por keyword research — no depende de que Luis responda (se puede
-crear con una cuenta de Google dedicada y transferir después) y arranca antes la captura de datos
-de referencia ("antes" de los cambios SEO). Detalle paso a paso en `plan-gtm-ga4.md`.
+**Respuesta del cliente 2026-08-28 — reportada por WhatsApp, NO verificable por mí (sin acceso a
+WhatsApp de Jonatan):** según indica Jonatan, Luis respondió *"Hola si puedo lo ago esta tarde
+sino mañana seguro"* — se compromete a darse de alta en las 3 herramientas de Google hoy o mañana
+a más tardar. **Aún no ha añadido a Adspubli como colaborador en ninguna** (no hay forma de
+verificarlo hasta que se compruebe el acceso real a Search Console/Analytics/Tag Manager).
+
+**Siguiente paso de ejecución (decidido en sesión previa, sigue vigente):** en cuanto Luis dé el
+acceso, empezar por la configuración de medición (GTM+GA4) en vez de por keyword research —
+arranca antes la captura de datos de referencia ("antes" de los cambios SEO). Detalle paso a paso
+en `plan-gtm-ga4.md`.
 
 **Comunicación con cliente 2026-07-28 (verificado en Gmail, no supuesto):** Luis
 había pedido (4 y 10 de julio, y de nuevo 22 de julio) poder acumular varias fotos

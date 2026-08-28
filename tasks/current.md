@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-08-25 (proyecto SEO arrancado — plan de ejecución completo, correo de arranque en borrador)
+**Last updated:** 2026-08-28 (Luis confirmó por WhatsApp que se da de alta en Google hoy/mañana)
 
 ---
 
@@ -15,14 +15,16 @@
       por debajo de mercado; decisión: honrar el precio ya dado, no renegociar con Luis.
 - [x] Plan de ejecución completo (4 planes de bloque + maestro, ≈79h, roadmap ≈7 semanas) en
       `frecoin-tracking/entregables/` (repo de contexto, fuera de este repo de código).
-- [x] Correo de arranque + checklist de 9 puntos (NAP, accesos, fotos, Trustpilot) — borrador en
-      Gmail, plantilla en `frecoin-tracking/correos/Email-Arranque-SEO-Luis.html`.
-- [ ] **Confirmar y enviar** el correo de arranque (sigue en borrador).
-- [ ] Respuesta de Luis al checklist (NAP, acceso a cuenta Google, fotos, datos Trustpilot).
-- [ ] **Siguiente sesión de trabajo: configurar GTM+GA4** (no keyword research) — no depende de
-      Luis, arranca antes la captura de datos de referencia. Ver `plan-gtm-ga4.md` Fases 1-4
-      (≈10.4h): alta de cuentas con Google dedicado, código (`phone_click`, `trackPageView()`,
-      Consent Mode v2), configuración de tags/triggers en GTM.
+- [x] Correo de arranque (25-ago) + correo de accesos Google con links directos (26-ago) —
+      **ambos confirmados enviados** en Gmail Enviados.
+- [x] Luis respondió por WhatsApp (28-ago, reportado por Jonatan): se da de alta en Search
+      Console/Analytics/Tag Manager "esta tarde, si no mañana seguro".
+- [ ] **Verificar que Luis añadió a `info@one.adspubli.com` como colaborador** en las 3
+      herramientas — no hay forma de comprobarlo hasta que se intente acceder.
+- [ ] Resto del checklist del correo del 25-ago sin respuesta aún (NAP, fotos, datos Trustpilot).
+- [ ] **Siguiente sesión de trabajo, en cuanto haya acceso: configurar GTM+GA4** (no keyword
+      research). Ver `plan-gtm-ga4.md` Fases 1-4 (≈10.4h): alta de cuentas, código
+      (`phone_click`, `trackPageView()`, Consent Mode v2), configuración de tags/triggers en GTM.
 
 ---
 

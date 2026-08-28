@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "HANDOFF.md": {
-    "mtime": 1787616259.672763,
-    "ast_hash": "eb45282352d127bbf24d0a438cefc557",
+    "mtime": 1787926586.6548688,
+    "ast_hash": "89b0f8ab051e5eb8673c1e9763f11592",
     "semantic_hash": ""
   },
   "README.md": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "tasks/current.md": {
-    "mtime": 1787616273.6972203,
-    "ast_hash": "2e41f582ad710cd34451170bb5b486b1",
+    "mtime": 1787926607.3907757,
+    "ast_hash": "df4dfa1219f62ba66e4d928a3a61583c",
     "semantic_hash": ""
   },
   "panel/public/logo-frecoin-dark.png": {
@@ -1097,6 +1097,11 @@
   "progress/2026-08-25-arranque-proyecto-seo.md": {
     "mtime": 1787616299.2981849,
     "ast_hash": "80e9eb9e731e8335973ff95cd77f63e5",
+    "semantic_hash": ""
+  },
+  "progress/2026-08-28-accesos-google-confirmados.md": {
+    "mtime": 1787926624.7580953,
+    "ast_hash": "aa9bb347c5fc55820b85810d40f8fa77",
     "semantic_hash": ""
   }
 }
