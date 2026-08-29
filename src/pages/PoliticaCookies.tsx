@@ -12,6 +12,9 @@ export default function PoliticaCookies() {
       title="Política de Cookies"
       subtitle="Información sobre el uso de cookies en frecoin.es conforme a la normativa europea y española."
       lastUpdated="10 de mayo de 2026"
+      metaTitle="Política de cookies | FRECOIN"
+      metaDescription="Qué cookies utiliza frecoin.es, para qué sirven y cómo gestionarlas o revocar tu consentimiento, conforme a la LSSI-CE y el RGPD."
+      path="/politica-cookies"
     >
       <div className="info-box">
         <p>

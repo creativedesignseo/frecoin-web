@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Phone } from 'lucide-react';
+import { services } from '@/data/services';
 
 const legalLinks = [
   { label: 'Aviso Legal', to: '/aviso-legal' },
@@ -43,7 +44,7 @@ export default function FooterCTA() {
             INSTALACIONES TECNOLÓGICAS A TU ALCANCE
           </h2>
           <p className="text-[15px] leading-[1.65] text-gripz-gray-400 max-w-xl mx-auto mb-8">
-            Redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso. Servicio profesional en Barcelona y Cataluña.
+            Redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso. Servicio profesional en toda España.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="tel:+34614134292" className="btn-primary shadow-[0_0_40px_rgba(34,197,94,0.3)] flex items-center gap-2">
@@ -58,18 +59,27 @@ export default function FooterCTA() {
 
         <div className="footer-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-16 border-t border-white/10">
           <div className="footer-col">
-            <img src="/assets/logo-frecoin-light.png" alt="frecoin comunicaciones" className="h-[40px] w-auto object-contain mb-4" />
+            <img src="/assets/logo-frecoin-light.png" alt="FRECOIN Comunicaciones — instalaciones tecnológicas para empresas" loading="lazy" width={3647} height={1400} className="h-[40px] w-auto object-contain mb-4" />
             <p className="text-[14px] leading-[1.7] text-gripz-gray-400">
-              Soluciones integrales en infraestructuras tecnológicas para empresas. Más de 20 años de experiencia en Barcelona y Cataluña.
+              Soluciones integrales en infraestructuras tecnológicas para empresas. Más de 20 años de experiencia, con sede en Barcelona y cobertura en toda España.
             </p>
           </div>
 
           <div className="footer-col">
             <h4 className="text-[13px] font-semibold text-white uppercase tracking-[0.08em] mb-4">SERVICIOS</h4>
             <ul className="flex flex-col gap-2.5">
-              {['Redes Informáticas', 'Instalaciones Eléctricas', 'Cámaras de Seguridad', 'Antenas WiFi', 'SAI', 'Controles de Acceso'].map((link) => (
-                <li key={link}><span className="text-[14px] text-gripz-gray-400 hover:text-gripz-primary transition-colors cursor-pointer">{link}</span></li>
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link to={`/servicios/${s.slug}`} className="text-[14px] text-gripz-gray-400 hover:text-gripz-primary transition-colors">
+                    {s.name}
+                  </Link>
+                </li>
               ))}
+              <li>
+                <Link to="/sobre-nosotros" className="text-[14px] text-gripz-gray-400 hover:text-gripz-primary transition-colors">
+                  Sobre nosotros
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -91,8 +101,23 @@ export default function FooterCTA() {
             <ul className="flex flex-col gap-3">
               <li className="text-[14px] text-gripz-gray-400">Luis Freire Camino</li>
               <li className="text-[14px] text-gripz-gray-400">NIF: 48142086G</li>
-              <li className="text-[14px] text-gripz-gray-400">Sant Vicenç dels Horts, Barcelona</li>
-              <li className="text-[14px] text-gripz-gray-400">info@frecoin.es</li>
+              {/* NAP visible — debe coincidir literalmente con el JSON-LD
+                  LocalBusiness de index.html y con la ficha de Google Business. */}
+              <li>
+                <address className="not-italic text-[14px] leading-[1.6] text-gripz-gray-400">
+                  C/ Balmes 33, 2º 4ª · 08620 Sant Vicenç dels Horts (Barcelona)
+                </address>
+              </li>
+              <li>
+                <a href="tel:+34614134292" className="text-[14px] text-gripz-gray-400 hover:text-gripz-primary transition-colors">
+                  614 134 292
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@frecoin.es" className="text-[14px] text-gripz-gray-400 hover:text-gripz-primary transition-colors">
+                  info@frecoin.es
+                </a>
+              </li>
             </ul>
           </div>
         </div>

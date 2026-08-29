@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const features = [
   'Redes informáticas de alta velocidad',
   'Instalaciones certificadas y seguras',
-  'Servicio personalizado en Barcelona',
+  'Servicio personalizado en toda España',
 ];
 
 export default function About() {
@@ -39,10 +39,10 @@ export default function About() {
         <div className="grid xl:grid-cols-[45%_55%] gap-10 xl:gap-20 items-center">
           <div className="relative">
             <div className="about-img rounded-2xl overflow-hidden">
-              <img src="/assets/about-network-1.jpg" alt="Instalación de red informática profesional Frecoin" className="w-full h-[260px] sm:h-[340px] lg:h-[400px] object-cover" />
+              <img src="/assets/about-network-1.webp" alt="Instalación de red informática profesional Frecoin" loading="lazy" width={1200} height={801} className="w-full h-[260px] sm:h-[340px] lg:h-[400px] object-cover" />
             </div>
             <div className="about-img rounded-2xl overflow-hidden mt-4 ml-6 sm:ml-10 w-[85%]">
-              <img src="/assets/about-network-2.jpg" alt="Infraestructura tecnológica empresarial Frecoin" className="w-full h-[200px] sm:h-[260px] lg:h-[300px] object-cover" />
+              <img src="/assets/about-network-2.webp" alt="Infraestructura tecnológica empresarial Frecoin" loading="lazy" width={1200} height={801} className="w-full h-[200px] sm:h-[260px] lg:h-[300px] object-cover" />
             </div>
             <div className="about-badge absolute top-1/2 right-2 sm:right-0 sm:translate-x-1/4 -translate-y-1/2 w-[90px] h-[90px] sm:w-[120px] sm:h-[120px] flex items-center justify-center">
               <svg viewBox="0 0 120 120" className="absolute inset-0 w-full h-full animate-[spin-slow_20s_linear_infinite]">
@@ -51,7 +51,7 @@ export default function About() {
                   <textPath href="#circlePath" textLength="263.89" lengthAdjust="spacing">+20 AÑOS DE EXPERIENCIA  •  +20 AÑOS DE EXPERIENCIA  •</textPath>
                 </text>
               </svg>
-              <img src="/assets/icono-frecoin.svg" alt="FRECOIN" className="relative w-[34px] h-auto" />
+              <img src="/assets/icono-frecoin.svg" alt="Icono corporativo de FRECOIN Comunicaciones" loading="lazy" width={34} height={34} className="relative w-[34px] h-auto" />
             </div>
           </div>
 
@@ -66,7 +66,7 @@ export default function About() {
               FRECOIN está liderada por <strong>Luis Freire Camino</strong>, técnico con más de 20 años de experiencia en infraestructuras tecnológicas. Ofrecemos soluciones integrales en instalaciones de redes informáticas, sistemas eléctricos y SAI, garantizando infraestructuras seguras, eficientes y fiables.
             </p>
             <p className="text-[16px] leading-[1.7] text-gripz-gray-600 mb-6">
-              Nuestra misión: asegurar la continuidad operativa de nuestros clientes con un servicio de alta calidad, adaptado a sus necesidades reales. Trabajamos en <strong>Barcelona y Cataluña</strong>.
+              Nuestra misión: asegurar la continuidad operativa de nuestros clientes con un servicio de alta calidad, adaptado a sus necesidades reales. Trabajamos en <strong>toda España</strong>, con sede en Barcelona.
             </p>
             <div className="flex flex-col gap-3 mb-8">
               {features.map((f, i) => (
@@ -82,7 +82,7 @@ export default function About() {
               </a>
               <div className="flex items-center gap-3">
                 <div className="w-16 h-16 rounded-full bg-gripz-gray-200 overflow-hidden">
-                  <img src="/assets/luis-avatar-v2.webp" alt="Luis Freire Camino" className="w-full h-full object-cover object-center" />
+                  <img src="/assets/luis-avatar-v2.webp" alt="Luis Freire Camino, fundador de FRECOIN" loading="lazy" width={512} height={512} className="w-full h-full object-cover object-center" />
                 </div>
                 <div>
                   <p className="text-[14px] font-semibold text-gripz-black">Luis Freire Camino</p>

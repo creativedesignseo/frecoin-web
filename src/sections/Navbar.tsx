@@ -46,7 +46,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center bg-white shadow-sm">
       <div className="container-gripz flex items-center justify-between w-full">
         <Link to="/" className="flex items-center">
-          <img src="/assets/logo-frecoin-dark.png" alt="frecoin comunicaciones" className="h-[48px] lg:h-[52px] w-auto object-contain" />
+          <img src="/assets/logo-frecoin-dark.png" alt="FRECOIN Comunicaciones — instalaciones tecnológicas para empresas" width={3647} height={1400} className="h-[48px] lg:h-[52px] w-auto object-contain" />
         </Link>
 
         {/* Desktop Menu */}

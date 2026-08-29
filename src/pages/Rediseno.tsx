@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 /**
  * Rediseño FRECOIN v3 — Inspirado en Telefónica Tech.
@@ -41,6 +42,15 @@ export default function Rediseno() {
   const [scrolled, setScrolled] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ nombre: '', empresa: '', telefono: '', servicio: '', mensaje: '' });
+
+  // Prototipo interno: nunca debe indexarse. Se refuerza con
+  // "Disallow: /rediseno" en robots.txt y con su exclusión del prerender.
+  usePageMeta({
+    title: 'Rediseño FRECOIN (prototipo interno)',
+    description: 'Prototipo de rediseño no público.',
+    canonical: 'https://frecoin.es/rediseno',
+    noindex: true,
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -230,6 +240,8 @@ export default function Rediseno() {
           <img
             src="/assets/services/rediseno/hero-dark.jpg"
             alt=""
+            width={2400}
+            height={1601}
             className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#07090D] via-[#07090D]/85 to-[#07090D]/40" />
@@ -391,7 +403,7 @@ export default function Rediseno() {
 
             <div className="hidden lg:block">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                <img src="/assets/services/rediseno/feature-redes.jpg" alt="Servidor con cableado de red" className="w-full h-full object-cover" />
+                <img src="/assets/services/rediseno/feature-redes.jpg" alt="Servidor con cableado de red" loading="lazy" width={1600} height={1068} className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -476,7 +488,7 @@ export default function Rediseno() {
                 </div>
               </div>
               <div className="hidden lg:block relative">
-                <img src="/assets/services/rediseno/cta-feature.jpg" alt="Profesional FRECOIN trabajando" className="absolute inset-0 w-full h-full object-cover" />
+                <img src="/assets/services/rediseno/cta-feature.jpg" alt="Profesional FRECOIN trabajando" loading="lazy" width={1200} height={800} className="absolute inset-0 w-full h-full object-cover" />
               </div>
             </div>
           </div>

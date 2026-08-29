@@ -1,6 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ServiceLayout from '@/components/ServiceLayout';
+import { usePageMeta } from '@/hooks/usePageMeta';
 import { getServiceBySlug, applyOverride, type ServiceOverride } from '@/data/services';
 
 /**
@@ -29,35 +30,14 @@ export default function Servicio() {
 
   const service = base ? applyOverride(base, override) : undefined;
 
-  useEffect(() => {
-    if (!service) return;
-    // Update meta tags dinámicamente (Vite SPA — los meta del index.html se sobreescriben)
-    document.title = service.metaTitle;
-
-    const setMeta = (selector: string, content: string) => {
-      const el = document.querySelector(selector);
-      if (el) el.setAttribute('content', content);
-    };
-
-    setMeta('meta[name="description"]', service.metaDescription);
-    setMeta('meta[property="og:title"]', service.metaTitle);
-    setMeta('meta[property="og:description"]', service.metaDescription);
-    setMeta('meta[property="og:url"]', `https://frecoin.es/servicios/${service.slug}`);
-    setMeta('meta[name="twitter:title"]', service.metaTitle);
-    setMeta('meta[name="twitter:description"]', service.metaDescription);
-
-    // Canonical
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', `https://frecoin.es/servicios/${service.slug}`);
-
-    return () => {
-      // Al desmontar volvemos a los meta por defecto de la home
-      document.title = 'FRECOIN — Infraestructuras tecnológicas para empresas | Barcelona y Cataluña';
-      setMeta('meta[name="description"]', 'FRECOIN: instalaciones de redes informáticas, eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso. Más de 20 años de experiencia en Barcelona y Cataluña.');
-      setMeta('meta[property="og:url"]', 'https://frecoin.es/');
-      if (canonical) canonical.setAttribute('href', 'https://frecoin.es/');
-    };
-  }, [service]);
+  // Metas por ruta (title, description, canonical, OG/Twitter). El prerender
+  // de build captura el <head> resultante, así que estos valores también
+  // llegan a los bots que no ejecutan JavaScript.
+  usePageMeta({
+    title: service?.metaTitle ?? 'FRECOIN',
+    description: service?.metaDescription ?? '',
+    canonical: `https://frecoin.es/servicios/${service?.slug ?? ''}`,
+  });
 
   if (!service) {
     return <Navigate to="/#servicios" replace />;

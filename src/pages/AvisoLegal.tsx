@@ -11,6 +11,9 @@ export default function AvisoLegal() {
       title="Aviso Legal"
       subtitle="Información legal del titular del sitio web conforme a la LSSI-CE."
       lastUpdated="10 de mayo de 2026"
+      metaTitle="Aviso legal | FRECOIN"
+      metaDescription="Datos identificativos del titular de frecoin.es y condiciones de uso del sitio web, conforme a la LSSI-CE (Ley 34/2002)."
+      path="/aviso-legal"
     >
       <div className="info-box">
         <p>

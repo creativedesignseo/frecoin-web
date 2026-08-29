@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Prototipo interno de rediseño — no debe indexarse.
+Disallow: /rediseno
+
 Sitemap: https://frecoin.es/sitemap.xml

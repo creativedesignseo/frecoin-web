@@ -67,13 +67,14 @@ export default function Hero() {
             <h1 className="hero-title font-montserrat font-extrabold text-[32px] sm:text-[44px] xl:text-[64px] leading-[1] sm:leading-[0.95] tracking-[-0.03em] text-gripz-black mb-4 sm:mb-5">
               Infraestructuras<br />
               tecnológicas<br />
-              para empresas.
+              para empresas<br />
+              en toda España.
             </h1>
 
             {/* Subtitle */}
             <p className="hero-subtitle text-[16px] leading-[1.65] text-gripz-gray-600 max-w-md mb-8">
               <strong className="text-gripz-black">"Tu satisfacción es mi prioridad laboral"</strong><br />
-              Soluciones integrales en redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso en Barcelona y Cataluña.
+              Soluciones integrales en redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso para empresas de toda España.
             </p>
 
             {/* CTAs — botones alineados visualmente (sólido + outline) */}
@@ -97,8 +98,11 @@ export default function Hero() {
           - Desktop (xl+): full-height absolute, ocupando el 45% derecho */}
       <div className="hero-image hidden lg:block absolute right-0 top-20 w-[42%] xl:w-[45%] h-[calc(100%-80px)]">
         <img
-          src="/assets/hero-electrician.jpg"
-          alt="Instalaciones tecnológicas Frecoin"
+          src="/assets/hero-electrician.webp"
+          alt="Técnico de FRECOIN trabajando en una instalación eléctrica para empresa"
+          fetchPriority="high"
+          width={1200}
+          height={801}
           className="w-full h-full object-cover object-center"
         />
       </div>

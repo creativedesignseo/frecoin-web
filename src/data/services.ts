@@ -186,8 +186,8 @@ const redesInformaticas: ServiceData = {
   name: 'Redes Informáticas',
   featured: false,
 
-  metaTitle: 'Instalación de redes informáticas en Barcelona | FRECOIN',
-  metaDescription: 'Diseño, instalación y mantenimiento de redes informáticas para empresas en Barcelona y Cataluña. Más de 20 años de experiencia.',
+  metaTitle: 'Instalación de redes informáticas para empresas | FRECOIN',
+  metaDescription: 'Diseño, instalación y mantenimiento de redes informáticas y cableado estructurado para empresas en toda España. +20 años de experiencia.',
   keywords: ['redes informáticas', 'instalación red empresa', 'cableado estructurado', 'red corporativa', 'wifi empresarial', 'Cataluña', 'Barcelona', 'redes Cat6', 'firewall empresa'],
 
   tagline: 'Conectividad empresarial',
@@ -229,7 +229,7 @@ const redesInformaticas: ServiceData = {
     { question: '¿Trabajáis en fines de semana o por la noche?', answer: 'Sí. Para empresas que no pueden parar su actividad durante el horario laboral, organizamos la instalación en horarios nocturnos o fines de semana. Avísanos en el presupuesto y lo planificamos.' },
     { question: '¿Aprovecháis la red que ya tengo o hay que cambiar todo?', answer: 'Siempre que sea técnicamente viable y seguro, reutilizamos el cableado y equipos existentes. Si algo ya no cumple normativa o limita el rendimiento, te lo decimos claramente y proponemos alternativas, pero no cambiamos por cambiar.' },
     { question: '¿Qué pasa si hay una incidencia después de la instalación?', answer: 'Te atendemos. Todas nuestras instalaciones incluyen un período de garantía y servicio post-venta. Para empresas con necesidades críticas ofrecemos contratos de mantenimiento con tiempos de respuesta garantizados.' },
-    { question: '¿En qué zonas trabajáis?', answer: 'Damos servicio en Barcelona y toda Cataluña. Si tu empresa está en otra zona, cuéntanoslo y valoramos el desplazamiento sin compromiso.' },
+    { question: '¿En qué zonas trabajáis?', answer: 'Damos servicio en toda España. Nuestra sede está en Barcelona (Sant Vicenç dels Horts), desde donde coordinamos las instalaciones y el mantenimiento en cualquier provincia. Cuéntanos dónde estás y lo valoramos sin compromiso.' },
   ],
 
   ctaTitle: '¿Listo para una red profesional que no te deje colgado?',
@@ -245,14 +245,14 @@ const instalacionesElectricas: ServiceData = {
   icon: PlugZap,
   name: 'Instalaciones Eléctricas',
 
-  metaTitle: 'Instalaciones eléctricas para empresas en Barcelona | FRECOIN',
-  metaDescription: 'Ejecución de instalaciones eléctricas seguras y certificadas en Barcelona y Cataluña. Cableado, cuadros eléctricos, protecciones y mantenimiento. +20 años.',
+  metaTitle: 'Empresa de instalaciones eléctricas | FRECOIN',
+  metaDescription: 'Ejecución de instalaciones eléctricas seguras y certificadas para empresas en toda España. Cableado, cuadros, protecciones y mantenimiento. +20 años.',
   keywords: ['instalaciones eléctricas', 'electricista empresa', 'cuadro eléctrico', 'cableado industrial', 'reforma eléctrica', 'Cataluña', 'Barcelona', 'boletín eléctrico'],
 
   tagline: 'Normativa y seguridad',
   heroH1: 'Instalaciones eléctricas seguras, certificadas y bien hechas.',
   heroParagraph: 'Diseño y ejecución de instalaciones eléctricas para empresas, oficinas y naves industriales. Cableado, cuadros, protecciones y certificación según normativa vigente.',
-  heroImage: '/assets/services/electricas/hero.jpg',
+  heroImage: '/assets/services/electricas/hero.webp',
   heroImageAlt: 'Electricista profesional comprobando cuadro eléctrico con multímetro',
 
   includesTitle: '¿Qué incluye nuestro servicio eléctrico?',
@@ -302,8 +302,8 @@ const camarasVideovigilancia: ServiceData = {
   icon: Cctv,
   name: 'Cámaras de Videovigilancia',
 
-  metaTitle: 'Instalación de cámaras de seguridad en Barcelona | FRECOIN',
-  metaDescription: 'Sistemas de videovigilancia CCTV e IP para empresas, naves industriales y comunidades en Barcelona y Cataluña. Visión nocturna, acceso remoto, normativa RGPD.',
+  metaTitle: 'Instalación de cámaras de seguridad para empresas | FRECOIN',
+  metaDescription: 'Instalación de cámaras de seguridad CCTV e IP para empresas, naves y comercios en toda España. Visión nocturna, acceso remoto y cumplimiento RGPD.',
   keywords: ['cámaras de seguridad', 'videovigilancia', 'CCTV', 'cámaras IP empresa', 'sistemas videovigilancia Barcelona', 'cámaras nave industrial', 'Cataluña', 'normativa cámaras'],
 
   tagline: 'Vigilancia activa',
@@ -359,8 +359,8 @@ const antenasWifi: ServiceData = {
   icon: WifiRouterIcon,
   name: 'Antenas WiFi',
 
-  metaTitle: 'Instalación de antenas WiFi empresarial en Barcelona | FRECOIN',
-  metaDescription: 'Cobertura WiFi profesional para empresas, naves y locales en Barcelona y Cataluña. Antenas exteriores, puntos de acceso, redes mesh y soporte continuo.',
+  metaTitle: 'Instalación de WiFi empresarial | FRECOIN',
+  metaDescription: 'Cobertura WiFi profesional para empresas, naves y locales en toda España. Antenas exteriores, puntos de acceso, redes mesh y soporte continuo.',
   keywords: ['antenas WiFi', 'WiFi empresarial', 'cobertura WiFi nave', 'WiFi profesional Barcelona', 'puntos de acceso', 'mesh WiFi', 'WiFi 6', 'Cataluña'],
 
   tagline: 'Cobertura empresarial',
@@ -416,12 +416,12 @@ const sai: ServiceData = {
   icon: BatteryCharging,
   name: 'Sistemas SAI',
 
-  metaTitle: 'Sistemas SAI para empresas en Barcelona | FRECOIN',
-  metaDescription: 'Instalación de Sistemas de Alimentación Ininterrumpida (SAI/UPS) para servidores, equipos críticos y comercios. Evita pérdidas por cortes eléctricos. Barcelona y Cataluña.',
+  metaTitle: 'Sistemas SAI para empresas | FRECOIN',
+  metaDescription: 'Instalación de sistemas SAI/UPS para servidores y equipos críticos de empresa en toda España. Evita pérdidas de datos y paradas por cortes de luz.',
   keywords: ['SAI', 'UPS', 'sistema alimentación ininterrumpida', 'protección eléctrica', 'SAI servidor', 'UPS empresa Barcelona', 'cortes de luz', 'protección equipos'],
 
   tagline: 'Continuidad operativa',
-  heroH1: 'No pierdas dinero por un corte de luz.',
+  heroH1: 'Sistemas SAI para empresas: no pierdas dinero por un corte de luz.',
   heroParagraph: 'Instalamos Sistemas de Alimentación Ininterrumpida (SAI/UPS) que mantienen tus servidores, ordenadores y equipos críticos funcionando durante cortes y picos eléctricos. Cero pérdidas de datos, cero interrupciones.',
   heroImage: '/assets/services/sai/hero.webp',
   heroImageAlt: 'Gama de sistemas SAI/UPS profesionales para empresas: torres y equipos rack',
@@ -473,12 +473,12 @@ const controlesAcceso: ServiceData = {
   icon: Fingerprint,
   name: 'Controles de Acceso',
 
-  metaTitle: 'Sistemas de control de acceso en Barcelona | FRECOIN',
-  metaDescription: 'Instalación de sistemas de control de acceso para empresas: tarjetas RFID, huella, código y app. Barcelona y Cataluña. Sin llaves físicas, todo trazado.',
+  metaTitle: 'Control de accesos para empresas | FRECOIN',
+  metaDescription: 'Instalación de sistemas de control de acceso para empresas en toda España: tarjetas RFID, huella, código y app. Sin llaves físicas, todo trazado.',
   keywords: ['control de acceso', 'control accesos empresa', 'tarjeta RFID', 'lector huella', 'cerradura electrónica', 'control horario', 'Cataluña', 'Barcelona'],
 
   tagline: 'Trazabilidad y seguridad',
-  heroH1: 'Adiós a las llaves perdidas. Hola a un control real.',
+  heroH1: 'Control de accesos para empresas: adiós a las llaves perdidas.',
   heroParagraph: 'Sistemas de control de acceso por tarjeta, huella, código o app móvil. Quién entra, cuándo y a qué zonas, todo registrado y configurable desde un único panel.',
   heroImage: '/assets/services/accesos/hero.jpg',
   heroImageAlt: 'Empresario usando lector RFID para acceder a oficina',
@@ -536,4 +536,24 @@ export const services: ServiceData[] = [
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {
   return services.find(s => s.slug === slug);
+}
+
+/**
+ * Enlazado interno: 2 servicios afines por página.
+ * Cada par se ha elegido por proximidad técnica real (lo que un cliente
+ * suele contratar junto), no al azar.
+ */
+const relatedBySlug: Record<string, [string, string]> = {
+  'redes-informaticas': ['antenas-wifi', 'sai'],
+  'instalaciones-electricas': ['sai', 'controles-de-acceso'],
+  'camaras-videovigilancia': ['controles-de-acceso', 'antenas-wifi'],
+  'antenas-wifi': ['redes-informaticas', 'camaras-videovigilancia'],
+  'sai': ['instalaciones-electricas', 'redes-informaticas'],
+  'controles-de-acceso': ['camaras-videovigilancia', 'instalaciones-electricas'],
+};
+
+export function getRelatedServices(slug: string): ServiceData[] {
+  return (relatedBySlug[slug] || [])
+    .map(getServiceBySlug)
+    .filter((s): s is ServiceData => Boolean(s));
 }

@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import Navbar from '@/sections/Navbar';
 import FooterCTA from '@/sections/FooterCTA';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 interface LegalLayoutProps {
   title: string;
   subtitle?: string;
   lastUpdated: string;
+  /** <title> de la página. */
+  metaTitle: string;
+  /** meta description propia de la página. */
+  metaDescription: string;
+  /** Path absoluto sin dominio ni barra final, p. ej. "/aviso-legal". */
+  path: string;
   children: React.ReactNode;
 }
 
@@ -17,7 +25,21 @@ interface LegalLayoutProps {
  * Misma navbar y footer que la home, hero corporativo claro,
  * tipografía coherente con el resto del sitio.
  */
-export default function LegalLayout({ title, subtitle, lastUpdated, children }: LegalLayoutProps) {
+export default function LegalLayout({
+  title,
+  subtitle,
+  lastUpdated,
+  metaTitle,
+  metaDescription,
+  path,
+  children,
+}: LegalLayoutProps) {
+  usePageMeta({
+    title: metaTitle,
+    description: metaDescription,
+    canonical: `https://frecoin.es${path}`,
+  });
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
@@ -60,6 +82,10 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children }: 
       </main>
 
       <FooterCTA />
+
+      <BreadcrumbJsonLd
+        crumbs={[{ name: 'Inicio', url: 'https://frecoin.es' }, { name: title }]}
+      />
     </div>
   );
 }

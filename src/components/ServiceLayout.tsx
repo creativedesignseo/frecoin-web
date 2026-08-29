@@ -5,8 +5,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronRight, ChevronDown, Phone, ArrowRight } from 'lucide-react';
 import Navbar from '@/sections/Navbar';
 import FooterCTA from '@/sections/FooterCTA';
+import JsonLd, { BreadcrumbJsonLd } from '@/components/JsonLd';
 import { trackEvent } from '@/lib/analytics';
-import type { ServiceData } from '@/data/services';
+import { dimsOf } from '@/data/imageDims';
+import { getRelatedServices, type ServiceData } from '@/data/services';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,10 +31,13 @@ export default function ServiceLayout({ service }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
+  // El <title> y el resto de metas los gestiona usePageMeta desde
+  // pages/Servicio.tsx — aquí solo reposicionamos el scroll.
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
-    document.title = service.metaTitle;
   }, [service]);
+
+  const related = getRelatedServices(service.slug);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -120,6 +125,8 @@ export default function ServiceLayout({ service }: Props) {
               <img
                 src={service.heroImage}
                 alt={service.heroImageAlt}
+                loading="lazy"
+                {...dimsOf(service.heroImage)}
                 className="w-full h-[340px] lg:h-[440px] object-cover rounded-2xl shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)]"
               />
               {/* Círculo decorativo retirado — no aportaba valor y cargaba el verde. */}
@@ -194,6 +201,8 @@ export default function ServiceLayout({ service }: Props) {
                 <img
                   src={service.benefitsImage}
                   alt={service.benefitsImageAlt}
+                  loading="lazy"
+                  {...dimsOf(service.benefitsImage)}
                   className="w-full h-[380px] lg:h-[480px] object-cover rounded-2xl shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)]"
                 />
               </div>
@@ -307,6 +316,47 @@ export default function ServiceLayout({ service }: Props) {
         </section>
       )}
 
+      {/* SERVICIOS RELACIONADOS ============================================= */}
+      {related.length > 0 && (
+        <section className="relative py-[70px] lg:py-[100px] bg-white border-t border-gripz-gray-200">
+          <div className="container-gripz">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="font-montserrat font-extrabold text-[24px] sm:text-[30px] lg:text-[34px] leading-[1.15] tracking-[-0.02em] text-gripz-black mb-3">
+                Servicios relacionados
+              </h2>
+              <p className="text-[15px] leading-[1.65] text-gripz-gray-600 mb-8 max-w-xl">
+                Lo que nuestros clientes suelen contratar junto a {service.name.toLowerCase()}.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
+                {related.map((r) => {
+                  const Icon = r.icon;
+                  return (
+                    <Link
+                      key={r.slug}
+                      to={`/servicios/${r.slug}`}
+                      className="group flex flex-col bg-white border border-gripz-gray-200 rounded-xl p-6 lg:p-7 hover:border-gripz-primary/40 hover:shadow-md transition-all"
+                    >
+                      <Icon size={28} className="text-gripz-primary mb-4" strokeWidth={2.2} />
+                      <h3 className="font-montserrat font-bold text-[18px] text-gripz-black leading-tight mb-2">
+                        {r.name}
+                      </h3>
+                      <p className="text-[14px] leading-[1.6] text-gripz-gray-600 mb-4 flex-1">
+                        {r.tagline}. {r.heroParagraph.split('. ')[0]}.
+                      </p>
+                      <span className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-gripz-primary">
+                        Ver {r.name.toLowerCase()}
+                        <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA FINAL ========================================================== */}
       <section className="relative py-[80px] lg:py-[100px] bg-gripz-cream">
         <div className="container-gripz">
@@ -342,27 +392,49 @@ export default function ServiceLayout({ service }: Props) {
       <FooterCTA />
 
       {/* Schema.org Service (JSON-LD) ====================================== */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            'serviceType': service.name,
-            'name': service.name,
-            'description': service.metaDescription,
-            'provider': {
-              '@type': 'LocalBusiness',
-              '@id': 'https://frecoin.es/#business',
-              'name': 'FRECOIN',
-            },
-            'areaServed': [
-              { '@type': 'City', 'name': 'Barcelona' },
-              { '@type': 'AdministrativeArea', 'name': 'Cataluña' },
-            ],
-            'url': `https://frecoin.es/servicios/${service.slug}`,
-          }),
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          serviceType: service.name,
+          name: service.name,
+          description: service.metaDescription,
+          provider: {
+            '@type': 'LocalBusiness',
+            '@id': 'https://frecoin.es/#business',
+            name: 'FRECOIN',
+          },
+          areaServed: [
+            { '@type': 'Country', name: 'España' },
+            { '@type': 'AdministrativeArea', name: 'Cataluña' },
+            { '@type': 'City', name: 'Barcelona' },
+          ],
+          url: `https://frecoin.es/servicios/${service.slug}`,
         }}
+      />
+
+      {/* Schema.org FAQPage (JSON-LD) — generado desde service.faq ========= */}
+      {service.faq.length > 0 && (
+        <JsonLd
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: service.faq.map((item) => ({
+              '@type': 'Question',
+              name: item.question,
+              acceptedAnswer: { '@type': 'Answer', text: item.answer },
+            })),
+          }}
+        />
+      )}
+
+      {/* Schema.org BreadcrumbList — refleja las migas visuales =========== */}
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: 'Inicio', url: 'https://frecoin.es' },
+          { name: 'Servicios', url: 'https://frecoin.es/#servicios' },
+          { name: service.name },
+        ]}
       />
     </div>
   );

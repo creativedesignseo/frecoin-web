@@ -9,6 +9,11 @@ import About from '@/sections/About';
 import WorkGallery from '@/sections/WorkGallery';
 import Contacto from '@/sections/Contacto';
 import FooterCTA from '@/sections/FooterCTA';
+import { usePageMeta } from '@/hooks/usePageMeta';
+
+export const HOME_TITLE = 'Instalaciones tecnológicas para empresas en España | FRECOIN';
+export const HOME_DESCRIPTION =
+  'Redes, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y accesos para empresas en toda España. Sede en Barcelona. Presupuesto sin compromiso.';
 
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -30,6 +35,12 @@ function ScrollToTop() {
 }
 
 export default function HomePage() {
+  usePageMeta({
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    canonical: 'https://frecoin.es/',
+  });
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />

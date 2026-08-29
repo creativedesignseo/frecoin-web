@@ -90,7 +90,7 @@ const inputCls = 'w-full rounded-lg border border-neutral-300 px-3 py-2.5 text-s
 // hero y UNA de beneficios — no es una galería (esa es la sección "Trabajos").
 const SERVICE_DEFAULT_IMAGES: Record<string, { hero: string; benefits: string }> = {
   'redes-informaticas':       { hero: '/assets/services/redes/hero-server-rack.jpg', benefits: '/assets/services/redes/data-center.jpg' },
-  'instalaciones-electricas': { hero: '/assets/services/electricas/hero.jpg',        benefits: '/assets/services/electricas/benefits.jpg' },
+  'instalaciones-electricas': { hero: '/assets/services/electricas/hero.webp',       benefits: '/assets/services/electricas/benefits.jpg' },
   'camaras-videovigilancia':  { hero: '/assets/services/camaras/hero.jpg',           benefits: '/assets/services/camaras/benefits.jpg' },
   'antenas-wifi':             { hero: '/assets/services/wifi/hero.jpg',               benefits: '/assets/services/wifi/benefits.jpg' },
   'sai':                      { hero: '/assets/services/sai/hero.webp',               benefits: '/assets/services/sai/benefits.webp' },

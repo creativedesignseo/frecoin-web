@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0052FF" />
 
-    <title>FRECOIN — Infraestructuras tecnológicas para empresas | Barcelona y Cataluña</title>
-    <meta name="description" content="FRECOIN: instalaciones de redes informáticas, eléctricas, cámaras de seguridad, WiFi, SAI y controles de acceso. Más de 20 años de experiencia en Barcelona y Cataluña." />
-    <meta name="keywords" content="redes informáticas, instalaciones eléctricas, cámaras de seguridad, WiFi empresarial, SAI, controles de acceso, Barcelona, Cataluña" />
+    <title>Instalaciones tecnológicas para empresas en España | FRECOIN</title>
+    <meta name="description" content="Redes, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y accesos para empresas en toda España. Sede en Barcelona. Presupuesto sin compromiso." />
     <meta name="author" content="FRECOIN" />
     <link rel="canonical" href="https://frecoin.es/" />
 
@@ -15,26 +14,32 @@
     <link rel="icon" type="image/png" href="/assets/logo-frecoin.png" />
     <link rel="apple-touch-icon" href="/assets/logo-frecoin.png" />
 
+    <!-- LCP de la home: la imagen del hero se descarga en paralelo al bundle -->
+    <link rel="preload" as="image" href="/assets/hero-electrician.webp" fetchpriority="high" />
+
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:url" content="https://frecoin.es/" />
     <meta property="og:site_name" content="FRECOIN" />
-    <meta property="og:title" content="FRECOIN — Infraestructuras tecnológicas para empresas" />
-    <meta property="og:description" content="Redes informáticas, instalaciones eléctricas, cámaras, WiFi, SAI y controles de acceso. +20 años en Barcelona y Cataluña." />
+    <meta property="og:title" content="Instalaciones tecnológicas para empresas en España | FRECOIN" />
+    <meta property="og:description" content="Redes, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y accesos para empresas en toda España. Sede en Barcelona. Presupuesto sin compromiso." />
     <meta property="og:image" content="https://frecoin.es/assets/logo-frecoin.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="FRECOIN — Infraestructuras tecnológicas para empresas" />
-    <meta name="twitter:description" content="Redes, instalaciones eléctricas, cámaras, WiFi, SAI y controles de acceso en Barcelona y Cataluña." />
+    <meta name="twitter:title" content="Instalaciones tecnológicas para empresas en España | FRECOIN" />
+    <meta name="twitter:description" content="Redes, instalaciones eléctricas, cámaras de seguridad, WiFi, SAI y accesos para empresas en toda España. Sede en Barcelona. Presupuesto sin compromiso." />
     <meta name="twitter:image" content="https://frecoin.es/assets/logo-frecoin.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
 
-    <!-- Schema.org LocalBusiness (SEO local) -->
+    <!-- Schema.org LocalBusiness (SEO local)
+         TODO: rellenar "sameAs" con la URL de la ficha de Google Business
+         Profile y el perfil de LinkedIn en cuanto Luis complete las altas.
+         Hasta entonces se deja el array vacío a propósito. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,7 +47,7 @@
       "@id": "https://frecoin.es/#business",
       "name": "FRECOIN",
       "alternateName": "Frecoin Comunicaciones",
-      "description": "Empresa de instalaciones tecnológicas: redes informáticas, instalaciones eléctricas, cámaras de seguridad, antenas WiFi, SAI y controles de acceso. Más de 20 años de experiencia en Barcelona y Cataluña.",
+      "description": "Empresa de instalaciones tecnológicas: redes informáticas, instalaciones eléctricas, cámaras de seguridad, antenas WiFi, SAI y controles de acceso. Más de 20 años de experiencia. Sede en Barcelona y cobertura en toda España.",
       "url": "https://frecoin.es",
       "logo": "https://frecoin.es/assets/logo-frecoin.png",
       "image": "https://frecoin.es/assets/logo-frecoin.png",
@@ -61,9 +66,16 @@
         "addressRegion": "Barcelona",
         "addressCountry": "ES"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.3925,
+        "longitude": 2.0104
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=41.3925,2.0104",
       "areaServed": [
-        { "@type": "City", "name": "Barcelona" },
-        { "@type": "AdministrativeArea", "name": "Cataluña" }
+        { "@type": "Country", "name": "España" },
+        { "@type": "AdministrativeArea", "name": "Cataluña" },
+        { "@type": "City", "name": "Barcelona" }
       ],
       "openingHoursSpecification": [
         {

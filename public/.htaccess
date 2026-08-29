@@ -6,29 +6,57 @@
 # =============================================================================
 
 # -----------------------------------------------------------------------------
-# SPA routing — necesario para que React Router funcione al refrescar /aviso-legal etc.
+# Canonicalización de host y protocolo + routing de las páginas prerenderizadas
 # -----------------------------------------------------------------------------
+# El build genera un HTML real por ruta (scripts/prerender.mjs):
+#   dist/index.html, dist/servicios/sai/index.html, dist/sobre-nosotros/index.html…
+# Por eso YA NO hay fallback global a index.html: una URL inventada debe dar un
+# 404 real (antes toda URL devolvía 200 = soft 404 masivo).
+# mod_dir redirige por defecto /servicios/sai → /servicios/sai/ (301 a barra
+# final) en cuanto la ruta coincide con un directorio real, y lo hace ANTES de
+# que mod_rewrite pueda actuar. Eso duplicaría cada URL respecto al canonical
+# (que va sin barra). Con DirectorySlash Off el rewrite de abajo es quien sirve
+# el index.html prerenderizado, manteniendo la URL sin barra.
+<IfModule mod_dir.c>
+  DirectorySlash Off
+  DirectoryIndex index.html
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Si el request es un archivo o directorio real, sírvelo
+  # 301 www.frecoin.es → frecoin.es (evita host duplicado)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # Forzar HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # URL antigua /contacto → ancla de contacto de la home (301 real, ya no
+  # dependemos de una redirección de cliente).
+  RewriteRule ^contacto/?$ /#contacto [R=301,L,NE]
+
+  # /rediseno es un prototipo interno sin prerender: se sirve la SPA para que
+  # React lo pinte. No se indexa (robots.txt Disallow + meta robots noindex +
+  # cabecera X-Robots-Tag más abajo).
+  RewriteRule ^rediseno/?$ /index.html [L]
+
+  # Ruta con HTML prerenderizado: /servicios/sai → /servicios/sai/index.html
+  # Se sirve internamente (sin redirección 301 a barra final), así la URL
+  # canónica sigue siendo la que está sin barra.
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
+
+  # Archivo o directorio real (assets, sitemap.xml, send-form.php, /admin…)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Cualquier otra ruta → devolver index.html (React Router se encarga)
-  RewriteRule ^ index.html [L]
-</IfModule>
-
-# -----------------------------------------------------------------------------
-# Forzar HTTPS (cuando esté el SSL provisionado)
-# -----------------------------------------------------------------------------
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  # Sin fallback: cualquier otra cosa cae en el 404 real de Apache,
+  # que sirve /404.html (ver ErrorDocument al final del fichero).
 </IfModule>
 
 # -----------------------------------------------------------------------------
@@ -104,6 +132,14 @@
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
+# Refuerzo de noindex para el prototipo interno /rediseno: la cabecera llega
+# también a los bots que no ejecutan JavaScript.
+<IfModule mod_headers.c>
+  # Se evalúa sobre THE_REQUEST (la petición original): REQUEST_URI ya viene
+  # reescrito a /index.html cuando mod_headers actúa.
+  Header always set X-Robots-Tag "noindex, nofollow" "expr=%{THE_REQUEST} =~ m#^\S+\s/rediseno#"
+</IfModule>
+
 # Bloquear acceso a archivos sensibles
 <FilesMatch "(\.env|\.git|composer\.json|package\.json|package-lock\.json|node_modules)">
   Order allow,deny
@@ -111,6 +147,7 @@
 </FilesMatch>
 
 # -----------------------------------------------------------------------------
-# 404 personalizado → redirigir a la home (igual que en Netlify)
+# 404 real: página propia servida CON estado 404 (no la home con 200).
+# El fichero /404.html lo genera el prerender durante el build.
 # -----------------------------------------------------------------------------
-ErrorDocument 404 /index.html
+ErrorDocument 404 /404.html

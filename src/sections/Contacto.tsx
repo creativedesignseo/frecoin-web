@@ -105,7 +105,7 @@ export default function Contacto() {
             ))}
             <div className="mt-4 p-6 bg-gripz-cream rounded-xl">
               <p className="text-[14px] text-gripz-gray-600 leading-relaxed">
-                <strong>Zona de cobertura:</strong> Barcelona y Cataluña.
+                <strong>Zona de cobertura:</strong> toda España (sede en Barcelona).
               </p>
               <p className="text-[14px] text-gripz-gray-600 leading-relaxed mt-2">
                 Atendemos directamente en su empresa o domicilio. Sin oficina física — vamos a usted.

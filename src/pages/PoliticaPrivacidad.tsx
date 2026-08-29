@@ -12,6 +12,9 @@ export default function PoliticaPrivacidad() {
       title="Política de Privacidad"
       subtitle="Información sobre el tratamiento de datos personales conforme al RGPD y la LOPDGDD."
       lastUpdated="10 de mayo de 2026"
+      metaTitle="Política de privacidad | FRECOIN"
+      metaDescription="Cómo FRECOIN recoge, usa y protege los datos personales facilitados en frecoin.es, conforme al RGPD y la LOPDGDD."
+      path="/politica-privacidad"
     >
       <div className="info-box">
         <p>

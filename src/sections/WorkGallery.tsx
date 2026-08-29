@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { dimsOf } from '@/data/imageDims';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -98,7 +99,7 @@ export default function WorkGallery() {
           {works.map((work, i) => (
             <SwiperSlide key={i}>
               <div className="work-card group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer">
-                <img src={work.image} alt={work.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={work.image} alt={work.title} loading="lazy" {...dimsOf(work.image)} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <span className="inline-block text-[11px] font-semibold text-white bg-white/15 rounded px-2.5 py-1 mb-2">{work.tag}</span>

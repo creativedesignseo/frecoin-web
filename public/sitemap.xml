@@ -1,67 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap FRECOIN.
+  Solo rutas públicas indexables. Se excluyen a propósito /rediseno
+  (prototipo interno, noindex + Disallow) y /404.
+  changefreq y priority se han eliminado: Google los ignora desde hace años
+  y mantenerlos coherentes solo genera deuda.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://frecoin.es/</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
 
-  <!-- Landings de servicios (alta prioridad para SEO local) -->
+  <!-- Landings de servicios -->
   <url>
     <loc>https://frecoin.es/servicios/redes-informaticas</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://frecoin.es/servicios/instalaciones-electricas</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://frecoin.es/servicios/camaras-videovigilancia</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://frecoin.es/servicios/antenas-wifi</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://frecoin.es/servicios/sai</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://frecoin.es/servicios/controles-de-acceso</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
 
-  <!-- Páginas legales (baja prioridad) -->
+  <!-- Página corporativa / E-E-A-T -->
+  <url>
+    <loc>https://frecoin.es/sobre-nosotros</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+
+  <!-- Páginas legales -->
   <url>
     <loc>https://frecoin.es/aviso-legal</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://frecoin.es/politica-privacidad</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
   <url>
     <loc>https://frecoin.es/politica-cookies</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-08-28</lastmod>
   </url>
 </urlset>

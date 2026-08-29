@@ -5,6 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import Navbar from '@/sections/Navbar';
 import FooterCTA from '@/sections/FooterCTA';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
+import { usePageMeta } from '@/hooks/usePageMeta';
+import { dimsOf } from '@/data/imageDims';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +17,13 @@ gsap.registerPlugin(ScrollTrigger);
  */
 export default function SobreNosotros() {
   const ref = useRef<HTMLDivElement>(null);
+
+  usePageMeta({
+    title: 'Quiénes somos — FRECOIN | Instalaciones para empresas',
+    description:
+      'Luis Freire Camino, fundador de FRECOIN: más de 20 años instalando redes, electricidad y seguridad para empresas. Sede en Barcelona, cobertura nacional.',
+    canonical: 'https://frecoin.es/sobre-nosotros',
+  });
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -55,10 +65,10 @@ export default function SobreNosotros() {
             Conócenos
           </p>
           <h1 className="font-montserrat font-extrabold text-[32px] sm:text-[44px] lg:text-[64px] leading-[1.05] sm:leading-[1] tracking-[-0.03em] text-gripz-black mb-5 sm:mb-6 max-w-3xl">
-            Tecnología cercana<br className="hidden sm:block" /> <span className="sm:hidden">para empresas de Barcelona.</span><span className="hidden sm:inline">para empresas<br />de Barcelona.</span>
+            Tecnología cercana<br className="hidden sm:block" /> <span className="sm:hidden">para empresas de toda España.</span><span className="hidden sm:inline">para empresas<br />de toda España.</span>
           </h1>
           <p className="text-[16px] sm:text-[17px] leading-[1.65] text-gripz-gray-600 max-w-2xl">
-            Más de 20 años cuidando la infraestructura tecnológica de las pymes de Cataluña. Sin oficina física, sin call centers, sin intermediarios. Te atiende quien hace el trabajo.
+            Más de 20 años cuidando la infraestructura tecnológica de las pymes de toda España. Sin oficina física, sin call centers, sin intermediarios. Te atiende quien hace el trabajo.
           </p>
         </div>
       </header>
@@ -72,6 +82,8 @@ export default function SobreNosotros() {
                 <img
                   src="/assets/luis-fundador.webp"
                   alt="Luis Freire Camino — fundador de FRECOIN"
+                  loading="lazy"
+                  {...dimsOf('/assets/luis-fundador.webp')}
                   className="w-full h-[360px] sm:h-[440px] lg:h-[500px] object-cover object-top"
                 />
               </div>
@@ -95,7 +107,7 @@ export default function SobreNosotros() {
               </blockquote>
               <div className="space-y-5 text-[16px] leading-[1.75] text-gripz-gray-600">
                 <p>
-                  Me llamo <strong className="text-gripz-black">Luis Freire Camino</strong> y creé FRECOIN con una idea muy simple: que las pequeñas y medianas empresas de Barcelona y Cataluña pudieran acceder a servicios técnicos de calidad sin tener que recurrir a grandes consultoras anónimas con call centers infinitos.
+                  Me llamo <strong className="text-gripz-black">Luis Freire Camino</strong> y creé FRECOIN con una idea muy simple: que las pequeñas y medianas empresas de toda España pudieran acceder a servicios técnicos de calidad sin tener que recurrir a grandes consultoras anónimas con call centers infinitos.
                 </p>
                 <p>
                   Llevo más de dos décadas montando redes informáticas, instalaciones eléctricas, sistemas de videovigilancia, antenas WiFi, SAI y controles de acceso. He visto evolucionar la tecnología — del cable Ethernet a la fibra óptica, de las cámaras analógicas a la videovigilancia IP de alta resolución — pero lo que no ha cambiado es mi forma de trabajar.
@@ -182,6 +194,13 @@ export default function SobreNosotros() {
       </section>
 
       <FooterCTA />
+
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: 'Inicio', url: 'https://frecoin.es' },
+          { name: 'Sobre nosotros' },
+        ]}
+      />
     </div>
   );
 }
