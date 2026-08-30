@@ -9,15 +9,48 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-08-28 (Luis confirmó por WhatsApp que se da de alta en Google hoy/mañana — verificado código+prod, sin cambios de código)
+**Last updated:** 2026-08-29 (sesión SEO: auditoría + keyword research + optimización on-page/técnica **commiteada en local, NO desplegada**)
 
-**Verificación 2026-08-28 (comprobado, no supuesto):** `bash scripts/verify.sh` → `✓ all checks
-passed` (sin necesidad de `npm install`, ya estaba instalado desde la verificación previa).
-Producción en vivo: `/` → 200 (`index-Dti3xGD2.js`, sin cambios), `/panel/` → 200
-(`index-BlcpRtEO.js`, sin cambios), `/admin/api/auth.php` sin sesión → 401,
-`/assets/work-gallery.json` → 200. **Ningún archivo de código se tocó en esta sesión** — todo el
-trabajo sigue siendo de planificación/negocio, documentado abajo y en el repo de contexto privado
-`frecoin-tracking` (separado de este repo de código).
+---
+
+## ⚠️ ESTADO REAL 2026-08-29 — código optimizado en repo, producción TODAVÍA ANTIGUA
+
+**Verificado con `curl` contra producción (no supuesto), 2026-08-29:**
+
+| Comprobación en vivo | Resultado real hoy |
+|---|---|
+| `<title>` de `/` | `FRECOIN — Infraestructuras tecnológicas para empresas \| Barcelona y Cataluña` (**versión antigua**) |
+| `<title>` de `/servicios/sai` | **idéntico al de la home** → sigue el problema de SPA sin prerender |
+| `/url-que-no-existe-xyz` | **200** (soft 404 aún presente) |
+| `sitemap.xml` | 10 `<loc>`, **sin `/sobre-nosotros`** |
+| `robots.txt` | sin `Disallow: /rediseno` |
+| `https://www.frecoin.es/` | **200** (aún sin 301 al apex) |
+
+**Conclusión: NADA del trabajo SEO de esta sesión está en vivo.** Producción sirve el build anterior.
+
+### Qué SÍ está hecho (verificado en local)
+
+- Commit **`d540be2`** en rama `feat/backoffice-cms`: `feat(seo): optimización SEO integral — prerender, metas nacionales, schema, enlazado` (34 ficheros, +1174/−159).
+- `bash scripts/verify.sh` → **`✓ all checks passed`** (build + prerender completos; `typecheck`/`test` se saltan por script ausente, comportamiento preexistente).
+- `dist/` contiene las 11 rutas prerenderizadas + `404.html`, cada una con su title/canonical propios. Ejemplo verificado: `/` → `Instalaciones tecnológicas para empresas en España | FRECOIN`; `dist/404.html` → `Página no encontrada (404) | FRECOIN`.
+- Contenido del trabajo: prerender con `scripts/prerender.mjs` (puppeteer-core), `usePageMeta` en todas las páginas, titles/H1/descriptions **de alcance nacional (España)** por decisión del cliente, schema `FAQPage` + `BreadcrumbList` + `LocalBusiness` con `geo` y `areaServed` España+Cataluña+Barcelona, footer con enlaces reales + NAP visible, bloque "servicios relacionados", sitemap de 11 URLs, `Disallow: /rediseno` + noindex, 404 real, 301 www, imágenes WebP (−61%) con lazy loading y dimensiones.
+- Verificado además en **Apache 2.4 local** con el `.htaccess` del build: 11 rutas 200 con title propio, 404 real en URLs inventadas, 301 de www y de `/contacto`.
+
+### Deploy: PENDIENTE (parado a propósito)
+
+Conexión SSH probada OK e inventario remoto listado. **Backup remoto NO hecho, `rsync` NO ejecutado.** Al desplegar, verificar en vivo: `/servicios/sai` con su title propio, una URL inventada → 404, y `www` → 301.
+
+⚠️ **Riesgo a vigilar tras el deploy:** el nuevo `.htaccess` elimina el fallback global a `index.html`. Solo debe desplegarse un `dist/` generado con `npm run build` **completo** (con prerender); un build hecho con `build:only` dejaría 404 en todas las rutas menos `/`.
+
+### Documentación del trabajo (repo de contexto `frecoin-tracking`)
+
+`entregables/auditoria-tecnica-SEO-2026-08-28.md` (24 hallazgos priorizados), `entregables/keyword-research-FRECOIN-2026-08-28.md` (datos reales de Google Keyword Planner, cuenta Amsip MCC 769-608-2742) y `entregables/implementacion-SEO-2026-08-28.md` (qué se implementó y cómo se verificó). Los tres incluyen la nota de giro a estrategia nacional.
+
+### Sigue pendiente de Luis (no bloquea el deploy)
+
+GTM/GA4 (variables vacías en el bundle → no se mide nada), Search Console (verificación + envío de sitemap), Ficha de Google (rellena el `sameAs`, hoy vacío). Fase 2 acordada: páginas de zona `/zonas/<ciudad|comunidad>` con contenido único + blog nacional (oportunidad detectada: "mantenimiento informático", competencia baja y fuerte crecimiento).
+
+---
 
 **Proyecto SEO — ARRANCADO 2026-08-25.** Luis aprobó por llamada la propuesta de 499€ del 12-jun
 (ver `## Propuesta SEO FRECOIN` más abajo) y, según indica Jonatan, hizo hoy el primer pago de 250€

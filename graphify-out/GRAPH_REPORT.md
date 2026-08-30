@@ -1,16 +1,16 @@
-# Graph Report - frecoin-web-produccion  (2026-08-28)
+# Graph Report - frecoin-web-produccion  (2026-08-30)
 
 ## Corpus Check
-- 168 files · ~345,895 words
+- 173 files · ~368,614 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1067 nodes · 1484 edges · 99 communities (94 shown, 5 thin omitted)
+- 1105 nodes · 1569 edges · 99 communities (95 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `bfcb6b4c`
+- Built from commit: `d540be2a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -97,11 +97,11 @@
 3. `compilerOptions` - 18 edges
 4. `compilerOptions` - 16 edges
 5. `useAuth()` - 13 edges
-6. `tasks/current.md — frecoin-web active task queue` - 13 edges
-7. `AGENTS.md — frecoin-web project harness` - 12 edges
-8. `PLAN — Backoffice CMS para frecoin.es` - 12 edges
-9. `Galería "Trabajos realizados" — multi-foto por área (acumular)` - 10 edges
-10. `db()` - 9 edges
+6. `usePageMeta()` - 13 edges
+7. `tasks/current.md — frecoin-web active task queue` - 13 edges
+8. `AGENTS.md — frecoin-web project harness` - 12 edges
+9. `PLAN — Backoffice CMS para frecoin.es` - 12 edges
+10. `HANDOFF.md — frecoin-web (verdad operativa)` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `regenerate_content_snapshot()` --calls--> `db()`  [INFERRED]
@@ -118,15 +118,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (99 total, 5 thin omitted)
+## Communities (99 total, 4 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
 Nodes (37): Layout(), NAV, NavItem, ProtectedRoute(), AdminRole, AdminUser, AdminUserFull, api (+29 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.06
-Nodes (44): cn(), Avatar(), AvatarFallback(), AvatarImage(), BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList() (+36 more)
+Cohesion: 0.07
+Nodes (36): cn(), Avatar(), AvatarFallback(), AvatarImage(), Card(), CardAction(), CardContent(), CardDescription() (+28 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.06
@@ -137,8 +137,8 @@ Cohesion: 0.04
 Nodes (50): dependencies, class-variance-authority, clsx, cmdk, date-fns, embla-carousel-react, gsap, @hookform/resolvers (+42 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.07
-Nodes (28): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, kimi-plugin-inspect-react (+20 more)
+Cohesion: 0.06
+Nodes (31): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, kimi-plugin-inspect-react (+23 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.09
@@ -153,8 +153,8 @@ Cohesion: 0.08
 Nodes (24): compilerOptions, allowImportingTsExtensions, baseUrl, erasableSyntaxOnly, jsx, lib, module, moduleDetection (+16 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.12
-Nodes (16): antenasWifi, applyOverride(), camarasVideovigilancia, controlesAcceso, getServiceBySlug(), instalacionesElectricas, procesoFRECOIN, redesInformaticas (+8 more)
+Cohesion: 0.11
+Nodes (17): antenasWifi, applyOverride(), camarasVideovigilancia, controlesAcceso, getServiceBySlug(), instalacionesElectricas, procesoFRECOIN, redesInformaticas (+9 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.12
@@ -173,12 +173,12 @@ Cohesion: 0.16
 Nodes (12): Field(), FieldContent(), FieldDescription(), FieldError(), FieldGroup(), FieldLabel(), FieldLegend(), FieldSeparator() (+4 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.14
-Nodes (12): ConsentRecord, ConsentValue, CookieBanner(), disableAnalytics(), enableAnalytics(), GA4_ID, GTM_ID, initAnalyticsFromConsent() (+4 more)
+Cohesion: 0.13
+Nodes (14): ConsentRecord, ConsentValue, CookieBanner(), WhatsAppFloat(), disableAnalytics(), enableAnalytics(), GA4_ID, GTM_ID (+6 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.11
-Nodes (17): Al cerrar cada sesión que despliegue, BACKOFFICE CMS (sesión 2026-06-18) — EN VIVO, Backups en servidor Hostinger, Comunicaciones con el cliente (verificado 2026-06-12), Contenido en vivo (build acumulado 08-jun), Cómo se despliega DE VERDAD, Directorios locales — NAP y guía, GitHub Actions (+9 more)
+Cohesion: 0.09
+Nodes (22): Al cerrar cada sesión que despliegue, BACKOFFICE CMS (sesión 2026-06-18) — EN VIVO, Backups en servidor Hostinger, Comunicaciones con el cliente (verificado 2026-06-12), Contenido en vivo (build acumulado 08-jun), Cómo se despliega DE VERDAD, Deploy: PENDIENTE (parado a propósito), Directorios locales — NAP y guía (+14 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.11
@@ -197,24 +197,24 @@ Cohesion: 0.12
 Nodes (9): DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuItem(), DropdownMenuLabel(), DropdownMenuRadioItem(), DropdownMenuSeparator(), DropdownMenuShortcut(), DropdownMenuSubContent() (+1 more)
 
 ### Community 19 - "Community 19"
-Cohesion: 0.21
-Nodes (5): LegalLayout(), LegalLayoutProps, WhatsAppFloat(), AvisoLegal(), PoliticaPrivacidad()
+Cohesion: 0.16
+Nodes (9): LegalLayout(), LegalLayoutProps, services, AvisoLegal(), PoliticaPrivacidad(), FooterCTA(), legalLinks, NavLink (+1 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.09
-Nodes (19): Badge(), badgeVariants, Button(), CalendarDayButton(), Checkbox(), InputGroup(), InputGroupAddon(), inputGroupAddonVariants (+11 more)
+Cohesion: 0.08
+Nodes (13): AccordionContent(), AccordionItem(), AccordionTrigger(), Badge(), badgeVariants, Checkbox(), HoverCardContent(), Progress() (+5 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.08
-Nodes (18): AlertDialogAction(), AlertDialogCancel(), AlertDialogContent(), AlertDialogDescription(), AlertDialogFooter(), AlertDialogHeader(), AlertDialogOverlay(), AlertDialogTitle() (+10 more)
+Cohesion: 0.07
+Nodes (32): AlertDialogAction(), AlertDialogCancel(), AlertDialogContent(), AlertDialogDescription(), AlertDialogFooter(), AlertDialogHeader(), AlertDialogOverlay(), AlertDialogTitle() (+24 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.23
-Nodes (9): services, useScrollReveal(), Blog(), blogs, ClientLogos(), logos, Services(), reasons (+1 more)
+Cohesion: 0.26
+Nodes (8): useScrollReveal(), Blog(), blogs, ClientLogos(), logos, Services(), reasons, WhyChooseUs()
 
 ### Community 23 - "Community 23"
-Cohesion: 0.19
-Nodes (13): Carousel(), CarouselApi, CarouselContent(), CarouselContext, CarouselContextProps, CarouselItem(), CarouselNext(), CarouselOptions (+5 more)
+Cohesion: 0.12
+Nodes (9): ContextMenuCheckboxItem(), ContextMenuContent(), ContextMenuItem(), ContextMenuLabel(), ContextMenuRadioItem(), ContextMenuSeparator(), ContextMenuShortcut(), ContextMenuSubContent() (+1 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.23
@@ -225,12 +225,12 @@ Cohesion: 0.15
 Nodes (12): AGENTS.md — frecoin-web project harness, Commit conventions, Do not run without explicit permission, Do not touch without explicit permission, Documentation discipline, How to verify a change, Read on session start, Sources of truth (in this order) (+4 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.18
-Nodes (5): Props, ServiceData, legalLinks, NavLink, navLinks
+Cohesion: 0.16
+Nodes (14): BreadcrumbJsonLd(), Crumb, JsonLd(), Props, ServiceLayout(), dimsOf(), imageDims, getRelatedServices() (+6 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.19
-Nodes (7): HomePage(), About(), features, Hero(), SubmitState, Numbers(), stats
+Cohesion: 0.21
+Nodes (6): About(), features, Hero(), SubmitState, Numbers(), stats
 
 ### Community 28 - "Community 28"
 Cohesion: 0.15
@@ -265,8 +265,8 @@ Cohesion: 0.25
 Nodes (7): Accesos Google — correos enviados, Luis confirma por WhatsApp, Commands run, Files changed, Next step, Objective, Open risks, Verification result
 
 ### Community 36 - "Community 36"
-Cohesion: 0.18
-Nodes (7): SelectContent(), SelectItem(), SelectLabel(), SelectScrollDownButton(), SelectScrollUpButton(), SelectSeparator(), SelectTrigger()
+Cohesion: 0.22
+Nodes (11): CHROME_CANDIDATES, __dirname, DIST, findChrome(), main(), outputFileFor(), renderRoute(), ROOT (+3 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.20
@@ -349,8 +349,8 @@ Cohesion: 0.33
 Nodes (5): Discipline, Naming, progress/ — multi-step task journal, Template, When to create an entry
 
 ### Community 57 - "Community 57"
-Cohesion: 0.33
-Nodes (4): AREA_META, DEFAULT_WORKS, Snapshot, Work
+Cohesion: 0.21
+Nodes (10): InputGroup(), InputGroupAddon(), inputGroupAddonVariants, InputGroupButton(), inputGroupButtonVariants, InputGroupInput(), InputGroupText(), InputGroupTextarea() (+2 more)
 
 ### Community 58 - "Community 58"
 Cohesion: 0.40
@@ -373,8 +373,8 @@ Cohesion: 0.50
 Nodes (4): Alert(), AlertDescription(), AlertTitle(), alertVariants
 
 ### Community 65 - "Community 65"
-Cohesion: 0.40
-Nodes (3): AccordionContent(), AccordionItem(), AccordionTrigger()
+Cohesion: 0.28
+Nodes (4): PageMeta, usePageMeta(), NotFound(), Rediseno()
 
 ### Community 66 - "Community 66"
 Cohesion: 0.40
@@ -400,24 +400,28 @@ Nodes (3): Expanding the ESLint configuration, React Compiler, React + TypeScrip
 Cohesion: 0.40
 Nodes (3): InputOTP(), InputOTPGroup(), InputOTPSlot()
 
+### Community 74 - "Community 74"
+Cohesion: 0.25
+Nodes (6): BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList(), BreadcrumbPage(), BreadcrumbSeparator()
+
 ## Knowledge Gaps
-- **440 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+435 more)
+- **456 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+451 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 1` to `Community 2`, `Community 9`, `Community 12`, `Community 16`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 24`, `Community 30`, `Community 32`, `Community 33`, `Community 36`, `Community 40`, `Community 47`, `Community 52`, `Community 64`, `Community 65`, `Community 73`, `Community 74`, `Community 98`?**
-  _High betweenness centrality (0.115) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 1` to `Community 2`, `Community 9`, `Community 12`, `Community 16`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 24`, `Community 30`, `Community 32`, `Community 33`, `Community 40`, `Community 47`, `Community 52`, `Community 57`, `Community 64`, `Community 73`, `Community 74`, `Community 98`?**
+  _High betweenness centrality (0.102) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `Community 3` to `Community 4`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _440 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _456 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.05687645687645688 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.0576271186440678 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07493061979648474 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.05673758865248227 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
