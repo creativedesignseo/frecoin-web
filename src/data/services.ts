@@ -188,15 +188,15 @@ const redesInformaticas: ServiceData = {
 
   metaTitle: 'Instalación de redes informáticas para empresas | FRECOIN',
   metaDescription: 'Diseño, instalación y mantenimiento de redes informáticas y cableado estructurado para empresas en toda España. +20 años de experiencia.',
-  keywords: ['redes informáticas', 'instalación red empresa', 'cableado estructurado', 'red corporativa', 'wifi empresarial', 'Cataluña', 'Barcelona', 'redes Cat6', 'firewall empresa'],
+  keywords: ['instalación de redes informáticas', 'redes informáticas para empresas', 'cableado estructurado', 'instalación de redes', 'red corporativa', 'WiFi empresarial', 'routers y switches'],
 
   tagline: 'Conectividad empresarial',
-  heroH1: 'Redes informáticas para empresas que no pueden permitirse caer.',
+  heroH1: 'Instalación de redes informáticas para empresas',
   heroParagraph: 'Diseñamos, instalamos y mantenemos redes corporativas estables, rápidas y seguras. Cableado estructurado, certificación, configuración de routers y switches, Wi-Fi empresarial y soporte continuo.',
   heroImage: '/assets/services/redes/hero-server-rack.jpg',
   heroImageAlt: 'Rack de servidores con iluminación azul en sala técnica',
 
-  includesTitle: '¿Qué incluye nuestro servicio de redes?',
+  includesTitle: '¿Qué incluye la instalación de redes informáticas?',
   includes: [
     { icon: Cable, title: 'Cableado estructurado', description: 'Diseño y tendido de cableado Cat 6/6A/7 con etiquetado, certificación y documentación profesional.' },
     { icon: Network, title: 'Routers, switches y firewalls', description: 'Configuración de hardware profesional adaptado al tamaño y necesidades de tu empresa.' },
@@ -245,17 +245,17 @@ const instalacionesElectricas: ServiceData = {
   icon: PlugZap,
   name: 'Instalaciones Eléctricas',
 
-  metaTitle: 'Empresa de instalaciones eléctricas | FRECOIN',
+  metaTitle: 'Instalaciones eléctricas para empresas | FRECOIN',
   metaDescription: 'Ejecución de instalaciones eléctricas seguras y certificadas para empresas en toda España. Cableado, cuadros, protecciones y mantenimiento. +20 años.',
-  keywords: ['instalaciones eléctricas', 'electricista empresa', 'cuadro eléctrico', 'cableado industrial', 'reforma eléctrica', 'Cataluña', 'Barcelona', 'boletín eléctrico'],
+  keywords: ['instalaciones eléctricas', 'instalaciones eléctricas para empresas', 'empresa de instalaciones eléctricas', 'electricista industrial', 'mantenimiento eléctrico industrial', 'cuadros eléctricos', 'reparaciones eléctricas'],
 
   tagline: 'Normativa y seguridad',
-  heroH1: 'Instalaciones eléctricas seguras, certificadas y bien hechas.',
+  heroH1: 'Instalaciones eléctricas para empresas',
   heroParagraph: 'Diseño y ejecución de instalaciones eléctricas para empresas, oficinas y naves industriales. Cableado, cuadros, protecciones y certificación según normativa vigente.',
   heroImage: '/assets/services/electricas/hero.webp',
   heroImageAlt: 'Electricista profesional comprobando cuadro eléctrico con multímetro',
 
-  includesTitle: '¿Qué incluye nuestro servicio eléctrico?',
+  includesTitle: '¿Qué incluyen nuestras instalaciones eléctricas?',
   includes: [
     { icon: Cable, title: 'Cableado completo', description: 'Tendido de cableado eléctrico certificado, dimensionado correctamente para tu carga y crecimiento futuro.' },
     { icon: Zap, title: 'Cuadros eléctricos', description: 'Diseño e instalación de cuadros generales y secundarios con etiquetado claro y documentación.' },
@@ -304,15 +304,15 @@ const camarasVideovigilancia: ServiceData = {
 
   metaTitle: 'Instalación de cámaras de seguridad para empresas | FRECOIN',
   metaDescription: 'Instalación de cámaras de seguridad CCTV e IP para empresas, naves y comercios en toda España. Visión nocturna, acceso remoto y cumplimiento RGPD.',
-  keywords: ['cámaras de seguridad', 'videovigilancia', 'CCTV', 'cámaras IP empresa', 'sistemas videovigilancia Barcelona', 'cámaras nave industrial', 'Cataluña', 'normativa cámaras'],
+  keywords: ['instalación de cámaras de seguridad', 'cámaras de seguridad para empresas', 'instalación de cámaras de vigilancia', 'videovigilancia', 'CCTV', 'cámaras IP', 'cámaras para negocios'],
 
   tagline: 'Vigilancia activa',
-  heroH1: 'Sistemas de videovigilancia profesionales y siempre operativos.',
+  heroH1: 'Instalación de cámaras de seguridad para empresas',
   heroParagraph: 'Diseño e instalación de circuitos cerrados de cámaras IP y CCTV para empresas, naves, comercios y comunidades. Visión nocturna, acceso remoto, grabación segura y cumplimiento normativo.',
   heroImage: '/assets/services/camaras/hero.jpg',
   heroImageAlt: 'Cámara de seguridad domo de exterior instalada en muro',
 
-  includesTitle: '¿Qué incluye nuestro servicio de cámaras?',
+  includesTitle: '¿Qué incluye la instalación de cámaras de seguridad?',
   includes: [
     { icon: Cctv, title: 'Cámaras IP profesionales', description: 'Cámaras Full HD/4K con visión nocturna, detección inteligente y conexión por red.' },
     { icon: Video, title: 'Grabador (NVR) configurado', description: 'Almacenamiento local seguro con disco duro dimensionado para los días de retención que necesites.' },
@@ -361,15 +361,15 @@ const antenasWifi: ServiceData = {
 
   metaTitle: 'Instalación de WiFi empresarial | FRECOIN',
   metaDescription: 'Cobertura WiFi profesional para empresas, naves y locales en toda España. Antenas exteriores, puntos de acceso, redes mesh y soporte continuo.',
-  keywords: ['antenas WiFi', 'WiFi empresarial', 'cobertura WiFi nave', 'WiFi profesional Barcelona', 'puntos de acceso', 'mesh WiFi', 'WiFi 6', 'Cataluña'],
+  keywords: ['WiFi empresarial', 'instalación de WiFi empresarial', 'WiFi para empresas', 'cobertura WiFi', 'puntos de acceso empresariales', 'red mesh profesional', 'WiFi para naves'],
 
   tagline: 'Cobertura empresarial',
-  heroH1: 'WiFi sin cortes en cada rincón de tu empresa.',
+  heroH1: 'WiFi empresarial para oficinas, naves y locales',
   heroParagraph: 'Diseñamos e instalamos cobertura WiFi profesional para oficinas, naves, locales y exteriores. Puntos de acceso gestionables, redes mesh y conectividad estable para todos tus dispositivos.',
   heroImage: '/assets/services/wifi/hero.jpg',
   heroImageAlt: 'Router WiFi 6 profesional con múltiples antenas',
 
-  includesTitle: '¿Qué incluye nuestro servicio WiFi?',
+  includesTitle: '¿Qué incluye la instalación de WiFi empresarial?',
   includes: [
     { icon: Wifi, title: 'Puntos de acceso profesionales', description: 'APs de gama empresarial (Ubiquiti, TP-Link Omada, Aruba) con cobertura amplia y gestión centralizada.' },
     { icon: Signal, title: 'Estudio de cobertura', description: 'Medimos in situ la cobertura, identificamos zonas muertas y planificamos exactamente cuántos APs hace falta.' },
@@ -418,7 +418,7 @@ const sai: ServiceData = {
 
   metaTitle: 'Sistemas SAI para empresas | FRECOIN',
   metaDescription: 'Instalación de sistemas SAI/UPS para servidores y equipos críticos de empresa en toda España. Evita pérdidas de datos y paradas por cortes de luz.',
-  keywords: ['SAI', 'UPS', 'sistema alimentación ininterrumpida', 'protección eléctrica', 'SAI servidor', 'UPS empresa Barcelona', 'cortes de luz', 'protección equipos'],
+  keywords: ['sistema SAI', 'SAI para empresas', 'sistema de alimentación ininterrumpida', 'SAI UPS', 'SAI para servidores', 'protección eléctrica', 'mantenimiento SAI'],
 
   tagline: 'Continuidad operativa',
   heroH1: 'Sistemas SAI para empresas: no pierdas dinero por un corte de luz.',
@@ -426,7 +426,7 @@ const sai: ServiceData = {
   heroImage: '/assets/services/sai/hero.webp',
   heroImageAlt: 'Gama de sistemas SAI/UPS profesionales para empresas: torres y equipos rack',
 
-  includesTitle: '¿Qué incluye nuestro servicio SAI?',
+  includesTitle: '¿Qué incluye la instalación de sistemas SAI?',
   includes: [
     { icon: BatteryCharging, title: 'Estudio de necesidades', description: 'Calculamos la potencia exacta que necesitas según equipos a proteger y autonomía deseada.' },
     { icon: Server, title: 'SAI dimensionado correctamente', description: 'Modelo y capacidad ajustados a tu caso: desde 1 kVA para puestos críticos hasta sistemas de 10+ kVA para salas de servidores.' },
@@ -475,7 +475,7 @@ const controlesAcceso: ServiceData = {
 
   metaTitle: 'Control de accesos para empresas | FRECOIN',
   metaDescription: 'Instalación de sistemas de control de acceso para empresas en toda España: tarjetas RFID, huella, código y app. Sin llaves físicas, todo trazado.',
-  keywords: ['control de acceso', 'control accesos empresa', 'tarjeta RFID', 'lector huella', 'cerradura electrónica', 'control horario', 'Cataluña', 'Barcelona'],
+  keywords: ['control de accesos', 'control de acceso para empresas', 'control de acceso biométrico', 'control de acceso para puertas', 'empresas de control de accesos', 'control de acceso vehicular', 'control horario'],
 
   tagline: 'Trazabilidad y seguridad',
   heroH1: 'Control de accesos para empresas: adiós a las llaves perdidas.',
@@ -483,7 +483,7 @@ const controlesAcceso: ServiceData = {
   heroImage: '/assets/services/accesos/hero.jpg',
   heroImageAlt: 'Empresario usando lector RFID para acceder a oficina',
 
-  includesTitle: '¿Qué incluye nuestro servicio de accesos?',
+  includesTitle: '¿Qué incluye un sistema de control de accesos?',
   includes: [
     { icon: KeyRound, title: 'Tarjetas y llaveros RFID', description: 'Sistema clásico fiable: cada usuario tiene su tarjeta o llavero, y tú gestionas permisos desde el panel.' },
     { icon: Fingerprint, title: 'Lectores biométricos', description: 'Huella dactilar o reconocimiento facial. Sin tarjetas que se pierden y sin posibilidad de "prestar" la llave.' },

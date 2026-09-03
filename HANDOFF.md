@@ -9,11 +9,11 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-09-03 (SEO + GTM/GA4 desplegados y verificados en vivo)
+**Last updated:** 2026-09-03 (SEO, CMS, GTM/GA4 desplegados y verificados en vivo)
 
 ---
 
-## ESTADO REAL 2026-09-03 — SEO técnico y GTM publicados
+## ESTADO REAL 2026-09-03 — SEO técnico, on-page y GTM publicados
 
 **Verificado con `curl` contra producción (no supuesto), 2026-09-03:**
 
@@ -25,6 +25,23 @@
 | `sitemap.xml` | 11 `<loc>`, incluida `/sobre-nosotros` |
 | `robots.txt` | `Disallow: /rediseno` presente |
 | `https://www.frecoin.es/` | **301** a `https://frecoin.es/` |
+
+### Corrección on-page y CMS — 03/09
+
+Se detectó que `assets/services.json` del CMS todavía contenía la versión antigua de
+Barcelona/Cataluña. Aunque el HTML prerenderizado ya era nacional, el front descargaba ese
+snapshot tras cargar y podía sobrescribir title, meta description y H1 en el navegador.
+
+- Los **seis registros** del CMS se sincronizaron con la matriz SEO nacional y se regeneró el
+  snapshot público. Backup remoto: `~/backup_seo_cms_20260903_225500/`.
+- El código base, la semilla SQL y el CMS contienen los mismos title/H1. La matriz mantenible está
+  en `docs/MATRIZ-SEO-ON-PAGE-2026-09-03.md`.
+- Verificación en vivo, tanto HTML como navegador recién cargado: `/servicios/redes-informaticas`
+  entrega `Instalación de redes informáticas para empresas | FRECOIN` y H1
+  `Instalación de redes informáticas para empresas`.
+- Sitemap actualizado con `lastmod` `2026-09-03` en sus 11 URL. Sigue siendo obligatorio desplegar
+  solo un `dist/` generado con el build completo y **excluir** `assets/services.json`; el script
+  `scripts/sync-seo-cms.php` permite volver a alinear el CMS sin exponer secretos.
 
 **Conclusión: el trabajo SEO técnico está en producción.** El HTML prerenderizado, rutas SEO,
 redirecciones y recursos optimizados sirven el build actual.
@@ -48,9 +65,9 @@ reglas necesarias de prerender, 404 real y 301.
 La etiqueta GA4 usa `G-YY2PPL6YP8`; Consent Mode v2 solo concede `analytics_storage` tras
 aceptación explícita de cookies y mantiene consentimiento publicitario denegado. GTM carga en
 producción después de aceptar cookies y el JavaScript público del contenedor contiene la etiqueta
-GA4 y los eventos `form_submit`, `phone_click`, `whatsapp_click` y `page_view`. **Pendiente de
-confirmar:** la primera sesión no apareció todavía en la API realtime de GA4 durante los minutos
-posteriores a la prueba; volver a consultar tras propagación, sin asumir que ya hay datos.
+GA4 y los eventos `form_submit`, `phone_click`, `whatsapp_click` y `page_view`. **Confirmado:**
+GA4 mostró una sesión en tiempo real con `first_visit`, `page_view` y `session_start` tras la
+publicación.
 
 ⚠️ **Riesgo a vigilar tras el deploy:** el nuevo `.htaccess` elimina el fallback global a `index.html`. Solo debe desplegarse un `dist/` generado con `npm run build` **completo** (con prerender); un build hecho con `build:only` dejaría 404 en todas las rutas menos `/`.
 
