@@ -1,7 +1,7 @@
 # GTM + GA4 measurement setup
 
 **Date:** 2026-09-03
-**Status:** prepared and verified locally; production deploy blocked by SSH authentication
+**Status:** deployed; GA4 realtime propagation confirmation pending
 
 ## Objective
 
@@ -40,12 +40,19 @@ measurement for successful forms, phone clicks, WhatsApp clicks, and SPA navigat
 - The generated bundle contains `GTM-TPX75G8N` and does not contain the direct GA4 ID, avoiding
   duplicate measurement.
 
-## Next step
+## Production deployment
 
-Restore Hostinger SSH access: the local key `~/.ssh/frecoin_hostinger` was rejected by the
-saved deployment connection candidates on 2026-09-03. No remote backup, upload, or GTM
-publication was attempted after that failed read-only authentication check. Once the valid
-Hostinger connection or an authorized public key is available, publish the GTM workspace, back
-up `public_html`, deploy the complete prerendered `dist/` with
-`VITE_GTM_ID=GTM-TPX75G8N`, then verify live SEO responses and GA4 realtime events after
-accepting analytics cookies.
+- Hostinger SSH access was restored by removing and re-adding the existing public key in hPanel.
+- Remote backup created: `~/backup_public_html_20260903_211132`.
+- GTM Default Workspace published as container version 2.
+- `rsync` deployed `dist/` without `--delete`; it excluded `admin/`, `panel/`, uploads, CMS
+  snapshots, `send-form.php`, and email templates.
+- Live checks passed: home and service-specific titles, 404 status, www-to-apex 301, 11 sitemap
+  URLs, robots block for `/rediseno`, panel 200, API auth 401, and GTM ID in the served bundle.
+- GTM loaded after accepting cookies in a clean test session. The public GTM JavaScript includes
+  the GA4 measurement ID and all four event names.
+
+## Remaining verification
+
+GA4 realtime and same-day reporting did not show the first test session during the brief
+post-deploy window. Recheck after propagation before reporting analytics as receiving data.

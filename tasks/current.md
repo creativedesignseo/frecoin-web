@@ -22,11 +22,11 @@
 - [x] Acceso real verificado: Search Console (`sc-domain:frecoin.es`, Full User), GA4
       (propiedad `frecoin.es`) y GTM (cuenta y contenedor `frecoin.es`).
 - [ ] Resto del checklist del correo del 25-ago sin respuesta aún (NAP, fotos, datos Trustpilot).
-- [ ] Publicar el workspace GTM y desplegar el build SEO completo con Consent Mode v2,
+- [x] Publicado GTM versión 2 y desplegado el build SEO completo con Consent Mode v2,
       navegación SPA y eventos de formulario/teléfono/WhatsApp. Ver
       `progress/2026-09-03-gtm-ga4-setup.md`.
-- [ ] Restaurar acceso SSH de Hostinger: la clave local de deploy fue rechazada en la comprobación
-      de solo lectura del 03-sep. No se ha hecho backup ni subida remota.
+- [ ] Consultar GA4 de nuevo tras propagación y confirmar la primera sesión/eventos; la API
+      realtime no mostraba datos en la ventana breve posterior a la prueba de producción.
 
 ---
 

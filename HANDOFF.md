@@ -9,24 +9,25 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-09-03 (SEO + GTM/GA4 preparados y verificados localmente; **NO desplegados**)
+**Last updated:** 2026-09-03 (SEO + GTM/GA4 desplegados y verificados en vivo)
 
 ---
 
-## ⚠️ ESTADO REAL 2026-08-29 — código optimizado en repo, producción TODAVÍA ANTIGUA
+## ESTADO REAL 2026-09-03 — SEO técnico y GTM publicados
 
-**Verificado con `curl` contra producción (no supuesto), 2026-08-29:**
+**Verificado con `curl` contra producción (no supuesto), 2026-09-03:**
 
 | Comprobación en vivo | Resultado real hoy |
 |---|---|
-| `<title>` de `/` | `FRECOIN — Infraestructuras tecnológicas para empresas \| Barcelona y Cataluña` (**versión antigua**) |
-| `<title>` de `/servicios/sai` | **idéntico al de la home** → sigue el problema de SPA sin prerender |
-| `/url-que-no-existe-xyz` | **200** (soft 404 aún presente) |
-| `sitemap.xml` | 10 `<loc>`, **sin `/sobre-nosotros`** |
-| `robots.txt` | sin `Disallow: /rediseno` |
-| `https://www.frecoin.es/` | **200** (aún sin 301 al apex) |
+| `<title>` de `/` | `Instalaciones tecnológicas para empresas en España \| FRECOIN` |
+| `<title>` de `/servicios/sai` | `Sistemas SAI para empresas \| FRECOIN` (propio, prerenderizado) |
+| `/url-que-no-existe-xyz` | **404** real |
+| `sitemap.xml` | 11 `<loc>`, incluida `/sobre-nosotros` |
+| `robots.txt` | `Disallow: /rediseno` presente |
+| `https://www.frecoin.es/` | **301** a `https://frecoin.es/` |
 
-**Conclusión: NADA del trabajo SEO de esta sesión está en vivo.** Producción sirve el build anterior.
+**Conclusión: el trabajo SEO técnico está en producción.** El HTML prerenderizado, rutas SEO,
+redirecciones y recursos optimizados sirven el build actual.
 
 ### Qué SÍ está hecho (verificado en local)
 
@@ -36,16 +37,20 @@
 - Contenido del trabajo: prerender con `scripts/prerender.mjs` (puppeteer-core), `usePageMeta` en todas las páginas, titles/H1/descriptions **de alcance nacional (España)** por decisión del cliente, schema `FAQPage` + `BreadcrumbList` + `LocalBusiness` con `geo` y `areaServed` España+Cataluña+Barcelona, footer con enlaces reales + NAP visible, bloque "servicios relacionados", sitemap de 11 URLs, `Disallow: /rediseno` + noindex, 404 real, 301 www, imágenes WebP (−61%) con lazy loading y dimensiones.
 - Verificado además en **Apache 2.4 local** con el `.htaccess` del build: 11 rutas 200 con title propio, 404 real en URLs inventadas, 301 de www y de `/contacto`.
 
-### Deploy: PENDIENTE (parado a propósito)
+### Deploy: COMPLETADO 2026-09-03
 
-Conexión SSH probada OK e inventario remoto listado. **Backup remoto NO hecho, `rsync` NO ejecutado.** Al desplegar, verificar en vivo: `/servicios/sai` con su title propio, una URL inventada → 404, y `www` → 301.
+Backup remoto creado: `~/backup_public_html_20260903_211132`. Se publicó el contenedor GTM
+`GTM-TPX75G8N` como versión 2 y se subió el `dist/` prerenderizado sin `--delete`, excluyendo
+`admin/`, `panel/`, uploads, snapshots del CMS, formularios y plantillas de correo. El nuevo
+`.htaccess` se comparó antes contra el activo y conserva hardening/compresión, añadiendo las
+reglas necesarias de prerender, 404 real y 301.
 
-**Actualización 2026-09-03:** el workspace GTM de FRECOIN ya existe y contiene la etiqueta
-GA4 (`G-YY2PPL6YP8`) más eventos de formulario, teléfono, WhatsApp y pageviews SPA, pero está
-**sin publicar**. El build local incluye `GTM-TPX75G8N`, Consent Mode v2 y pasó
-`scripts/verify.sh`. La comprobación SSH de solo lectura falló: la clave local de deploy fue
-rechazada por las conexiones históricas encontradas. **No se hizo backup, rsync, subida ni
-escritura remota.** Restaurar el acceso SSH o confirmar la conexión actual antes de continuar.
+La etiqueta GA4 usa `G-YY2PPL6YP8`; Consent Mode v2 solo concede `analytics_storage` tras
+aceptación explícita de cookies y mantiene consentimiento publicitario denegado. GTM carga en
+producción después de aceptar cookies y el JavaScript público del contenedor contiene la etiqueta
+GA4 y los eventos `form_submit`, `phone_click`, `whatsapp_click` y `page_view`. **Pendiente de
+confirmar:** la primera sesión no apareció todavía en la API realtime de GA4 durante los minutos
+posteriores a la prueba; volver a consultar tras propagación, sin asumir que ya hay datos.
 
 ⚠️ **Riesgo a vigilar tras el deploy:** el nuevo `.htaccess` elimina el fallback global a `index.html`. Solo debe desplegarse un `dist/` generado con `npm run build` **completo** (con prerender); un build hecho con `build:only` dejaría 404 en todas las rutas menos `/`.
 
