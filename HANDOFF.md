@@ -25,6 +25,7 @@
 | `sitemap.xml` | 11 `<loc>`, incluida `/sobre-nosotros` |
 | `robots.txt` | `Disallow: /rediseno` presente |
 | `https://www.frecoin.es/` | **301** a `https://frecoin.es/` |
+| Search Console | Sitemap reenviado sin errores; home añadida a cola prioritaria de rastreo |
 
 ### Corrección on-page y CMS — 03/09
 
