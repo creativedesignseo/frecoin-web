@@ -9,7 +9,7 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-08-29 (sesión SEO: auditoría + keyword research + optimización on-page/técnica **commiteada en local, NO desplegada**)
+**Last updated:** 2026-09-03 (SEO + GTM/GA4 preparados y verificados localmente; **NO desplegados**)
 
 ---
 
@@ -39,6 +39,13 @@
 ### Deploy: PENDIENTE (parado a propósito)
 
 Conexión SSH probada OK e inventario remoto listado. **Backup remoto NO hecho, `rsync` NO ejecutado.** Al desplegar, verificar en vivo: `/servicios/sai` con su title propio, una URL inventada → 404, y `www` → 301.
+
+**Actualización 2026-09-03:** el workspace GTM de FRECOIN ya existe y contiene la etiqueta
+GA4 (`G-YY2PPL6YP8`) más eventos de formulario, teléfono, WhatsApp y pageviews SPA, pero está
+**sin publicar**. El build local incluye `GTM-TPX75G8N`, Consent Mode v2 y pasó
+`scripts/verify.sh`. La comprobación SSH de solo lectura falló: la clave local de deploy fue
+rechazada por las conexiones históricas encontradas. **No se hizo backup, rsync, subida ni
+escritura remota.** Restaurar el acceso SSH o confirmar la conexión actual antes de continuar.
 
 ⚠️ **Riesgo a vigilar tras el deploy:** el nuevo `.htaccess` elimina el fallback global a `index.html`. Solo debe desplegarse un `dist/` generado con `npm run build` **completo** (con prerender); un build hecho con `build:only` dejaría 404 en todas las rutas menos `/`.
 

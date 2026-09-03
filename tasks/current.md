@@ -25,6 +25,8 @@
 - [ ] Publicar el workspace GTM y desplegar el build SEO completo con Consent Mode v2,
       navegación SPA y eventos de formulario/teléfono/WhatsApp. Ver
       `progress/2026-09-03-gtm-ga4-setup.md`.
+- [ ] Restaurar acceso SSH de Hostinger: la clave local de deploy fue rechazada en la comprobación
+      de solo lectura del 03-sep. No se ha hecho backup ni subida remota.
 
 ---
 

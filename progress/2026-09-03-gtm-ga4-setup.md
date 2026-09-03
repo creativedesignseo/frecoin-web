@@ -1,7 +1,7 @@
 # GTM + GA4 measurement setup
 
 **Date:** 2026-09-03
-**Status:** prepared and verified locally; pending GTM publication and production deploy
+**Status:** prepared and verified locally; production deploy blocked by SSH authentication
 
 ## Objective
 
@@ -42,6 +42,10 @@ measurement for successful forms, phone clicks, WhatsApp clicks, and SPA navigat
 
 ## Next step
 
-Publish the GTM workspace, back up Hostinger's `public_html`, deploy the complete prerendered
-`dist/` with `VITE_GTM_ID=GTM-TPX75G8N`, then verify the live SEO responses and GA4 realtime
-events after accepting analytics cookies.
+Restore Hostinger SSH access: the local key `~/.ssh/frecoin_hostinger` was rejected by the
+saved deployment connection candidates on 2026-09-03. No remote backup, upload, or GTM
+publication was attempted after that failed read-only authentication check. Once the valid
+Hostinger connection or an authorized public key is available, publish the GTM workspace, back
+up `public_html`, deploy the complete prerendered `dist/` with
+`VITE_GTM_ID=GTM-TPX75G8N`, then verify live SEO responses and GA4 realtime events after
+accepting analytics cookies.
