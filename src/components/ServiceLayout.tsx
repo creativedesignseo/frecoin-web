@@ -111,7 +111,7 @@ export default function ServiceLayout({ service }: Props) {
                   href="https://wa.me/34614134292?text=Hola,%20me%20interesa%20el%20servicio%20de%20%22"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => { handleCTAClick('hero_whatsapp'); trackEvent('whatsapp_click', { location: 'service_hero', service: service.slug }); }}
+                  onClick={() => handleCTAClick('hero_whatsapp')}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-gripz-black hover:text-gripz-primary transition-colors"
                 >
                   <Phone size={16} className="text-gripz-primary" />
@@ -379,7 +379,7 @@ export default function ServiceLayout({ service }: Props) {
                 href="https://wa.me/34614134292"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => { handleCTAClick('cta_final_whatsapp'); trackEvent('whatsapp_click', { location: 'service_cta_final', service: service.slug }); }}
+                onClick={() => handleCTAClick('cta_final_whatsapp')}
                 className="inline-flex items-center gap-2 border border-gripz-black text-gripz-black px-6 py-3.5 rounded text-sm font-semibold hover:bg-gripz-black hover:text-white transition-colors"
               >
                 WhatsApp directo

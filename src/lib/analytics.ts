@@ -29,6 +29,22 @@ declare global {
 
 let analyticsEnabled = false;
 
+type ConsentState = 'granted' | 'denied';
+
+function setConsent(state: ConsentState): void {
+  if (typeof window === 'undefined') return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag(...args: unknown[]) {
+    (window.dataLayer = window.dataLayer || []).push(args);
+  };
+  window.gtag('consent', 'update', {
+    analytics_storage: state,
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
+}
+
 /**
  * Carga los scripts de GTM y/o GA4. Llamar SOLO tras consentimiento del usuario.
  * Idempotente — si ya está cargado, no hace nada.
@@ -36,8 +52,20 @@ let analyticsEnabled = false;
 export function enableAnalytics(): void {
   if (analyticsEnabled || typeof window === 'undefined') return;
 
-  // dataLayer SIEMPRE existe — los eventos se acumulan aunque GTM tarde en cargar
+  // Consent Mode v2: no advertising storage is granted by this site.
+  // Analytics is granted only after the explicit choice in CookieBanner.
   window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag(...args: unknown[]) {
+    (window.dataLayer = window.dataLayer || []).push(args);
+  };
+  window.gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500,
+  });
+  setConsent('granted');
 
   // Google Tag Manager
   if (GTM_ID) {
@@ -89,6 +117,7 @@ export function enableAnalytics(): void {
  * pero `trackEvent` no enviará nuevos hits.
  */
 export function disableAnalytics(): void {
+  setConsent('denied');
   analyticsEnabled = false;
 }
 

@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AvisoLegal from './pages/AvisoLegal';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
@@ -10,13 +10,43 @@ import Rediseno from './pages/Rediseno';
 import NotFound from './pages/NotFound';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import CookieBanner from './components/CookieBanner';
-import { initAnalyticsFromConsent } from './lib/analytics';
+import { initAnalyticsFromConsent, trackEvent, trackPageView } from './lib/analytics';
 
 export default function App() {
+  const location = useLocation();
+  const initialPath = useRef<string | null>(null);
+
   // Restaura analytics si el usuario ya había aceptado en una sesión previa
   useEffect(() => {
     initAnalyticsFromConsent();
   }, []);
+
+  useEffect(() => {
+    const path = `${location.pathname}${location.search}`;
+    if (initialPath.current === null) {
+      initialPath.current = path;
+      return;
+    }
+    trackPageView(path, document.title);
+  }, [location.pathname, location.search]);
+
+  useEffect(() => {
+    const handleContactClick = (event: MouseEvent) => {
+      const anchor = (event.target as Element | null)?.closest<HTMLAnchorElement>('a[href]');
+      if (!anchor) return;
+
+      const href = anchor.href;
+      const locationPath = `${location.pathname}${location.search}`;
+      if (href.startsWith('tel:')) {
+        trackEvent('phone_click', { location: locationPath });
+      } else if (href.includes('wa.me/')) {
+        trackEvent('whatsapp_click', { location: locationPath });
+      }
+    };
+
+    document.addEventListener('click', handleContactClick);
+    return () => document.removeEventListener('click', handleContactClick);
+  }, [location.pathname, location.search]);
 
   return (
     <>

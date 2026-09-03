@@ -1,12 +1,7 @@
-import { trackEvent } from '@/lib/analytics';
-
 /**
  * Botón flotante de WhatsApp.
  * Fixed bottom-right, siempre visible, abre chat directo con FRECOIN.
  * Pulse animado sutil para llamar la atención sin agresividad.
- *
- * Dispara evento `whatsapp_click` con location=floating al hacer clic
- * (solo si el usuario ha aceptado cookies).
  */
 export default function WhatsAppFloat() {
   const message = encodeURIComponent('Hola, me gustaría solicitar un presupuesto para FRECOIN.');
@@ -18,7 +13,6 @@ export default function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      onClick={() => trackEvent('whatsapp_click', { location: 'floating' })}
       className="fixed bottom-6 right-6 z-50 group"
     >
       {/* Anillo de pulse animado */}

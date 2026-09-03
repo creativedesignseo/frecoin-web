@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-08-28 (Luis confirmó por WhatsApp que se da de alta en Google hoy/mañana)
+**Last updated:** 2026-09-03 (GA4, Search Console y GTM de FRECOIN verificados)
 
 ---
 
@@ -19,12 +19,12 @@
       **ambos confirmados enviados** en Gmail Enviados.
 - [x] Luis respondió por WhatsApp (28-ago, reportado por Jonatan): se da de alta en Search
       Console/Analytics/Tag Manager "esta tarde, si no mañana seguro".
-- [ ] **Verificar que Luis añadió a `info@one.adspubli.com` como colaborador** en las 3
-      herramientas — no hay forma de comprobarlo hasta que se intente acceder.
+- [x] Acceso real verificado: Search Console (`sc-domain:frecoin.es`, Full User), GA4
+      (propiedad `frecoin.es`) y GTM (cuenta y contenedor `frecoin.es`).
 - [ ] Resto del checklist del correo del 25-ago sin respuesta aún (NAP, fotos, datos Trustpilot).
-- [ ] **Siguiente sesión de trabajo, en cuanto haya acceso: configurar GTM+GA4** (no keyword
-      research). Ver `plan-gtm-ga4.md` Fases 1-4 (≈10.4h): alta de cuentas, código
-      (`phone_click`, `trackPageView()`, Consent Mode v2), configuración de tags/triggers en GTM.
+- [ ] Publicar el workspace GTM y desplegar el build SEO completo con Consent Mode v2,
+      navegación SPA y eventos de formulario/teléfono/WhatsApp. Ver
+      `progress/2026-09-03-gtm-ga4-setup.md`.
 
 ---
 
