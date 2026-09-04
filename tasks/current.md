@@ -31,6 +31,12 @@
       marcarlos como eventos clave en GA4. No reportarlos aún como conversiones verificadas.
 - [ ] Revisar Search Console en 7–14 días para Redes informáticas y Cámaras: ambas URL están
       solicitadas/descubiertas y no tienen bloqueo técnico confirmado. No reenviar solicitudes.
+- [ ] Ejecutar Ficha de Empresa de Google (GBP): diagnosticar si existe, crear o reclamar y
+      verificar; configurar NAP, categorías, servicios, cobertura, horarios, fotos y Q&A.
+      Bloque incluido en el paquete SEO de 499 €, pendiente de datos y decisiones de Luis.
+- [ ] Alta y seguimiento de 10–15 directorios locales con NAP confirmado.
+- [ ] Ejecutar bloque de reputación/Trustpilot o acordar el plan alternativo: requiere decisión de
+      Luis sobre la suscripción y datos reales; no usar opiniones ficticias.
 
 ---
 

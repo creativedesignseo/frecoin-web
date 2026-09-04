@@ -1,7 +1,7 @@
 # Graph Report - frecoin-web-produccion  (2026-09-04)
 
 ## Corpus Check
-- 177 files · ~371,054 words
+- 177 files · ~371,302 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fdc6dbe4`
+- Built from commit: `4a9e612c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -173,8 +173,8 @@ Cohesion: 0.16
 Nodes (12): Field(), FieldContent(), FieldDescription(), FieldError(), FieldGroup(), FieldLabel(), FieldLegend(), FieldSeparator() (+4 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.11
-Nodes (18): ConsentRecord, ConsentValue, CookieBanner(), LegalLayout(), WhatsAppFloat(), ConsentState, disableAnalytics(), enableAnalytics() (+10 more)
+Cohesion: 0.14
+Nodes (15): ConsentRecord, ConsentValue, CookieBanner(), WhatsAppFloat(), ConsentState, disableAnalytics(), enableAnalytics(), GA4_ID (+7 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.08
@@ -225,12 +225,12 @@ Cohesion: 0.15
 Nodes (12): AGENTS.md — frecoin-web project harness, Commit conventions, Do not run without explicit permission, Do not touch without explicit permission, Documentation discipline, How to verify a change, Read on session start, Sources of truth (in this order) (+4 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.20
-Nodes (13): BreadcrumbJsonLd(), Crumb, JsonLd(), LegalLayoutProps, Props, ServiceLayout(), dimsOf(), imageDims (+5 more)
+Cohesion: 0.16
+Nodes (11): BreadcrumbJsonLd(), Crumb, JsonLd(), LegalLayout(), LegalLayoutProps, Props, ServiceLayout(), getRelatedServices() (+3 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.12
-Nodes (11): PageMeta, usePageMeta(), HomePage(), NotFound(), Rediseno(), About(), features, Hero() (+3 more)
+Cohesion: 0.13
+Nodes (10): PageMeta, usePageMeta(), HomePage(), Rediseno(), About(), features, Hero(), SubmitState (+2 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.15
@@ -313,8 +313,8 @@ Cohesion: 0.29
 Nodes (7): Empty(), EmptyContent(), EmptyDescription(), EmptyHeader(), EmptyMedia(), emptyMediaVariants, EmptyTitle()
 
 ### Community 48 - "Community 48"
-Cohesion: 0.17
-Nodes (7): services, companyLinks, contactInfo, hours, serviceOptions, NavLink, navLinks
+Cohesion: 0.14
+Nodes (10): services, companyLinks, contactInfo, hours, serviceOptions, NotFound(), FooterCTA(), legalLinks (+2 more)
 
 ### Community 49 - "Community 49"
 Cohesion: 0.29
@@ -349,8 +349,8 @@ Cohesion: 0.33
 Nodes (5): Discipline, Naming, progress/ — multi-step task journal, Template, When to create an entry
 
 ### Community 57 - "Community 57"
-Cohesion: 0.33
-Nodes (4): AREA_META, DEFAULT_WORKS, Snapshot, Work
+Cohesion: 0.24
+Nodes (7): dimsOf(), imageDims, SobreNosotros(), AREA_META, DEFAULT_WORKS, Snapshot, Work
 
 ### Community 58 - "Community 58"
 Cohesion: 0.40

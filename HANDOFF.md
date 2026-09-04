@@ -9,11 +9,11 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-09-04 (código, producción, Search Console y consentimiento contrastados)
+**Last updated:** 2026-09-04 (código, producción y alcance contractual SEO contrastados)
 
 ---
 
-## ESTADO REAL 2026-09-04 — fase SEO técnica publicada y medición con consentimiento activa
+## ESTADO REAL 2026-09-04 — bloque SEO técnico publicado; paquete SEO de 499 € aún no cerrado
 
 **Verificado con `curl` contra producción (no supuesto), 2026-09-04:**
 
@@ -102,21 +102,30 @@ conversiones verificadas.
 
 `entregables/auditoria-tecnica-SEO-2026-08-28.md` (24 hallazgos priorizados), `entregables/keyword-research-FRECOIN-2026-08-28.md` (datos reales de Google Keyword Planner, cuenta Amsip MCC 769-608-2742) y `entregables/implementacion-SEO-2026-08-28.md` (qué se implementó y cómo se verificó). Los tres incluyen la nota de giro a estrategia nacional.
 
-### Próximos pasos reales (no bloquean la entrega SEO ya publicada)
+### Pendientes para el cierre íntegro del paquete SEO de 499 €
 
 1. Probar en una sesión controlada `form_submit`, `phone_click` y `whatsapp_click`; solo después
    marcarlos como eventos clave en GA4.
 2. Monitorizar en Search Console Redes y Cámaras durante 7–14 días sin reenviar solicitudes.
-3. Completar y verificar el Perfil de Empresa de Google; cuando exista su URL pública, añadirla a
-   `sameAs` del schema.
-4. Fase de crecimiento: contenido B2B validado por FRECOIN y menciones editoriales de calidad
-   (medios locales/B2B/sectoriales, casos de éxito), no enlaces masivos. La oportunidad de
-   “mantenimiento informático” requiere confirmar primero que FRECOIN presta ese servicio.
+3. Ejecutar la **Ficha de Empresa de Google (GBP)**: diagnosticar si existe, crear o reclamar,
+   completar el método de verificación de Google y configurar NAP, categorías, servicios,
+   cobertura, horarios, fotos y preguntas. Es parte del paquete, no un extra. Primero hay que
+   confirmar con Luis el modelo de negocio (área de servicio vs. local con atención presencial),
+   NAP público, municipios, horarios, garantía, atributos y 10–15 fotos reales.
+4. Dar de alta y seguir 10–15 directorios locales solo cuando el NAP esté confirmado.
+5. Ejecutar el bloque de reputación/Trustpilot o acordar expresamente la alternativa. El widget
+   requiere una cuenta/perfil real y una suscripción que paga el cliente; no sustituirlo con
+   testimonios ficticios. Añadir las URL reales de GBP/Trustpilot a `sameAs` cuando existan.
+6. Emitir el informe global y walkthrough únicamente al completar los bloques anteriores o si
+   Luis y Adspubli acuerdan formalmente una entrega parcial.
 
-El informe de entrega actual y el borrador de correo para la segunda parte de 250 € están en el
-repo privado `frecoin-tracking`: `entregables/auditoria-cierre-seo-frecoin-2026-09-04.md` y
-`correos/Borrador-Entrega-SEO-FRECOIN-2026-09-04.md`. No se ha enviado ningún correo desde esta
-sesión.
+Contenido B2B adicional y menciones editoriales de calidad son crecimiento posterior, no condición
+para cerrar el paquete. La oportunidad de “mantenimiento informático” requiere confirmar primero
+que FRECOIN presta ese servicio.
+
+El informe actual y el borrador de correo se corrigieron en el repo privado `frecoin-tracking` para
+presentarlos como **avance del bloque SEO técnico**, no como cierre total. No se ha enviado ningún
+correo desde esta sesión.
 
 ---
 
