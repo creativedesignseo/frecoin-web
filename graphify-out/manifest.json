@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "public/admin/api/seed-services.sql": {
-    "mtime": 1781729835.059881,
-    "ast_hash": "8191f76fb9b8d288cb66e87fa09b60fb",
+    "mtime": 1788469737.4735534,
+    "ast_hash": "a7df9a9cb02ac69bc0548fd6ffeb0a63",
     "semantic_hash": ""
   },
   "public/admin/api/services.php": {
@@ -210,8 +210,8 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1787928751.3196602,
-    "ast_hash": "5f9317a68d90a05f85b4c7db8fa2a79b",
+    "mtime": 1788452410.845596,
+    "ast_hash": "b63618c726d9d6ec04c5a64927e4ee67",
     "semantic_hash": ""
   },
   "src/components/CookieBanner.tsx": {
@@ -225,13 +225,13 @@
     "semantic_hash": ""
   },
   "src/components/ServiceLayout.tsx": {
-    "mtime": 1787933397.8699963,
-    "ast_hash": "0990bf2b45bedf97d72d51649eda0f50",
+    "mtime": 1788452410.9414036,
+    "ast_hash": "ff3a0ae423c696177ccf9f7932886406",
     "semantic_hash": ""
   },
   "src/components/WhatsAppFloat.tsx": {
-    "mtime": 1780923923.6909838,
-    "ast_hash": "c1ccb9372232f050a5d93f8e06a110fa",
+    "mtime": 1788452410.8938284,
+    "ast_hash": "bddcbcbe419fefc54ff3de5dcb32501c",
     "semantic_hash": ""
   },
   "src/components/icons/WifiRouterIcon.tsx": {
@@ -505,8 +505,8 @@
     "semantic_hash": ""
   },
   "src/data/services.ts": {
-    "mtime": 1787933348.4492466,
-    "ast_hash": "ebd8bfacb0628e5a455ae0af028af91f",
+    "mtime": 1788469737.425742,
+    "ast_hash": "38545c3faa8e6367e034eb38110298de",
     "semantic_hash": ""
   },
   "src/hooks/use-mobile.ts": {
@@ -525,8 +525,8 @@
     "semantic_hash": ""
   },
   "src/lib/analytics.ts": {
-    "mtime": 1780923923.6965241,
-    "ast_hash": "1310035e29d31b3285fd7ea785481596",
+    "mtime": 1788452410.7975638,
+    "ast_hash": "e7474a134b309a6f289fc3b8ea5bcb4a",
     "semantic_hash": ""
   },
   "src/lib/utils.ts": {
@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "HANDOFF.md": {
-    "mtime": 1788120369.5104616,
-    "ast_hash": "e0c6f1ead93eacfa4f7df5de8d408d9d",
+    "mtime": 1788480808.0585592,
+    "ast_hash": "c2bd3f416e7a94cb6345228b2992a8ce",
     "semantic_hash": ""
   },
   "README.md": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "tasks/current.md": {
-    "mtime": 1787926607.3907757,
-    "ast_hash": "df4dfa1219f62ba66e4d928a3a61583c",
+    "mtime": 1788462987.393924,
+    "ast_hash": "10ce5d1a5713db2e59639e8fd6835a8c",
     "semantic_hash": ""
   },
   "panel/public/logo-frecoin-dark.png": {
@@ -1147,6 +1147,26 @@
   "public/assets/services/electricas/hero.webp": {
     "mtime": 1787928820.7192998,
     "ast_hash": "1f108d3596dd75a0f5a3dd6ea42573ca",
+    "semantic_hash": ""
+  },
+  "scripts/sync-seo-cms.php": {
+    "mtime": 1788469786.637562,
+    "ast_hash": "65d65eeb58fd4263d6a358b778602395",
+    "semantic_hash": ""
+  },
+  "docs/MATRIZ-SEO-ON-PAGE-2026-09-03.md": {
+    "mtime": 1788469737.5667853,
+    "ast_hash": "07ed4071e159ab2b379b432009d231a2",
+    "semantic_hash": ""
+  },
+  "progress/2026-09-03-gtm-ga4-setup.md": {
+    "mtime": 1788462987.4516797,
+    "ast_hash": "e7f1abf451a590b15b9afe715a8f7001",
+    "semantic_hash": ""
+  },
+  "progress/2026-09-04-verify-seo-production-handoff.md": {
+    "mtime": 1788480825.608202,
+    "ast_hash": "2fc0014a1ec2a6725d39072f43f82fdc",
     "semantic_hash": ""
   }
 }

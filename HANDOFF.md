@@ -9,23 +9,45 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-09-03 (SEO, CMS, GTM/GA4 desplegados y verificados en vivo)
+**Last updated:** 2026-09-04 (código, producción, Search Console y consentimiento contrastados)
 
 ---
 
-## ESTADO REAL 2026-09-03 — SEO técnico, on-page y GTM publicados
+## ESTADO REAL 2026-09-04 — fase SEO técnica publicada y medición con consentimiento activa
 
-**Verificado con `curl` contra producción (no supuesto), 2026-09-03:**
+**Verificado con `curl` contra producción (no supuesto), 2026-09-04:**
 
 | Comprobación en vivo | Resultado real hoy |
 |---|---|
 | `<title>` de `/` | `Instalaciones tecnológicas para empresas en España \| FRECOIN` |
-| `<title>` de `/servicios/sai` | `Sistemas SAI para empresas \| FRECOIN` (propio, prerenderizado) |
+| Seis URLs de servicio | Cada una devuelve su propio `<title>` y canonical: Redes, Eléctricas, Cámaras, WiFi, SAI y Accesos |
+| `/sobre-nosotros` | Title y canonical propios presentes |
 | `/url-que-no-existe-xyz` | **404** real |
 | `sitemap.xml` | 11 `<loc>`, incluida `/sobre-nosotros` |
 | `robots.txt` | `Disallow: /rediseno` presente |
 | `https://www.frecoin.es/` | **301** a `https://frecoin.es/` |
-| Search Console | Sitemap reenviado sin errores; home añadida a cola prioritaria de rastreo |
+| Build local | `bash scripts/verify.sh` → **`✓ all checks passed`**: build y prerender de 11 rutas + 404; `typecheck`/`test` no existen en el proyecto y el script los omite |
+
+**No hay deploy pendiente para esta verificación.** La comprobación local regeneró `dist/` para
+validar el código, pero no se ha subido nada adicional a Hostinger en esta sesión.
+
+### Search Console — estado comprobado el 04/09
+
+La propiedad es `sc-domain:frecoin.es`; el sitemap está enviado y no registra errores ni
+advertencias. Las solicitudes manuales y la evidencia de la interfaz se registran fuera de este
+repo público en `frecoin-tracking/entregables/registro-indexacion-search-console-2026-09.md`.
+
+| URL | Estado confirmado |
+|---|---|
+| `/servicios/instalaciones-electricas` | **Indexada** |
+| `/servicios/antenas-wifi` | **Indexada** |
+| `/servicios/sai` | **Indexada** |
+| `/servicios/controles-de-acceso` | **Indexada** |
+| `/servicios/redes-informaticas` | Solicitud manual enviada; pendiente de rastreo. La prueba de URL publicada confirmó que es indexable. |
+| `/servicios/camaras-videovigilancia` | Descubierta mediante sitemap; pendiente de indexación. |
+
+Una solicitud enviada no equivale a una URL indexada: no reenviar las dos pendientes de forma
+repetida. Revisar de nuevo en 7–14 días desde Search Console.
 
 ### Corrección on-page y CMS — 03/09
 
@@ -63,12 +85,16 @@ Backup remoto creado: `~/backup_public_html_20260903_211132`. Se publicó el con
 `.htaccess` se comparó antes contra el activo y conserva hardening/compresión, añadiendo las
 reglas necesarias de prerender, 404 real y 301.
 
-La etiqueta GA4 usa `G-YY2PPL6YP8`; Consent Mode v2 solo concede `analytics_storage` tras
-aceptación explícita de cookies y mantiene consentimiento publicitario denegado. GTM carga en
-producción después de aceptar cookies y el JavaScript público del contenedor contiene la etiqueta
-GA4 y los eventos `form_submit`, `phone_click`, `whatsapp_click` y `page_view`. **Confirmado:**
-GA4 mostró una sesión en tiempo real con `first_visit`, `page_view` y `session_start` tras la
-publicación.
+La etiqueta GA4 usa `G-YY2PPL6YP8`; Consent Mode v2 se configuró en **modo básico**: antes de
+aceptar, y si el visitante rechaza, no se carga GTM/GA4 ni se instalan cookies de analítica. Tras
+aceptar se concede solo `analytics_storage`; `ad_storage`, `ad_user_data` y
+`ad_personalization` permanecen denegados. No hay remarketing ni publicidad personalizada. GTM
+carga en producción después de aceptar cookies y el JavaScript público del contenedor contiene la
+etiqueta GA4 y los eventos `form_submit`, `phone_click`, `whatsapp_click` y `page_view`.
+**Confirmado:** GA4 mostró una sesión en tiempo real con `first_visit`, `page_view` y
+`session_start` tras la publicación. Los eventos de lead están publicados, pero falta probar cada
+uno de forma controlada y marcarlos como eventos clave en GA4 antes de reportarlos como
+conversiones verificadas.
 
 ⚠️ **Riesgo a vigilar tras el deploy:** el nuevo `.htaccess` elimina el fallback global a `index.html`. Solo debe desplegarse un `dist/` generado con `npm run build` **completo** (con prerender); un build hecho con `build:only` dejaría 404 en todas las rutas menos `/`.
 
@@ -76,11 +102,30 @@ publicación.
 
 `entregables/auditoria-tecnica-SEO-2026-08-28.md` (24 hallazgos priorizados), `entregables/keyword-research-FRECOIN-2026-08-28.md` (datos reales de Google Keyword Planner, cuenta Amsip MCC 769-608-2742) y `entregables/implementacion-SEO-2026-08-28.md` (qué se implementó y cómo se verificó). Los tres incluyen la nota de giro a estrategia nacional.
 
-### Sigue pendiente de Luis (no bloquea el deploy)
+### Próximos pasos reales (no bloquean la entrega SEO ya publicada)
 
-GTM/GA4 (variables vacías en el bundle → no se mide nada), Search Console (verificación + envío de sitemap), Ficha de Google (rellena el `sameAs`, hoy vacío). Fase 2 acordada: páginas de zona `/zonas/<ciudad|comunidad>` con contenido único + blog nacional (oportunidad detectada: "mantenimiento informático", competencia baja y fuerte crecimiento).
+1. Probar en una sesión controlada `form_submit`, `phone_click` y `whatsapp_click`; solo después
+   marcarlos como eventos clave en GA4.
+2. Monitorizar en Search Console Redes y Cámaras durante 7–14 días sin reenviar solicitudes.
+3. Completar y verificar el Perfil de Empresa de Google; cuando exista su URL pública, añadirla a
+   `sameAs` del schema.
+4. Fase de crecimiento: contenido B2B validado por FRECOIN y menciones editoriales de calidad
+   (medios locales/B2B/sectoriales, casos de éxito), no enlaces masivos. La oportunidad de
+   “mantenimiento informático” requiere confirmar primero que FRECOIN presta ese servicio.
+
+El informe de entrega actual y el borrador de correo para la segunda parte de 250 € están en el
+repo privado `frecoin-tracking`: `entregables/auditoria-cierre-seo-frecoin-2026-09-04.md` y
+`correos/Borrador-Entrega-SEO-FRECOIN-2026-09-04.md`. No se ha enviado ningún correo desde esta
+sesión.
 
 ---
+
+## Contexto histórico anterior al cierre SEO
+
+Las secciones que siguen preservan decisiones y trazabilidad previas. Cualquier frase que diga
+que GA4, GTM o Search Console estaban pendientes describe el estado de agosto de 2026 y queda
+**superada por el estado real de 04/09 documentado arriba**. Para operar o desplegar, prevalece
+siempre esta cabecera y no los bloques históricos.
 
 **Proyecto SEO — ARRANCADO 2026-08-25.** Luis aprobó por llamada la propuesta de 499€ del 12-jun
 (ver `## Propuesta SEO FRECOIN` más abajo) y, según indica Jonatan, hizo hoy el primer pago de 250€
