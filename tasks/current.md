@@ -5,7 +5,7 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-09-03 (GA4, Search Console y GTM de FRECOIN verificados)
+**Last updated:** 2026-09-04 (cierre SEO, medición y estados de indexación contrastados)
 
 ---
 
@@ -25,8 +25,12 @@
 - [x] Publicado GTM versión 2 y desplegado el build SEO completo con Consent Mode v2,
       navegación SPA y eventos de formulario/teléfono/WhatsApp. Ver
       `progress/2026-09-03-gtm-ga4-setup.md`.
-- [ ] Consultar GA4 de nuevo tras propagación y confirmar la primera sesión/eventos; la API
-      realtime no mostraba datos en la ventana breve posterior a la prueba de producción.
+- [x] GA4 en tiempo real confirmado tras publicación: `first_visit`, `page_view` y
+      `session_start` recibidos. La implementación está activa en producción.
+- [ ] Probar de forma controlada `form_submit`, `phone_click` y `whatsapp_click`; al verificarlos,
+      marcarlos como eventos clave en GA4. No reportarlos aún como conversiones verificadas.
+- [ ] Revisar Search Console en 7–14 días para Redes informáticas y Cámaras: ambas URL están
+      solicitadas/descubiertas y no tienen bloqueo técnico confirmado. No reenviar solicitudes.
 
 ---
 
