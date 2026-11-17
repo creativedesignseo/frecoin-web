@@ -9,132 +9,274 @@
 > Las credenciales viven en el panel de Hostinger y en la clave local
 > `~/.ssh/frecoin_hostinger` (no commiteada).
 
-**Last updated:** 2026-09-04 (código, producción y alcance contractual SEO contrastados)
+**Last updated:** 2026-11-17 (cierre verificado: código y producción comprobados; desvinculación de accesos en curso)
 
 ---
 
-## ESTADO REAL 2026-09-04 — bloque SEO técnico publicado; paquete SEO de 499 € aún no cerrado
+## VERIFIED UPDATE — 2026-11-17 — realidad comprobada hoy (no supuesta)
 
-**Verificado con `curl` contra producción (no supuesto), 2026-09-04:**
+**Código (`feat/backoffice-cms`):** `HEAD` = `e83fe64`. `bash scripts/verify.sh` → `✓ build passed` y `✓ all checks passed` (typecheck y test se saltan por script ausente, preexistente).
 
-| Comprobación en vivo | Resultado real hoy |
+- **Sin commitear, 9 ficheros de código y configuración:** `index.html`, `public/admin/api/seed-services.sql`, `public/email-templates/confirmation-customer.html.php`, `scripts/sync-seo-cms.php`, `src/data/services.ts`, `src/lib/analytics.ts`, `src/sections/Hero.tsx`, `tasks/current.md`, `HANDOFF.md`. No se han commiteado porque hay que revisarlos antes.
+- **Sin commitear, registros de sesión:** `progress/2026-09-07-*`, `progress/2026-09-08-*`, `progress/2026-10-12-*`, y dos `Email-*.html` sueltos.
+
+**Producción (`https://frecoin.es`), comprobada con curl el 17/11/2026:**
+- `/` → 200, `Instalaciones tecnológicas para empresas en España | FRECOIN`.
+- `/servicios/sai` → 200, `Sistemas SAI para empresas | FRECOIN`.
+- `/servicios/redes-informaticas` → 200, `Instalación de redes informáticas para empresas | FRECOIN`.
+- `/sobre-nosotros` → 200, `Quiénes somos — FRECOIN | Instalaciones para empresas`.
+- `/url-inexistente-xyz` → 404 real, con título propio de 404.
+- `sitemap.xml` → 11 URLs. `robots.txt` → `Disallow: /rediseno`.
+- `www.frecoin.es` → 301 a `https://frecoin.es/`.
+- `last-modified` de la home: **08/09/2026 12:16:40 GMT**. **No hay ningún despliegue desde el 08/09.**
+- **No verificado:** el despliegue del 12/10 de la plantilla `confirmation-customer.html.php`. Es PHP y no se ve desde fuera. Su registro (`progress/2026-10-12-*`) está sin commitear.
+
+**Hosting (cambio importante):**
+- El sitio `frecoin.es` (PHP/HTML) está alojado en la **cuenta Hostinger de Adspubli Marketing** (`info@one.adspubli.com`). El plan caduca el **23/12/2026**.
+- Tienen acceso a esa cuenta como usuarios `lfreire@frecoin.es` (administrar servicios y facturación) e `infotaxiluxride@gmail.com` (otro proyecto: taxiluxride.com). **No tocar el de infotaxiluxride.**
+- **No se puede desvincular sin antes pasar el sitio a Luis.** Si se retira el plan o el acceso de Luis antes de migrar, la web deja de funcionar.
+
+**Accesos de Google (desvinculación iniciada el 17/11/2026):**
+- GA4 (propiedad 552199720): **retirado nuestro acceso**. Luis conserva el suyo (Administrador).
+- GTM (cuenta `frecoin`, contenedor GTM-TPX75G8N): **retirado nuestro acceso**. Luis conserva el suyo.
+- Search Console (`sc-domain:frecoin.es`): **pendiente**. Nuestro rol es Usuario completo y no se puede retirar desde nuestra cuenta. Solo lo puede hacer Luis, como propietario.
+- Ficha de Google: pendiente de revisar.
+- Detalle y capturas: `entregables/desvinculacion-accesos-FRECOIN-2026-11-17.md` y `entregables/evidencias-desvinculacion-2026-11-17/` (repo `frecoin-tracking`).
+
+**Pendiente:**
+- Decidir con Jonatan y Luis cómo pasa el sitio a su cuenta: transferencia del plan o migración de archivos, base de datos, correo y DNS. Después, verificar formularios y correo.
+- Revisar y commitear los 9 ficheros sin commitear.
+- Revisar el saldo pendiente del SEO (249 €).
+
+---
+
+## VERIFIED UPDATE — 2026-10-12 — customer confirmation email
+
+- Luis requested the customer auto-response wording in the email thread “Mensaje recibido al enviar formulario” (latest reminder: 2026-09-30).
+- The targeted file `public/email-templates/confirmation-customer.html.php` was deployed individually; no other local working-tree changes were uploaded.
+- A remote backup was created before upload: `domains/frecoin.es/public_html/email-templates/confirmation-customer.html.php.backup_20261012_135715`.
+- Local build and `bash scripts/verify.sh` passed. The local and remote template SHA-256 matched: `9c4b03e88dd2085b220d281d65ba2f0bb953d8372b9af343752bfd1a0de83ac3`.
+- Live HTTP verification at `https://frecoin.es/email-templates/confirmation-customer.html.php` confirmed the new wording, “Gracias por confiar en FRECOIN”, and absence of the old confirmation and Luis paragraph.
+- This verifies the template is served in production; it does not replace the separate real form submission/email-receipt test.
+
+---
+
+## VERIFIED UPDATE — 2026-09-08, after deployment and CMS synchronization
+
+This section supersedes the pre-deployment audit below. Do not report the old copy or deployment as pending.
+
+### Website and CMS — completed
+
+- The user explicitly authorized production deployment and the targeted CMS correction.
+- The full prerendered build was deployed through Hostinger File Manager after SSH connection timeouts. Live public bundle: `assets/index-o6SriQtV.js`; stylesheet: `assets/index-CKg7giIL.css`.
+- Full remote pre-deployment copy: `backup_public_html_20260908_predeploy/public_html/`, outside the web root, relative to the domain directory. Deployment archive was also kept outside the web root.
+- The upload preserved `admin/`, `panel/`, uploads, CMS snapshots, `send-form.php`, and email templates. No database migrations or authentication changes were performed.
+- Home now displays **Instalaciones eléctricas y cableado estructurado para empresas**. The approved motto, expanded service copy, and Google Maps CID in JSON-LD are deployed.
+- Networks CMS synchronization is **complete**: a conditional `UPDATE` changed only `services.hero_paragraph` for `slug='redes-informaticas'`, matching the previous paragraph to avoid overwriting a concurrent edit. phpMyAdmin confirmed **1 affected row**.
+- `assets/services.json` was then aligned with that row. A live HTTP download was parsed and compared with the pre-change snapshot: **6 services, exactly 1 changed field — Networks `hero_paragraph`**. All other data and image references were preserved.
+- Final paragraph: “Diseñamos, instalamos y mantenemos redes informáticas para empresas, oficinas y naves industriales. Realizamos instalaciones de cableado estructurado Cat 6 y Cat 6A, UTP y FTP, con certificación de red y montaje de racks. Configuramos routers y switches, instalamos WiFi empresarial y ofrecemos mantenimiento de redes.”
+- The final paragraph was visible on the live Networks page and remained after a full browser reload. No further copy deployment or CMS synchronization is pending for this request.
+- A line-wrapped editor selection briefly produced malformed snapshot JSON during synchronization. It was immediately replaced with valid JSON; the final parsed comparison above passed. No other service values changed. Record this as a corrected intermediate error, not an unresolved defect.
+- Final smoke checks: home **200**, Networks **200**, panel **200**, `GET /send-form.php` **405**, invented route **404**. The earlier same-day 11-route/canonical/sitemap/redirect checks are recorded below.
+
+### Measurement — verified, with explicit QA limits
+
+- GTM remains published at **version 2**, container `GTM-TPX75G8N`; no new GTM version was required.
+- `src/lib/analytics.ts` fixes are deployed: separate one-time initialization from consent state; restore only supported consent version; enqueue `gtag` commands as Arguments objects. Basic consent mode remains active, with advertising storage and personalization denied.
+- GA4 property `552199720` received **1 `form_submit`, 1 `phone_click`, and 1 `whatsapp_click`** in the direct Realtime API query on 08/09. These were deliberate QA interactions, not customer leads.
+- The QA harness served the deployed build locally with `qa_test=true`, `qa_run=frecoin_delivery_20260908`; telephone/WhatsApp navigation was cancelled and the form endpoint simulated success. No actual call, WhatsApp message, email, or production lead record was generated by that test. This proves the front-end → published GTM → GA4 path, **not** production email delivery.
+- All three contact events are now key events, `ONCE_PER_EVENT`, verified through the Admin API. Existing `purchase`, `close_convert_lead`, and `qualify_lead` entries were preserved; they do not prove business conversions.
+- Enhanced measurement `formInteractionsEnabled` is **false**, confirmed by a final API read, to avoid duplicate/attempt-based automatic form events. The custom event is emitted after successful form response.
+- A real production form/email receipt test remains separate and needs an agreed recipient/test window. Do not represent a mocked submission or a 405 GET response as an end-to-end email test.
+
+### Google Business Profile — changes saved
+
+- Six custom services and their descriptions saved: Networks/cabling, electrical installations, CCTV, enterprise WiFi, SAI/UPS, and access control. Google displayed review pending (up to one day).
+- Official square isotype saved as logo. A real client network-rack photograph saved as cover; cover and the three pre-existing photos were pending in the last gallery check. Do not claim Google has approved them.
+- First update **published**, verified in “Tus publicaciones” with “Publicada hace 29 segundos”; post ID `7867179217944467748`. Text: “Instalaciones eléctricas y cableado estructurado para empresas. FRECOIN instala y mantiene redes informáticas, WiFi empresarial, cámaras CCTV, sistemas SAI y controles de acceso. Consulta nuestros servicios y solicita presupuesto en https://frecoin.es/”. No copy was posted to other managed businesses.
+- Public review-request link: `https://g.page/r/CR0VIVQNwHJyECE/review`. No review was fabricated or requested from third parties during this task.
+- Service area is still Barcelona; hours, opening date, and existing categories were retained. Their factual accuracy is not established by our edit access. An opening date in 2025 does **not** inherently contradict the founder's 20+ years of experience.
+- Category replacement was paused by the action approval check; it was cancelled and not bypassed. Confirm the intended security-system category and real service areas/hours/date before changing unverified business facts. No public street address or social profile was invented.
+
+### Search Console and delivery boundaries
+
+The same-day API inspection found these five discovered/non-indexed URLs (indexing is Google's decision):
+
+1. `https://frecoin.es/servicios/camaras-videovigilancia`
+2. `https://frecoin.es/sobre-nosotros`
+3. `https://frecoin.es/aviso-legal`
+4. `https://frecoin.es/politica-privacidad`
+5. `https://frecoin.es/politica-cookies`
+
+The home and the other five service routes were indexed. No new indexing request was submitted by the agent in this closeout.
+
+**Later user update, 08-Sep:** the user reports manually submitting Cameras and About and says they are processing. Record both as request submitted, not confirmed indexed; no new independent inspection followed that message. The user excludes the three legal pages from manual submission and delivery blockers. No `noindex`, robots exclusion or sitemap change was requested or applied. No manual submission remains to execute from this list; only the result of the two reported requests remains to be checked.
+
+The website/copy/CMS changes and contact-event configuration are complete. The entire SEO package must **not** be marked closed: Google reviews of profile changes, business-fact confirmation, a real production form/email test, and the agreed directory/reputation scope remain open. No client closeout email was sent. Internal delivery report: `frecoin-tracking/entregables/estado-entrega-verificado-2026-09-08.md` (outside this public repository).
+
+Local source remains uncommitted on `feat/backoffice-cms`, HEAD `e83fe64`; no push was performed. The final full build passed before deployment (11 routes + 404; ~630.22 kB main chunk). Dedicated `test`/`typecheck` scripts do not exist; do not claim those npm scripts ran. See `progress/2026-09-08-deploy-cms-measurement-gbp.md`.
+
+---
+
+## HISTORICAL PRE-DEPLOY AUDIT — 2026-09-08 (superseded by the verified update above)
+
+The following audit describes the state before today's authorized changes. Its deployment, measurement, services, logo/cover and publication pending items are no longer current; preserve it for traceability only.
+
+### Resumen ejecutivo
+
+- La base SEO técnica desplegada el **03/09** sigue funcionando en producción: prerender, 11 rutas,
+  canonicals, sitemap, 404 real y redirección de `www` están operativos.
+- Los cambios de portada y copy pedidos por Luis el **24/08**, la ampliación del texto de Redes y el
+  enlace de Google Maps en `sameAs` están preparados **solo en el árbol de trabajo local**. Hay un
+  deploy pendiente; producción todavía muestra el copy anterior.
+- La ficha de Google Business Profile **sí existe, está verificada/reclamada y se administra** con
+  `creativedesignseo@gmail.com`. No hace falta crearla ni reclamarla. Está incompleta.
+- Search Console, GA4 y GTM se comprobaron directamente por API el **08/09**. No se deduce su estado
+  desde el navegador.
+- En la revisión del 07–08/09 no se hizo deploy, no se publicó una versión nueva de GTM, no se cambió
+  GBP y no se envió ningún correo al cliente.
+
+### Código local — comprobado el 08/09
+
+| Comprobación | Resultado real |
 |---|---|
-| `<title>` de `/` | `Instalaciones tecnológicas para empresas en España \| FRECOIN` |
-| Seis URLs de servicio | Cada una devuelve su propio `<title>` y canonical: Redes, Eléctricas, Cámaras, WiFi, SAI y Accesos |
-| `/sobre-nosotros` | Title y canonical propios presentes |
-| `/url-que-no-existe-xyz` | **404** real |
-| `sitemap.xml` | 11 `<loc>`, incluida `/sobre-nosotros` |
-| `robots.txt` | `Disallow: /rediseno` presente |
+| Rama | `feat/backoffice-cms`, HEAD `e83fe64`, **3 commits por delante** de `origin/feat/backoffice-cms` |
+| Árbol de trabajo | **No limpio**: 6 ficheros modificados (incluido este HANDOFF) y 1 registro de progreso nuevo sin seguimiento |
+| Verificación | `bash scripts/verify.sh` → **`✓ all checks passed`**; build + prerender de 11 rutas + 404 |
+| Cobertura automatizada | No existen scripts `typecheck` ni `test`; `verify.sh` los omite. No reportar esto como pruebas ejecutadas. |
+| Avisos del build | Chunk principal de 629,70 kB y datos de Browserslist con 9 meses de antigüedad |
+
+Cambios locales no publicados:
+
+- `src/sections/Hero.tsx`: H1 `Instalaciones eléctricas / y cableado estructurado / para empresas`,
+  listado técnico ampliado y mensaje de más de 20 años; se conserva el lema solicitado por Luis.
+- `src/data/services.ts`: párrafo de Redes ampliado con Cat 6/Cat 6A, UTP/FTP, racks, routers,
+  switches, WiFi y mantenimiento; meta description de Eléctricas alineada con la matriz SEO.
+- `public/admin/api/seed-services.sql` y `scripts/sync-seo-cms.php`: copy de Redes alineado y script
+  preparado para sincronización idempotente del CMS.
+- `index.html`: JSON-LD `sameAs` preparado con la ficha real de Google Maps,
+  `https://www.google.com/maps?cid=8246865031147361565`.
+
+### Producción HTTP — comprobada el 08/09
+
+| Comprobación en vivo | Resultado real |
+|---|---|
+| `/` | **200**; title `Instalaciones tecnológicas para empresas en España \| FRECOIN`; todavía usa el H1 anterior `Infraestructuras tecnológicas para empresas en toda España` |
+| 6 rutas de servicios | **200**, cada una con title y canonical propios |
+| `/sobre-nosotros` + 3 legales | **200**, title y canonical propios |
+| URL inventada | **404** real |
+| `sitemap.xml` | 11 `<loc>` |
+| `robots.txt` | `Disallow: /rediseno` y referencia al sitemap |
 | `https://www.frecoin.es/` | **301** a `https://frecoin.es/` |
-| Build local | `bash scripts/verify.sh` → **`✓ all checks passed`**: build y prerender de 11 rutas + 404; `typecheck`/`test` no existen en el proyecto y el script los omite |
+| `/panel/` | **200** |
+| `GET /send-form.php` | **405** JSON |
 
-**No hay deploy pendiente para esta verificación.** La comprobación local regeneró `dist/` para
-validar el código, pero no se ha subido nada adicional a Hostinger en esta sesión.
+Diferencias verificadas entre local y producción:
 
-### Search Console — estado comprobado el 04/09
+| Elemento | Producción | Local pendiente |
+|---|---|---|
+| H1 de portada | `Infraestructuras tecnológicas para empresas en toda España` | `Instalaciones eléctricas y cableado estructurado para empresas` |
+| Copy de Redes | Versión breve: redes estables, cableado, routers/switches, WiFi y soporte | Versión detallada pedida por el cliente |
+| `assets/services.json` de Redes | Sigue sirviendo la versión breve | Seed y script de sincronización ya preparados |
+| JSON-LD `sameAs` | No contiene el CID de Google Maps | Contiene el CID real de la ficha |
 
-La propiedad es `sc-domain:frecoin.es`; el sitemap está enviado y no registra errores ni
-advertencias. Las solicitudes manuales y la evidencia de la interfaz se registran fuera de este
-repo público en `frecoin-tracking/entregables/registro-indexacion-search-console-2026-09.md`.
+Por tanto, la frase anterior «no hay deploy pendiente» era incorrecta para el estado actual. El
+deploy del 03/09 está completado, pero **hay un nuevo deploy pendiente** para estos cambios locales.
 
-| URL | Estado confirmado |
+### Google Search Console — API, 08/09
+
+- Propiedad: `sc-domain:frecoin.es`; permiso de la cuenta: `siteFullUser`.
+- Sitemap: enviado `2026-09-03T21:16:37Z`, última descarga `2026-09-07T06:36:18Z`, no pendiente,
+  **0 errores y 0 advertencias**.
+- Rendimiento agregado de los últimos 90 días: **5 clics, 127 impresiones, CTR 3,94 % y posición
+  media 40,61**.
+
+Inspección individual por API:
+
+| Estado | URLs |
 |---|---|
-| `/servicios/instalaciones-electricas` | **Indexada** |
-| `/servicios/antenas-wifi` | **Indexada** |
-| `/servicios/sai` | **Indexada** |
-| `/servicios/controles-de-acceso` | **Indexada** |
-| `/servicios/redes-informaticas` | Solicitud manual enviada; pendiente de rastreo. La prueba de URL publicada confirmó que es indexable. |
-| `/servicios/camaras-videovigilancia` | Descubierta mediante sitemap; pendiente de indexación. |
+| **Indexadas / PASS** | `/`, Redes, Eléctricas, WiFi, SAI y Controles de acceso |
+| **Descubiertas, actualmente sin indexar / NEUTRAL** | Cámaras, `/sobre-nosotros` y las 3 páginas legales |
 
-Una solicitud enviada no equivale a una URL indexada: no reenviar las dos pendientes de forma
-repetida. Revisar de nuevo en 7–14 días desde Search Console.
+Redes ya está indexada: el estado «solicitud enviada; pendiente» del 04/09 quedó superado. No
+reenviar Cámaras ni las otras URLs repetidamente; monitorizar.
 
-### Corrección on-page y CMS — 03/09
+### GA4 y GTM — APIs, 08/09
 
-Se detectó que `assets/services.json` del CMS todavía contenía la versión antigua de
-Barcelona/Cataluña. Aunque el HTML prerenderizado ya era nacional, el front descargaba ese
-snapshot tras cargar y podía sobrescribir title, meta description y H1 en el navegador.
+**GA4:** propiedad `frecoin.es` (`552199720`). En los últimos 30 días constan 63 `page_view`, 11
+`session_start`, 10 `user_engagement`, 2 `first_visit`, 2 `scroll`, 1 `click`, 1 `form_start` y
+1 `whatsapp_click`. En los últimos 7 días: Direct 4 sesiones, Referral 4 y Organic Search 3.
 
-- Los **seis registros** del CMS se sincronizaron con la matriz SEO nacional y se regeneró el
-  snapshot público. Backup remoto: `~/backup_seo_cms_20260903_225500/`.
-- El código base, la semilla SQL y el CMS contienen los mismos title/H1. La matriz mantenible está
-  en `docs/MATRIZ-SEO-ON-PAGE-2026-09-03.md`.
-- Verificación en vivo, tanto HTML como navegador recién cargado: `/servicios/redes-informaticas`
-  entrega `Instalación de redes informáticas para empresas | FRECOIN` y H1
-  `Instalación de redes informáticas para empresas`.
-- Sitemap actualizado con `lastmod` `2026-09-03` en sus 11 URL. Sigue siendo obligatorio desplegar
-  solo un `dist/` generado con el build completo y **excluir** `assets/services.json`; el script
-  `scripts/sync-seo-cms.php` permite volver a alinear el CMS sin exponer secretos.
+Los únicos eventos clave configurados son `purchase`, `close_convert_lead` y `qualify_lead`.
+`whatsapp_click` **no** es evento clave; `phone_click` y `form_submit` todavía no aparecen en los
+datos consultados. No reportar conversiones de lead como verificadas.
 
-**Conclusión: el trabajo SEO técnico está en producción.** El HTML prerenderizado, rutas SEO,
-redirecciones y recursos optimizados sirven el build actual.
+**GTM:** cuenta `frecoin`, contenedor `frecoin.es` (`GTM-TPX75G8N`), versión publicada **2**. El
+workspace consultado contiene 5 tags —configuración GA4, `form_submit`, `phone_click`,
+`whatsapp_click` y `virtual_page_view`— y 4 triggers de evento personalizado correspondientes.
 
-### Qué SÍ está hecho (verificado en local)
+Consent Mode v2 permanece en modo básico: GTM/GA4 solo carga después de aceptar analítica;
+`ad_storage`, `ad_user_data` y `ad_personalization` siguen denegados.
 
-- Commit **`d540be2`** en rama `feat/backoffice-cms`: `feat(seo): optimización SEO integral — prerender, metas nacionales, schema, enlazado` (34 ficheros, +1174/−159).
-- `bash scripts/verify.sh` → **`✓ all checks passed`** (build + prerender completos; `typecheck`/`test` se saltan por script ausente, comportamiento preexistente).
-- `dist/` contiene las 11 rutas prerenderizadas + `404.html`, cada una con su title/canonical propios. Ejemplo verificado: `/` → `Instalaciones tecnológicas para empresas en España | FRECOIN`; `dist/404.html` → `Página no encontrada (404) | FRECOIN`.
-- Contenido del trabajo: prerender con `scripts/prerender.mjs` (puppeteer-core), `usePageMeta` en todas las páginas, titles/H1/descriptions **de alcance nacional (España)** por decisión del cliente, schema `FAQPage` + `BreadcrumbList` + `LocalBusiness` con `geo` y `areaServed` España+Cataluña+Barcelona, footer con enlaces reales + NAP visible, bloque "servicios relacionados", sitemap de 11 URLs, `Disallow: /rediseno` + noindex, 404 real, 301 www, imágenes WebP (−61%) con lazy loading y dimensiones.
-- Verificado además en **Apache 2.4 local** con el `.htaccess` del build: 11 rutas 200 con title propio, 404 real en URLs inventadas, 301 de www y de `/contacto`.
+### Google Business Profile — navegador autenticado, solo lectura, 08/09
 
-### Deploy: COMPLETADO 2026-09-03
+| Campo | Estado real |
+|---|---|
+| Perfil | `FRECOIN`, administrado por `creativedesignseo@gmail.com` |
+| Categoría principal | `Proveedor de servicios de telecomunicaciones` |
+| Categorías adicionales | `Electricista`, `Servicio de seguridad para computadoras`, `Contratista de telecomunicaciones` |
+| Teléfono / web | `614 13 42 92` / `https://frecoin.es/` |
+| Modelo visible | Sin dirección pública; negocio de área de servicio |
+| Área configurada | Solo `Barcelona, España` |
+| Horario | L–V 07:00–18:00; S 07:00–14:00; D cerrado |
+| Fecha de apertura | `1 de mayo de 2025` |
+| Servicios | **Vacíos**; solo aparecen sugerencias sin marcar (`Instalación`, `Reparaciones generales`) |
+| Fotos | Sin logo ni portada; 3 fotos subidas, las 3 con estado **PENDIENTE** |
+| Reseñas / publicaciones | Sin reseñas visibles y sin publicaciones; Google invita a obtener las primeras opiniones y agregar una actualización |
+| Chat / perfiles sociales | Vacíos |
 
-Backup remoto creado: `~/backup_public_html_20260903_211132`. Se publicó el contenedor GTM
-`GTM-TPX75G8N` como versión 2 y se subió el `dist/` prerenderizado sin `--delete`, excluyendo
-`admin/`, `panel/`, uploads, snapshots del CMS, formularios y plantillas de correo. El nuevo
-`.htaccess` se comparó antes contra el activo y conserva hardening/compresión, añadiendo las
-reglas necesarias de prerender, 404 real y 301.
+La descripción sí enumera redes, eléctricas, CCTV, WiFi, SAI y controles de acceso, menciona más de
+20 años y Barcelona/Baix Llobregat. Antes de editar hay que confirmar con Luis: fecha de apertura
+(no cuadra a primera vista con «más de 20 años»), cobertura real —GBP dice solo Barcelona y la web
+declara toda España—, horarios, dirección oculta vs. atención presencial y categorías/servicios.
 
-La etiqueta GA4 usa `G-YY2PPL6YP8`; Consent Mode v2 se configuró en **modo básico**: antes de
-aceptar, y si el visitante rechaza, no se carga GTM/GA4 ni se instalan cookies de analítica. Tras
-aceptar se concede solo `analytics_storage`; `ad_storage`, `ad_user_data` y
-`ad_personalization` permanecen denegados. No hay remarketing ni publicidad personalizada. GTM
-carga en producción después de aceptar cookies y el JavaScript público del contenedor contiene la
-etiqueta GA4 y los eventos `form_submit`, `phone_click`, `whatsapp_click` y `page_view`.
-**Confirmado:** GA4 mostró una sesión en tiempo real con `first_visit`, `page_view` y
-`session_start` tras la publicación. Los eventos de lead están publicados, pero falta probar cada
-uno de forma controlada y marcarlos como eventos clave en GA4 antes de reportarlos como
-conversiones verificadas.
+### Deploy de referencia: completado el 03/09
 
-⚠️ **Riesgo a vigilar tras el deploy:** el nuevo `.htaccess` elimina el fallback global a `index.html`. Solo debe desplegarse un `dist/` generado con `npm run build` **completo** (con prerender); un build hecho con `build:only` dejaría 404 en todas las rutas menos `/`.
+Backup remoto: `~/backup_public_html_20260903_211132`. Se publicó GTM versión 2 y se subió el
+`dist/` prerenderizado sin `--delete`, excluyendo `admin/`, `panel/`, uploads, snapshots del CMS,
+formularios y plantillas de correo. El CMS se sincronizó con la matriz SEO nacional; backup remoto
+de esa operación: `~/backup_seo_cms_20260903_225500/`.
 
-### Documentación del trabajo (repo de contexto `frecoin-tracking`)
+⚠️ El `.htaccess` activo exige un `dist/` generado con `npm run build` **completo**. Un build con
+`build:only` dejaría 404 en todas las rutas salvo `/`. En el próximo deploy se debe excluir de nuevo
+`assets/services.json` y ejecutar la sincronización controlada del CMS para no pisar contenido.
+Todo deploy requiere la aprobación explícita exigida por `AGENTS.md`.
 
-`entregables/auditoria-tecnica-SEO-2026-08-28.md` (24 hallazgos priorizados), `entregables/keyword-research-FRECOIN-2026-08-28.md` (datos reales de Google Keyword Planner, cuenta Amsip MCC 769-608-2742) y `entregables/implementacion-SEO-2026-08-28.md` (qué se implementó y cómo se verificó). Los tres incluyen la nota de giro a estrategia nacional.
+### Pendientes reales para cerrar el paquete SEO de 499 €
 
-### Pendientes para el cierre íntegro del paquete SEO de 499 €
+1. Revisar/confirmar el diff local y, con aprobación explícita, publicar los cambios del 24/08,
+   sincronizar el CMS y repetir verificación HTTP y visual en producción.
+2. Probar de forma controlada `form_submit`, `phone_click` y `whatsapp_click`; decidir después cuáles
+   deben ser eventos clave y configurarlos en GA4. No usar `purchase` como conversión de este sitio.
+3. Completar GBP tras las confirmaciones de Luis: servicios, cobertura, fecha de apertura, horarios,
+   categorías, logo, portada, fotos aprobadas, perfiles sociales y primera publicación.
+4. Monitorizar por API las 5 URLs descubiertas/no indexadas sin reenviar solicitudes de forma
+   repetida.
+5. Dar de alta y seguir directorios locales solo cuando el NAP y la cobertura estén confirmados.
+6. Ejecutar reputación/Trustpilot o acordar una alternativa real; no usar testimonios ficticios.
+7. Emitir el informe global y walkthrough solo después de verificar de nuevo producción, medición y
+   GBP, o documentar expresamente cualquier entrega parcial acordada con Luis.
 
-1. Probar en una sesión controlada `form_submit`, `phone_click` y `whatsapp_click`; solo después
-   marcarlos como eventos clave en GA4.
-2. Monitorizar en Search Console Redes y Cámaras durante 7–14 días sin reenviar solicitudes.
-3. Ejecutar la **Ficha de Empresa de Google (GBP)**: diagnosticar si existe, crear o reclamar,
-   completar el método de verificación de Google y configurar NAP, categorías, servicios,
-   cobertura, horarios, fotos y preguntas. Es parte del paquete, no un extra. Primero hay que
-   confirmar con Luis el modelo de negocio (área de servicio vs. local con atención presencial),
-   NAP público, municipios, horarios, garantía, atributos y 10–15 fotos reales.
-4. Dar de alta y seguir 10–15 directorios locales solo cuando el NAP esté confirmado.
-5. Ejecutar el bloque de reputación/Trustpilot o acordar expresamente la alternativa. El widget
-   requiere una cuenta/perfil real y una suscripción que paga el cliente; no sustituirlo con
-   testimonios ficticios. Añadir las URL reales de GBP/Trustpilot a `sameAs` cuando existan.
-6. Emitir el informe global y walkthrough únicamente al completar los bloques anteriores o si
-   Luis y Adspubli acuerdan formalmente una entrega parcial.
-
-Contenido B2B adicional y menciones editoriales de calidad son crecimiento posterior, no condición
-para cerrar el paquete. La oportunidad de “mantenimiento informático” requiere confirmar primero
-que FRECOIN presta ese servicio.
-
-El informe actual y el borrador de correo se corrigieron en el repo privado `frecoin-tracking` para
-presentarlos como **avance del bloque SEO técnico**, no como cierre total. No se ha enviado ningún
-correo desde esta sesión.
+Documentación detallada en el repo privado `frecoin-tracking`: auditoría técnica, keyword research,
+implementación SEO, registro de indexación y planes de ejecución. No se ha enviado un correo de
+cierre al cliente.
 
 ---
 
-## Contexto histórico anterior al cierre SEO
+## Contexto histórico (puede contener estados ya superados)
 
-Las secciones que siguen preservan decisiones y trazabilidad previas. Cualquier frase que diga
-que GA4, GTM o Search Console estaban pendientes describe el estado de agosto de 2026 y queda
-**superada por el estado real de 04/09 documentado arriba**. Para operar o desplegar, prevalece
-siempre esta cabecera y no los bloques históricos.
+Las secciones siguientes preservan trazabilidad previa. Para operar, informar o desplegar,
+**prevalece siempre el estado verificado del 08/09 documentado arriba**.
 
 **Proyecto SEO — ARRANCADO 2026-08-25.** Luis aprobó por llamada la propuesta de 499€ del 12-jun
 (ver `## Propuesta SEO FRECOIN` más abajo) y, según indica Jonatan, hizo hoy el primer pago de 250€
@@ -162,14 +304,12 @@ Adspubli, por eso viven fuera de este repo público).
 
 **Respuesta del cliente 2026-08-28 — reportada por WhatsApp, NO verificable por mí (sin acceso a
 WhatsApp de Jonatan):** según indica Jonatan, Luis respondió *"Hola si puedo lo ago esta tarde
-sino mañana seguro"* — se compromete a darse de alta en las 3 herramientas de Google hoy o mañana
-a más tardar. **Aún no ha añadido a Adspubli como colaborador en ninguna** (no hay forma de
-verificarlo hasta que se compruebe el acceso real a Search Console/Analytics/Tag Manager).
+sino mañana seguro"* — se comprometía a darse de alta en las 3 herramientas de Google. **Estado
+histórico superado:** el 08/09 se confirmó acceso real por API a Search Console, GA4 y GTM.
 
-**Siguiente paso de ejecución (decidido en sesión previa, sigue vigente):** en cuanto Luis dé el
-acceso, empezar por la configuración de medición (GTM+GA4) en vez de por keyword research —
-arranca antes la captura de datos de referencia ("antes" de los cambios SEO). Detalle paso a paso
-en `plan-gtm-ga4.md`.
+**Siguiente paso de ejecución decidido entonces (ya ejecutado):** al recibir el acceso se priorizó
+la configuración de medición (GTM+GA4) frente al keyword research para iniciar la captura de datos
+de referencia. Detalle en `plan-gtm-ga4.md`; el estado actual está en la cabecera de este HANDOFF.
 
 **Comunicación con cliente 2026-07-28 (verificado en Gmail, no supuesto):** Luis
 había pedido (4 y 10 de julio, y de nuevo 22 de julio) poder acumular varias fotos

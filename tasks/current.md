@@ -5,7 +5,11 @@
 > `README.md` or `ROADMAP.md`. Operational truth lives in
 > `HANDOFF.md` (when it exists).
 
-**Last updated:** 2026-09-04 (cierre SEO, medición y estados de indexación contrastados)
+**Last updated:** 2026-10-12 (customer confirmation template deployed and verified)
+
+**Current operational update:** the 24-Aug copy and analytics fixes are deployed. Networks database row and public snapshot are synchronized and verified after a live reload. Six GBP services, logo and cover were saved; first update was published. Google approvals and unconfirmed business facts remain open. See the latest section of `HANDOFF.md`; historical implementation notes below are not current deployment identifiers.
+
+**Latest operational update:** the customer confirmation email template requested by Luis on 2026-09-30 is now deployed and verified live. A real end-to-end form submission and email receipt are still untested.
 
 ---
 
@@ -27,13 +31,14 @@
       `progress/2026-09-03-gtm-ga4-setup.md`.
 - [x] GA4 en tiempo real confirmado tras publicación: `first_visit`, `page_view` y
       `session_start` recibidos. La implementación está activa en producción.
-- [ ] Probar de forma controlada `form_submit`, `phone_click` y `whatsapp_click`; al verificarlos,
-      marcarlos como eventos clave en GA4. No reportarlos aún como conversiones verificadas.
-- [ ] Revisar Search Console en 7–14 días para Redes informáticas y Cámaras: ambas URL están
-      solicitadas/descubiertas y no tienen bloqueo técnico confirmado. No reenviar solicitudes.
-- [ ] Ejecutar Ficha de Empresa de Google (GBP): diagnosticar si existe, crear o reclamar y
-      verificar; configurar NAP, categorías, servicios, cobertura, horarios, fotos y Q&A.
-      Bloque incluido en el paquete SEO de 499 €, pendiente de datos y decisiones de Luis.
+- [x] Controlled QA received `form_submit`, `phone_click`, and `whatsapp_click` in GA4; all three
+      are key events. QA used the deployed build locally and simulated the form response; these are not real leads.
+- [ ] Verify an agreed real production form submission and email receipt (not proven by the QA mock).
+- [x] Manual submission scope resolved: user reports Cameras and About submitted on 08-Sep.
+      Legal pages are excluded from manual submission and delivery blockers by user decision; their indexability is unchanged.
+- [ ] Check the later indexing result for Cameras and About. User-reported processing is not confirmed indexing; do not resubmit.
+- [x] GBP exists and is managed; six services, logo and cover saved; first update published on 08-Sep.
+- [ ] GBP: Google review of submitted services/photos; confirm real areas, hours, opening date and category.
 - [ ] Alta y seguimiento de 10–15 directorios locales con NAP confirmado.
 - [ ] Ejecutar bloque de reputación/Trustpilot o acordar el plan alternativo: requiere decisión de
       Luis sobre la suscripción y datos reales; no usar opiniones ficticias.
